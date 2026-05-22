@@ -205,10 +205,10 @@ def default_settings():
 #==================== Manage Updates
 {'setting_id': 'update.action', 'setting_type': 'action', 'setting_default': '3', 'settings_options': {'0': 'Prompt', '1': 'Automatic', '2': 'Notification', '3': 'Off'}},
 {'setting_id': 'update.delay', 'setting_type': 'action', 'setting_default': '10', 'min_value': '10', 'max_value': '300'},
-{'setting_id': 'update.username', 'setting_type': 'string', 'setting_default': 'FenlightAnonyMouse'},
-{'setting_id': 'update.location', 'setting_type': 'string', 'setting_default': 'FenlightAnonyMouse.github.io'},
+{'setting_id': 'update.username', 'setting_type': 'string', 'setting_default': 'ThePirateDylan'},
+{'setting_id': 'update.location', 'setting_type': 'string', 'setting_default': 'ThePirateDylan.github.io/thepiratestreaming/'},
 #==================== Watched Indicators
-{'setting_id': 'watched_indicators', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Fen Light', '1': 'Trakt'}},
+{'setting_id': 'watched_indicators', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'The Pirate', '1': 'Trakt'}},
 #======+============= Trakt Cache
 {'setting_id': 'trakt.sync_interval', 'setting_type': 'action', 'setting_default': '60', 'min_value': '5', 'max_value': '600'},
 {'setting_id': 'trakt.refresh_widgets', 'setting_type': 'boolean', 'setting_default': 'true'},
