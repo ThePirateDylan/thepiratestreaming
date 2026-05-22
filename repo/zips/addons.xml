@@ -23,8 +23,8 @@
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
-</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.3" provider-name="ThePirateDylan">
-    <extension point="xbmc.addon.repository" name="The Pirate Streaming">
+</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.4" provider-name="ThePirateDylan">
+    <extension point="xbmc.addon.repository" name="The Pirate Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml.md5</checksum>
