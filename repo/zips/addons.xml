@@ -112,7 +112,7 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="script.bingie.helper" name="The Pirate Helper" version="1.0.0" provider-name="The Pirate Dylan">
+</addon><addon id="script.bingie.helper" name="The Pirate Helper" version="1.0.1" provider-name="The Pirate Dylan">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.simplejson" version="3.17.0" />
@@ -128,8 +128,7 @@
 		<website />
 		<source>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.bingie.helper/</source>
 		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
+			<icon>resources/pirate_icon.png</icon>
 		</assets>
 	</extension>
 </addon><addon id="script.bingie.toolbox" name="Bingie Toolbox" version="1.0.0" provider-name="matke">
