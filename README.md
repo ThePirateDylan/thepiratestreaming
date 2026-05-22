@@ -1,4 +1,4 @@
-# A fork of FenLightAM that brings the abillity to use outside Players, restores all API keys, and more!
+# A fork of FenLightAM that brings the abillity to use external players, restores all API keys, and more!
 
 ### Credits 
 
