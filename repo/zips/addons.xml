@@ -23,7 +23,7 @@
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
-</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.4" provider-name="ThePirateDylan">
+</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.5" provider-name="ThePirateDylan">
     <extension point="xbmc.addon.repository" name="The Pirate Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml</info>
@@ -33,10 +33,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>The Pirate Repo</summary>
-        <description>The software, add-ons, and repositories provided are supplied "as is" and without warranties of any kind. 
-        The developers and maintainers of this repository assume no liability for any damages, data loss, 
-        or issues that may occur on your device as a result of installing or using these files
-        </description>
+        <description>The software, add-ons, and repositories provided are supplied "as is" and without warranties of any kind.</description>
         <disclaimer>Use At Your Own Risk!</disclaimer>
         <platform>all</platform>
         <assets>
