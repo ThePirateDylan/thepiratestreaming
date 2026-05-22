@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.video.fenlight" name="The Pirate Streaming" provider-name="ThePirateDylan" version="2.2.07">
+<addons><addon id="plugin.video.fenlight" name="The Pirate Streaming" provider-name="ThePirateDylan" version="2.2.08">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.pil" version="1.1.7" />
@@ -23,7 +23,7 @@
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
-</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.2" provider-name="ThePirateDylan">
+</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.3" provider-name="ThePirateDylan">
     <extension point="xbmc.addon.repository" name="The Pirate Streaming">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml</info>

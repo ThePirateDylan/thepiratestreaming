@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.pirate" name="The Pirate Repo" version="1.0.2" provider-name="ThePirateDylan">
+<addon id="repository.pirate" name="The Pirate Repo" version="1.0.3" provider-name="ThePirateDylan">
     <extension point="xbmc.addon.repository" name="The Pirate Streaming">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml</info>
