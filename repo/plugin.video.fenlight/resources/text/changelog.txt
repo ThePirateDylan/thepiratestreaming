@@ -1,5 +1,10 @@
 [COLOR darkgoldenrod]I don't do everything - I just make sure everything runs[/COLOR]
 
+[COLOR dodgerblue][B]Version 2.2.12[/B][/COLOR]
+ - Some changes to cache.
+ - Some changes to python script.
+
+
 [COLOR dodgerblue][B]Version 2.2.11[/B][/COLOR]
  - More changes to make naming I think good now!
 
