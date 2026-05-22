@@ -4,6 +4,10 @@
 
 Special Thank You to peno64 for his help with the Repository URL casing in this project.
 
+Special Thank You to Goldenfreddy0703 , I looked at his repository to figure out my layout.
+
+Special Thank You to drinfernoo for creating the example repository!
+
 Special Thank You to TikiPeter for creating FenLight.
 
 Special Thank You to AnonyMouse for continuing FenLightAM with FenLightAM.
@@ -24,5 +28,5 @@ one final add-on look/feel.
 Everything required can be found within the repository or inside 
 this read me.
 
-Thank you for your patience!
+# Thank you for your patience!
 
