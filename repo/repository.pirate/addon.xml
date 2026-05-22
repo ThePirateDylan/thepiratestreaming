@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.pirate" name="The Pirate Repo" version="1.0.2" provider-name="ThePirateDylan">
+    <extension point="xbmc.addon.repository" name="The Pirate Streaming">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>The Pirate Repo</summary>
+        <description>The software, add-ons, and repositories provided are supplied "as is" and without warranties of any kind. 
+        The developers and maintainers of this repository assume no liability for any damages, data loss, 
+        or issues that may occur on your device as a result of installing or using these files
+        </description>
+        <disclaimer>Use At Your Own Risk!</disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>pirate_icon.png</icon>
+        </assets>
+    </extension>
+</addon>
