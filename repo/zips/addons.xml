@@ -79,7 +79,7 @@
     <screenshot>resources/screenshot-02.jpg</screenshot>
   </assets>
 </extension>
-</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.5" provider-name="ThePirateDylan">
+</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.6" provider-name="ThePirateDylan">
     <extension point="xbmc.addon.repository" name="The Pirate Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml</info>
@@ -112,7 +112,7 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="script.bingie.helper" name="The Pirate Helper" version="1.0.3" provider-name="The Pirate Dylan">
+</addon><addon id="script.bingie.helper" name="The Pirate Helper" version="1.0.4" provider-name="The Pirate Dylan">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.simplejson" version="3.17.0" />
