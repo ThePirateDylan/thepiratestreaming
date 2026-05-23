@@ -180,7 +180,7 @@
         <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.bingie.widgets</website>
         <source />
     </extension>
-</addon><addon id="script.module.bingie" name="bingie common" provider-name="jurialmunkey,matke" version="1.0.0">
+</addon><addon id="script.module.bingie" name="pirate common" provider-name="The Pirate Dylan" version="1.0.1">
   <requires>
     <import addon="xbmc.python" version="3.0.1" />
     <import addon="script.module.requests" version="2.9.1" />
@@ -188,9 +188,9 @@
   </requires>
   <extension point="xbmc.python.module" library="resources/modules" />
   <extension point="xbmc.addon.metadata">
-    <description lang="en_GB">Common code required by TMDb Bingie Helper.</description>
+    <description lang="en_GB">Common code required by The Pirate TMDb Helper.</description>
     <license>GPL-3.0-or-later</license>
-    <website>https://github.com/matke-84/script.module.bingie</website>
+    <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.module.bingie</website>
     <assets>
       <icon>icon.png</icon>
     </assets>
