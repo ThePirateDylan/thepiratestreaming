@@ -48,7 +48,7 @@
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
-</addon><addon id="plugin.video.tmdb.bingie.helper" version="1.0.3" name="TMDb The Pirate Helper" provider-name="The Pirate Dylan">
+</addon><addon id="plugin.video.tmdb.bingie.helper" version="1.0.4" name="The Pirate TMDb Helper" provider-name="The Pirate Dylan">
 <requires>
   <import addon="xbmc.python" version="3.0.1" />
   <import addon="script.module.requests" version="2.9.1" />
@@ -68,8 +68,8 @@
 <extension point="xbmc.addon.metadata">
   <reuselanguageinvoker>false</reuselanguageinvoker>
   <summary lang="en_GB">TMDb Bingie Helper</summary>
-  <description lang="en_GB">TMDb The Pirate Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb TVDb MDbList and Trakt.</description>
-  <disclaimer lang="en_GB">Data provided by TMDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com. Please consider supporting them. https://thetvdb.com/subscribe</disclaimer>
+  <description lang="en_GB">The Pirate TMDb Helper provides details about movies, tvshows and actors from TMDb.</description>
+  <disclaimer lang="en_GB">Data provided by TMDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com.</disclaimer>
   <license>GPL-3.0-or-later</license>
   <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/plugin.video.tmdb.bingie.helper</website>
   <assets>
@@ -93,7 +93,7 @@
             <icon>pirate_icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="screensaver.bingie" name="Bingie Screensaver" version="1.0.0" provider-name="matke">
+</addon><addon id="screensaver.bingie" name="The Pirate Screensaver" version="1.0.1" provider-name="The Pirate Dylan">
     <requires>
         <import addon="skin.bingie" version="1.0.0" />
     </requires>
@@ -102,11 +102,10 @@
     <extension point="xbmc.python.script" library="script.py" />
     
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">Bingie Screensaver</summary>
-        <description lang="en">Netflix styled screensaver for Bingie skin.</description>
+        <summary lang="en">The Pirate Screensaver</summary>
+        <description lang="en">Netflix styled screensaver for The Pirate Streaming skin.</description>
         <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
+            <icon>screen_icon.png</icon> 
         </assets>
     </extension>
 </addon><addon id="script.bingie.helper" name="The Pirate Helper" version="1.0.4" provider-name="The Pirate Dylan">

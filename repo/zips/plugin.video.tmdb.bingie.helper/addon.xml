@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.tmdb.bingie.helper"
-version="1.0.3"
-name="TMDb The Pirate Helper"
+version="1.0.4"
+name="The Pirate TMDb Helper"
 provider-name="The Pirate Dylan">
 <requires>
   <import addon="xbmc.python" version="3.0.1"/>
@@ -22,8 +22,8 @@ provider-name="The Pirate Dylan">
 <extension point="xbmc.addon.metadata">
   <reuselanguageinvoker>false</reuselanguageinvoker>
   <summary lang="en_GB">TMDb Bingie Helper</summary>
-  <description lang="en_GB">TMDb The Pirate Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb TVDb MDbList and Trakt.</description>
-  <disclaimer lang="en_GB">Data provided by TMDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com. Please consider supporting them. https://thetvdb.com/subscribe</disclaimer>
+  <description lang="en_GB">The Pirate TMDb Helper provides details about movies, tvshows and actors from TMDb.</description>
+  <disclaimer lang="en_GB">Data provided by TMDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com.</disclaimer>
   <license>GPL-3.0-or-later</license>
   <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/plugin.video.tmdb.bingie.helper</website>
   <assets>
