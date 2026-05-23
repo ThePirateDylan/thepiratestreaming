@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.tmdb.bingie.helper"
-version="1.0.2"
-name="TMDb Bingie Helper"
-provider-name="jurialmunkey,matke">
+version="1.0.3"
+name="TMDb The Pirate Helper"
+provider-name="The Pirate Dylan">
 <requires>
   <import addon="xbmc.python" version="3.0.1"/>
   <import addon="script.module.requests" version="2.9.1"/>
@@ -22,15 +22,12 @@ provider-name="jurialmunkey,matke">
 <extension point="xbmc.addon.metadata">
   <reuselanguageinvoker>false</reuselanguageinvoker>
   <summary lang="en_GB">TMDb Bingie Helper</summary>
-  <description lang="en_GB">TMDb Bingie Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb TVDb MDbList and Trakt.</description>
+  <description lang="en_GB">TMDb The Pirate Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb TVDb MDbList and Trakt.</description>
   <disclaimer lang="en_GB">Data provided by TMDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com. Please consider supporting them. https://thetvdb.com/subscribe</disclaimer>
   <license>GPL-3.0-or-later</license>
-  <website>https://github.com/matke-84/plugin.video.tmdb.bingie.helper</website>
+  <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/plugin.video.tmdb.bingie.helper</website>
   <assets>
-    <icon>icon.png</icon>
-    <fanart>fanart.jpg</fanart>
-    <screenshot>resources/screenshot-01.jpg</screenshot>
-    <screenshot>resources/screenshot-02.jpg</screenshot>
+    <icon>tmdbhelper_icon.png</icon>
   </assets>
 </extension>
 </addon>
