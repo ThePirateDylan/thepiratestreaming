@@ -1,26 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- BINGIE -->
 <shortcuts>
-    <shortcut>
-        <label>$VAR[DefMovieHubName]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>$VAR[DefMovieHubContent]</action>
-    </shortcut>
-    <shortcut>
-        <label>$VAR[DefMovieHub1Name]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>$VAR[DefMovieHub1Content]</action>
-    </shortcut>
-    <shortcut>
-        <label>$VAR[DefMovieHub2Name]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>$VAR[DefMovieHub2Content]</action>
-    </shortcut>
-    
-</shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>In Progress</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fplayer.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?name=In+Progress&amp;mode=build_movie_list&amp;action=in_progress_movies&amp;iconImage=player",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Streaming Services</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fproviders.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?name=Providers&amp;mode=navigator.providers&amp;menu_type=movie&amp;random_support=true&amp;iconImage=providers",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>In Theaters</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fintheatres.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?name=In+Theaters&amp;mode=build_movie_list&amp;action=tmdb_movies_in_theaters&amp;random_support=true&amp;iconImage=intheatres",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Top 250 Movies</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2ftrakt.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?mode=trakt.list.build_trakt_list&amp;user=justin&amp;slug=imdb-top-rated-movies&amp;list_id=2142753&amp;list_type=user_lists&amp;list_name=IMDB%3A+Top+Rated+Movies&amp;iconImage=trakt&amp;name=IMDB%3A+Top+Rated+Movies&amp;sort_by=rank&amp;sort_how=asc",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Latest Releases</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fdvd.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?name=Latest+Releases&amp;mode=build_movie_list&amp;action=tmdb_movies_latest_releases&amp;random_support=true&amp;iconImage=dvd",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Popular Today</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fpopular_today.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?name=Popular+Today&amp;mode=build_movie_list&amp;action=tmdb_movies_popular_today&amp;random_support=true&amp;iconImage=popular_today",return)</action>
+		</shortcut>
+	</shortcuts>

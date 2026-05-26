@@ -1,47 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- BINGIE -->
 <shortcuts>
-    <shortcut>
-        <label>$VAR[DefWidgetName]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>$VAR[DefWidgetContent]</action>
-    </shortcut>
-    <shortcut>
-        <label>$VAR[DefWidget1Name]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>$VAR[DefWidget1Content]</action>
-    </shortcut>
-    <shortcut>
-        <label>$VAR[DefWidget2Name]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>$VAR[DefWidget2Content]</action>
-    </shortcut>
 	<shortcut>
-        <label>$VAR[DefWidget3Name]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>$VAR[DefWidget3Content]</action>
-    </shortcut>
+		<defaultID />
+		<label>Trending Recent Movies</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2ftrending_recent.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?name=Trending+Recent&amp;mode=build_movie_list&amp;action=trakt_movies_trending_recent&amp;random_support=true&amp;iconImage=trending_recent",return)</action>
+		</shortcut>
 	<shortcut>
-        <label>$VAR[DefWidget4Name]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>$VAR[DefWidget4Content]</action>
-    </shortcut>
+		<defaultID />
+		<label>Trending Recent TV Shows</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2ftrending_recent.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?name=Trending+Recent&amp;mode=build_tvshow_list&amp;action=trakt_tv_trending_recent&amp;random_support=true&amp;iconImage=trending_recent",return)</action>
+		</shortcut>
 	<shortcut>
-        <label>$VAR[DefWidget5Name]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>$VAR[DefWidget5Content]</action>
-    </shortcut>
-    
-</shortcuts>
+		<defaultID />
+		<label>Top 250 Movies</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2ftrakt.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?mode=trakt.list.build_trakt_list&amp;user=philrivers&amp;slug=reddit-top-250-2018-edition&amp;list_id=4737076&amp;list_type=user_lists&amp;list_name=Reddit+Top+250+%282018+Edition%29&amp;iconImage=trakt&amp;name=Reddit+Top+250+%282018+Edition%29&amp;sort_by=rank&amp;sort_how=asc",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Top 250 TV Shows</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2ftrakt.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.fenlight/?mode=trakt.list.build_trakt_list&amp;user=justin&amp;slug=imdb-top-rated-tv-shows&amp;list_id=2143363&amp;list_type=user_lists&amp;list_name=IMDB%3A+Top+Rated+TV+Shows&amp;iconImage=trakt&amp;name=IMDB%3A+Top+Rated+TV+Shows&amp;sort_by=rank&amp;sort_how=asc",return)</action>
+		</shortcut>
+	</shortcuts>
