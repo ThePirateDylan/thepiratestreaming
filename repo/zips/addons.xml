@@ -24,7 +24,7 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.fenlight" name="The Pirate Streaming" provider-name="ThePirateDylan" version="2.2.12">
+</addon><addon id="plugin.video.fenlight" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.13">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.pil" version="1.1.7" />
@@ -221,7 +221,7 @@
 		</assets>
 		<news />
 	</extension>
-</addon><addon id="skin.bingie" version="2.1.0" name="The Pirate Skin" provider-name="The Pirate Dylan">
+</addon><addon id="skin.bingie" version="2.1.1" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui" />
 		<import addon="script.bingie.helper" version="1.1.4" />
