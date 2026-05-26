@@ -27,5 +27,7 @@ Special Thank You to TikiPeter for creating FenLight.
 
 Special Thank You to AnonyMouse for continuing FenLightAM with FenLightAM.
 
-Special Thank You to the BINGIE Mod team for creating the BINGIE Skin which is the basis for The Pirate Streaming Skin
+Special Thank You to the BINGIE Mod team for creating the BINGIE Skin which is the basis for The Pirate Streaming Skin.
+
+Special Thank You to kittmaster for creating the Kodi Texture Tool.
 
