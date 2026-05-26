@@ -179,7 +179,7 @@
         <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.bingie.widgets</website>
         <source />
     </extension>
-</addon><addon id="script.module.bingie" name="pirate common" provider-name="The Pirate Dylan" version="1.0.1">
+</addon><addon id="script.module.bingie" name="pirate common" provider-name="The Pirate Dylan" version="1.0.2">
   <requires>
     <import addon="xbmc.python" version="3.0.1" />
     <import addon="script.module.requests" version="2.9.1" />
