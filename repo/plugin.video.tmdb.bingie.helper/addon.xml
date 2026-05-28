@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.tmdb.bingie.helper"
-version="1.0.8"
+version="1.0.9"
 name="The Pirate TMDb Helper"
 provider-name="The Pirate Dylan">
 <requires>
