@@ -31,3 +31,5 @@ Special Thank You to the BINGIE Mod team for creating the BINGIE Skin which is t
 
 Special Thank You to kittmaster for creating the Kodi Texture Tool.
 
+Special Thank You to Team Kodi for the AndroidTV GUI sounds
+
