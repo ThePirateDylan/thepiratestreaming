@@ -486,7 +486,7 @@ def default_settings():
 #===================================PLAYBACK====================================#
 #===============================================================================#
 #==================== Playback Movies
-{'setting_id': 'auto_play_movie', 'setting_type': 'boolean', 'setting_default': 'false'},
+{'setting_id': 'auto_play_movie', 'setting_type': 'boolean', 'setting_default': 'true'},
 {'setting_id': 'results_quality_movie', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p, 4K'},
 {'setting_id': 'autoplay_quality_movie', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p, 4K'},
 {'setting_id': 'auto_resume_movie', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Never', '1': 'Always', '2': 'Autoplay Only'}},
@@ -494,10 +494,10 @@ def default_settings():
 {'setting_id': 'stinger_alert.window_percentage', 'setting_type': 'action', 'setting_default': '90', 'min_value': '1', 'max_value': '99'},
 {'setting_id': 'stinger_alert.use_chapters', 'setting_type': 'boolean', 'setting_default': 'true'},
 #==================== Playback Episodes
-{'setting_id': 'auto_play_episode', 'setting_type': 'boolean', 'setting_default': 'false'},
+{'setting_id': 'auto_play_episode', 'setting_type': 'boolean', 'setting_default': 'true'},
 {'setting_id': 'results_quality_episode', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p, 4K'},
 {'setting_id': 'autoplay_quality_episode', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p, 4K'},
-{'setting_id': 'autoplay_next_episode', 'setting_type': 'boolean', 'setting_default': 'false'},
+{'setting_id': 'autoplay_next_episode', 'setting_type': 'boolean', 'setting_default': 'true'},
 {'setting_id': 'autoplay_alert_method', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Window', '1': 'Notification'}},
 {'setting_id': 'autoplay_default_action', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Play', '1': 'Cancel', '2': 'Pause & Wait'}},
 {'setting_id': 'autoplay_next_window_percentage', 'setting_type': 'action', 'setting_default': '95', 'min_value': '75', 'max_value': '99'},
