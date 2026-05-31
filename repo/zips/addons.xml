@@ -221,7 +221,7 @@
 		</assets>
 		<news />
 	</extension>
-</addon><addon id="skin.bingie" version="2.1.17" name="The Pirate Skin" provider-name="The Pirate Dylan">
+</addon><addon id="skin.bingie" version="2.1.18" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui" />
 		<import addon="script.bingie.helper" version="1.1.4" />
