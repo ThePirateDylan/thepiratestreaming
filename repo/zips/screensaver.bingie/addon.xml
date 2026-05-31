@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="screensaver.bingie" name="The Pirate Screensaver" version="1.0.1" provider-name="The Pirate Dylan">
+<addon id="screensaver.bingie" name="The Pirate Screensaver" version="1.0.3" provider-name="The Pirate Dylan">
     <requires>
         <import addon="skin.bingie" version="1.0.0"/>
     </requires>
