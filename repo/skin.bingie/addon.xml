@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
-<addon id="skin.bingie" version="2.1.15" name="The Pirate Skin" provider-name="The Pirate Dylan">
+<addon id="skin.bingie" version="2.1.16" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui"/>
 		<import addon="script.bingie.helper" version="1.1.4"/>
@@ -8,7 +8,7 @@
 		<import addon="script.bingie.widgets" version="1.0.3"/>
 		<import addon="script.skinshortcuts" version="2.0.3"/>
 		<import addon="resource.images.studios.coloured" version="0.0.24" />
-		<import addon="plugin.video.tmdb.bingie.helper" version="1.0.9" />
+		<import addon="plugin.video.tmdb.bingie.helper" version="1.0.10" />
 		<import addon="plugin.program.autocompletion" version="2.1.4" />
 		<import addon="plugin.video.fenlight" version="2.2.13"/>
 		<import addon="resource.uisounds.androidtv" version="1.0.0"/>
