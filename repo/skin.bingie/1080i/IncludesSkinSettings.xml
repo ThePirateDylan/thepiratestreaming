@@ -583,6 +583,7 @@
             <label>$LOCALIZE[31360]</label>
             <onclick>Skin.ToggleSetting(EnableRatings)</onclick>
             <selected>Skin.HasSetting(EnableRatings)</selected>
+            <onload>Skin.SetBool(EnableRatings)</onload>
         </control>
 		<!-- Select which ratings to show in footer -->
 		<include content="SkinSettings_ActionButton">
