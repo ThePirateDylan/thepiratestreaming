@@ -2,6 +2,19 @@
     
     <!--Trying To Enable Ratings-->
      <setting id="enableratings" type="bool">true</setting>
+     <setting id="ratings_Top250" type="bool">true</setting>
+     <setting id="ratings_RT" type="bool">true</setting>
+     <setting id="ratings_RTAudience" type="bool">true</setting>
+     <setting id="ratings_TMdb" type="bool">true</setting>
+     <setting id="ratings_Letterboxd" type="bool">true</setting>
+     <setting id="ratings_IMDB" type="bool">true</setting>
+     <setting id="ratings_Trakt" type="bool">true</setting>
+     <setting id="ratings_Oscar" type="bool">true</setting>
+     <setting id="ratings_Metacritic" type="bool">true</setting>
+     <setting id="ratings_Emmy" type="bool">true</setting>
+     <setting id="ratings_GoldenGlobe" type="bool">true</setting>
+     <setting id="tmdbbingiehelper.disableratings" type="bool">false</setting>
+
 
 
 	<!-- widget style -->	
