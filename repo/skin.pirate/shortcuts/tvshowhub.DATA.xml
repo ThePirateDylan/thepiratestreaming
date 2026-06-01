@@ -1,0 +1,90 @@
+<shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>Continue Watching Shows</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fplayer.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=In+Progress+Episodes&amp;mode=build_in_progress_episode&amp;iconImage=player",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>New Episodes</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fnext_episodes.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=Next+Episodes&amp;mode=build_next_episode&amp;iconImage=next_episodes",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Browse by Streaming Service</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fproviders.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=Providers&amp;mode=navigator.providers&amp;menu_type=tvshow&amp;random_support=true&amp;iconImage=providers",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Trending TV</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fpopular_today.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=Popular+Today&amp;mode=build_tvshow_list&amp;action=tmdb_tv_popular_today&amp;random_support=true&amp;iconImage=popular_today",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Binge-Worthy Shows</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fmost_watched.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=Most+Watched&amp;mode=build_tvshow_list&amp;action=trakt_tv_most_watched&amp;random_support=true&amp;iconImage=most_watched",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Top TV Shows of All Time</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2ftrakt.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?mode=trakt.list.build_trakt_list&amp;user=justin&amp;slug=imdb-top-rated-tv-shows&amp;list_id=2143363&amp;list_type=user_lists&amp;list_name=IMDB%3A+Top+Rated+TV+Shows&amp;iconImage=trakt&amp;name=IMDB%3A+Top+Rated+TV+Shows&amp;sort_by=rank&amp;sort_how=asc",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Crime &amp; Mystery</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fgenre_crime.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?mode=build_tvshow_list&amp;action=tmdb_tv_genres&amp;key_id=80&amp;name=Crime&amp;iconImage=https%3A%2F%2Fraw.githubusercontent.com%2FThePirateDylan%2FThePirateDylan.github.io%2Fthepiratestreaming%2Fmain%2Fpackages%2Fmedia%2Ficons%2Fgenre_crime.png",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Throwback TV</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fcalendar_decades.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?mode=build_tvshow_list&amp;action=tmdb_tv_decade&amp;key_id=2000&amp;name=2000s&amp;iconImage=https%3A%2F%2Fraw.githubusercontent.com%2FThePirateDylan%2FThePirateDylan.github.io%2Fthepiratestreaming%2Fmain%2Fpackages%2Fmedia%2Ficons%2Fcalendar_decades.png",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Prestige Dramas</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fgenre_drama.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?mode=build_tvshow_list&amp;action=tmdb_tv_genres&amp;key_id=18&amp;name=Drama&amp;iconImage=https%3A%2F%2Fraw.githubusercontent.com%2FThePirateDylan%2FThePirateDylan.github.io%2Fthepiratestreaming%2Fmain%2Fpackages%2Fmedia%2Ficons%2Fgenre_drama.png",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Reality TV</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fgenre_reality.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?mode=build_tvshow_list&amp;action=tmdb_tv_genres&amp;key_id=10764&amp;name=Reality&amp;iconImage=https%3A%2F%2Fraw.githubusercontent.com%2FThePirateDylan%2FThePirateDylan.github.io%2Fthepiratestreaming%2Fmain%2Fpackages%2Fmedia%2Ficons%2Fgenre_reality.png",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Comedic Comfort Shows</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fgenre_comedy.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?mode=build_tvshow_list&amp;action=tmdb_tv_genres&amp;key_id=35&amp;name=Comedy&amp;iconImage=https%3A%2F%2Fraw.githubusercontent.com%2FThePirateDylan%2FThePirateDylan.github.io%2Fthepiratestreaming%2Fmain%2Fpackages%2Fmedia%2Ficons%2Fgenre_comedy.png",return)</action>
+		</shortcut>
+	</shortcuts>

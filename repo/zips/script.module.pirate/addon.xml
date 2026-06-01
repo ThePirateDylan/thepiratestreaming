@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.module.pirate" name="pirate common" provider-name="The Pirate Dylan" version="1.0.3">
+  <requires>
+    <import addon="xbmc.python" version="3.0.1"/>
+    <import addon="script.module.requests" version="2.9.1"/>
+    <import addon="script.module.infotagger" version="0.0.5" />
+  </requires>
+  <extension point="xbmc.python.module" library="resources/modules" />
+  <extension point="xbmc.addon.metadata">
+    <description lang="en_GB">Common code required by The Pirate TMDb Helper.</description>
+    <license>GPL-3.0-or-later</license>
+    <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.module.pirate</website>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+

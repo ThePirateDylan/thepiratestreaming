@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="screensaver.pirate" name="The Pirate Screensaver" version="1.0.4" provider-name="The Pirate Dylan">
+    <requires>
+        <import addon="skin.pirate" version="1.0.0"/>
+    </requires>
+    
+    <extension point="xbmc.ui.screensaver" library="default.py"/>
+    <extension point="xbmc.python.script" library="script.py"/>
+    
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">The Pirate Screensaver</summary>
+        <description lang="en">Netflix styled screensaver for The Pirate Streaming skin.</description>
+        <assets>
+            <icon>screen_icon.png</icon> 
+        </assets>
+    </extension>
+</addon>

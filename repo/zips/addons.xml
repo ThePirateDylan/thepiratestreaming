@@ -24,7 +24,7 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.fenlight" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.14">
+</addon><addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.15">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.pil" version="1.1.7" />
@@ -48,13 +48,13 @@
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
-</addon><addon id="plugin.video.tmdb.bingie.helper" version="1.0.10" name="The Pirate TMDb Helper" provider-name="The Pirate Dylan">
+</addon><addon id="plugin.video.tmdb.pirate.helper" version="1.0.11" name="The Pirate TMDb Helper" provider-name="The Pirate Dylan">
 <requires>
   <import addon="xbmc.python" version="3.0.1" />
   <import addon="script.module.requests" version="2.9.1" />
   <import addon="script.module.pil" version="1.1.7" />
   <import addon="script.module.addon.signals" version="0.0.6" />
-  <import addon="script.module.bingie" version="1.0.0" />
+  <import addon="script.module.pirate" version="1.0.0" />
   <import addon="script.module.infotagger" version="0.0.5" />
   <import addon="script.module.beautifulsoup4" version="4.9.3" />
   <import addon="script.module.qrcode" version="6.1.0" />
@@ -71,12 +71,12 @@
   <description lang="en_GB">The Pirate TMDb Helper provides details about movies, tvshows and actors from TMDb.</description>
   <disclaimer lang="en_GB">Data provided by TMDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com.</disclaimer>
   <license>GPL-3.0-or-later</license>
-  <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/plugin.video.tmdb.bingie.helper</website>
+  <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/plugin.video.tmdb.pirate.helper</website>
   <assets>
     <icon>tmdbhelper_icon.png</icon>
   </assets>
 </extension>
-</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.6" provider-name="ThePirateDylan">
+</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.7" provider-name="ThePirateDylan">
     <extension point="xbmc.addon.repository" name="The Pirate Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml</info>
@@ -93,9 +93,9 @@
             <icon>pirate_icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="screensaver.bingie" name="The Pirate Screensaver" version="1.0.3" provider-name="The Pirate Dylan">
+</addon><addon id="screensaver.pirate" name="The Pirate Screensaver" version="1.0.4" provider-name="The Pirate Dylan">
     <requires>
-        <import addon="skin.bingie" version="1.0.0" />
+        <import addon="skin.pirate" version="1.0.0" />
     </requires>
     
     <extension point="xbmc.ui.screensaver" library="default.py" />
@@ -108,92 +108,6 @@
             <icon>screen_icon.png</icon> 
         </assets>
     </extension>
-</addon><addon id="script.bingie.helper" name="The Pirate Helper" version="1.1.4" provider-name="The Pirate Dylan">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="script.module.simplejson" version="3.17.0" />
-	</requires>
-	<extension point="xbmc.python.script" library="default.py" />
-	<extension point="xbmc.addon.metadata">
-		<language />
-		<summary lang="en">The Pirate Helper</summary>
-		<description lang="en">Helper for some of The Pirate Streaming skin features.</description>
-		<platform>all</platform>
-		<license>GPL v3.0</license>
-		<forum />
-		<website />
-		<source>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.bingie.helper/</source>
-		<assets>
-			<icon>icon.png</icon>
-		</assets>
-	</extension>
-</addon><addon id="script.bingie.toolbox" name="The Pirate Toolbox" version="1.0.1" provider-name="The Pirate Dylan">
-    <requires>
-		<import addon="xbmc.python" version="3.0.0" />
-        <import addon="xbmc.addon" version="12.0.0" />
-        <import addon="script.module.simplejson" version="3.3.0" />
-		<import addon="script.module.simplecache" version="1.0.0" />
-    </requires>
-
-    <extension point="xbmc.python.library" library="default.py" />
-    <extension point="xbmc.python.pluginsource" library="plugin.py" />
-
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">The Pirate Toolbox</summary>
-        <description>Toolbox for The Pirate Streaming skin.</description>
-		<assets>
-            <icon>icon.png</icon>
-        </assets>
-        <language />
-        <platform>all</platform>
-        <license>GPL v2.0</license>
-        <forum />
-        <website />
-        <source />
-    </extension>
-</addon><addon id="script.bingie.widgets" name="The Pirate Widgets" version="1.0.3" provider-name="The Pirate Dylan">
-    <requires>
-		<import addon="xbmc.python" version="3.0.0" />
-        <import addon="xbmc.addon" version="12.0.0" />
-        <import addon="script.module.simplecache" version="2.0.2" />
-		<import addon="script.module.requests" version="2.9.1" />
-        <import addon="script.module.infotagger" version="0.0.4" />
-    </requires>
-
-    <extension point="xbmc.python.pluginsource" library="plugin.py">
-        <provides>video</provides>
-    </extension>
-    <extension library="service.py" point="xbmc.service" start="login" />
-
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">The Pirate Widgets</summary>
-        <description>Widgets for The Pirate Streaming skin.</description>
-		<assets>
-            <icon>widgets_icon.png</icon>
-            
-        </assets>
-        <language />
-        <platform>all</platform>
-        <license>GPL v2.0</license>
-        <forum />
-        <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.bingie.widgets</website>
-        <source />
-    </extension>
-</addon><addon id="script.module.bingie" name="pirate common" provider-name="The Pirate Dylan" version="1.0.2">
-  <requires>
-    <import addon="xbmc.python" version="3.0.1" />
-    <import addon="script.module.requests" version="2.9.1" />
-    <import addon="script.module.infotagger" version="0.0.5" />
-  </requires>
-  <extension point="xbmc.python.module" library="resources/modules" />
-  <extension point="xbmc.addon.metadata">
-    <description lang="en_GB">Common code required by The Pirate TMDb Helper.</description>
-    <license>GPL-3.0-or-later</license>
-    <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.module.bingie</website>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-  </extension>
 </addon><addon id="script.module.cocoscrapers" name="CocoScrapers Module" version="1.0.11" provider-name="CocoJoe">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
@@ -221,17 +135,103 @@
 		</assets>
 		<news />
 	</extension>
-</addon><addon id="skin.bingie" version="2.1.25" name="The Pirate Skin" provider-name="The Pirate Dylan">
+</addon><addon id="script.module.pirate" name="pirate common" provider-name="The Pirate Dylan" version="1.0.3">
+  <requires>
+    <import addon="xbmc.python" version="3.0.1" />
+    <import addon="script.module.requests" version="2.9.1" />
+    <import addon="script.module.infotagger" version="0.0.5" />
+  </requires>
+  <extension point="xbmc.python.module" library="resources/modules" />
+  <extension point="xbmc.addon.metadata">
+    <description lang="en_GB">Common code required by The Pirate TMDb Helper.</description>
+    <license>GPL-3.0-or-later</license>
+    <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.module.pirate</website>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon><addon id="script.pirate.helper" name="The Pirate Helper" version="1.1.5" provider-name="The Pirate Dylan">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.simplejson" version="3.17.0" />
+	</requires>
+	<extension point="xbmc.python.script" library="default.py" />
+	<extension point="xbmc.addon.metadata">
+		<language />
+		<summary lang="en">The Pirate Helper</summary>
+		<description lang="en">Helper for some of The Pirate Streaming skin features.</description>
+		<platform>all</platform>
+		<license>GPL v3.0</license>
+		<forum />
+		<website />
+		<source>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.helper/</source>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
+</addon><addon id="script.pirate.toolbox" name="The Pirate Toolbox" version="1.0.2" provider-name="The Pirate Dylan">
+    <requires>
+		<import addon="xbmc.python" version="3.0.0" />
+        <import addon="xbmc.addon" version="12.0.0" />
+        <import addon="script.module.simplejson" version="3.3.0" />
+		<import addon="script.module.simplecache" version="1.0.0" />
+    </requires>
+
+    <extension point="xbmc.python.library" library="default.py" />
+    <extension point="xbmc.python.pluginsource" library="plugin.py" />
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">The Pirate Toolbox</summary>
+        <description>Toolbox for The Pirate Streaming skin.</description>
+		<assets>
+            <icon>icon.png</icon>
+        </assets>
+        <language />
+        <platform>all</platform>
+        <license>GPL v2.0</license>
+        <forum />
+        <website />
+        <source />
+    </extension>
+</addon><addon id="script.pirate.widgets" name="The Pirate Widgets" version="1.0.4" provider-name="The Pirate Dylan">
+    <requires>
+		<import addon="xbmc.python" version="3.0.0" />
+        <import addon="xbmc.addon" version="12.0.0" />
+        <import addon="script.module.simplecache" version="2.0.2" />
+		<import addon="script.module.requests" version="2.9.1" />
+        <import addon="script.module.infotagger" version="0.0.4" />
+    </requires>
+
+    <extension point="xbmc.python.pluginsource" library="plugin.py">
+        <provides>video</provides>
+    </extension>
+    <extension library="service.py" point="xbmc.service" start="login" />
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">The Pirate Widgets</summary>
+        <description>Widgets for The Pirate Streaming skin.</description>
+		<assets>
+            <icon>widgets_icon.png</icon>
+            
+        </assets>
+        <language />
+        <platform>all</platform>
+        <license>GPL v2.0</license>
+        <forum />
+        <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.widgets</website>
+        <source />
+    </extension>
+</addon><addon id="skin.pirate" version="2.1.26" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui" />
-		<import addon="script.bingie.helper" version="1.1.4" />
-		<import addon="script.bingie.toolbox" version="1.0.1" />
-		<import addon="script.bingie.widgets" version="1.0.3" />
+		<import addon="script.pirate.helper" version="1.1.4" />
+		<import addon="script.pirate.toolbox" version="1.0.1" />
+		<import addon="script.pirate.widgets" version="1.0.3" />
 		<import addon="script.skinshortcuts" version="2.0.3" />
 		<import addon="resource.images.studios.coloured" version="0.0.24" />
-		<import addon="plugin.video.tmdb.bingie.helper" version="1.0.10" />
+		<import addon="plugin.video.tmdb.pirate.helper" version="1.0.10" />
 		<import addon="plugin.program.autocompletion" version="2.1.4" />
-		<import addon="plugin.video.fenlight" version="2.2.14" />
+		<import addon="plugin.video.pirate" version="2.2.14" />
 		<import addon="resource.uisounds.androidtv" version="1.0.0" />
 	</requires>
 	<extension debugging="false" defaultthemename="Textures.xbt" effectslowdown="1" point="xbmc.gui.skin">
