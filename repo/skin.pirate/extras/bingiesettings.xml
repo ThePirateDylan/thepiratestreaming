@@ -1,5 +1,9 @@
 <settings>
     
+    <!--Trying To Enable Ratings-->
+     <setting id="enableratings" type="bool">true</setting>
+
+
 	<!-- widget style -->	
 	<setting id="$VAR[catnum]widgetstyle" value="poster" label="$LOCALIZE[20021]" icon="special://skin/extras/viewthumbs/widget_poster.jpg" condition="" description=""/>
 	<setting id="$VAR[catnum]widgetstyle" value="landscape" label="$LOCALIZE[31576]" condition="" icon="special://skin/extras/viewthumbs/widget_landscape.jpg" description=""/>
