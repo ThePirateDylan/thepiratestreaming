@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
-<addon id="skin.pirate" version="2.1.29" name="The Pirate Skin" provider-name="The Pirate Dylan">
+<addon id="skin.pirate" version="2.1.30" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui"/>
 		<import addon="script.pirate.helper" version="1.1.4"/>

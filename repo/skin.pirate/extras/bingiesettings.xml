@@ -13,9 +13,6 @@
     <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ratings_Metacritic)</onload>
     <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ratings_Emmy)</onload>
     <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ratings_GoldenGlobe)</onload>
-    <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(tmdbbingiehelper.disableratings)</onload>
-
-
 
 	<!-- widget style -->	
 	<setting id="$VAR[catnum]widgetstyle" value="poster" label="$LOCALIZE[20021]" icon="special://skin/extras/viewthumbs/widget_poster.jpg" condition="" description=""/>
