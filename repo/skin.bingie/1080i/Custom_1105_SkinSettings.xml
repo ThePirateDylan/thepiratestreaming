@@ -4,7 +4,7 @@
     <onload>SetFocus($INFO[Window(Home).Property(SkinSettingSection)])</onload>
     <onload>SetFocus(1000)</onload>
     <onunload>ClearProperty(SkinSettingSection,Home)</onunload>
-	<onunload>Skin.Reset(TMDbBingieHelper.DisableRatings)</onunload>
+	<onload>Skin.HasSetting(EnableRatings)</onload>
     <controls>
         <!--Dialog Overlay-->
 		<control type="group">
