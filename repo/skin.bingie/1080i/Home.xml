@@ -10,8 +10,7 @@
 	<!-- BINGIE -->
     <onload condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">Skin.Reset(CustomSearchTerm)</onload>
     <onload>Skin.SetString(TMDbBingieHelper.MonitorContainer,17195)</onload>
-	<onload condition="!Skin.HasSetting(EnableRatings)">Skin.SetBool(TMDbBingieHelper.DisableRatings)</onload>
-    <onload condition="Skin.HasSetting(EnableRatings)">Skin.Reset(TMDbBingieHelper.DisableRatings)</onload>
+	<onunload>Skin.Reset(TMDbBingieHelper.DisableRatings)</onunload>
 	
 	<!-- Build Menu -->
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=900&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu|tmdbsearchmenu|moviehub|tvshowhub|newhub|musichub|customhub|somethinghub|mylisthub)</onload>

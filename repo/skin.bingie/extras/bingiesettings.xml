@@ -238,7 +238,7 @@
     <setting id="scrollbar_visibility" value="always_hide" label="$LOCALIZE[31067]" condition="" icon="" description=""/>
 	
 	<!-- ratings to show on home - multiselect -->
-    <setting id="ratings" value="ratings_Top250 | ratings_TMdb | ratings_Emmy | ratings_GoldenGlobe | ratings_Oscar" label="" condition="" icon="" description="">
+    <setting id="ratings" value="ratings_TMdb|ratings_Top250|ratings_Oscar|ratings_Emmy|ratings_GoldenGlobe" label="" condition="" icon="" description="">
         <option id="ratings_IMDB" label="$LOCALIZE[31357]" condition=""/>
         <option id="ratings_Top250" label="$LOCALIZE[31244]" condition=""/>
         <option id="ratings_RT" label="$LOCALIZE[31116]" condition=""/>
