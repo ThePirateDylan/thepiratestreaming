@@ -32,6 +32,14 @@
 		<action>ActivateWindow(1111,return)</action>
 		</shortcut>
 	<shortcut>
+		<defaultID />
+		<label>Cloud Services</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=My+Services&amp;mode=navigator.premium&amp;iconImage=premium",return)</action>
+		</shortcut>
+	<shortcut>
 		<defaultID>arghsettings</defaultID>
 		<label>Settings</label>
 		<label2>Custom item</label2>
