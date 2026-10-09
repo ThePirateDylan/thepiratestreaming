@@ -12,6 +12,7 @@
 			<shortcut label="10000" grouping="32029" icon="shortcuts/home.png">ActivateWindow(home,return)</shortcut>			
 			<shortcut label="31227" grouping="32029" icon="shortcuts/new.png">ActivateWindow(1112,return)</shortcut>
 			<shortcut label="31566" grouping="32029" icon="shortcuts/tv.png">ActivateWindow(1110,return)</shortcut>
+			<shortcut label="TV Guide" grouping="32029" icon="shortcuts/tv.png">ActivateWindow(Videos,"plugin://plugin.video.pirate/?mode=tvguide.main",return)</shortcut>
 			<shortcut label="342" grouping="32029" icon="shortcuts/clapperboard.png">ActivateWindow(1111,return)</shortcut>
 			<shortcut label="31025" grouping="32029" icon="shortcuts/categories.png">ActivateWindow(1119,return)</shortcut>
 			<shortcut label="31534" grouping="32029" icon="shortcuts/mylist.png">ActivateWindow(1114,return)</shortcut>
