@@ -7,7 +7,7 @@
             <top>0</top>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="FF0F1828">fenlight_common/white.png</texture>
+            <texture colordiffuse="$INFO[Skin.String(BackgroundOverlayColor)]">fenlight_common/white.png</texture>
         </control>
         <control type="image">
             <left>0</left>
@@ -35,7 +35,7 @@
                     <width max="300">auto</width>
                     <height>20</height>
                     <font>font37</font> <!-- FENLIGHT_38 -->
-                   <textcolor>FFD4AF37</textcolor>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <align>right</align>
                     <aligny>center</aligny>
                     <label>[B]$INFO[System.Time][/B]</label>
@@ -46,7 +46,7 @@
                     <width max="350">auto</width>
                     <height>20</height>
                     <font>font10</font> <!-- FENLIGHT_21 -->
-                   <textcolor>FFD4AF37</textcolor>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <align>right</align>
                     <aligny>center</aligny>
                     <label>$INFO[System.Date]</label>
@@ -57,7 +57,7 @@
                     <width>1520</width>
                     <height>20</height>
                     <font>font10</font> <!-- FENLIGHT_21 -->
-                    <textcolor>FFFFFFFF</textcolor>
+                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
                     <label>[UPPERCASE]Page $INFO[Window.Property(page_no)][/UPPERCASE] $INFO[Window.Property(item_count),(x,)][B] | [UPPERCASE]$INFO[Container(2000).ListItem.Property(name)][/B][/UPPERCASE]</label>
@@ -78,7 +78,7 @@
                         <top>0</top>
                         <width>320</width>
                         <height>320</height>
-                        <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme)]" border="12">fenlight_common/panel-256-box.png</texture>
+                        <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="12">fenlight_common/panel-256-box.png</texture>
                     </control>
                     <control type="image">
                         <left>10</left>
@@ -101,7 +101,7 @@
                             <top>0</top>
                             <width>320</width>
                             <height>320</height>
-                            <texture colordiffuse="FF3FA9FF" border="12">fenlight_common/panel-256-box.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="12">fenlight_common/panel-256-box.png</texture>
                         </control>
                         <control type="image">
                             <left>10</left>
@@ -121,9 +121,9 @@
                 <height>940</height>
                 <onleft>2000</onleft>
                 <onright>2000</onright>
-                <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                 <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
                 <visible>Control.IsVisible(2000)</visible>

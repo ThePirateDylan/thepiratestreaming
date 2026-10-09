@@ -14,6 +14,13 @@ def routing(sys):
 	if 'navigator.' in mode:
 		from indexers.navigator import Navigator
 		return exec('Navigator(params).%s()' % mode.split('.')[1])
+	elif mode.startswith('tvguide.'):
+		from indexers import tv_guide
+		action = mode.split('.', 1)[1]
+		if action == 'main': return tv_guide.main(params)
+		elif action == 'channel': return tv_guide.channel(params)
+		elif action == 'kodi_favorites': return tv_guide.kodi_favorites(params)
+		elif action == 'play_favorite': return tv_guide.play_favorite(params)
 	elif 'menu_editor.' in mode:
 		from modules.menu_editor import MenuEditor
 		return exec('MenuEditor(params).%s()' % mode.split('.')[1])

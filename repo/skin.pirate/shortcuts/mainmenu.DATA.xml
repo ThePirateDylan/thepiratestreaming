@@ -24,6 +24,14 @@
 		<action>ActivateWindow(1110,return)</action>
 		</shortcut>
 	<shortcut>
+		<defaultID>tvguide</defaultID>
+		<label>TV Guide</label>
+		<label2>Video Add-On</label2>
+		<icon>shortcuts/tv.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?mode=tvguide.main",return)</action>
+		</shortcut>
+	<shortcut>
 		<defaultID>movies</defaultID>
 		<label>342</label>
 		<label2 />

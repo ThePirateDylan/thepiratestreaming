@@ -22,6 +22,10 @@ class TextViewer(BaseDialog):
 		if action in self.closing_actions:
 			self.close()
 
+	def onClick(self, control_id):
+		if control_id == 2062:
+			self.close()
+
 	def set_properties(self):
 		self.setProperty('text', self.text)
 		self.setProperty('heading', self.heading)

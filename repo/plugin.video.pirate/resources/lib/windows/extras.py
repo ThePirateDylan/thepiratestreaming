@@ -936,6 +936,12 @@ class ShowTextMedia(BaseDialog):
 			if action == self.left_action: return self.update_text('previous')
 			if action == self.right_action: return self.update_text('next')
 
+	def onClick(self, control_id):
+		if control_id == 2096: return self.close()
+		if not self.text_is_list: return
+		if control_id == 2098: return self.update_text('previous')
+		if control_id == 2097: return self.update_text('next')
+
 	def update_text(self, direction=None):
 		if direction == 'previous': self.position = self.position - 1 if self.position > 0 else self.len_text - 1
 		elif direction == 'next': self.position = 0 if self.position == self.len_text - 1 else self.position + 1

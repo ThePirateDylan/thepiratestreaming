@@ -7,7 +7,7 @@
             <top>0</top>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="FF0F1828">fenlight_common/white.png</texture>
+            <texture colordiffuse="$INFO[Skin.String(BackgroundOverlayColor)]">fenlight_common/white.png</texture>
             <animation effect="fade" end="85" time="120">WindowOpen</animation>
         </control>
         <!-- Filter Window -->
@@ -18,7 +18,7 @@
             <control type="image">
                 <width>1732</width>
                 <height>936</height>
-                <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme)]" border="30">fenlight_common/circle.png</texture>
+                <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
             </control>
             <control type="image">
                 <left>12</left>
@@ -35,8 +35,8 @@
                 <left>30</left>
                 <height>20</height>
                 <font>font12</font> <!-- FENLIGHT_26 -->
-               <textcolor>FFD4AF37</textcolor>
-                <shadowcolor>FF0F1828</shadowcolor>
+               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(BackgroundOverlayColor)]</shadowcolor>
                 <align>center</align>
                 <label>[UPPERCASE][B]DISCOVER[/B][/UPPERCASE]</label>
             </control>
@@ -72,7 +72,7 @@
                         <top>45</top>
                         <height>5</height>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(label1)][/UPPERCASE]</label>
@@ -83,7 +83,7 @@
                         <top>45</top>
                         <height>5</height>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                        <textcolor>FFA9A8A8</textcolor>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(label2)][/UPPERCASE]</label>
@@ -93,7 +93,7 @@
                     <control type="image">
                         <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(2100)">Conditional</animation>
                         <width>1242</width>
-                        <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texture>
+                        <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                     </control>
                     <control type="label">
                         <left>15</left>
@@ -101,7 +101,7 @@
                         <height>5</height>
                         <width max="360">auto</width>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(label1)][/UPPERCASE]</label>
@@ -129,9 +129,9 @@
                 <onleft>2100</onleft>
                 <onright condition="String.IsEqual(Window.Property(active_attributes),true)">10</onright>
                 <onright condition="!String.IsEqual(Window.Property(active_attributes),true)">11</onright>
-                <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                 <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
             </control>
@@ -144,7 +144,7 @@
                     <width>1635</width>
                     <height>20</height>
                     <font>font12</font> <!-- FENLIGHT_26 -->
-                   <textcolor>FFD4AF37</textcolor>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <label>[UPPERCASE]$INFO[Window.Property(list_label)][/UPPERCASE]</label>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -156,7 +156,7 @@
                     <width>1635</width>
                     <height>20</height>
                     <font>font10</font> <!-- FENLIGHT_21 -->
-                   <textcolor>FFD4AF37</textcolor>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <label>[UPPERCASE][I]$INFO[Window.Property(url_label)][/I][/UPPERCASE]</label>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -176,10 +176,10 @@
                     <onright>2100</onright>
                     <label>Save and Exit</label>
                     <font>font12</font> <!-- FENLIGHT_26 -->
-                   <textcolor>FFD4AF37</textcolor>
-                    <focusedcolor>FFF2C94C</focusedcolor>
-                    <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texturefocus>
-                    <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme_contrast)]" border="30">fenlight_common/circle.png</texturenofocus>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                    <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                    <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                    <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
                     <visible>String.IsEqual(Window.Property(active_attributes),true)</visible>
@@ -196,10 +196,10 @@
                     <onright>2100</onright>
                     <label>Exit</label>
                     <font>font12</font> <!-- FENLIGHT_26 -->
-                   <textcolor>FFD4AF37</textcolor>
-                    <focusedcolor>FFF2C94C</focusedcolor>
-                    <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texturefocus>
-                    <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme_contrast)]" border="30">fenlight_common/circle.png</texturenofocus>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                    <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                    <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                    <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
                 </control>

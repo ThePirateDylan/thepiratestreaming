@@ -18,6 +18,7 @@
 	<include file="View_54_Panel.xml" />
 	<include file="View_56_BannerPlex.xml" />
 	<include file="View_57_BigPanel.xml" />
+	<include file="View_58_TVGuide.xml" />
 	<include file="View_501_Landscape.xml" />
 	<include file="View_502_LandscapeSingle.xml" />
 	<include file="View_503_Logos.xml" />
@@ -76,11 +77,11 @@
 
     <expression name="IsBingieCategoriesActive">Window.IsActive(1117)</expression>
 	
-	<expression name="AllBingieViews">Window.IsActive(Home) | Window.IsActive(1109) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1116) | Window.IsActive(1117) | Window.IsActive(1118) | Window.IsActive(1119) | Window.IsActive(1120) | Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)</expression>
+	<expression name="AllBingieViews">Window.IsActive(Home) | Window.IsActive(1109) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1116) | Window.IsActive(1117) | Window.IsActive(1118) | Window.IsActive(1119) | Window.IsActive(1120) | Control.IsVisible(58) | Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)</expression>
 	
-	<expression name="AllNoneBingieViews">Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | Control.IsVisible(503) | Control.IsVisible(50)</expression>
+	<expression name="AllNoneBingieViews">Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | Control.IsVisible(503) | Control.IsVisible(50) | Control.IsVisible(58)</expression>
 	
-	<expression name="BingieIndicatorsViews">Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(1109) | Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | Control.IsVisible(503) | Control.IsVisible(50)</expression>
+	<expression name="BingieIndicatorsViews">Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(1109) | Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | Control.IsVisible(503) | Control.IsVisible(50) | Control.IsVisible(58)</expression>
 
     <expression name="IsRecognizedVideoContent">VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(livetv) | VideoPlayer.Content(musicvideos) | Pvr.IsPlayingRecording</expression>
 

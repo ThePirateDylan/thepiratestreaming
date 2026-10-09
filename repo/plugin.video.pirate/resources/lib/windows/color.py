@@ -41,6 +41,11 @@ class SelectColor(BaseDialog):
 				self.current_setting = self.selected = color_value
 				self.close()
 
+	def onClick(self, control_id):
+		if control_id in (self.window_id, 10, 11, 12):
+			self.setFocusId(control_id)
+			return self.onAction(self.selection_actions[0])
+
 	def make_menu(self):
 		def builder():
 			for item in color_palette():

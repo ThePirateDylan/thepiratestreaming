@@ -9,7 +9,7 @@
                 <top>0</top>
                 <width>1920</width>
                 <height>1080</height>
-                <texture colordiffuse="FF0F1828">fenlight_common/white.png</texture>
+                <texture colordiffuse="$INFO[Skin.String(BackgroundOverlayColor)]">fenlight_common/white.png</texture>
             </control>
             <control type="image">
                 <left>0</left>
@@ -38,7 +38,7 @@
                 <width max="650">auto</width>
                 <height>20</height>
                 <font>font10</font> <!-- FENLIGHT_21 -->
-                <textcolor>FFFFFFFF</textcolor>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <align>left</align>
                 <aligny>center</aligny>
                 <label>[B]$INFO[Window.Property(total_results)][/B] [UPPERCASE]Results $INFO[Window.Property(filters_ignored)] $INFO[Window.Property(filter_info)][/UPPERCASE]</label>
@@ -67,7 +67,7 @@
                     <width max="1210">auto</width>
                     <height>30</height>
                     <font>font60</font> <!-- FENLIGHT_60_BOLD -->
-                   <textcolor>FFD4AF37</textcolor>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <align>center</align>
                     <aligny>top</aligny>
                     <label>[B]$INFO[Window.Property(title)][/B]</label>
@@ -101,7 +101,7 @@
                             <top>15</top>
                             <width>1180</width>
                             <height>110</height>
-                            <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.sources)]" border="30">fenlight_common/circle.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
                         </control>
                         <control type="group">
                             <height max="100">auto</height>
@@ -133,7 +133,7 @@
                                 <width max="950">auto</width>
                                 <height>12</height>
                                 <font>font10</font> <!-- FENLIGHT_21 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)][/UPPERCASE]</label>
@@ -145,7 +145,7 @@
                                 <width max="950">auto</width>
                                 <height>12</height>
                                 <font>font10</font> <!-- FENLIGHT_21 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Info: [/B][/COLOR]$INFO[ListItem.Property(extraInfo)][/UPPERCASE]</label>
@@ -157,7 +157,7 @@
                                 <width max="950">auto</width>
                                 <height>12</height>
                                 <font>font10</font> <!-- FENLIGHT_21 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Title: [/B][/COLOR]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/UPPERCASE]</label>
@@ -173,7 +173,7 @@
                                 <left>60</left>
                                 <align>left</align>
                                 <aligny>top</aligny>
-                                <texture colordiffuse="FF9c9a9b">fenlight_common/info.png</texture>
+                                <texture colordiffuse="$INFO[Skin.String(GeneralTextColor)]">fenlight_common/info.png</texture>
                             </control>
                             <control type="label">
                                 <top>50</top>
@@ -181,7 +181,7 @@
                                 <width max="860">auto</width>
                                 <height>40</height>
                                 <font>font14</font> <!-- FENLIGHT_33 -->
-                                <textcolor>FF9c9a9b</textcolor>
+                                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>center</align>
                                 <aligny>center</aligny>
                                 <label>[B]***START FULL SCRAPE***[/B]</label>
@@ -198,7 +198,7 @@
                                 <animation effect="fade" start="100" end="60" time="0" condition="!Control.HasFocus(2000)">Conditional</animation>
                                 <control type="image">
                                     <width>1180</width>
-                                    <texture colordiffuse="FF3FA9FF" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <width>200</width>
@@ -214,7 +214,7 @@
                                     <left>20</left>
                                     <control type="label">
                                         <font>font14</font> <!-- FENLIGHT_33 -->
-                                       <textcolor>FFD4AF37</textcolor>
+                                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                         <align>left</align>
                                         <aligny>bottom</aligny>
                                         <label>[B]$INFO[ListItem.Property(quality)][/B]</label>
@@ -222,7 +222,7 @@
                                     <control type="label">
                                         <top>35</top>
                                         <font>font10</font> <!-- FENLIGHT_21 -->
-                                       <textcolor>FFD4AF37</textcolor>
+                                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                         <align>left</align>
                                         <aligny>top</aligny>
                                         <label>[B]$INFO[ListItem.Property(provider)][/B]</label>
@@ -234,7 +234,7 @@
                                     <width max="950">auto</width>
                                     <height>12</height>
                                     <font>font10</font> <!-- FENLIGHT_21 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)][/UPPERCASE]</label>
@@ -246,7 +246,7 @@
                                     <width max="950">auto</width>
                                     <height>12</height>
                                     <font>font10</font> <!-- FENLIGHT_21 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Info: [/B][/COLOR]$INFO[ListItem.Property(extraInfo)][/UPPERCASE]</label>
@@ -258,7 +258,7 @@
                                     <width max="950">auto</width>
                                     <height>12</height>
                                     <font>font10</font> <!-- FENLIGHT_21 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Title: [/B][/COLOR]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/UPPERCASE]</label>
@@ -274,7 +274,7 @@
                                     <left>60</left>
                                     <align>left</align>
                                     <aligny>top</aligny>
-                                    <texture colordiffuse="FF3FA9FF">fenlight_common/info.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/info.png</texture>
                                 </control>
                                 <control type="label">
                                     <top>50</top>
@@ -282,7 +282,7 @@
                                     <width max="860">auto</width>
                                     <height>40</height>
                                     <font>font14</font> <!-- FENLIGHT_33 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <label>[B]***START FULL SCRAPE***[/B]</label>
@@ -296,7 +296,7 @@
                     <top>0</top>
                     <width>1920</width>
                     <height>1080</height>
-                    <texture colordiffuse="FF0F1828">fenlight_common/white.png</texture>
+                    <texture colordiffuse="$INFO[Skin.String(BackgroundOverlayColor)]">fenlight_common/white.png</texture>
                     <visible>Control.HasFocus(2060) | Control.HasFocus(2100)</visible>
                     <animation effect="fade" start="0" end="70" time="200" tween="sine">Visible</animation>
                 </control>
@@ -308,7 +308,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="FF9c9a9b">$INFO[Container(2000).ListItem.Property(quality_icon)]</texture>
+                    <texture colordiffuse="$INFO[Skin.String(GeneralTextColor)]">$INFO[Container(2000).ListItem.Property(quality_icon)]</texture>
                     <visible>Control.HasFocus(2060)</visible>
                     <animation effect="fade" start="0" end="100" time="200" tween="sine">Visible</animation>
                 </control>
@@ -319,9 +319,9 @@
                     <height>945</height>
                     <onleft>2000</onleft>
                     <onright>2000</onright>
-                    <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                    <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                    <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                    <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                    <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                     <showonepage>false</showonepage>
                     <orientation>vertical</orientation>
                     <visible>Control.IsVisible(2000)</visible>
@@ -347,7 +347,7 @@
                     <width max="1210">auto</width>
                     <height>30</height>
                     <font>font60</font> <!-- FENLIGHT_60_BOLD -->
-                   <textcolor>FFD4AF37</textcolor>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <align>center</align>
                     <aligny>bottom</aligny>
                     <label>[B]$INFO[Window.Property(title)][/B]</label>
@@ -371,7 +371,7 @@
                             <top>15</top>
                             <width>925</width>
                             <height>110</height>
-                            <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.sources)]" border="30">fenlight_common/circle.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
                         </control>
                         <control type="group">
                             <visible>String.IsEmpty(ListItem.Property(perform_full_search))</visible>
@@ -402,7 +402,7 @@
                                 <width max="725">auto</width>
                                 <height>12</height>
                                 <font>font10</font> <!-- FENLIGHT_21 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)][/UPPERCASE]</label>
@@ -414,7 +414,7 @@
                                 <width max="725">auto</width>
                                 <height>12</height>
                                 <font>font10</font> <!-- FENLIGHT_21 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Info: [/B][/COLOR]$INFO[ListItem.Property(extraInfo)][/UPPERCASE]</label>
@@ -426,7 +426,7 @@
                                 <width max="725">auto</width>
                                 <height>12</height>
                                 <font>font10</font> <!-- FENLIGHT_21 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Title: [/B][/COLOR]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/UPPERCASE]</label>
@@ -442,7 +442,7 @@
                                 <left>45</left>
                                 <align>left</align>
                                 <aligny>top</aligny>
-                                <texture colordiffuse="FF9c9a9b">fenlight_common/info.png</texture>
+                                <texture colordiffuse="$INFO[Skin.String(GeneralTextColor)]">fenlight_common/info.png</texture>
                             </control>
                             <control type="label">
                                 <top>50</top>
@@ -450,7 +450,7 @@
                                 <width max="860">auto</width>
                                 <height>40</height>
                                 <font>font14</font> <!-- FENLIGHT_33 -->
-                                <textcolor>FF9c9a9b</textcolor>
+                                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>center</align>
                                 <aligny>center</aligny>
                                 <label>[B]***START FULL SCRAPE***[/B]</label>
@@ -467,7 +467,7 @@
                                 <height>110</height>
                                 <control type="image">
                                     <width>925</width>
-                                    <texture colordiffuse="FF3FA9FF" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <width>175</width>
@@ -483,7 +483,7 @@
                                     <left>20</left>
                                     <control type="label">
                                         <font>font14</font> <!-- FENLIGHT_33 -->
-                                       <textcolor>FFD4AF37</textcolor>
+                                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                         <align>left</align>
                                         <aligny>bottom</aligny>
                                         <label>[B]$INFO[ListItem.Property(quality)][/B]</label>
@@ -491,7 +491,7 @@
                                     <control type="label">
                                         <top>35</top>
                                         <font>font10</font> <!-- FENLIGHT_21 -->
-                                       <textcolor>FFD4AF37</textcolor>
+                                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                         <align>left</align>
                                         <aligny>top</aligny>
                                         <label>[B]$INFO[ListItem.Property(provider)][/B]</label>
@@ -503,7 +503,7 @@
                                     <width max="725">auto</width>
                                     <height>12</height>
                                     <font>font10</font> <!-- FENLIGHT_21 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)][/UPPERCASE]</label>
@@ -515,7 +515,7 @@
                                     <width max="725">auto</width>
                                     <height>12</height>
                                     <font>font10</font> <!-- FENLIGHT_21 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Info: [/B][/COLOR]$INFO[ListItem.Property(extraInfo)][/UPPERCASE]</label>
@@ -527,7 +527,7 @@
                                     <width max="725">auto</width>
                                     <height>12</height>
                                     <font>font10</font> <!-- FENLIGHT_21 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Title: [/B][/COLOR]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/UPPERCASE]</label>
@@ -543,7 +543,7 @@
                                     <left>45</left>
                                     <align>left</align>
                                     <aligny>top</aligny>
-                                    <texture colordiffuse="FF3FA9FF">fenlight_common/info.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/info.png</texture>
                                 </control>
                                 <control type="label">
                                     <top>50</top>
@@ -551,7 +551,7 @@
                                     <width max="860">auto</width>
                                     <height>40</height>
                                     <font>font14</font> <!-- FENLIGHT_33 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>center</align>
                                     <aligny>center</aligny>
                                     <label>[B]***START FULL SCRAPE***[/B]</label>
@@ -567,7 +567,7 @@
                     <top>0</top>
                     <width>1920</width>
                     <height>1080</height>
-                    <texture colordiffuse="FF0F1828">fenlight_common/white.png</texture>
+                    <texture colordiffuse="$INFO[Skin.String(BackgroundOverlayColor)]">fenlight_common/white.png</texture>
                     <visible>Control.HasFocus(2063) | Control.HasFocus(2100)</visible>
                     <animation effect="fade" start="0" end="70" time="200" tween="sine">Visible</animation>
                 </control>
@@ -579,7 +579,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="FF9c9a9b">$INFO[Container(2001).ListItem.Property(quality_icon)]</texture>
+                    <texture colordiffuse="$INFO[Skin.String(GeneralTextColor)]">$INFO[Container(2001).ListItem.Property(quality_icon)]</texture>
                     <visible>Control.HasFocus(2063)</visible>
                     <animation effect="fade" start="0" end="100" time="200" tween="sine">Visible</animation>
                 </control>
@@ -590,9 +590,9 @@
                     <height>825</height>
                     <onleft>2001</onleft>
                     <onright>2001</onright>
-                    <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                    <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                    <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                    <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                    <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                     <showonepage>false</showonepage>
                     <orientation>vertical</orientation>
                     <visible>Control.IsVisible(2001)</visible>
@@ -618,7 +618,7 @@
                     <width max="1210">auto</width>
                     <height>30</height>
                     <font>font60</font> <!-- FENLIGHT_60_BOLD -->
-                   <textcolor>FFD4AF37</textcolor>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <align>center</align>
                     <aligny>top</aligny>
                     <label>[B]$INFO[Window.Property(title)][/B]</label>
@@ -644,7 +644,7 @@
                             <top>15</top>
                             <width>1700</width>
                             <height>110</height>
-                            <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.sources)]" border="30">fenlight_common/circle.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
                         </control>
                         <control type="group">
                             <visible>String.IsEmpty(ListItem.Property(perform_full_search))</visible>
@@ -675,7 +675,7 @@
                                 <width max="1460">auto</width>
                                 <height>12</height>
                                 <font>font10</font> <!-- FENLIGHT_21 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <scroll>false</scroll>
@@ -687,7 +687,7 @@
                                 <width max="1460">auto</width>
                                 <height>12</height>
                                 <font>font12</font> <!-- FENLIGHT_26 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>[UPPERCASE]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/UPPERCASE]</label>
@@ -703,7 +703,7 @@
                                 <left>55</left>
                                 <align>left</align>
                                 <aligny>top</aligny>
-                                <texture colordiffuse="FF9c9a9b">fenlight_common/info.png</texture>
+                                <texture colordiffuse="$INFO[Skin.String(GeneralTextColor)]">fenlight_common/info.png</texture>
                             </control>
                             <control type="label">
                                 <top>50</top>
@@ -711,7 +711,7 @@
                                 <width max="1460">auto</width>
                                 <height>40</height>
                                 <font>font14</font> <!-- FENLIGHT_33 -->
-                                <textcolor>FF9c9a9b</textcolor>
+                                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>[B]***START FULL SCRAPE***[/B]</label>
@@ -727,7 +727,7 @@
                                 <height>110</height>
                                 <control type="image">
                                     <width>1700</width>
-                                    <texture colordiffuse="FF3FA9FF" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <width>200</width>
@@ -743,7 +743,7 @@
                                     <left>20</left>
                                     <control type="label">
                                         <font>font14</font> <!-- FENLIGHT_33 -->
-                                       <textcolor>FFD4AF37</textcolor>
+                                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                         <align>left</align>
                                         <aligny>bottom</aligny>
                                         <label>[B]$INFO[ListItem.Property(quality)][/B]</label>
@@ -751,7 +751,7 @@
                                     <control type="label">
                                         <top>35</top>
                                         <font>font10</font> <!-- FENLIGHT_21 -->
-                                       <textcolor>FFD4AF37</textcolor>
+                                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                         <align>left</align>
                                         <aligny>top</aligny>
                                         <label>[B]$INFO[ListItem.Property(provider)][/B]</label>
@@ -763,7 +763,7 @@
                                     <width max="1460">auto</width>
                                     <height>12</height>
                                     <font>font10</font> <!-- FENLIGHT_21 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE][COLOR $INFO[ListItem.Property(highlight)]][B]Size: [/B][/COLOR]$INFO[ListItem.Property(size_label)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Hoster: [/B][/COLOR]$INFO[ListItem.Property(source_type)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Site: [/B][/COLOR]$INFO[ListItem.Property(source_site)]     [COLOR $INFO[ListItem.Property(highlight)]][B]Info: [/B][/COLOR]$INFO[ListItem.Property(extraInfo)][/UPPERCASE]</label>
@@ -775,7 +775,7 @@
                                     <width max="1460">auto</width>
                                     <height>12</height>
                                     <font>font12</font> <!-- FENLIGHT_26 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[UPPERCASE]$INFO[ListItem.Property(count)] $INFO[ListItem.Property(name)][/UPPERCASE]</label>
@@ -791,7 +791,7 @@
                                     <left>55</left>
                                     <align>left</align>
                                     <aligny>top</aligny>
-                                    <texture colordiffuse="FF3FA9FF">fenlight_common/info.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/info.png</texture>
                                 </control>
                                 <control type="label">
                                     <top>50</top>
@@ -799,7 +799,7 @@
                                     <width max="1460">auto</width>
                                     <height>40</height>
                                     <font>font14</font> <!-- FENLIGHT_33 -->
-                                   <textcolor>FFD4AF37</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>[B]***START FULL SCRAPE***[/B]</label>
@@ -813,7 +813,7 @@
                     <top>0</top>
                     <width>1920</width>
                     <height>1080</height>
-                    <texture colordiffuse="FF0F1828">fenlight_common/white.png</texture>
+                    <texture colordiffuse="$INFO[Skin.String(BackgroundOverlayColor)]">fenlight_common/white.png</texture>
                     <visible>Control.HasFocus(2064) | Control.HasFocus(2100)</visible>
                     <animation effect="fade" start="0" end="70" time="200" tween="sine">Visible</animation>
                 </control>
@@ -825,7 +825,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <aspectratio>keep</aspectratio>
-                    <texture colordiffuse="FF9c9a9b">$INFO[Container(2002).ListItem.Property(quality_icon)]</texture>
+                    <texture colordiffuse="$INFO[Skin.String(GeneralTextColor)]">$INFO[Container(2002).ListItem.Property(quality_icon)]</texture>
                     <visible>Control.HasFocus(2064)</visible>
                     <animation effect="fade" start="0" end="100" time="200" tween="sine">Visible</animation>
                 </control>
@@ -836,9 +836,9 @@
                     <height>945</height>
                     <onleft>2002</onleft>
                     <onright>2002</onright>
-                    <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                    <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                    <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                    <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                    <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                    <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                     <showonepage>false</showonepage>
                     <orientation>vertical</orientation>
                     <visible>Control.IsVisible(2002)</visible>
@@ -855,7 +855,7 @@
             <control type="image">
                 <width>778</width>
                 <height>803</height>
-                <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme)]" border="30">fenlight_common/circle.png</texture>
+                <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
             </control>
             <control type="image">
                 <left>10</left>
@@ -865,7 +865,7 @@
                 <align>left</align>
                 <aligny>top</aligny>
                 <aspectratio aligny="top">keep</aspectratio>
-                <texturefocus colordiffuse="80D4AF37">$INFO[Window(10000).Property(fenlight.addon_icon_mini)]</texture>
+                <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">$INFO[Window(10000).Property(fenlight.addon_icon_mini)]</texture>
             </control>
             <control type="label">
                 <width max="580">auto</width>
@@ -873,8 +873,8 @@
                 <left>110</left>
                 <height>20</height>
                 <font>font12</font> <!-- FENLIGHT_26 -->
-               <textcolor>FFD4AF37</textcolor>
-                <shadowcolor>FF0F1828</shadowcolor>
+               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(BackgroundOverlayColor)]</shadowcolor>
                 <align>center</align>
                 <label>[UPPERCASE][B]actions[/B][/UPPERCASE]</label>
             </control>
@@ -884,7 +884,7 @@
                 <left>788</left>
                 <width>15</width>
                 <height>30</height>
-                <texture colordiffuse="FF3FA9FF">fenlight_common/arrow_left.png</texture>
+                <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/arrow_left.png</texture>
             </control>
             <control type="image">
                 <visible>Control.HasFocus(2100)</visible>
@@ -892,7 +892,7 @@
                 <left>788</left>
                 <width>15</width>
                 <height>30</height>
-                <texture colordiffuse="FF3FA9FF" flipx="true">fenlight_common/arrow_left.png</texture>
+                <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" flipx="true">fenlight_common/arrow_left.png</texture>
             </control>
             <!-- Filter List -->
             <control type="fixedlist" id="2100">
@@ -917,7 +917,7 @@
                         <top>45</top>
                         <height>5</height>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(label)][/UPPERCASE]</label>
                     </control>
@@ -926,7 +926,7 @@
                     <control type="image">
                         <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(2100)">Conditional</animation>
                         <width>750</width>
-                        <texture colordiffuse="FF3FA9FF" border="30">fenlight_common/circle.png</texture>
+                        <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                     </control>
                     <control type="label">
                         <left>70</left>
@@ -934,7 +934,7 @@
                         <height>5</height>
                         <width max="610">auto</width>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <aligny>center</aligny>
                         <label>[UPPERCASE]$INFO[ListItem.Property(label)][/UPPERCASE]</label>
                     </control>

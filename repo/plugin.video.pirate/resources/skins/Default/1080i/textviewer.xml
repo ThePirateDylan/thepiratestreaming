@@ -40,6 +40,20 @@
                     <aligny>center</aligny>
                     <label>[B]$INFO[Window.Property(heading)][/B]</label>
                 </control>
+                <control type="button" id="2062">
+                    <top>20</top>
+                    <left>1280</left>
+                    <width>50</width>
+                    <height>50</height>
+                    <label>X</label>
+                    <font>font14</font> <!-- FENLIGHT_33 -->
+                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                    <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                    <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                    <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
                 <control type="textbox" id="2000">
                     <visible>String.IsEqual(Window.Property(font_size),small)</visible>
                     <left>45</left>

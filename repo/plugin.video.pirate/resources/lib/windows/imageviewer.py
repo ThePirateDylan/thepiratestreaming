@@ -35,16 +35,7 @@ class ThumbImageViewer(BaseDialog):
 			chosen_listitem = self.get_listitem(self.window_id)
 		except: return
 		if action in self.selection_actions:
-			if chosen_listitem.getProperty('next_page_item') == 'true': self.new_page()
-			else:
-				thumb_params = json.loads(chosen_listitem.getProperty('action'))
-				mode = thumb_params['mode']
-				if mode == 'imageviewer':
-					thumb_params['current_index'] = position
-					ending_position = self.ImagesInstance.run(thumb_params)
-					self.select_item(self.window_id, ending_position)
-				elif mode == 'person_data_dialog':
-					person_data_dialog(thumb_params)
+			return self.select_current_item()
 		elif action in self.context_actions:
 			if chosen_listitem.getProperty('next_page_item') == 'true': return
 			in_favorites = chosen_listitem.getProperty('in_favorites') == 'true'
@@ -65,6 +56,26 @@ class ThumbImageViewer(BaseDialog):
 					if in_favorites and action == 'Remove From Favorites?': self.reset_after_favorite_delete(position)
 				else:#exit_image
 					return self.close()
+
+	def onClick(self, control_id):
+		if control_id == self.window_id:
+			return self.select_current_item()
+
+	def select_current_item(self):
+		try:
+			position = self.get_position(self.window_id)
+			chosen_listitem = self.get_listitem(self.window_id)
+		except: return
+		if chosen_listitem.getProperty('next_page_item') == 'true':
+			return self.new_page()
+		thumb_params = json.loads(chosen_listitem.getProperty('action'))
+		mode = thumb_params['mode']
+		if mode == 'imageviewer':
+			thumb_params['current_index'] = position
+			ending_position = self.ImagesInstance.run(thumb_params)
+			self.select_item(self.window_id, ending_position)
+		elif mode == 'person_data_dialog':
+			person_data_dialog(thumb_params)
 
 	def make_page(self):
 		try:
@@ -153,6 +164,11 @@ class ImageViewer(BaseDialog):
 
 	def onAction(self, action):
 		if action in self.closing_actions:
+			self.position = self.get_position(self.window_id)
+			self.close()
+
+	def onClick(self, control_id):
+		if control_id == self.window_id:
 			self.position = self.get_position(self.window_id)
 			self.close()
 

@@ -25,6 +25,10 @@ class Progress(BaseDialog):
 			self.is_canceled = True
 			self.close()
 
+	def onClick(self, control_id):
+		self.is_canceled = True
+		self.close()
+
 	def set_controls(self):
 		self.set_image(200, self.icon)
 		self.set_label(2000, self.heading)

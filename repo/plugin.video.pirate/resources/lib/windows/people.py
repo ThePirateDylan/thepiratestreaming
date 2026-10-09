@@ -63,7 +63,9 @@ class People(BaseDialog):
 				dialogs.favorites_manager_choice({'media_type': 'people', 'tmdb_id': str(self.person_id), 'title': title, 'refresh': 'false'})
 			else:
 				self.show_text_media(text=self.person_biography)
-		else: self.control_id = controlID
+		else:
+			self.control_id = controlID
+			return self.select_current_item()
 
 	def onAction(self, action):
 		if action in self.closing_actions: return window_manager(self)
@@ -80,17 +82,21 @@ class People(BaseDialog):
 			self.show_extrainfo(meta)
 		if not self.control_id: return
 		if action in self.selection_actions:
-			chosen_listitem = self.get_listitem(self.control_id)
-			chosen_var = chosen_listitem.getProperty(self.item_action_dict[self.control_id])
-			if self.control_id in (People.more_from_movies_id, People.more_from_tvshows_id, People.more_from_director_id):
-				if self.control_id in (People.more_from_movies_id, People.more_from_director_id): media_type = 'movie'
-				else: media_type = 'tvshow'
-				self.set_current_params()
-				self.new_params = {'mode': 'extras_menu_choice', 'tmdb_id': chosen_var, 'media_type': media_type, 'is_external': self.is_external, 'stacked': 'true'}
-				return window_manager(self)
-			elif self.control_id == People.trivia_id:
-				end_index = self.show_text_media(text=self.get_attribute(self, chosen_var), current_index=self.get_position(self.control_id))
-				self.select_item(self.control_id, end_index)
+			return self.select_current_item()
+
+	def select_current_item(self):
+		control_id, self.control_id = self.control_id, None
+		if control_id not in self.item_action_dict: return
+		chosen_listitem = self.get_listitem(control_id)
+		chosen_var = chosen_listitem.getProperty(self.item_action_dict[control_id])
+		if control_id in (People.more_from_movies_id, People.more_from_tvshows_id, People.more_from_director_id):
+			media_type = 'movie' if control_id in (People.more_from_movies_id, People.more_from_director_id) else 'tvshow'
+			self.set_current_params()
+			self.new_params = {'mode': 'extras_menu_choice', 'tmdb_id': chosen_var, 'media_type': media_type, 'is_external': self.is_external, 'stacked': 'true'}
+			return window_manager(self)
+		elif control_id == People.trivia_id:
+			end_index = self.show_text_media(text=self.get_attribute(self, chosen_var), current_index=self.get_position(control_id))
+			self.select_item(control_id, end_index)
 
 	def set_infoline1(self):
 		gender, age = self.person_gender or None, '%syo' % self.person_age if self.person_age else None

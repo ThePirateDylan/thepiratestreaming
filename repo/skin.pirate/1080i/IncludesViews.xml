@@ -3,7 +3,7 @@
 <includes>
 
     <include name="allViewIds">
-        <views>10,50,51,52,501,502,503,53,54,55,56,57,507,509,510,511,512,513,514,523,524,525,526,527,528</views>
+        <views>10,50,51,52,501,502,503,53,54,55,56,57,58,507,509,510,511,512,513,514,523,524,525,526,527,528</views>
         <menucontrol>9000</menucontrol>
     </include>
 
@@ -36,6 +36,7 @@
 			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.55)">View_55_BannerList</include>
 			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.56)">View_56_BannerPlex</include>
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.57)">View_57_BigPanel</include>  
+            <include>View_58_TVGuide</include>
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.501)">View_501_Landscape</include>
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.502)">View_502_LandscapeSingle</include>
 			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.503)">View_503_Logos</include>
@@ -59,7 +60,7 @@
             <visible>Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | 
 			Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) |
 			Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | 
-			Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) |
+			Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | Control.IsVisible(58) |
 			Control.IsVisible(503) | Control.IsVisible(50) | ![Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)]</visible>
             <include condition="!Skin.HasSetting(DisableFooterBarOnViews)">Footer</include>
         </control>

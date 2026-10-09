@@ -72,7 +72,7 @@
                         <height>85</height>
                         <control type="image">
                             <width>300</width>
-                            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                         </control>
                     </control>
                     <control type="label">
@@ -145,7 +145,7 @@
                         <visible>Control.HasFocus(2101)</visible>
                         <height>85</height>
                         <width>1160</width>
-                        <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                        <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                     </control>
                     <!-- LABEL -->
                     <control type="group">

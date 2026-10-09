@@ -150,6 +150,10 @@ class StingersNotification(BaseDialog):
 			self.closed = True
 			self.close()
 
+	def onClick(self, controlID):
+		self.closed = True
+		self.close()
+
 	def make_stingers(self):
 		for k, v in self.stinger_dict.items():
 			if k in self.stingers:

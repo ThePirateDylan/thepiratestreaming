@@ -433,7 +433,7 @@ class ExtrasUtils:
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
 				            <font>font14</font> <!-- FENLIGHT_33 -->
-				            <textcolor>FFD4AF37</textcolor>
+				            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 				            <label>{heading_label}</label>
 				            <visible>!Control.HasFocus({container_no})</visible>
 				        </control>
@@ -441,7 +441,7 @@ class ExtrasUtils:
 				            <width min="30" max="1160">auto</width>
 				            <height>20</height>
 				            <font>font14</font> <!-- FENLIGHT_33 -->
-				            <textcolor>FFF2C94C</textcolor>
+				            <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
 				            <label>{highlight_label}</label>
 				            <visible>Control.HasFocus({container_no})</visible>
 				        </control>
@@ -479,7 +479,7 @@ class ExtrasUtils:
 				                    <top>5</top>
 				                    <height>350</height>
 				                    <width>236</width>
-				                    <texture colordiffuse="FF3FA9FF">fenlight_diffuse/poster-50.png</texture>
+				                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_diffuse/poster-50.png</texture>
 				                    <visible>Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})</visible>
 				                </control>
 				                <control type="image">
@@ -499,9 +499,9 @@ class ExtrasUtils:
 				            <height>15</height>
 				            <onup>{container_no}</onup>
 				            <ondown>{n_container_no}</ondown>
-				            <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -511,7 +511,7 @@ class ExtrasUtils:
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texturefocus colordiffuse="80D4AF37" background="true">fenlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true">fenlight_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -519,7 +519,7 @@ class ExtrasUtils:
 				            <left>1135</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texturefocus colordiffuse="80D4AF37" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
 				        </control>
 				    </control>
@@ -536,7 +536,7 @@ class ExtrasUtils:
 				            <width max="1160">auto</width>
 				            <height>20</height>
 				            <font>font14</font> <!-- FENLIGHT_33 -->
-				            <textcolor>FFD4AF37</textcolor>
+				            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 				            <align>left</align>
 				            <aligny>bottom</aligny>
 				            <label>{heading_label}</label>
@@ -554,7 +554,7 @@ class ExtrasUtils:
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texture>
+				                    <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
@@ -564,7 +564,7 @@ class ExtrasUtils:
 				                    <font>font12</font> <!-- FENLIGHT_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
-				                   <textcolor>FFFFFFFF</textcolor>
+				                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 				                    <label>$INFO[ListItem.Property(text)]</label>
 				                    <autoscroll>false</autoscroll>
 				                </control>
@@ -573,7 +573,7 @@ class ExtrasUtils:
 				                <control type="image">
 				                    <height>360</height>
 				                    <width>580</width>
-				                    <texture colordiffuse="FF3FA9FF" border="30">fenlight_common/circle.png</texture>
+				                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
 				                </control>
 				                <control type="textbox">
 				                    <top>15</top>
@@ -583,7 +583,7 @@ class ExtrasUtils:
 				                    <font>font12</font> <!-- FENLIGHT_26 -->
 				                    <align>center</align>
 				                    <aligny>top</aligny>
-				                   <textcolor>FFFFFFFF</textcolor>
+				                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 				                    <label>$INFO[ListItem.Property(text)]</label>
 				                    <autoscroll>false</autoscroll>
 				                </control>
@@ -595,9 +595,9 @@ class ExtrasUtils:
 				            <height>15</height>
 				            <onup>{container_no}</onup>
 				            <ondown>{n_container_no}</ondown>
-				            <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-				            <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-				            <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+				            <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+				            <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+				            <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
 				            <showonepage>false</showonepage>
 				            <orientation>Horizontal</orientation>
 				            <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -607,7 +607,7 @@ class ExtrasUtils:
 				            <left>20</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texturefocus colordiffuse="80D4AF37" background="true">fenlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true">fenlight_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
 				        </control>
 				        <control type="image">
@@ -615,7 +615,7 @@ class ExtrasUtils:
 				            <left>1125</left>
 				            <width>25</width>
 				            <height>25</height>
-				            <texturefocus colordiffuse="80D4AF37" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
+				            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
 				            <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
 				        </control>
 				    </control>
@@ -632,7 +632,7 @@ class ExtrasUtils:
                             <width max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
                             <label>{heading_label}</label>
@@ -643,8 +643,8 @@ class ExtrasUtils:
                             <height>390</height>
                             <onup>{p_container_no}</onup>
                             <ondown>{n_container_no}</ondown>
-                           <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texturenofocus>
+                           <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                         </control>
                         <control type="textbox">
                             <top>65</top>
@@ -654,7 +654,7 @@ class ExtrasUtils:
                             <font>font13</font> <!-- FENLIGHT_30 -->
                             <align>center</align>
                             <aligny>center</aligny>
-                           <textcolor>FFFFFFFF</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>$INFO[Window.Property({content_lookup})]</label>
                             <autoscroll>false</autoscroll>
                             <visible>!Control.HasFocus({container_no})</visible>
@@ -667,7 +667,7 @@ class ExtrasUtils:
                             <font>font13</font> <!-- FENLIGHT_30 -->
                             <align>center</align>
                             <aligny>center</aligny>
-                           <textcolor>FFFFFFFF</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>$INFO[Window.Property(plot)]</label>
                             <autoscroll>false</autoscroll>
                             <visible>Control.HasFocus({container_no})</visible>
@@ -686,7 +686,7 @@ class ExtrasUtils:
             <width>1920</width>
             <height>1080</height>
             <control type="image">
-                <texture colordiffuse="FF0F1828">fenlight_common/white.png</texture>
+                <texture colordiffuse="$INFO[Skin.String(BackgroundOverlayColor)]">fenlight_common/white.png</texture>
             </control>
             <control type="image" id="202">
                 <aspectratio>scale</aspectratio>
@@ -712,7 +712,7 @@ class ExtrasUtils:
                         <width max="300">auto</width>
                         <height>20</height>
                         <font>font37</font> <!-- FENLIGHT_38 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>[B]$INFO[System.Time][/B]</label>
@@ -723,7 +723,7 @@ class ExtrasUtils:
                         <width max="350">auto</width>
                         <height>20</height>
                         <font>font10</font> <!-- FENLIGHT_21 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>$INFO[System.Date]</label>
@@ -745,7 +745,7 @@ class ExtrasUtils:
                         <width max="600">auto</width>
                         <height>20</height>
                         <font>font10</font> <!-- FENLIGHT_21 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>right</align>
                         <aligny>bottom</aligny>
                         <label>$INFO[ListItem.Property(info_alert)]</label>
@@ -778,7 +778,7 @@ class ExtrasUtils:
                         <width max="1130">auto</width>
                         <height>30</height>
                         <font>font60</font> <!-- FENLIGHT_60_BOLD -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>center</align>
                         <aligny>bottom</aligny>
                         <label>[B]$INFO[Window.Property(title)][/B]</label>
@@ -796,7 +796,7 @@ class ExtrasUtils:
                         <width max="1150">auto</width>
                         <height>25</height>
                         <font>font14</font> <!-- FENLIGHT_33 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>center</align>
                         <label>[I]$INFO[Window.Property(genre)][/I]</label>
                     </control>
@@ -817,7 +817,7 @@ class ExtrasUtils:
                             <width max="1026">auto</width>
                             <height>32</height>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <align>left</align>
                         </control>
                     </control>
@@ -826,7 +826,7 @@ class ExtrasUtils:
                         <width max="1150">auto</width>
                         <height>25</height>
                         <font>font14</font> <!-- FENLIGHT_33 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>center</align>
                     </control>
                     <control type="grouplist">
@@ -852,7 +852,7 @@ class ExtrasUtils:
                                 <width max="75">auto</width>
                                 <height>32</height>
                                 <font>font13</font> <!-- FENLIGHT_30 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                             </control>
@@ -874,7 +874,7 @@ class ExtrasUtils:
                                 <width max="75">auto</width>
                                 <height>32</height>
                                 <font>font13</font> <!-- FENLIGHT_30 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                             </control>
@@ -896,7 +896,7 @@ class ExtrasUtils:
                                 <width max="75">auto</width>
                                 <height>32</height>
                                 <font>font13</font> <!-- FENLIGHT_30 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                             </control>
@@ -918,7 +918,7 @@ class ExtrasUtils:
                                 <width max="75">auto</width>
                                 <height>32</height>
                                 <font>font13</font> <!-- FENLIGHT_30 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                             </control>
@@ -940,7 +940,7 @@ class ExtrasUtils:
                                 <width max="75">auto</width>
                                 <height>32</height>
                                 <font>font13</font> <!-- FENLIGHT_30 -->
-                               <textcolor>FFD4AF37</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <align>left</align>
                                 <aligny>center</aligny>
                             </control>
@@ -970,10 +970,10 @@ class ExtrasUtils:
                             <ondown>14</ondown>
                             <label>$INFO[Window.Property(button10.label)]</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                           <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texturenofocus>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                           <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -987,10 +987,10 @@ class ExtrasUtils:
                             <ondown>15</ondown>
                             <label>$INFO[Window.Property(button11.label)]</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                            <texturefocus colordiffuse="FFD8C08A" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texturenofocus>  
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1004,10 +1004,10 @@ class ExtrasUtils:
                             <ondown>16</ondown>
                             <label>$INFO[Window.Property(button12.label)]</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                            <texturefocus colordiffuse="FFD8C08A" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texturenofocus>  
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1021,10 +1021,10 @@ class ExtrasUtils:
                             <ondown>17</ondown>
                             <label>$INFO[Window.Property(button13.label)]</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                            <texturefocus colordiffuse="FFD8C08A" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texturenofocus>  
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1040,10 +1040,10 @@ class ExtrasUtils:
                             <ondown>{first_container}</ondown>
                             <label>$INFO[Window.Property(button14.label)]</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                            <texturefocus colordiffuse="FFD8C08A" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texturenofocus> 
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1057,10 +1057,10 @@ class ExtrasUtils:
                             <ondown>{first_container}</ondown>
                             <label>$INFO[Window.Property(button15.label)]</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                            <texturefocus colordiffuse="FFD8C08A" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texturenofocus>                         <align>center</align>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>                         <align>center</align>
                             <aligny>center</aligny>
                         </control>
                         <control type="button" id="16">
@@ -1073,10 +1073,10 @@ class ExtrasUtils:
                             <ondown>{first_container}</ondown>
                             <label>$INFO[Window.Property(button16.label)]</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                            <texturefocus colordiffuse="FFD8C08A" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texturenofocus>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1090,10 +1090,10 @@ class ExtrasUtils:
                             <ondown>{first_container}</ondown>
                             <label>$INFO[Window.Property(button17.label)]</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                            <texturefocus colordiffuse="FFD8C08A" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texturenofocus>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -1121,7 +1121,7 @@ class ExtrasUtils:
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>[B]$INFO[Window.Property(more_from_collection.name)] $INFO[Window.Property(more_from_collection.number)][/B]</label>
                             <visible>!Control.HasFocus({container_no})</visible>
                         </control>
@@ -1129,7 +1129,7 @@ class ExtrasUtils:
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>[B]$INFO[Window.Property(more_from_collection.name)] | [/B]$INFO[ListItem.Property(name)]$INFO[ListItem.Property(release_date), • ]$INFO[ListItem.Property(vote_average), • ]</label>
                             <visible>Control.HasFocus({container_no})</visible>
                         </control>
@@ -1138,13 +1138,13 @@ class ExtrasUtils:
                             <control type="image">
                                 <height>360</height>
                                 <width>933</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
                                 <visible>Integer.IsGreater(Container({container_no}).NumItems,1)</visible>
                             </control>
                             <control type="image">
                                 <height>360</height>
                                 <width>1169</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
                                 <visible>Integer.IsGreater(Container({container_no}).NumItems,2)</visible>
                             </control>
                             <control type="image">
@@ -1163,7 +1163,7 @@ class ExtrasUtils:
                                 <font>font12</font> <!-- FENLIGHT_26 -->
                                 <align>center</align>
                                 <aligny>center</aligny>
-                               <textcolor>FFFFFFFF</textcolor>
+                               <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                 <label>$INFO[Window.Property(more_from_collection.overview)]</label>
                                 <autoscroll time="1500" delay="6000" repeat="3000">true</autoscroll>
                             </control>
@@ -1202,7 +1202,7 @@ class ExtrasUtils:
                                     <top>5</top>
                                     <height>350</height>
                                     <width>236</width>
-                                    <texture colordiffuse="FF3FA9FF">fenlight_diffuse/poster-50.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_diffuse/poster-50.png</texture>
                                     <visible>Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})</visible>
                                 </control>
                                 <control type="image">
@@ -1221,9 +1221,9 @@ class ExtrasUtils:
                             <height>15</height>
                             <onup>{container_no}</onup>
                             <ondown>{n_container_no}</ondown>
-                            <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -1233,7 +1233,7 @@ class ExtrasUtils:
                             <left>480</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -1241,7 +1241,7 @@ class ExtrasUtils:
                             <left>1120</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
                         </control>
                     </control>
@@ -1258,7 +1258,7 @@ class ExtrasUtils:
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>{heading_label}</label>
                             <visible>!Control.HasFocus({container_no})</visible>
                         </control>
@@ -1266,7 +1266,7 @@ class ExtrasUtils:
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>{highlight_label}</label>
                             <visible>Control.HasFocus({container_no})</visible>
                         </control>
@@ -1303,7 +1303,7 @@ class ExtrasUtils:
                                     <top>32</top>
                                     <height>296</height>
                                     <width>393</width>
-                                    <texture colordiffuse="FF3FA9FF">fenlight_diffuse/landscape.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_diffuse/landscape.png</texture>
                                     <visible>Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})</visible>
                                 </control>
                                 <control type="image">
@@ -1323,9 +1323,9 @@ class ExtrasUtils:
                             <height>15</height>
                             <onup>{container_no}</onup>
                             <ondown>{n_container_no}</ondown>
-                            <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -1335,7 +1335,7 @@ class ExtrasUtils:
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -1343,7 +1343,7 @@ class ExtrasUtils:
                             <left>1125</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
                         </control>
                     </control>
@@ -1360,7 +1360,7 @@ class ExtrasUtils:
                             <width max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
                             <label>{heading_label}</label>
@@ -1382,7 +1382,7 @@ class ExtrasUtils:
                                 <control type="image">
                                     <height>360</height>
                                     <width>230</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <left>-35</left>
@@ -1402,7 +1402,7 @@ class ExtrasUtils:
                                     <font>font12</font> <!-- FENLIGHT_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                   <textcolor>FFFFFFFF</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <label>$INFO[ListItem.Property(name)]</label>
                                     <autoscroll>false</autoscroll>
                                 </control>
@@ -1419,14 +1419,14 @@ class ExtrasUtils:
                                 <control type="image">
                                     <width>230</width>
                                     <height>360</height>
-                                    <texture colordiffuse="FF3FA9FF" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                                     <visible>Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})</visible>
                                     <animation effect="fade" start="100" end="60" condition="Control.HasFocus({scrollbar_no})">Conditional</animation>
                                 </control>
                                 <control type="image">
                                     <height>360</height>
                                     <width>230</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
                                     <visible>![Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
                                 </control>
                                 <control type="image">
@@ -1447,7 +1447,7 @@ class ExtrasUtils:
                                     <font>font12</font> <!-- FENLIGHT_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                   <textcolor>FFFFFFFF</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <label>$INFO[ListItem.Property(name)]</label>
                                     <autoscroll>false</autoscroll>
                                     <visible>Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})</visible>
@@ -1460,7 +1460,7 @@ class ExtrasUtils:
                                     <font>font12</font> <!-- FENLIGHT_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                   <textcolor>FFFFFFFF</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <label>$INFO[ListItem.Property(name)]</label>
                                     <autoscroll>false</autoscroll>
                                     <visible>![Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -1482,9 +1482,9 @@ class ExtrasUtils:
                             <height>15</height>
                             <onup>{container_no}</onup>
                             <ondown>{n_container_no}</ondown>
-                            <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + [Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})]</visible>
@@ -1494,7 +1494,7 @@ class ExtrasUtils:
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -1502,7 +1502,7 @@ class ExtrasUtils:
                             <left>1135</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus({container_no}) | Control.HasFocus({scrollbar_no})] + Container({container_no}).HasNext</visible>
                         </control>
                     </control>
@@ -1519,7 +1519,7 @@ class ExtrasUtils:
                             <width max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
                             <label>[B]Parental Guide $INFO[Window.Property(imdb_parentsguide.number)][/B]</label>
@@ -1536,7 +1536,7 @@ class ExtrasUtils:
                                 <control type="image">
                                     <height>360</height>
                                     <width>230</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.extras)]" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <left>6</left>
@@ -1544,7 +1544,7 @@ class ExtrasUtils:
                                     <width>224</width>
                                     <height>320</height>
                                     <aspectratio>scale</aspectratio>
-                                    <texture colordiffuse="FF3FA9FF" border="30">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                                 <control type="textbox">
                                     <left>6</left>
@@ -1554,7 +1554,7 @@ class ExtrasUtils:
                                     <font>font12</font> <!-- FENLIGHT_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                   <textcolor>FFFFFFFF</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <label>$INFO[ListItem.Property(name)]</label>
                                     <autoscroll>false</autoscroll>
                                 </control>
@@ -1566,7 +1566,7 @@ class ExtrasUtils:
                                     <font>font12</font> <!-- FENLIGHT_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                   <textcolor>FFFFFFFF</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <label>$INFO[ListItem.Property(ranking)]</label>
                                     <autoscroll>false</autoscroll>
                                 </control>
@@ -1575,7 +1575,7 @@ class ExtrasUtils:
                                 <control type="image">
                                     <width>230</width>
                                     <height>360</height>
-                                    <texture colordiffuse="FF3FA9FF" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                                 </control>
                                 <control type="image">
                                     <left>6</left>
@@ -1583,7 +1583,7 @@ class ExtrasUtils:
                                     <width>224</width>
                                     <height>320</height>
                                     <aspectratio>scale</aspectratio>
-                                    <texture colordiffuse="FF3FA9FF" border="30">$INFO[ListItem.Property(thumbnail)]</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">$INFO[ListItem.Property(thumbnail)]</texture>
                                 </control>
                                 <control type="textbox">
                                     <left>6</left>
@@ -1593,7 +1593,7 @@ class ExtrasUtils:
                                     <font>font12</font> <!-- FENLIGHT_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                   <textcolor>FFFFFFFF</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <label>$INFO[ListItem.Property(name)]</label>
                                     <autoscroll>false</autoscroll>
                                 </control>
@@ -1605,7 +1605,7 @@ class ExtrasUtils:
                                     <font>font12</font> <!-- FENLIGHT_26 -->
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                   <textcolor>FFFFFFFF</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <label>$INFO[ListItem.Property(ranking)]</label>
                                     <autoscroll>false</autoscroll>
                                 </control>

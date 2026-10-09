@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
+from threading import Thread
 from windows.base_window import BaseDialog
 from modules.kodi_utils import select_dialog, confirm_dialog, ok_dialog
 # from modules.kodi_utils import logger
@@ -13,7 +14,7 @@ class DownloadsManager(BaseDialog):
 
 	def onInit(self):
 		self.make_active_downloads(first_run=True)
-		self.monitor()
+		Thread(target=self.monitor, daemon=True).start()
 
 	def run(self):
 		self.doModal()
@@ -25,6 +26,10 @@ class DownloadsManager(BaseDialog):
 			return self.close()
 		else:
 			if action in self.selection_actions: return self.set_status(self.get_listitem(self.window_id))
+
+	def onClick(self, control_id):
+		if control_id == self.window_id:
+			return self.set_status(self.get_listitem(self.window_id))
 
 	def make_active_downloads(self, first_run=False):
 		def queued_builder():
@@ -84,6 +89,7 @@ class DownloadsManager(BaseDialog):
 		while not self.closed:
 			if not self.active_downloads and not self.active_queued_downloads: break
 			self.sleep(2500)
+			if self.closed: break
 			self.position = self.get_position(self.window_id)
 			self.reset_window(self.window_id)
 			self.make_active_downloads()

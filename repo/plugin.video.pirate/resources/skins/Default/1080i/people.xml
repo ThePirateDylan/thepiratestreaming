@@ -7,7 +7,7 @@
             <width>1920</width>
             <height>1080</height>
             <control type="image">
-                <texture colordiffuse="FF0F1828">fenlight_common/white.png</texture>
+                <texture colordiffuse="$INFO[Skin.String(BackgroundOverlayColor)]">fenlight_common/white.png</texture>
             </control>
             <control type="image">
                 <texture>$INFO[Window.Property(fanart)]</texture>
@@ -35,7 +35,7 @@
                         <width max="300">auto</width>
                         <height>20</height>
                         <font>font37</font> <!-- FENLIGHT_38 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>[B]$INFO[System.Time][/B]</label>
@@ -46,7 +46,7 @@
                         <width max="350">auto</width>
                         <height>20</height>
                         <font>font10</font> <!-- FENLIGHT_21 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>$INFO[System.Date]</label>
@@ -68,7 +68,7 @@
                         <width max="600">auto</width>
                         <height>20</height>
                         <font>font10</font> <!-- FENLIGHT_21 -->
-                       <textcolor>FFD4AF37</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <align>right</align>
                         <aligny>top</aligny>
                         <label>Press Info Button for More Info</label>
@@ -84,7 +84,7 @@
                     <width max="1150">auto</width>
                     <height>30</height>
                     <font>font60</font> <!-- FENLIGHT_60_BOLD -->
-                   <textcolor>FFD4AF37</textcolor>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <align>center</align>
                     <aligny>bottom</aligny>
                     <label>[B]$INFO[Window.Property(name)][/B]</label>
@@ -108,7 +108,7 @@
                     <width max="1150">auto</width>
                     <height>25</height>
                     <font>font14</font> <!-- FENLIGHT_33 -->
-                    <textcolor>FFB7B4BB</textcolor>
+                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <align>center</align>
                     <label>[I]$INFO[Window.Property(place_of_birth)][/I]</label>
                 </control>
@@ -118,7 +118,7 @@
                     <width max="1150">auto</width>
                     <height>25</height>
                     <font>font14</font> <!-- FENLIGHT_33 -->
-                   <textcolor>FFD4AF37</textcolor>
+                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <align>center</align>
                 </control>
             </control>
@@ -148,10 +148,10 @@
                             <ondown>50</ondown>
                             <label>Images</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                           <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.people)]" border="30">fenlight_common/circle.png</texturenofocus>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                           <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -165,10 +165,10 @@
                             <ondown>50</ondown>
                             <label>Tagged Images</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                           <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.people)]" border="30">fenlight_common/circle.png</texturenofocus>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                           <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -182,10 +182,10 @@
                             <ondown>50</ondown>
                             <label>More Images</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                           <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.people)]" border="30">fenlight_common/circle.png</texturenofocus>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                           <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                             <visible>String.IsEqual(Window.Property(easynews_authorized),true)</visible>
@@ -201,10 +201,10 @@
                             <ondown>50</ondown>
                             <label>Favorites Manager</label>
                             <font>font13</font> <!-- FENLIGHT_30 -->
-                           <textcolor>FFD4AF37</textcolor>
-                            <focusedcolor>FFF2C94C</focusedcolor>
-                           <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.people)]" border="30">fenlight_common/circle.png</texturenofocus>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+                           <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                             <align>center</align>
                             <aligny>center</aligny>
                         </control>
@@ -219,7 +219,7 @@
                             <width max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
                             <label>[B]Biography[/B]</label>
@@ -230,8 +230,8 @@
                             <height>390</height>
                             <onup>10</onup>
                             <ondown>2050</ondown>
-                           <texturefocus colordiffuse="80D4AF37" border="30">fenlight_common/circle.png</texturefocus>
-                            <texturenofocus colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.people)]" border="30">fenlight_common/circle.png</texturenofocus>
+                           <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                            <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                         </control>
                         <control type="textbox">
                             <top>65</top>
@@ -241,7 +241,7 @@
                             <font>font13</font> <!-- FENLIGHT_30 -->
                             <align>center</align>
                             <aligny>center</aligny>
-                           <textcolor>FFFFFFFF</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>$INFO[Window.Property(biography)]</label>
                             <autoscroll>false</autoscroll>
                             <visible>!Control.HasFocus(50)</visible>
@@ -254,7 +254,7 @@
                             <font>font13</font> <!-- FENLIGHT_30 -->
                             <align>center</align>
                             <aligny>center</aligny>
-                           <textcolor>FFFFFFFF</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>$INFO[Window.Property(biography)]</label>
                             <autoscroll>false</autoscroll>
                             <visible>Control.HasFocus(50)</visible>
@@ -270,7 +270,7 @@
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>[B]Movies $INFO[Window.Property(more_from_movie.number)][/B]</label>
                             <visible>!Control.HasFocus(2050)</visible>
                         </control>
@@ -278,7 +278,7 @@
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>[B]Movies | [/B]$INFO[Container(2050).ListItem.Property(name)] • $INFO[Container(2050).ListItem.Property(release_date)] • $INFO[Container(2050).ListItem.Property(vote_average)]</label>
                             <visible>Control.HasFocus(2050)</visible>
                         </control>
@@ -316,7 +316,7 @@
                                     <top>5</top>
                                     <height>350</height>
                                     <width>236</width>
-                                    <texture colordiffuse="FF3FA9FF">fenlight_diffuse/poster-50.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_diffuse/poster-50.png</texture>
                                     <visible>Control.HasFocus(2050) | Control.HasFocus(4050)</visible>
                                 </control>
                                 <control type="image">
@@ -336,9 +336,9 @@
                             <height>15</height>
                             <onup>2050</onup>
                             <ondown>2051</ondown>
-                            <texturesliderbackground colordiffuse="FF091420">fenlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FFD8C08A">fenlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FFD4AF37">fenlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">fenlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="$INFO[Skin.String(GeneralTextColor)]">fenlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + Control.IsVisible(2050) + [Control.HasFocus(2050) | Control.HasFocus(4050)]</visible>
@@ -348,7 +348,7 @@
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2050) | Control.HasFocus(4050)] + Container(2050).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -356,7 +356,7 @@
                             <left>1135</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2050) | Control.HasFocus(4050)] + Container(2050).HasNext</visible>
                         </control>
                     </control>
@@ -370,7 +370,7 @@
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>[B]TV Shows $INFO[Window.Property(more_from_tvshow.number)][/B]</label>
                             <visible>!Control.HasFocus(2051)</visible>
                         </control>
@@ -378,7 +378,7 @@
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>[B]TV Shows | [/B]$INFO[Container(2051).ListItem.Property(name)] • $INFO[Container(2051).ListItem.Property(release_date)] • $INFO[Container(2051).ListItem.Property(vote_average)]</label>
                             <visible>Control.HasFocus(2051)</visible>
                         </control>
@@ -416,7 +416,7 @@
                                     <top>5</top>
                                     <height>350</height>
                                     <width>236</width>
-                                    <texture colordiffuse="FF3FA9FF">fenlight_diffuse/poster-50.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_diffuse/poster-50.png</texture>
                                     <visible>Control.HasFocus(2051) | Control.HasFocus(4051)</visible>
                                 </control>
                                 <control type="image">
@@ -436,9 +436,9 @@
                             <height>15</height>
                             <onup>2051</onup>
                             <ondown>2052</ondown>
-                            <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + Control.IsVisible(2051) + [Control.HasFocus(2051) | Control.HasFocus(4051)]</visible>
@@ -448,7 +448,7 @@
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2051) | Control.HasFocus(4050)] + Container(2051).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -456,7 +456,7 @@
                             <left>1135</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2051) | Control.HasFocus(4051)] + Container(2051).HasNext</visible>
                         </control>
                     </control>
@@ -470,7 +470,7 @@
                             <width max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <align>left</align>
                             <aligny>bottom</aligny>
                             <label>[B]Trivia $INFO[Window.Property(imdb_trivia.number)][/B]</label>
@@ -488,7 +488,7 @@
                                 <control type="image">
                                     <height>360</height>
                                     <width>580</width>
-                                    <texture colordiffuse="$INFO[Window(10000).Property(fenlight.window_theme.people)]" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texture>
                                 </control>
                                 <control type="textbox">
                                     <top>15</top>
@@ -498,7 +498,7 @@
                                     <font>font12</font> <!-- FENLIGHT_26 -->
                                     <align>center</align>
                                     <aligny>top</aligny>
-                                   <textcolor>FFFFFFFF</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <label>$INFO[ListItem.Property(text)]</label>
                                     <autoscroll>false</autoscroll>
                                 </control>
@@ -507,7 +507,7 @@
                                 <control type="image">
                                     <height>360</height>
                                     <width>580</width>
-                                    <texture colordiffuse="FF3FA9FF" border="30">fenlight_common/circle.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
                                 </control>
                                 <control type="textbox">
                                     <top>15</top>
@@ -517,7 +517,7 @@
                                     <font>font12</font> <!-- FENLIGHT_26 -->
                                     <align>center</align>
                                     <aligny>top</aligny>
-                                   <textcolor>FFFFFFFF</textcolor>
+                                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                                     <label>$INFO[ListItem.Property(text)]</label>
                                     <autoscroll>false</autoscroll>
                                 </control>
@@ -529,9 +529,9 @@
                             <height>15</height>
                             <onup>2052</onup>
                             <ondown>2053</ondown>
-                            <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + Control.IsVisible(2052) + [Control.HasFocus(2052) | Control.HasFocus(4052)]</visible>
@@ -541,7 +541,7 @@
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2052) | Control.HasFocus(4052)] + Container(2052).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -549,7 +549,7 @@
                             <left>1125</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2052) | Control.HasFocus(4052)] + Container(2052).HasNext</visible>
                         </control>
                     </control>
@@ -563,7 +563,7 @@
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>[B]Movies Directed $INFO[Window.Property(more_from_director.number)][/B]</label>
                             <visible>!Control.HasFocus(2053)</visible>
                         </control>
@@ -571,7 +571,7 @@
                             <width min="30" max="1160">auto</width>
                             <height>20</height>
                             <font>font14</font> <!-- FENLIGHT_33 -->
-                           <textcolor>FFD4AF37</textcolor>
+                           <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                             <label>[B]Movies Directed | [/B]$INFO[Container(2053).ListItem.Property(name)] • $INFO[Container(2053).ListItem.Property(release_date)] • $INFO[Container(2053).ListItem.Property(vote_average)]</label>
                             <visible>Control.HasFocus(2053)</visible>
                         </control>
@@ -609,7 +609,7 @@
                                     <top>5</top>
                                     <height>350</height>
                                     <width>236</width>
-                                    <texture colordiffuse="FF3FA9FF">fenlight_diffuse/poster-50.png</texture>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_diffuse/poster-50.png</texture>
                                     <visible>Control.HasFocus(2053) | Control.HasFocus(4053)</visible>
                                 </control>
                                 <control type="image">
@@ -629,9 +629,9 @@
                             <height>15</height>
                             <onup>2053</onup>
                             <ondown>10</ondown>
-                            <texturesliderbackground colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbackground>
-                            <texturesliderbar colordiffuse="FF1C2F44">fenlight_common/white.png</texturesliderbar>
-                            <texturesliderbarfocus colordiffuse="FF3FA9FF">fenlight_common/white.png</texturesliderbarfocus>
+                            <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
+                            <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
                             <showonepage>false</showonepage>
                             <orientation>Horizontal</orientation>
                             <visible>String.IsEqual(Window.Property(enable_scrollbars),true) + Control.IsVisible(2053) + [Control.HasFocus(2053) | Control.HasFocus(4053)]</visible>
@@ -641,7 +641,7 @@
                             <left>20</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2053) | Control.HasFocus(4053)] + Container(2053).HasPrevious</visible>
                         </control>
                         <control type="image">
@@ -649,7 +649,7 @@
                             <left>1135</left>
                             <width>25</width>
                             <height>25</height>
-                            <texturefocus colordiffuse="80D4AF37" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
+                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" background="true" flipx="true">fenlight_common/arrow_left.png</texture>
                             <visible>[Control.HasFocus(2053) | Control.HasFocus(4053)] + Container(2053).HasNext</visible>
                         </control>
                     </control>

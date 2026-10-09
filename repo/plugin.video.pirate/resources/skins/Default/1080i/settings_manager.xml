@@ -466,28 +466,13 @@
                           <property name="setting_description">Choose the maximum active concurrent threads The Pirate will be limited to</property>
                           <onclick>RunPlugin(plugin://plugin.video.pirate/?mode=settings_manager.set_numeric&amp;setting_id=max_threads)</onclick>
                       </item>
-        <!-- Window Theme -->
+        <!-- Window Colors -->
                       <item>
                           <visible>Container(2000).HasFocus(10)</visible>
-                          <property name="setting_label">Window Theme</property>
-                          <property name="setting_type">separator</property>
+                          <property name="setting_label">Window Colors Follow Your Skin</property>
+                          <property name="setting_type">info</property>
+                          <property name="setting_description">The Pirate's windows use the active skin palette. Change these colors in the skin settings.</property>
                           <onclick>noop</onclick>
-                     </item>
-                      <item>
-                          <visible>Container(2000).HasFocus(10)</visible>
-                          <property name="setting_label">Assign Window Theme</property>
-                          <property name="setting_type">action</property>
-                          <property name="setting_value">$INFO[Window(10000).Property(fenlight.window_theme_name)]</property>
-                          <property name="setting_description">Choose the theme The Pirate will use for custom windows. Choices are Light, Medium and Dark</property>
-                          <onclick>RunPlugin(plugin://plugin.video.pirate/?mode=window_theme_choice&amp;type=theme)</onclick>
-                      </item>
-                      <item>
-                          <visible>Container(2000).HasFocus(10)</visible>
-                          <property name="setting_label">Assign Window Theme Opacity</property>
-                          <property name="setting_type">action</property>
-                          <property name="setting_value">$INFO[Window(10000).Property(fenlight.window_theme_opacity_name)]</property>
-                          <property name="setting_description">Choose the Opacity The Pirate will use for custom window themes. Choose between 10% - 100%</property>
-                          <onclick>RunPlugin(plugin://plugin.video.pirate/?mode=window_theme_choice&amp;type=opacity)</onclick>
                       </item>
         <!-- Manage Addon Updates -->
                       <item>
@@ -2948,7 +2933,7 @@
                         <font>font12</font> <!-- FENLIGHT_26 -->
                         <align>left</align>
                         <aligny>center</aligny>
-                       <textcolor>FFFFFFFF</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <label>$INFO[Container(2100).ListItem.Property(setting_description)]</label>
                         <autoscroll time="7000" delay="15000" repeat="7000">true</autoscroll>
                         <visible>Control.HasFocus(2100)</visible>
@@ -2957,7 +2942,7 @@
                         <font>font12</font> <!-- FENLIGHT_26 -->
                         <align>left</align>
                         <aligny>center</aligny>
-                       <textcolor>FFFFFFFF</textcolor>
+                       <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                         <label>$INFO[Container(2000).ListItem.Property(setting_label),All settings related to [UPPERCASE][B],[/B][/UPPERCASE] settings]</label>
                         <autoscroll time="7000" delay="15000" repeat="7000">true</autoscroll>
                         <visible>Control.HasFocus(2000)</visible>
