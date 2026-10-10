@@ -46,6 +46,16 @@ class SettingsCache:
 			dbcon.execute('INSERT OR REPLACE INTO settings VALUES (?, ?, ?, ?)', (name_setting_id, 'name', '', name_setting_value))
 			self.set_memory_cache(name_setting_id, name_setting_value)
 
+	def sync_default(self, setting_id):
+		dbcon = connect_database('settings_db')
+		setting_info = default_setting_values(setting_id)
+		setting_default = setting_info['setting_default']
+		row = dbcon.execute('SELECT setting_default, setting_value FROM settings WHERE setting_id = ?', (setting_id,)).fetchone()
+		if not row or row[0] == setting_default: return
+		old_default, setting_value = row
+		if setting_value == old_default: self.set(setting_id, setting_default)
+		else: dbcon.execute('UPDATE settings SET setting_default = ? WHERE setting_id = ?', (setting_default, setting_id))
+
 	def set_many(self, settings_list):
 		dbcon = connect_database('settings_db')
 		dbcon.executemany('INSERT OR REPLACE INTO settings VALUES (?, ?, ?, ?)', settings_list)
@@ -81,6 +91,8 @@ def get_many(settings_list):
 
 def sync_settings(params={}):
 	silent = params.get('silent', 'true') == 'true'
+	default_changes = {'results_quality_movie', 'autoplay_quality_movie', 'results_quality_episode', 'autoplay_quality_episode',
+		'results.sort_order_display', 'results.sort_order', 'results.size_sort_direction'}
 	insert_list = []
 	insert_list_append = insert_list.append
 	currentsettings = settings_cache.get_all()
@@ -99,7 +111,9 @@ def sync_settings(params={}):
 		for k, v  in c_settings: settings_cache.set_memory_cache(k, v)
 	for item in d_settings:
 		setting_id = item['setting_id']
-		if setting_id in currentsettings: continue
+		if setting_id in currentsettings:
+			if setting_id in default_changes: settings_cache.sync_default(setting_id)
+			continue
 		setting_type = item['setting_type']
 		setting_default = item['setting_default']
 		if setting_type == 'action' and 'settings_options' in item:
@@ -438,7 +452,7 @@ def default_settings():
 {'setting_id': 'rescrape.ignore_filters', 'setting_type': 'action', 'setting_default': '1', 'settings_options': {'0': 'Off', '1': 'Auto', '2': 'Prompt'}},
 {'setting_id': 'rescrape.ignore_filters.order', 'setting_type': 'action', 'setting_default': '4', 'min_value': '1', 'max_value': '5'},
 #==================== Sorting and Filtering
-{'setting_id': 'results.sort_order_display', 'setting_type': 'string', 'setting_default': 'Quality, Size, Provider'},
+{'setting_id': 'results.sort_order_display', 'setting_type': 'string', 'setting_default': 'Size, Quality, Provider'},
 {'setting_id': 'results.filter_size_method', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Off', '1': 'Use Line Speed', '2': 'Use Size'}},
 {'setting_id': 'results.line_speed', 'setting_type': 'action', 'setting_default': '25', 'min_value': '1'},
 {'setting_id': 'results.movie_size_max', 'setting_type': 'action', 'setting_default': '10000', 'min_value': '1'},
@@ -447,7 +461,7 @@ def default_settings():
 {'setting_id': 'results.episode_size_min', 'setting_type': 'action', 'setting_default': '0', 'min_value': '0'},
 {'setting_id': 'results.size_unknown', 'setting_type': 'boolean', 'setting_default': 'true'},
 {'setting_id': 'results.size_sort_weighted', 'setting_type': 'boolean', 'setting_default': 'false'},
-{'setting_id': 'results.size_sort_direction', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Descending', '1': 'Ascending'}},
+{'setting_id': 'results.size_sort_direction', 'setting_type': 'action', 'setting_default': '1', 'settings_options': {'0': 'Descending', '1': 'Ascending'}},
 {'setting_id': 'results.uncached_min_seeders', 'setting_type': 'action', 'setting_default': '0', 'min_value': '0'},
 {'setting_id': 'results.limit_number_quality', 'setting_type': 'string', 'setting_default': '0'},
 {'setting_id': 'results.limit_number_total', 'setting_type': 'string', 'setting_default': '0'},
@@ -487,16 +501,16 @@ def default_settings():
 #===============================================================================#
 #==================== Playback Movies
 {'setting_id': 'auto_play_movie', 'setting_type': 'boolean', 'setting_default': 'true'},
-{'setting_id': 'results_quality_movie', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p, 4K'},
-{'setting_id': 'autoplay_quality_movie', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p, 4K'},
+{'setting_id': 'results_quality_movie', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p'},
+{'setting_id': 'autoplay_quality_movie', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p'},
 {'setting_id': 'auto_resume_movie', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Never', '1': 'Always', '2': 'Autoplay Only'}},
 {'setting_id': 'stinger_alert.show', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'stinger_alert.window_percentage', 'setting_type': 'action', 'setting_default': '90', 'min_value': '1', 'max_value': '99'},
 {'setting_id': 'stinger_alert.use_chapters', 'setting_type': 'boolean', 'setting_default': 'true'},
 #==================== Playback Episodes
 {'setting_id': 'auto_play_episode', 'setting_type': 'boolean', 'setting_default': 'true'},
-{'setting_id': 'results_quality_episode', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p, 4K'},
-{'setting_id': 'autoplay_quality_episode', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p, 4K'},
+{'setting_id': 'results_quality_episode', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p'},
+{'setting_id': 'autoplay_quality_episode', 'setting_type': 'string', 'setting_default': 'SD, 720p, 1080p'},
 {'setting_id': 'autoplay_next_episode', 'setting_type': 'boolean', 'setting_default': 'true'},
 {'setting_id': 'autoplay_alert_method', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Window', '1': 'Notification'}},
 {'setting_id': 'autoplay_default_action', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Play', '1': 'Cancel', '2': 'Pause & Wait'}},
@@ -547,7 +561,7 @@ def default_settings():
 {'setting_id': 'rd.client_id', 'setting_type': 'string', 'setting_default': 'empty_setting'},
 {'setting_id': 'rd.refresh', 'setting_type': 'string', 'setting_default': 'empty_setting'},
 {'setting_id': 'rd.secret', 'setting_type': 'string', 'setting_default': 'empty_setting'},
-{'setting_id': 'results.sort_order', 'setting_type': 'string', 'setting_default': '1'},
+{'setting_id': 'results.sort_order', 'setting_type': 'string', 'setting_default': '4'},
 {'setting_id': 'folder1.display_name', 'setting_type': 'string', 'setting_default': 'Folder 1'},
 {'setting_id': 'folder1.movies_directory', 'setting_type': 'path', 'setting_default': 'None', 'browse_mode': '0'},
 {'setting_id': 'folder1.tv_shows_directory', 'setting_type': 'path', 'setting_default': 'None', 'browse_mode': '0'},

@@ -170,6 +170,12 @@ class Sources():
 			autoplay_results = [i for i in results if i['scrape_provider'] in self.active_internal_scrapers and settings.autoplay_prescrape(i['scrape_provider'])]
 			if autoplay_results:
 				self.autoplay = True
+				if not self.ignore_scrape_filters:
+					# Autoplay can be selected only after prescrape results are filtered.
+					# Reapply its own quality list so a 4K result allowed for browsing
+					# cannot slip into automatic playback.
+					self.quality_filter = self._quality_filter()
+					autoplay_results = [i for i in autoplay_results if i.get('quality') in self.quality_filter]
 				results = autoplay_results
 		else:
 			self.all_scrapers = list(set(self.active_internal_scrapers + self.remove_scrapers))

@@ -752,17 +752,19 @@ def playback_choice(params):
 
 def set_quality_choice(params):
 	quality_setting = params.get('setting_id')
+	if quality_setting not in ('results_quality_movie', 'autoplay_quality_movie', 'results_quality_episode', 'autoplay_quality_episode'): return
 	icon = params.get('icon', None) or ''
 	dl = ['Include 4K', 'Include 1080p', 'Include 720p', 'Include SD']
 	fl = ['4K', '1080p', '720p', 'SD']
-	q_setting = get_setting('fenlight.%s' % quality_setting).split(', ')
-	try: preselect = [fl.index(i) for i in q_setting]
-	except: preselect = []
+	q_setting = get_setting('fenlight.%s' % quality_setting, '')
+	selected_qualities = {i.strip() for i in q_setting.split(',') if i.strip()}
+	preselect = [index for index, quality in enumerate(fl) if quality in selected_qualities]
 	list_items = [{'line1': item, 'icon': icon} for item in dl]
 	kwargs = {'items': json.dumps(list_items), 'heading': 'Choose the Included Qualities', 'multi_choice': 'true', 'preselect': preselect}
 	choice = kodi_utils.select_dialog(fl, **kwargs)
 	if choice is None: return
-	if choice == []:
+	choice = [quality for quality in fl if quality in set(choice)]
+	if not choice:
 		kodi_utils.ok_dialog(text='You must select at least 1 Quality')
 		return set_quality_choice(params)
 	set_setting(quality_setting, ', '.join(choice))

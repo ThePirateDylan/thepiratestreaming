@@ -285,13 +285,16 @@ def size_sort_weighted():
 
 def results_sort_order():
 	sort_direction = -1 if get_setting('fenlight.results.size_sort_direction') == '0' else 1
+	def size_sort_rank(item):
+		size_rank = item.get('size_rank', 0)
+		return sort_direction*size_rank if size_rank > 0 else float('inf')
 	return (
-			lambda k: (k['quality_rank'], k['provider_rank'], sort_direction*k['size_rank']), #Quality, Provider, Size
-			lambda k: (k['quality_rank'], sort_direction*k['size_rank'], k['provider_rank']), #Quality, Size, Provider
-			lambda k: (k['provider_rank'], k['quality_rank'], sort_direction*k['size_rank']), #Provider, Quality, Size
-			lambda k: (k['provider_rank'], sort_direction*k['size_rank'], k['quality_rank']), #Provider, Size, Quality
-			lambda k: (sort_direction*k['size_rank'], k['quality_rank'], k['provider_rank']), #Size, Quality, Provider
-			lambda k: (sort_direction*k['size_rank'], k['provider_rank'], k['quality_rank'])  #Size, Provider, Quality
+			lambda k: (k['quality_rank'], k['provider_rank'], size_sort_rank(k)), #Quality, Provider, Size
+			lambda k: (k['quality_rank'], size_sort_rank(k), k['provider_rank']), #Quality, Size, Provider
+			lambda k: (k['provider_rank'], k['quality_rank'], size_sort_rank(k)), #Provider, Quality, Size
+			lambda k: (k['provider_rank'], size_sort_rank(k), k['quality_rank']), #Provider, Size, Quality
+			lambda k: (size_sort_rank(k), k['quality_rank'], k['provider_rank']), #Size, Quality, Provider
+			lambda k: (size_sort_rank(k), k['provider_rank'], k['quality_rank'])  #Size, Provider, Quality
 			)[int(get_setting('fenlight.results.sort_order', '1'))]
 
 def active_internal_scrapers():
