@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Match the fullscreen ENTER/select path so VideoOSD owns pause and focus. -->
 <keymap>
+    <!-- Let click and drag events target the item under the pointer, but don't
+         continuously change focus while the mouse moves across media lists. -->
+    <videos>
+        <mouse>
+            <mousemove>noop</mousemove>
+            <leftclick>leftclick</leftclick>
+        </mouse>
+    </videos>
     <FullscreenVideo>
         <keyboard>
             <space>OSD</space>

@@ -47,6 +47,8 @@ def _holiday_channel(now=None):
 		return {
 			'id': 'holiday', 'number': '199', 'name': 'Halloween Channel', 'season': 'Halloween',
 			'icon': 'horror',
+			'movie_genre': '27',
+			'movie_keyword': 'halloween', 'tv_keyword': 'horror',
 			'description': 'Seasonal Halloween picks, with spooky shows and movies.',
 			'slots': ('Halloween Series', 'Halloween Movies', 'Spooky Encore')
 		}
@@ -54,6 +56,8 @@ def _holiday_channel(now=None):
 		return {
 			'id': 'holiday', 'number': '199', 'name': 'Christmas Channel', 'season': 'Christmas',
 			'icon': 'genre_family',
+			'movie_genre': '10751', 'tv_genre': '10765',
+			'movie_keyword': 'christmas', 'tv_keyword': 'christmas',
 			'description': 'Seasonal Christmas picks for cozy TV and movie nights.',
 			'slots': ('Holiday Series', 'Christmas Movies', 'Holiday Encore')
 		}
@@ -136,10 +140,20 @@ def _channel_programs(channel):
 		from modules.settings import tmdb_api_key
 		if tmdb_api_key() in (None, '', 'empty_setting'): return []
 		from apis import tmdb_api
-		show_data = tmdb_api.tmdb_tv_genres(channel.get('tv_genre'), 1) if channel.get('tv_genre') else {}
-		movie_data = tmdb_api.tmdb_movies_genres(channel.get('movie_genre'), 1) if channel.get('movie_genre') else {}
-		shows = (show_data or {}).get('results', [])
-		movies = (movie_data or {}).get('results', [])
+		show_data = tmdb_api.tmdb_tv_keyword_results_direct(channel['tv_keyword'], 1) if channel.get('tv_keyword') else None
+		movie_data = tmdb_api.tmdb_movie_keyword_results_direct(channel['movie_keyword'], 1) if channel.get('movie_keyword') else None
+		genre_show_data = tmdb_api.tmdb_tv_genres(channel.get('tv_genre'), 1) if channel.get('tv_genre') else None
+		genre_movie_data = tmdb_api.tmdb_movies_genres(channel.get('movie_genre'), 1) if channel.get('movie_genre') else None
+		shows = list((show_data or {}).get('results', []))
+		movies = list((movie_data or {}).get('results', []))
+		# The holiday keyword keeps the lineup seasonal; genre results provide a
+		# useful fallback if TMDb has no matching keyword feed for this media type.
+		for result in (genre_show_data or {}).get('results', []):
+			if result.get('id') not in {item.get('id') for item in shows}:
+				shows.append(result)
+		for result in (genre_movie_data or {}).get('results', []):
+			if result.get('id') not in {item.get('id') for item in movies}:
+				movies.append(result)
 		programs = []
 		for index in range(max(len(shows), len(movies))):
 			if index < len(shows):
@@ -196,6 +210,7 @@ def _channel_item(handle, channel, start_time, fanart):
 		except Exception:
 			pass
 	item.setProperty('channel_number', channel['number'])
+	item.setProperty('channel_id', channel['id'])
 	item.setProperty('channel_name', channel['name'])
 	item.setProperty('channel_description', channel['description'])
 	item.setProperty('now_title', current_program['title'])
@@ -224,6 +239,9 @@ def main(params=None):
 	start_time = datetime.now().replace(minute=0, second=0, microsecond=0)
 	channels = _channels()
 	fanart = kodi_utils.get_addon_fanart()
+	# A previously-selected sort mode can otherwise reorder the schedule using
+	# the program titles. The guide is a fixed numbered channel lineup.
+	kodi_utils.set_sort_method(handle, 'none')
 	for channel in channels:
 		_channel_item(handle, channel, start_time, fanart)
 	kodi_utils.set_content(handle, 'files')
