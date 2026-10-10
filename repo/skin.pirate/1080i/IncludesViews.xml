@@ -74,7 +74,7 @@
             
         <!-- clearlogo -->
         <control type="group">
-            <visible>![Control.IsVisible(10) | Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(525) | Control.IsVisible(527) | Control.IsVisible(528)]</visible>
+            <visible>![Control.IsVisible(10) | Control.IsVisible(58) | Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(525) | Control.IsVisible(527) | Control.IsVisible(528)]</visible>
             <include condition="Skin.String(ClearLogoLocation)">ClearLogo</include>
         </control>          
 		

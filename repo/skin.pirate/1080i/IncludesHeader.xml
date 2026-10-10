@@ -91,7 +91,7 @@
 			<fadetime>350</fadetime>
 			<aspectratio align="right" aligny="center">keep</aspectratio>
 			<texture background="true" fallback="colors/color_transparent.png">$VAR[ListItemClearLogo]</texture>
-			<visible>!String.IsEmpty(Control.GetLabel(881)) + Skin.String(ClearLogoLocation, topright)</visible>
+			<visible>!String.IsEmpty(Control.GetLabel(881)) + Skin.String(ClearLogoLocation, topright) + !Control.IsVisible(58)</visible>
             <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog)</visible>
 			<visible>![Skin.String(View514_DisplayInfo,small) + Control.IsVisible(514)] + ![Control.IsVisible(514) + Skin.String(View514_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
 			<visible>![Skin.String(View513_DisplayInfo,small) + Control.IsVisible(513)] + ![Control.IsVisible(513) + Skin.String(View513_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
@@ -114,7 +114,7 @@
 						<label>$VAR[BingieMainFallbackTitle]</label>
 						<include condition="$PARAM[genre_adjust]">Bingie_TextTitle_Adjust_Genre_Anim</include>
 						<autoscroll delay="4000" time="2000" repeat="6000">true</autoscroll>
-						<visible>!String.IsEmpty(Control.GetLabel(881)) + Skin.String(ClearLogoLocation, topright)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(881)) + Skin.String(ClearLogoLocation, topright) + !Control.IsVisible(58)</visible>
 						<visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog)</visible>
 						<visible>![Skin.String(View514_DisplayInfo,small) + Control.IsVisible(514)] + ![Control.IsVisible(514) + Skin.String(View514_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
 						<visible>![Skin.String(View513_DisplayInfo,small) + Control.IsVisible(513)] + ![Control.IsVisible(513) + Skin.String(View513_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
@@ -133,7 +133,7 @@
 			<fadetime>350</fadetime>
 			<aspectratio align="left" aligny="center">keep</aspectratio>
 			<texture background="true" fallback="colors/color_transparent.png">$VAR[ListItemClearLogo]</texture>
-			<visible>!String.IsEmpty(Control.GetLabel(882)) + Skin.String(ClearLogoLocation, topleft)</visible>
+			<visible>!String.IsEmpty(Control.GetLabel(882)) + Skin.String(ClearLogoLocation, topleft) + !Control.IsVisible(58)</visible>
 			<visible>![Skin.String(View514_DisplayInfo,small) + Control.IsVisible(514)] + ![Control.IsVisible(514) + Skin.String(View514_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
 			<visible>![Skin.String(View513_DisplayInfo,small) + Control.IsVisible(513)] + ![Control.IsVisible(513) + Skin.String(View513_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
 		</control>
@@ -152,7 +152,7 @@
 						<label>$VAR[BingieMainFallbackTitle]</label>
 						<include condition="$PARAM[genre_adjust]">Bingie_TextTitle_Adjust_Genre_Anim</include>
 						<autoscroll delay="4000" time="2000" repeat="6000">true</autoscroll>
-						<visible>!String.IsEmpty(Control.GetLabel(882)) + Skin.String(ClearLogoLocation, topleft)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(882)) + Skin.String(ClearLogoLocation, topleft) + !Control.IsVisible(58)</visible>
 						<visible>![Skin.String(View514_DisplayInfo,small) + Control.IsVisible(514)] + ![Control.IsVisible(514) + Skin.String(View514_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
 						<visible>![Skin.String(View513_DisplayInfo,small) + Control.IsVisible(513)] + ![Control.IsVisible(513) + Skin.String(View513_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
                     </control>	
@@ -169,7 +169,7 @@
 			<texture background="true" fallback="colors/color_transparent.png">$VAR[ListItemClearLogo]</texture>
             <visible>![Skin.String(View514_DisplayInfo,small) + Control.IsVisible(514)] + ![Control.IsVisible(514) + Skin.String(View514_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
             <visible>![Skin.String(View513_DisplayInfo,small) + Control.IsVisible(513)] + ![Control.IsVisible(513) + Skin.String(View513_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
-			<visible>!String.IsEmpty(Control.GetLabel(883)) + Skin.String(ClearLogoLocation, topcenter)</visible>
+			<visible>!String.IsEmpty(Control.GetLabel(883)) + Skin.String(ClearLogoLocation, topcenter) + !Control.IsVisible(58)</visible>
 		</control>
 
 					<control type="textbox">
@@ -188,7 +188,7 @@
 						<autoscroll delay="4000" time="2000" repeat="6000">true</autoscroll>
 						<visible>![Skin.String(View514_DisplayInfo,small) + Control.IsVisible(514)] + ![Control.IsVisible(514) + Skin.String(View514_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
 						<visible>![Skin.String(View513_DisplayInfo,small) + Control.IsVisible(513)] + ![Control.IsVisible(513) + Skin.String(View513_DisplayInfo,small_delayed) + Control.IsVisible(88883)]</visible>
-						<visible>!String.IsEmpty(Control.GetLabel(883)) + Skin.String(ClearLogoLocation, topcenter)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(883)) + Skin.String(ClearLogoLocation, topcenter) + !Control.IsVisible(58)</visible>
                     </control>		
 		
 	</include>

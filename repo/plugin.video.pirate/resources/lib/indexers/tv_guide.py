@@ -75,22 +75,104 @@ def _format_time(value):
 	return value.strftime('%I %p').lstrip('0')
 
 
+def _program_record(result, media_type, fallback_icon):
+	if not isinstance(result, dict): return None
+	title = result.get('name') or result.get('title')
+	if not title: return None
+	poster_path = result.get('poster_path') or ''
+	backdrop_path = result.get('backdrop_path') or ''
+	return {
+		'title': title,
+		'plot': result.get('overview') or 'Program information is not available.',
+		'thumb': 'https://image.tmdb.org/t/p/w342%s' % poster_path if poster_path else fallback_icon,
+		'fanart': 'https://image.tmdb.org/t/p/w1280%s' % backdrop_path if backdrop_path else '',
+		'media_type': media_type,
+	}
+
+
+def _channel_programs(channel):
+	"""Load real titles and artwork from the same cached TMDb genre feeds as the catalog."""
+	icon = kodi_utils.get_icon(channel['icon'])
+	if channel['id'] == 'favorites':
+		programs = []
+		for favourite in _get_kodi_favourites():
+			if favourite.get('type') != 'media': continue
+			title = favourite.get('title')
+			if not title: continue
+			programs.append({
+				'title': title,
+				'plot': 'Saved in your Kodi Favorites.',
+				'thumb': favourite.get('thumbnail') or icon,
+				'fanart': '',
+				'media_type': 'video',
+			})
+		if programs: return programs[:3]
+
+	try:
+		from modules.settings import tmdb_api_key
+		if tmdb_api_key() in (None, '', 'empty_setting'): return []
+		from apis import tmdb_api
+		show_data = tmdb_api.tmdb_tv_genres(channel.get('tv_genre'), 1) if channel.get('tv_genre') else {}
+		movie_data = tmdb_api.tmdb_movies_genres(channel.get('movie_genre'), 1) if channel.get('movie_genre') else {}
+		shows = (show_data or {}).get('results', [])
+		movies = (movie_data or {}).get('results', [])
+		programs = []
+		for index in range(max(len(shows), len(movies))):
+			if index < len(shows):
+				program = _program_record(shows[index], 'tvshow', icon)
+				if program: programs.append(program)
+			if index < len(movies):
+				program = _program_record(movies[index], 'movie', icon)
+				if program: programs.append(program)
+		if programs: return programs[:3]
+	except Exception:
+		pass
+	return []
+
+
 def _channel_item(handle, channel, start_time, fanart):
 	item = kodi_utils.make_listitem()
-	item.setLabel('%s  |  %s' % (channel['number'], channel['name']))
-	item.setLabel2('NOW  %s–%s' % (_format_time(start_time), _format_time(start_time + timedelta(hours=1))))
+	programs = _channel_programs(channel)
 	icon = kodi_utils.get_icon(channel['icon'])
-	item.setArt({'icon': icon, 'thumb': icon, 'poster': icon, 'fanart': fanart, 'banner': icon})
+	if not programs:
+		programs = [{
+			'title': title,
+			'plot': channel['description'],
+			'thumb': icon,
+			'fanart': '',
+			'media_type': 'video',
+		} for title in channel['slots']]
+	while len(programs) < 3:
+		programs.append(programs[-1])
+	current_program = programs[0]
+	# Use Kodi's built-in labels for the two stable channel fields. The skin can
+	# render these even on Kodi builds that don't expose custom properties in a
+	# plugin item's view layout consistently.
+	item.setLabel(channel['name'])
+	item.setLabel2(channel['number'])
+	item.setArt({
+		'icon': icon,
+		'thumb': current_program['thumb'],
+		'poster': current_program['thumb'],
+		'fanart': current_program['fanart'] or fanart,
+		'banner': icon,
+	})
+	info = item.getVideoInfoTag(True)
+	info.setTitle(current_program['title'])
+	info.setPlot(current_program['plot'])
+	info.setMediaType(current_program['media_type'])
 	item.setProperty('channel_number', channel['number'])
 	item.setProperty('channel_name', channel['name'])
-	for index, slot in enumerate(channel['slots'], 1):
+	item.setProperty('channel_description', channel['description'])
+	item.setProperty('now_title', current_program['title'])
+	item.setProperty('now_plot', current_program['plot'])
+	for index, program in enumerate(programs[:3], 1):
 		slot_start = start_time + timedelta(hours=index - 1)
 		slot_end = slot_start + timedelta(hours=1)
-		item.setProperty('slot_%s' % index, '%s–%s   %s' % (_format_time(slot_start), _format_time(slot_end), slot))
-	info = item.getVideoInfoTag(True)
-	info.setTitle(channel['name'])
-	info.setPlot(channel['description'])
-	info.setMediaType('video')
+		item.setProperty('slot_%s' % index, '%s–%s   %s' % (_format_time(slot_start), _format_time(slot_end), program['title']))
+		item.setProperty('program_%s_title' % index, program['title'])
+		item.setProperty('program_%s_plot' % index, program['plot'])
+		item.setProperty('program_%s_thumb' % index, program['thumb'])
 	url = kodi_utils.build_url({'mode': 'tvguide.channel', 'channel': channel['id']})
 	kodi_utils.add_item(handle, url, item, True)
 
