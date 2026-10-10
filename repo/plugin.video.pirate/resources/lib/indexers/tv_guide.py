@@ -110,6 +110,14 @@ def _format_time(value):
 	return value.strftime('%I %p').lstrip('0')
 
 
+def _rotate_programs_for_time(programs, start_time):
+	"""Advance each channel's lineup by one program at each local hour."""
+	if len(programs) < 2: return programs
+	hour_number = start_time.toordinal() * 24 + start_time.hour
+	rotation = hour_number % len(programs)
+	return programs[rotation:] + programs[:rotation]
+
+
 def _program_record(result, media_type, fallback_icon):
 	if not isinstance(result, dict): return None
 	title = result.get('name') or result.get('title')
@@ -212,6 +220,7 @@ def _channel_item(handle, channel, start_time, fanart):
 		} for title in channel['slots']]
 	while len(programs) < 3:
 		programs.append(programs[-1])
+	programs = _rotate_programs_for_time(programs, start_time)
 	current_program = programs[0]
 	# Keep channel labels separate from the show's title in VideoInfoTag. Kodi
 	# exposes the title as ListItem.Label on some builds, so the skin uses the

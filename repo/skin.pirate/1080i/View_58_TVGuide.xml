@@ -111,6 +111,8 @@
                 <ondown>58</ondown>
                 <pagecontrol>60</pagecontrol>
                 <autoscroll>false</autoscroll>
+                <onfocus condition="!System.HasAlarm(PirateTVGuideRefresh)">AlarmClock(PirateTVGuideRefresh,Container.Refresh(),00:15:00,silent,loop)</onfocus>
+                <onunfocus condition="System.HasAlarm(PirateTVGuideRefresh)">CancelAlarm(PirateTVGuideRefresh,silent)</onunfocus>
                 <scrolltime tween="quadratic">250</scrolltime>
                 <viewtype label="TV Guide">TV Guide</viewtype>
                 <itemlayout width="1790" height="92">

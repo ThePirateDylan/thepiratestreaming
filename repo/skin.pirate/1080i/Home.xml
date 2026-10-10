@@ -9,7 +9,7 @@
     
 	<!-- BINGIE -->
     <onload condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">Skin.Reset(CustomSearchTerm)</onload>
-    <onload condition="String.IsEmpty(Window(Home).Property(PiratePauseOSDKeymapInstalled))">RunScript(script.pirate.helper,action=installpauseosdkeymap)</onload>
+    <onload condition="!String.IsEqual(Window(Home).Property(PiratePauseOSDKeymapInstalled),1.1.12)">RunScript(script.pirate.helper,action=installpauseosdkeymap)</onload>
     <onload>Skin.SetString(TMDbBingieHelper.MonitorContainer,17195)</onload>
 	<onunload>Skin.Reset(TMDbBingieHelper.DisableRatings)</onunload>
 	

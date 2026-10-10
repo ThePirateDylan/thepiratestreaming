@@ -83,10 +83,9 @@ def installpauseosdkeymap(params):
             with xbmcvfs.File(destination, 'w') as destination_file:
                 destination_file.write(_read_vfs_file(source))
             xbmc.executebuiltin('Action(reloadkeymaps)')
+        home_window.setProperty(installation_property, ADDON.getAddonInfo('version'))
     except Exception as error:
         log('Unable to install pause/OSD keymap: %s' % error, WARNING, True)
-    finally:
-        home_window.setProperty(installation_property, 'true')
 
 def get_first_youtube_video(query):
     for media in get_youtube_listing('%s' % query, limit=5):
