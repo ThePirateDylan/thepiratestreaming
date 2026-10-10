@@ -4,7 +4,7 @@
     <!-- Ensure the video information dialog activates the pointed-at action button. -->
     <movieinformation>
         <mouse>
-            <leftclick>Select</leftclick>
+            <leftclick>leftclick</leftclick>
         </mouse>
     </movieinformation>
     <FullscreenVideo>

@@ -150,7 +150,7 @@
       <icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="script.pirate.helper" name="The Pirate Helper" version="1.1.10" provider-name="The Pirate Dylan">
+</addon><addon id="script.pirate.helper" name="The Pirate Helper" version="1.1.11" provider-name="The Pirate Dylan">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.simplejson" version="3.17.0" />
@@ -221,10 +221,10 @@
         <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.widgets</website>
         <source />
     </extension>
-</addon><addon id="skin.pirate" version="2.2.17" name="The Pirate Skin" provider-name="The Pirate Dylan">
+</addon><addon id="skin.pirate" version="2.2.18" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui" />
-		<import addon="script.pirate.helper" version="1.1.10" />
+		<import addon="script.pirate.helper" version="1.1.11" />
 		<import addon="script.pirate.toolbox" version="1.0.1" />
 		<import addon="script.pirate.widgets" version="1.0.3" />
 		<import addon="script.skinshortcuts" version="2.0.3" />
