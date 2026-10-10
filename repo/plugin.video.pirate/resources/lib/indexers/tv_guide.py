@@ -96,6 +96,7 @@ def _channel_programs(channel):
 	if channel['id'] == 'favorites':
 		programs = []
 		for favourite in _get_kodi_favourites():
+			if not isinstance(favourite, dict): continue
 			if favourite.get('type') != 'media': continue
 			title = favourite.get('title')
 			if not title: continue
@@ -286,6 +287,7 @@ def play_favorite(params):
 		favourite = _get_kodi_favourites()[index]
 	except (IndexError, TypeError, ValueError):
 		return
+	if not isinstance(favourite, dict): return
 	if favourite.get('type') == 'window' and favourite.get('window'):
 		window = favourite['window'].replace(')', '').replace(',', '')
 		parameter = favourite.get('windowparameter', '').replace('"', '\\"')
@@ -306,7 +308,10 @@ def _get_kodi_favourites():
 		'params': {'properties': ['path', 'thumbnail', 'window', 'windowparameter']}
 	}
 	try:
-		return (kodi_utils.get_jsonrpc(request) or {}).get('favourites', [])
+		result = kodi_utils.get_jsonrpc(request)
+		if not isinstance(result, dict): return []
+		favourites = result.get('favourites')
+		return favourites if isinstance(favourites, list) else []
 	except Exception:
 		return []
 
