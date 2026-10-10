@@ -52,11 +52,20 @@
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                 <label>$INFO[Container(58).ListItem.Title]</label>
             </control>
+            <control type="label">
+                <left>1635</left>
+                <top>101</top>
+                <width>220</width>
+                <height>27</height>
+                <font>Reg20</font>
+                <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+                <label>$INFO[Container(58).ListItem.MPAA]</label>
+            </control>
             <control type="textbox">
                 <left>1635</left>
-                <top>108</top>
+                <top>132</top>
                 <width>220</width>
-                <height>120</height>
+                <height>96</height>
                 <font>Reg24</font>
                 <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
                 <label>$INFO[Container(58).ListItem.Plot]</label>
@@ -110,6 +119,7 @@
                 <onup>58</onup>
                 <ondown>58</ondown>
                 <pagecontrol>60</pagecontrol>
+                <autoscroll>false</autoscroll>
                 <scrolltime tween="quadratic">250</scrolltime>
                 <viewtype label="TV Guide">TV Guide</viewtype>
                 <itemlayout width="1790" height="92">

@@ -19,6 +19,7 @@ def routing(sys):
 		action = mode.split('.', 1)[1]
 		if action == 'main': return tv_guide.main(params)
 		elif action == 'channel': return tv_guide.channel(params)
+		elif action == 'play_channel': return tv_guide.play_channel(params)
 		elif action == 'kodi_favorites': return tv_guide.kodi_favorites(params)
 		elif action == 'play_favorite': return tv_guide.play_favorite(params)
 	elif 'menu_editor.' in mode:

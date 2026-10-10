@@ -10,6 +10,7 @@
            
             <!-- codec info normal-->
 			<control type="group">
+				<visible>!Control.IsVisible(58)</visible>
 				<include condition="!Skin.String(mediaflagsstyle,disabled) + Skin.HasSetting(EnableRatings)">Animation.TestOut</include>
 				<posx>20</posx>
 				<height>60</height>
@@ -19,6 +20,7 @@
 			
 			<!--Rating normal-->
 			<control type="group">
+				<visible>!Control.IsVisible(58)</visible>
 				<include condition="!Skin.String(mediaflagsstyle,disabled) + Skin.HasSetting(EnableRatings)">Animation.TestIn</include>
 				<include condition="Window.IsActive(Videos) | Window.IsActive(videoplaylist)">Footer_RatingAndStudio_Hor</include>
 			</control>

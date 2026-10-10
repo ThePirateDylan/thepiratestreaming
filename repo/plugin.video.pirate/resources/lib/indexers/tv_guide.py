@@ -2,6 +2,7 @@
 """Fake cable guide backed by The Pirate's existing catalog routes."""
 import sys
 from datetime import datetime, timedelta
+from urllib.parse import parse_qs, urlparse
 
 from modules import kodi_utils
 
@@ -87,27 +88,49 @@ def _program_record(result, media_type, fallback_icon):
 		'thumb': 'https://image.tmdb.org/t/p/w342%s' % poster_path if poster_path else fallback_icon,
 		'fanart': 'https://image.tmdb.org/t/p/w1280%s' % backdrop_path if backdrop_path else '',
 		'media_type': media_type,
+		'tmdb_id': result.get('id') if media_type == 'tvshow' else None,
 	}
+
+
+def _favorite_tvshow_id(favourite):
+	"""Return the TMDb ID when a Kodi favorite points at a Pirate TV series."""
+	try:
+		path = favourite.get('path', '')
+		query = parse_qs(urlparse(path).query)
+		tmdb_id = query.get('tmdb_id', [None])[0]
+		mode = query.get('mode', [''])[0]
+		media_type = query.get('media_type', [''])[0].lower()
+		is_tvshow = media_type in ('tvshow', 'tv', 'episode', 'shows') or mode in ('build_season_list', 'build_episode_list')
+		if is_tvshow and tmdb_id and str(tmdb_id).isdigit(): return str(tmdb_id)
+	except Exception:
+		pass
+	return None
 
 
 def _channel_programs(channel):
 	"""Load real titles and artwork from the same cached TMDb genre feeds as the catalog."""
 	icon = kodi_utils.get_icon(channel['icon'])
 	if channel['id'] == 'favorites':
-		programs = []
+		show_programs, other_programs = [], []
 		for favourite in _get_kodi_favourites():
 			if not isinstance(favourite, dict): continue
 			if favourite.get('type') != 'media': continue
 			title = favourite.get('title')
 			if not title: continue
-			programs.append({
+			tmdb_id = _favorite_tvshow_id(favourite)
+			program = {
 				'title': title,
 				'plot': 'Saved in your Kodi Favorites.',
 				'thumb': favourite.get('thumbnail') or icon,
 				'fanart': '',
-				'media_type': 'video',
-			})
-		if programs: return programs[:3]
+				'media_type': 'tvshow' if tmdb_id else 'video',
+				'tmdb_id': tmdb_id,
+			}
+			(show_programs if tmdb_id else other_programs).append(program)
+		# Keep an episode-playable show in the active slot. Movie and other
+		# favorites can still appear in the later guide slots.
+		programs = show_programs[:1] + other_programs[:2]
+		if programs: return programs
 
 	try:
 		from modules.settings import tmdb_api_key
@@ -162,6 +185,16 @@ def _channel_item(handle, channel, start_time, fanart):
 	info.setTitle(current_program['title'])
 	info.setPlot(current_program['plot'])
 	info.setMediaType(current_program['media_type'])
+	if current_program.get('media_type') == 'tvshow' and current_program.get('tmdb_id'):
+		try:
+			from modules import metadata, settings
+			from modules.utils import get_datetime
+			if settings.tmdb_api_key():
+				program_meta = metadata.tvshow_meta('tmdb_id', current_program['tmdb_id'], settings.tmdb_api_key(), settings.mpaa_region(), get_datetime())
+				if program_meta and program_meta.get('mpaa'):
+					info.setMpaa(program_meta['mpaa'])
+		except Exception:
+			pass
 	item.setProperty('channel_number', channel['number'])
 	item.setProperty('channel_name', channel['name'])
 	item.setProperty('channel_description', channel['description'])
@@ -174,8 +207,16 @@ def _channel_item(handle, channel, start_time, fanart):
 		item.setProperty('program_%s_title' % index, program['title'])
 		item.setProperty('program_%s_plot' % index, program['plot'])
 		item.setProperty('program_%s_thumb' % index, program['thumb'])
-	url = kodi_utils.build_url({'mode': 'tvguide.channel', 'channel': channel['id']})
-	kodi_utils.add_item(handle, url, item, True)
+	# The selected guide row represents its current series and plays a random
+	# aired episode. Keep the show ID on the item as Kodi skin builds vary in how
+	# consistently they expose custom properties in list layouts.
+	tmdb_id = current_program.get('tmdb_id')
+	if tmdb_id:
+		item.setProperty('IsPlayable', 'true')
+		item.setProperty('tmdb_id', str(tmdb_id))
+		info.setUniqueIDs({'tmdb': str(tmdb_id)})
+	url = kodi_utils.build_url({'mode': 'tvguide.play_channel', 'channel': channel['id'], 'tmdb_id': tmdb_id or ''})
+	kodi_utils.add_item(handle, url, item, False)
 
 
 def main(params=None):
@@ -233,6 +274,23 @@ def channel(params):
 	if kodi_utils.current_skin() == 'skin.pirate':
 		from threading import Thread
 		Thread(target=_set_catalog_view, daemon=True).start()
+
+
+def play_channel(params):
+	"""Play one random aired episode from the series currently shown in a channel."""
+	tmdb_id = params.get('tmdb_id', '')
+	if not tmdb_id.isdigit():
+		return kodi_utils.notification('No playable TV series is available in this channel.', 4000)
+	try:
+		from modules import metadata, settings
+		from modules.episode_tools import EpisodeTools
+		from modules.utils import get_datetime
+		meta = metadata.tvshow_meta('tmdb_id', tmdb_id, settings.tmdb_api_key(), settings.mpaa_region(), get_datetime())
+		if not meta or meta.get('blank_entry'):
+			return kodi_utils.notification('Could not load the selected series.', 4000)
+		return EpisodeTools(meta).play_random()
+	except Exception:
+		return kodi_utils.notification('Could not play a random episode from this series.', 4000)
 
 
 def _channel_entries(channel):
