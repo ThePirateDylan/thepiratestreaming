@@ -10,7 +10,7 @@
            
             <!-- codec info normal-->
 			<control type="group">
-				<visible>!Control.IsVisible(58)</visible>
+				<visible>!Control.IsVisible(58) + !String.Contains(Container.FolderPath,tvguide.main)</visible>
 				<include condition="!Skin.String(mediaflagsstyle,disabled) + Skin.HasSetting(EnableRatings)">Animation.TestOut</include>
 				<posx>20</posx>
 				<height>60</height>
@@ -20,7 +20,7 @@
 			
 			<!--Rating normal-->
 			<control type="group">
-				<visible>!Control.IsVisible(58)</visible>
+				<visible>!Control.IsVisible(58) + !String.Contains(Container.FolderPath,tvguide.main)</visible>
 				<include condition="!Skin.String(mediaflagsstyle,disabled) + Skin.HasSetting(EnableRatings)">Animation.TestIn</include>
 				<include condition="Window.IsActive(Videos) | Window.IsActive(videoplaylist)">Footer_RatingAndStudio_Hor</include>
 			</control>
@@ -42,7 +42,7 @@
 			Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) |
 			Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | 
 			Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | 
-			Control.IsVisible(503) | Control.IsVisible(50) | Control.IsVisible(527) | Control.IsVisible(525)]</visible>
+			Control.IsVisible(503) | Control.IsVisible(50) | Control.IsVisible(527) | Control.IsVisible(525) | Control.IsVisible(58) | String.Contains(Container.FolderPath,tvguide.main)]</visible>
 		</control>
 	</include>
 	

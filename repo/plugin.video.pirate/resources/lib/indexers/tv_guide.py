@@ -9,34 +9,64 @@ from modules import kodi_utils
 
 GENRE_CHANNELS = (
 	{
-		'id': 'comedy', 'number': '101', 'name': 'Comedy', 'icon': 'genre_comedy',
+		'id': 'comedy', 'number': '101', 'name': 'Comedy Channel', 'icon': 'genre_comedy',
 		'description': 'A rotating lineup of comedy series and comedy movies.',
 		'movie_genre': '35', 'tv_genre': '35',
 		'slots': ('Comedy Series', 'Comedy Movies', 'Comedy Encore')
 	},
 	{
-		'id': 'thriller', 'number': '102', 'name': 'Thriller', 'icon': 'genre_thriller',
+		'id': 'thriller', 'number': '102', 'name': 'Thriller Channel', 'icon': 'genre_thriller',
 		'description': 'Suspenseful films and mystery-led series.',
 		'movie_genre': '53', 'tv_genre': '9648',
 		'slots': ('Mystery Series', 'Thriller Movies', 'Suspense Encore')
 	},
 	{
-		'id': 'scifi', 'number': '103', 'name': 'Sci-Fi', 'icon': 'genre_scifi',
+		'id': 'scifi', 'number': '103', 'name': 'Sci-Fi Channel', 'icon': 'genre_scifi',
 		'description': 'Science-fiction and fantasy series, films, and reruns.',
 		'movie_genre': '878', 'tv_genre': '10765',
 		'slots': ('Sci-Fi Series', 'Sci-Fi Movies', 'Future Encore')
 	},
 	{
-		'id': 'drama', 'number': '104', 'name': 'Drama', 'icon': 'genre_drama',
+		'id': 'drama', 'number': '104', 'name': 'Drama Channel', 'icon': 'genre_drama',
 		'description': 'Character-driven dramas from the TV and movie catalog.',
 		'movie_genre': '18', 'tv_genre': '18',
 		'slots': ('Drama Series', 'Drama Movies', 'Drama Encore')
 	},
 	{
-		'id': 'action', 'number': '105', 'name': 'Action', 'icon': 'genre_action',
+		'id': 'action', 'number': '105', 'name': 'Action Channel', 'icon': 'genre_action',
 		'description': 'Action-packed series and movies.',
 		'movie_genre': '28', 'tv_genre': '10759',
 		'slots': ('Action Series', 'Action Movies', 'Action Encore')
+	},
+	{
+		'id': 'crime_mystery', 'number': '106', 'name': 'Crime & Mystery Channel', 'icon': 'genre_crime',
+		'description': 'Crime stories, mysteries, investigations, and suspense.',
+		'movie_genre': '80|9648', 'tv_genre': '80|9648',
+		'slots': ('Crime & Mystery Series', 'Crime & Mystery Movies', 'Case Files Encore')
+	},
+	{
+		'id': 'horror', 'number': '107', 'name': 'Horror Channel', 'icon': 'genre_horror',
+		'description': 'Horror films and spooky series selected from TMDb horror keywords.',
+		'movie_genre': '27', 'movie_keyword': 'horror', 'tv_keyword': 'horror',
+		'slots': ('Horror Series', 'Horror Movies', 'Late Night Frights')
+	},
+	{
+		'id': 'family_kids', 'number': '108', 'name': 'Family & Kids Channel', 'icon': 'genre_family',
+		'description': 'Family films and kid-friendly series for all ages.',
+		'movie_genre': '10751', 'tv_genre': '10751|10762',
+		'slots': ('Kids Series', 'Family Movies', 'Family Favorites')
+	},
+	{
+		'id': 'animation', 'number': '109', 'name': 'Animation Channel', 'icon': 'genre_animation',
+		'description': 'Animated series and movies from across the catalog.',
+		'movie_genre': '16', 'tv_genre': '16',
+		'slots': ('Animated Series', 'Animated Movies', 'Animation Encore')
+	},
+	{
+		'id': 'documentary_reality', 'number': '110', 'name': 'Documentary & Reality Channel', 'icon': 'genre_documentary',
+		'description': 'Documentary films and reality series from the catalog.',
+		'movie_genre': '99', 'tv_genre': '99|10764',
+		'slots': ('Documentary Series', 'Documentary Movies', 'Reality Encore')
 	},
 )
 
@@ -67,7 +97,7 @@ def _holiday_channel(now=None):
 def _channels(now=None):
 	channels = list(GENRE_CHANNELS)
 	channels.append({
-		'id': 'favorites', 'number': '106', 'name': 'Favorites', 'icon': 'favorites',
+		'id': 'favorites', 'number': '111', 'name': 'Favorites Channel', 'icon': 'favorites',
 		'description': 'Your saved shows and movies from Kodi Favorites and The Pirate Favorites.',
 		'slots': ('Favorite Series', 'Favorite Movies', 'Your Favorites Encore')
 	})
@@ -92,7 +122,7 @@ def _program_record(result, media_type, fallback_icon):
 		'thumb': 'https://image.tmdb.org/t/p/w342%s' % poster_path if poster_path else fallback_icon,
 		'fanart': 'https://image.tmdb.org/t/p/w1280%s' % backdrop_path if backdrop_path else '',
 		'media_type': media_type,
-		'tmdb_id': result.get('id') if media_type == 'tvshow' else None,
+		'tmdb_id': result.get('id'),
 	}
 
 
@@ -183,9 +213,9 @@ def _channel_item(handle, channel, start_time, fanart):
 	while len(programs) < 3:
 		programs.append(programs[-1])
 	current_program = programs[0]
-	# Use Kodi's built-in labels for the two stable channel fields. The skin can
-	# render these even on Kodi builds that don't expose custom properties in a
-	# plugin item's view layout consistently.
+	# Keep channel labels separate from the show's title in VideoInfoTag. Kodi
+	# exposes the title as ListItem.Label on some builds, so the skin uses the
+	# explicit channel properties below for the guide columns.
 	item.setLabel(channel['name'])
 	item.setLabel2(channel['number'])
 	item.setArt({
@@ -222,15 +252,15 @@ def _channel_item(handle, channel, start_time, fanart):
 		item.setProperty('program_%s_title' % index, program['title'])
 		item.setProperty('program_%s_plot' % index, program['plot'])
 		item.setProperty('program_%s_thumb' % index, program['thumb'])
-	# The selected guide row represents its current series and plays a random
-	# aired episode. Keep the show ID on the item as Kodi skin builds vary in how
-	# consistently they expose custom properties in list layouts.
+	# Keep a TMDb ID on playable show and movie entries. Show entries start a
+	# random aired episode; movie entries start that film.
 	tmdb_id = current_program.get('tmdb_id')
-	if tmdb_id:
+	if tmdb_id and current_program.get('media_type') in ('tvshow', 'movie'):
 		item.setProperty('IsPlayable', 'true')
 		item.setProperty('tmdb_id', str(tmdb_id))
 		info.setUniqueIDs({'tmdb': str(tmdb_id)})
-	url = kodi_utils.build_url({'mode': 'tvguide.play_channel', 'channel': channel['id'], 'tmdb_id': tmdb_id or ''})
+	url = kodi_utils.build_url({'mode': 'tvguide.play_channel', 'channel': channel['id'], 'tmdb_id': tmdb_id or '',
+								'media_type': current_program.get('media_type', '')})
 	kodi_utils.add_item(handle, url, item, False)
 
 
@@ -263,9 +293,32 @@ def _set_catalog_view():
 
 
 def _set_view_for_mode(mode, view_id):
-	for unused in range(60):
-		if 'mode=%s' % mode in kodi_utils.folder_path():
-			return kodi_utils.execute_builtin('Container.SetViewMode(%s)' % view_id)
+	target = 'mode=%s' % mode
+	ready_checks = 0
+	for unused in range(80):
+		if target in kodi_utils.folder_path() and kodi_utils.get_visibility('Window.IsActive(Videos)'):
+			try:
+				item_count = int(kodi_utils.get_infolabel('Container.NumItems') or '0')
+			except (TypeError, ValueError):
+				item_count = 0
+			if item_count > 0:
+				ready_checks += 1
+				if ready_checks >= 2:
+					# Let Kodi finish attaching the plugin directory to the video
+					# window before applying its custom view on a first visit.
+					kodi_utils.sleep(150)
+					if target not in kodi_utils.folder_path(): return
+					kodi_utils.execute_builtin('Container.SetViewMode(%s)' % view_id)
+					kodi_utils.sleep(300)
+					# On the initial plugin launch Kodi can process the view action
+					# before the skin has registered the requested view; retry once.
+					if target in kodi_utils.folder_path() and not kodi_utils.get_visibility('Control.IsVisible(%s)' % view_id):
+						kodi_utils.execute_builtin('Container.SetViewMode(%s)' % view_id)
+					return
+			else:
+				ready_checks = 0
+		else:
+			ready_checks = 0
 		kodi_utils.sleep(100)
 
 
@@ -295,20 +348,29 @@ def channel(params):
 
 
 def play_channel(params):
-	"""Play one random aired episode from the series currently shown in a channel."""
+	"""Play the current program: a random aired episode for shows, or the movie."""
 	tmdb_id = params.get('tmdb_id', '')
-	if not tmdb_id.isdigit():
-		return kodi_utils.notification('No playable TV series is available in this channel.', 4000)
+	media_type = params.get('media_type', 'tvshow')
+	if not str(tmdb_id).isdigit():
+		return kodi_utils.notification('No playable program is available in this channel.', 4000)
 	try:
 		from modules import metadata, settings
-		from modules.episode_tools import EpisodeTools
 		from modules.utils import get_datetime
+		if media_type == 'movie':
+			meta = metadata.movie_meta('tmdb_id', tmdb_id, settings.tmdb_api_key(), settings.mpaa_region(), get_datetime())
+			if not meta or meta.get('blank_entry'):
+				return kodi_utils.notification('Could not load the selected movie.', 4000)
+			from modules.sources import Sources
+			playback_key = settings.playback_key()
+			return Sources().playback_prep({'media_type': 'movie', 'tmdb_id': str(tmdb_id), playback_key: playback_key})
+		from modules.episode_tools import EpisodeTools
 		meta = metadata.tvshow_meta('tmdb_id', tmdb_id, settings.tmdb_api_key(), settings.mpaa_region(), get_datetime())
 		if not meta or meta.get('blank_entry'):
 			return kodi_utils.notification('Could not load the selected series.', 4000)
 		return EpisodeTools(meta).play_random()
 	except Exception:
-		return kodi_utils.notification('Could not play a random episode from this series.', 4000)
+		message = 'Could not play the selected movie.' if media_type == 'movie' else 'Could not play a random episode from this series.'
+		return kodi_utils.notification(message, 4000)
 
 
 def _channel_entries(channel):

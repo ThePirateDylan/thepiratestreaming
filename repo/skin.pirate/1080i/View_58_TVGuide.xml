@@ -52,20 +52,11 @@
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                 <label>$INFO[Container(58).ListItem.Title]</label>
             </control>
-            <control type="label">
-                <left>1635</left>
-                <top>101</top>
-                <width>220</width>
-                <height>27</height>
-                <font>Reg20</font>
-                <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
-                <label>$INFO[Container(58).ListItem.MPAA]</label>
-            </control>
             <control type="textbox">
                 <left>1635</left>
-                <top>132</top>
+                <top>105</top>
                 <width>220</width>
-                <height>96</height>
+                <height>123</height>
                 <font>Reg24</font>
                 <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
                 <label>$INFO[Container(58).ListItem.Plot]</label>
@@ -139,7 +130,7 @@
                         <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label2]</label>
+                        <label>$INFO[ListItem.Property(channel_number)]</label>
                     </control>
                     <control type="label">
                         <left>120</left>
@@ -149,7 +140,7 @@
                         <font>Bold30</font>
                         <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>$INFO[ListItem.Property(channel_name)]</label>
                     </control>
                     <control type="image">
                         <left>440</left>
@@ -220,7 +211,7 @@
                         <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label2]</label>
+                        <label>$INFO[ListItem.Property(channel_number)]</label>
                     </control>
                     <control type="label">
                         <left>120</left>
@@ -230,7 +221,7 @@
                         <font>Bold30</font>
                         <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>$INFO[ListItem.Property(channel_name)]</label>
                     </control>
                     <control type="label">
                         <left>465</left>
