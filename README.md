@@ -36,7 +36,6 @@ The goal is to provide a unified Kodi experience with personalized home-screen l
 
 ## Features
 
-- **External Player Support** — Support for using external video players.
 - **Restored API Key Functionality** — Restores API key functionality from the underlying add-on project where supported.
 - **Automatic TV Ratings** — TV ratings are enabled by default and color-coded to better match the media presentation.
 - **Automatic Review Ratings** — Review ratings and their providers are enabled by default.
