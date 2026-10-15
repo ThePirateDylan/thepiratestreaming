@@ -1,39 +1,291 @@
-# A fork of FenLightAM that brings the abillity to use external players, restores all API keys, and more!
+# 🏴‍☠️ The Pirate Streaming
 
-# Welcome to The Pirate Streaming!
+A fork of FenLightAM that brings external player support, restores API key functionality, adds quality-of-life improvements, and includes a customized BINGIE Mod skin designed specifically for this project.
 
-### In light of FenLightAM going kapoot I decided to host my own add-on.
-This was mainly done because my mom relies on me to fix her TV and 
-it has become a lot to constantly go back and forth with the fixes.
+The Pirate Streaming was created because maintaining the original setup had become a constant cycle of fixes. Since my mom relies on me to keep her TV working, I wanted to build a setup that I could maintain in one place instead of repeatedly fixing the same things.
 
-This version is meant to also use a fork of the BINGIE Mod 
-which is changed to match my fork of FenLightAM to make it into
-one final add-on look/feel.
+This project brings the add-on, skin, and related configuration together in one place to make installation easier.
 
-Everything required can be found within the repository or inside 
-this read me.
+---
 
-# Thank you for your patience!
+## 📑 Table of Contents
 
-### Credits 
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Development Status](#development-status)
+- [Important Skin Warning](#important-skin-warning)
+- [Simulated Live TV](#simulated-live-tv)
+- [Supported Platforms](#supported-platforms)
+- [Mouse Support](#mouse-support)
+- [Requirements](#requirements)
+- [Installation Guide](#installation-guide)
+- [Initial Setup](#initial-setup)
+- [Troubleshooting](#troubleshooting)
+- [Credits](#credits)
+- [Disclaimer](#disclaimer)
 
-Special Thank You to peno64 for his help with the Repository URL casing in this project.
+---
 
-Special Thank You to Goldenfreddy0703 , I looked at his repository to figure out my layout.
+## About the Project
 
-Special Thank You to drinfernoo for creating the example repository!
+The Pirate Streaming builds on the work of FenLight and FenLightAM while adding its own features and customizations.
 
-Special Thank You to TikiPeter for creating FenLight.
+The project includes a customized version of the BINGIE Mod skin, bundled directly with the repository. You do not need to locate or install a separate skin repository.
 
-Special Thank You to AnonyMouse for continuing FenLightAM with FenLightAM.
+The goal is to provide a unified Kodi experience with personalized home-screen layouts, automated ratings, external player support, and a simulated Live TV experience.
 
-Special Thank You to the BINGIE Mod team for creating the BINGIE Skin which is the basis for The Pirate Streaming Skin.
+## Features
 
-Special Thank You to kittmaster for creating the Kodi Texture Tool.
+- **Restored API Key Functionality** — Restores API key functionality from the underlying add-on project where supported.
+- **Automatic TV Ratings** — TV ratings are enabled by default and color-coded to better match the media presentation.
+- **Automatic Review Ratings** — Review ratings and their providers are enabled by default.
+- **Customized BINGIE Mod Skin** — A bundled skin tailored to The Pirate Streaming.
+- **Simulated Live TV** — Genre-based channels, Trakt-powered schedules, Kodi Favorites, and seasonal channels.
+- **Unified Installation** — The skin ZIP is intended to install the components required for the complete setup.
+- **Ongoing Maintenance** — Continued fixes and improvements as time permits.
 
-Special Thank You to Team Kodi for the AndroidTV GUI sounds
+## Development Status
 
-Special Thank You to BetterRedUK for creating RedLight which helps me fork FenLightAM.
+The Pirate Streaming is an ongoing project. Features, layouts, and compatibility may change as fixes and improvements are made.
 
-Special Thank You to kodifitzwell for creating POV which helps me fork FenLightAM.
+Some areas, especially the simulated Live TV experience and offline TV Guide, remain works in progress.
 
+The progress estimates above are intended to help track development, not to guarantee feature completeness or stability.
+
+Bug reports and useful feedback are welcome. Please provide enough information to reproduce the issue.
+
+### Core Add-on — 80%
+
+`[████████░░] 80%`
+
+Main add-on functionality and integration.
+
+### External Players — 60%
+
+`[██████░░░░] 60%`
+
+External player configuration and playback.
+
+### API Keys — 70%
+
+`[███████░░░] 70%`
+
+Restored keys and related service functionality.
+
+### Bundled Skin — 80%
+
+`[████████░░] 80%`
+
+BINGIE Mod customization and integration.
+
+### Genre Channels — 60%
+
+`[██████░░░░] 60%`
+
+Channel generation and playback.
+
+### Trakt Schedule — 60%
+
+`[██████░░░░] 60%`
+
+Generating a schedule from Trakt lists.
+
+### Favorites Channel — 70%
+
+`[███████░░░] 70%`
+
+Populating the channel from Kodi Favorites.
+
+### Holiday Channel — 70%
+
+`[███████░░░] 70%`
+
+Seasonal visibility and holiday programming.
+
+### Offline TV Guide — 40%
+
+`[████░░░░░░] 40%`
+
+Guide interface and schedule navigation.
+
+### Testing — 55%
+
+`[█████▌░░░░] 55%`
+
+Compatibility testing across devices and setups.
+
+> **Note:** These values are for planning until verified. A percentage does not necessarily mean a feature is production-ready or fully tested.
+
+## Important Skin Warning
+
+**Please do not change the skin settings unless you know exactly what you are doing.**
+
+The included skin has been customized specifically for The Pirate Streaming. Its layouts and features are designed to work with the project's existing configuration.
+
+Changing skin settings, experimenting with unsupported options, or altering its configuration may cause parts of the interface to break or behave unexpectedly.
+
+If you encounter a problem, please check the troubleshooting section before changing skin settings.
+
+## Simulated Live TV
+
+The Pirate Streaming includes a work-in-progress, channel-based experience designed to make browsing your library feel more like watching television.
+
+This is **not conventional broadcast television**. Channels are populated using your configured sources and content lists.
+
+Current features include:
+
+- **Genre Channels** — Browse content through genre-based channels.
+- **Trakt-Powered Schedules** — Trakt lists can populate schedules containing a mixture of movies and TV shows.
+- **Kodi Favorites Channel** — Content from your Kodi Favorites can populate its own channel.
+- **Seasonal Holiday Channels** — A seasonal channel can appear automatically during Halloween and Christmas periods, featuring relevant content.
+- **Offline TV Guide** — An offline guide is available in a usable but unfinished state.
+
+### TV Guide Development
+
+The TV Guide remains a major work in progress and needs substantial additional development. Some features and behaviors may change as development continues.
+
+## Supported Platforms
+
+The project has been developed and tested with the following platforms:
+
+- PC
+- Xbox
+- Android TV
+- Amazon Fire TV Stick
+
+Compatibility can vary depending on your device, Kodi version, installed dependencies, and available hardware resources. Not every feature is guaranteed to work identically across every platform.
+
+## Mouse Support
+
+Mouse support is **not officially supported**.
+
+I have made code adjustments to make mouse navigation more bearable, but there are limitations that cannot be fully addressed without changes to Kodi itself.
+
+For the intended experience, a compatible remote, controller, or other supported navigation method is recommended.
+
+## Requirements
+
+Before installing, make sure you have:
+
+- A working installation of Kodi compatible with the project's dependencies.
+- An internet connection for installation and initial configuration.
+- A Trakt account if you want to use Trakt-powered features.
+- A compatible Debrid service or torrent provider, configured according to your preferences and the add-on's supported options, if required for your chosen sources.
+
+Availability and compatibility depend on your device, Kodi version, and provider configuration.
+
+## Installation Guide
+
+The recommended installation method is to use the **The Pirate Streaming Skin ZIP** from the project's website. This package is intended to install the required components together.
+
+**Project website:** [https://ThePirateDylan.github.io/thepiratestreaming/](https://ThePirateDylan.github.io/thepiratestreaming/)
+
+### Step 1 — Download the ZIP
+
+1. Open the [The Pirate Streaming website](https://ThePirateDylan.github.io/thepiratestreaming/).
+2. Download the **The Pirate Streaming Skin ZIP** package.
+
+### Step 2 — Enable Unknown Sources
+
+1. Open Kodi.
+2. Navigate to **Settings**.
+3. Select **System**.
+4. Open **Add-ons**.
+5. Enable **Unknown sources**.
+6. Confirm the warning by selecting **Yes**.
+
+Kodi requires this setting to install ZIP packages that are not installed through its official repository system. Only install packages you trust.
+
+### Step 3 — Install the ZIP
+
+1. Return to Kodi's home screen.
+2. Open **Add-ons**.
+3. Select the **Add-on browser** (the open-box icon).
+4. Choose **Install from ZIP file**.
+5. Navigate to the downloaded ZIP.
+6. Select the **The Pirate Streaming Skin ZIP** package.
+7. Allow the installer to finish and follow any prompts.
+
+If Kodi asks whether you want to switch to or activate the included skin, select **Yes**.
+
+### Step 4 — Allow Setup to Finish
+
+Wait for the installation and any first-run setup tasks to complete. Depending on your device and internet connection, this may take some time.
+
+Avoid interrupting Kodi while components are installing or updating.
+
+### Step 5 — Configure Your Services
+
+Once the home screen has loaded, continue to [Initial Setup](#initial-setup).
+
+## Initial Setup
+
+After installation:
+
+1. Open the left sidebar from the home screen.
+2. Select **Settings**.
+3. Sign in to or authenticate your **Trakt** account if you want to use Trakt features.
+4. Configure your preferred supported Debrid or torrent provider, as applicable.
+5. Return to the home screen and explore the available sections and channels.
+
+Provider availability, authentication steps, and source behavior depend on the services you choose.
+
+**Remember:** Avoid changing the included skin's settings. It has been configured specifically for this project.
+
+## Troubleshooting
+
+### The skin did not activate
+
+- Check whether Kodi displayed a prompt to switch skins.
+- Allow the installation process to finish.
+- Restart Kodi and check whether the included skin is available.
+- Consult the project website for the current installation package and instructions.
+
+### Add-ons or dependencies are missing
+
+- Confirm that you installed the intended **The Pirate Streaming Skin ZIP**.
+- Make sure your Kodi version is compatible with the package.
+- Check Kodi's notifications and logs for installation errors.
+- Verify that your device has an internet connection.
+
+### Trakt lists or channels are empty
+
+- Confirm that you authenticated Trakt successfully.
+- Check that your selected Trakt lists contain content.
+- Allow time for content and schedules to populate.
+- Check whether the relevant feature is still under development.
+
+### Playback is not working
+
+- Check your provider configuration and authentication.
+- Verify that your selected source is supported by your device and Kodi version.
+- If using an external player, check its installation and configuration.
+
+### The skin looks broken after changing settings
+
+Restore the intended configuration if you know which settings were changed. If you are unsure how to restore it, avoid making further changes and consult the project's documentation or report the problem.
+
+For unresolved problems, include your device, Kodi version, the steps that caused the issue, and relevant Kodi log errors when reporting a bug.
+
+## Credits
+
+The Pirate Streaming builds on the work and resources of other developers and projects.
+
+- **peno64** — Help with repository URL casing.
+- **Goldenfreddy0703** — Inspiration for repository structure and layout.
+- **drinfernoo** — Example repository.
+- **TikiPeter** — Creator of FenLight.
+- **AnonyMouse** — Continued development of FenLightAM.
+- **BINGIE Mod team** — Original skin foundation.
+- **kittmaster** — Kodi Texture Tool.
+- **Team Kodi** — Android TV GUI sounds.
+
+Thank you to the developers and contributors whose work helped make this project possible.
+
+## Disclaimer
+
+The Pirate Streaming is an independent community project and is not affiliated with, endorsed by, or officially connected to Kodi, Team Kodi, the developers of FenLight or FenLightAM, or the BINGIE Mod team.
+
+All trademarks, software, and third-party assets remain the property of their respective owners. Credit is provided to acknowledge the original work.
+
+Users are responsible for how they configure and use Kodi, third-party add-ons, playback providers, and external services. Ensure that your use complies with applicable laws and the terms of the services you choose.
