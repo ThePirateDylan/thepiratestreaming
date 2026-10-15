@@ -1,4 +1,4 @@
-# 🏴‍☠️ The Pirate Streaming
+# The Pirate Streaming
 
 A fork of FenLightAM that brings external player support, restores API key functionality, adds quality-of-life improvements, and includes a customized BINGIE Mod skin designed specifically for this project.
 
@@ -8,7 +8,7 @@ This project brings the add-on, skin, and related configuration together in one 
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [About the Project](#about-the-project)
 - [Features](#features)
