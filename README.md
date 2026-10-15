@@ -37,6 +37,7 @@ The goal is to provide a unified Kodi experience with personalized home-screen l
 ## Features
 
 - **Restored API Key Functionality** — Restores API key functionality from the underlying add-on project where supported.
+-  **Prioritize Cloud-Search** - Searches your provider's cloud to auto-select a previously played media instead of scraping again.
 - **Automatic TV Ratings** — TV ratings are enabled by default and color-coded to better match the media presentation.
 - **Automatic Review Ratings** — Review ratings and their providers are enabled by default.
 - **Customized BINGIE Mod Skin** — A bundled skin tailored to The Pirate Streaming.
@@ -233,8 +234,9 @@ After installation:
 1. Open the left sidebar from the home screen.
 2. Select **Settings**.
 3. Sign in to or authenticate your **Trakt** account if you want to use Trakt features.
-4. Configure your preferred supported Debrid or torrent provider, as applicable.
-5. Return to the home screen and explore the available sections and channels.
+4. Configure your preferred supported **Debrid** or **Torrent** provider, as applicable. You may configure multiple.
+5. Configure your choice of **Scraper**.
+6. Return to the home screen and explore the available sections and channels.
 
 Provider availability, authentication steps, and source behavior depend on the services you choose.
 
