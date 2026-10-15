@@ -36,6 +36,7 @@ The goal is to provide a unified Kodi experience with personalized home-screen l
 
 ## Features
 
+- **External Player Support** — Support for using external video players.
 - **Restored API Key Functionality** — Restores API key functionality from the underlying add-on project where supported.
 - **Automatic TV Ratings** — TV ratings are enabled by default and color-coded to better match the media presentation.
 - **Automatic Review Ratings** — Review ratings and their providers are enabled by default.
@@ -47,12 +48,9 @@ The goal is to provide a unified Kodi experience with personalized home-screen l
 ## Development Status
 
 The Pirate Streaming is an ongoing project. Features, layouts, and compatibility may change as fixes and improvements are made.
-
 Some areas, especially the simulated Live TV experience and offline TV Guide, remain works in progress.
 
-The progress estimates above are intended to help track development, not to guarantee feature completeness or stability.
-
-Bug reports and useful feedback are welcome. Please provide enough information to reproduce the issue.
+The percentages below are estimates until verified. They do not guarantee that a feature is complete, stable, or fully tested.
 
 ### Core Add-on — 80%
 
@@ -114,8 +112,6 @@ Guide interface and schedule navigation.
 
 Compatibility testing across devices and setups.
 
-> **Note:** These values are for planning until verified. A percentage does not necessarily mean a feature is production-ready or fully tested.
-
 ## Important Skin Warning
 
 **Please do not change the skin settings unless you know exactly what you are doing.**
@@ -176,47 +172,56 @@ Availability and compatibility depend on your device, Kodi version, and provider
 
 ## Installation Guide
 
-The recommended installation method is to use the **The Pirate Streaming Skin ZIP** from the project's website. This package is intended to install the required components together.
+Install The Pirate Streaming directly through Kodi using the project's website as a source in Kodi's File Manager.
 
-**Project website:** [https://ThePirateDylan.github.io/thepiratestreaming/](https://ThePirateDylan.github.io/thepiratestreaming/)
+**Repository URL:**
 
-### Step 1 — Download the ZIP
+`https://ThePirateDylan.github.io/thepiratestreaming/`
 
-1. Open the [The Pirate Streaming website](https://ThePirateDylan.github.io/thepiratestreaming/).
-2. Download the **The Pirate Streaming Skin ZIP** package.
-
-### Step 2 — Enable Unknown Sources
+### Step 1 — Add the Source in Kodi
 
 1. Open Kodi.
 2. Navigate to **Settings**.
-3. Select **System**.
-4. Open **Add-ons**.
-5. Enable **Unknown sources**.
-6. Confirm the warning by selecting **Yes**.
+3. Select **File Manager**.
+4. Choose **Add source**.
+5. Select the field displaying `<None>`.
+6. Enter the following URL exactly:
 
-Kodi requires this setting to install ZIP packages that are not installed through its official repository system. Only install packages you trust.
+   `https://ThePirateDylan.github.io/thepiratestreaming/`
 
-### Step 3 — Install the ZIP
+7. Select **OK**.
+8. Enter `The Pirate Streaming` as the source name.
+9. Select **OK** to save the source.
+
+### Step 2 — Enable Unknown Sources
+
+1. Return to Kodi's **Settings**.
+2. Select **System**.
+3. Open **Add-ons**.
+4. Enable **Unknown sources**.
+5. Confirm the warning by selecting **Yes**.
+
+This allows Kodi to install ZIP packages from sources outside its official repository system. Only install packages you trust.
+
+### Step 3 — Install the Skin ZIP
 
 1. Return to Kodi's home screen.
 2. Open **Add-ons**.
-3. Select the **Add-on browser** (the open-box icon).
+3. Select the **Add-on Browser**.
 4. Choose **Install from ZIP file**.
-5. Navigate to the downloaded ZIP.
-6. Select the **The Pirate Streaming Skin ZIP** package.
-7. Allow the installer to finish and follow any prompts.
+5. Select the `The Pirate Streaming` source you added in Step 1.
+6. Locate and select the **The Pirate Streaming Skin ZIP**.
+7. Wait for the installation to complete and follow any prompts.
 
-If Kodi asks whether you want to switch to or activate the included skin, select **Yes**.
+If Kodi asks whether you want to switch to the included skin, select **Yes**.
 
 ### Step 4 — Allow Setup to Finish
 
-Wait for the installation and any first-run setup tasks to complete. Depending on your device and internet connection, this may take some time.
+Allow Kodi to finish installing and configuring the included components. Depending on your device and internet connection, this may take some time.
 
-Avoid interrupting Kodi while components are installing or updating.
+Do not interrupt the installation process.
 
-### Step 5 — Configure Your Services
-
-Once the home screen has loaded, continue to [Initial Setup](#initial-setup).
+Once the customized home screen loads, continue to [Initial Setup](#initial-setup).
 
 ## Initial Setup
 
@@ -234,6 +239,13 @@ Provider availability, authentication steps, and source behavior depend on the s
 
 ## Troubleshooting
 
+### The source cannot be opened
+
+- Check that you entered the repository URL correctly.
+- Verify that your device has an internet connection.
+- Confirm that the website is accessible.
+- If Kodi cannot browse the source, the website may need a Kodi-compatible directory listing or repository structure.
+
 ### The skin did not activate
 
 - Check whether Kodi displayed a prompt to switch skins.
@@ -243,7 +255,7 @@ Provider availability, authentication steps, and source behavior depend on the s
 
 ### Add-ons or dependencies are missing
 
-- Confirm that you installed the intended **The Pirate Streaming Skin ZIP**.
+- Confirm that you selected the intended **The Pirate Streaming Skin ZIP**.
 - Make sure your Kodi version is compatible with the package.
 - Check Kodi's notifications and logs for installation errors.
 - Verify that your device has an internet connection.
