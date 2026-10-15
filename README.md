@@ -209,8 +209,12 @@ This allows Kodi to install ZIP packages from sources outside its official repos
 3. Select the **Add-on Browser**.
 4. Choose **Install from ZIP file**.
 5. Select the `The Pirate Streaming` source you added in Step 1.
-6. Locate and select the **The Pirate Streaming Skin ZIP**.
-7. Wait for the installation to complete and follow any prompts.
+6. Locate and select the **The Pirate Repo**.
+7. Wait for the installation to complete.
+8. Choose **Install from Repositroy**.
+9. Select **The Pirate Repo**.
+10. Select **Look and Feel**.
+11. Select **The Pirate Skin** and install. Select `Yes` to install dependencies.
 
 If Kodi asks whether you want to switch to the included skin, select **Yes**.
 
