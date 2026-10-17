@@ -42,6 +42,7 @@ class Sources():
 	#	if not kodi_utils.external_playback_check(self.params): return #
 		self.play_type = params_get('play_type', '')
 		self.background = params_get('background', 'false') == 'true'
+		self.check_sources_only = params_get('check_sources_only', 'false') == 'true'
 		self.prescrape = params_get('prescrape', self.prescrape) == 'true'
 		self.random, self.random_continual = params_get('random', 'false') == 'true', params_get('random_continual', 'false') == 'true'
 		if 'external_cache_check' in self.params: self.external_cache_check = params_get('external_cache_check') == 'true'
@@ -51,7 +52,7 @@ class Sources():
 			elif self.play_type == 'random_continual': self.autoplay_nextep, self.autoscrape_nextep = False, False
 			else: self.autoplay_nextep, self.autoscrape_nextep = False, True
 		else: self.autoplay_nextep, self.autoscrape_nextep = settings.autoplay_next_episode(), settings.autoscrape_next_episode()
-		self.autoscrape = self.autoscrape_nextep and self.background		
+		self.autoscrape = self.autoscrape_nextep and self.background and not self.check_sources_only
 		self.ignore_scrape_filters = params_get('ignore_scrape_filters', 'false') == 'true'
 		self.nextep_settings, self.disable_autoplay_next_episode = params_get('nextep_settings', {}), params_get('disable_autoplay_next_episode', 'false') == 'true'
 		self.disabled_ext_ignored = params_get('disabled_ext_ignored', self.disabled_ext_ignored) == 'true'
@@ -113,11 +114,14 @@ class Sources():
 			self.prescrape = False
 			self.prepare_internal_scrapers()
 			if self.active_external: self.activate_external_providers()
-			elif not self.active_internal_scrapers: self._kill_progress_dialog()
+			elif not self.active_internal_scrapers and not self.check_sources_only: self._kill_progress_dialog()
 			self.orig_results = self.collect_results()
-			if not self.orig_results and not self.active_external: self._kill_progress_dialog()
+			if not self.orig_results and not self.active_external and not self.check_sources_only: self._kill_progress_dialog()
 			results = self.process_results(self.orig_results)
-		if not results: return self._process_post_results()
+		if not results:
+			if self.check_sources_only: return False
+			return self._process_post_results()
+		if self.check_sources_only: return True
 		if self.autoscrape: return results
 		else: return self.play_source(results)
 
@@ -302,7 +306,7 @@ class Sources():
 		if not self.external_providers: self.disable_external('No External Providers Enabled')
 
 	def disable_external(self, line1=''):
-		if line1: kodi_utils.notification(line1, 2000)
+		if line1 and not getattr(self, 'check_sources_only', False): kodi_utils.notification(line1, 2000)
 		try: self.active_internal_scrapers.remove('external')
 		except: pass
 		self.active_external, self.external_providers = False, []

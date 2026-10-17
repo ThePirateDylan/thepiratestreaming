@@ -24,7 +24,7 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.43">
+</addon><addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.44">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.pil" version="1.1.7" />
@@ -76,7 +76,7 @@
     <icon>tmdbhelper_icon.png</icon>
   </assets>
 </extension>
-</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.7" provider-name="ThePirateDylan">
+</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.8" provider-name="ThePirateDylan">
     <extension point="xbmc.addon.repository" name="The Pirate Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml</info>

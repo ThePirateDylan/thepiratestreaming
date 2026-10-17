@@ -121,7 +121,8 @@ def _rotate_programs_for_time(programs, start_time):
 def _program_record(result, media_type, fallback_icon):
 	if not isinstance(result, dict): return None
 	title = result.get('name') or result.get('title')
-	if not title: return None
+	tmdb_id = result.get('id')
+	if not title or not str(tmdb_id or '').isdigit(): return None
 	poster_path = result.get('poster_path') or ''
 	backdrop_path = result.get('backdrop_path') or ''
 	return {
@@ -130,8 +131,15 @@ def _program_record(result, media_type, fallback_icon):
 		'thumb': 'https://image.tmdb.org/t/p/w342%s' % poster_path if poster_path else fallback_icon,
 		'fanart': 'https://image.tmdb.org/t/p/w1280%s' % backdrop_path if backdrop_path else '',
 		'media_type': media_type,
-		'tmdb_id': result.get('id'),
+		'tmdb_id': str(tmdb_id),
 	}
+
+
+def _matches_channel_genre(result, genre_ids):
+	if not genre_ids: return True
+	expected = {item.strip() for item in str(genre_ids).split('|') if item.strip()}
+	actual = {str(item) for item in result.get('genre_ids', [])}
+	return bool(expected.intersection(actual))
 
 
 def _favorite_tvshow_id(favourite):
@@ -180,46 +188,127 @@ def _channel_programs(channel):
 		from apis import tmdb_api
 		show_data = tmdb_api.tmdb_tv_keyword_results_direct(channel['tv_keyword'], 1) if channel.get('tv_keyword') else None
 		movie_data = tmdb_api.tmdb_movie_keyword_results_direct(channel['movie_keyword'], 1) if channel.get('movie_keyword') else None
-		genre_show_data = tmdb_api.tmdb_tv_genres(channel.get('tv_genre'), 1) if channel.get('tv_genre') else None
-		genre_movie_data = tmdb_api.tmdb_movies_genres(channel.get('movie_genre'), 1) if channel.get('movie_genre') else None
-		shows = list((show_data or {}).get('results', []))
-		movies = list((movie_data or {}).get('results', []))
-		# The holiday keyword keeps the lineup seasonal; genre results provide a
-		# useful fallback if TMDb has no matching keyword feed for this media type.
-		for result in (genre_show_data or {}).get('results', []):
-			if result.get('id') not in {item.get('id') for item in shows}:
-				shows.append(result)
-		for result in (genre_movie_data or {}).get('results', []):
-			if result.get('id') not in {item.get('id') for item in movies}:
-				movies.append(result)
+		# Seasonal channels must stay seasonal; do not pad an empty holiday
+		# keyword feed with unrelated titles from a broad genre feed.
+		seasonal = bool(channel.get('season'))
+		genre_show_data = tmdb_api.tmdb_tv_genres(channel.get('tv_genre'), 1) if channel.get('tv_genre') and not seasonal else None
+		genre_movie_data = tmdb_api.tmdb_movies_genres(channel.get('movie_genre'), 1) if channel.get('movie_genre') and not seasonal else None
+		shows, movies = [], []
+		seen = set()
+		def append_programs(data, media_type, genre_ids=None, require_genre=False):
+			for result in (data or {}).get('results', []):
+				if not isinstance(result, dict): continue
+				if require_genre and not _matches_channel_genre(result, genre_ids): continue
+				program = _program_record(result, media_type, icon)
+				if not program: continue
+				key = (media_type, program['tmdb_id'])
+				if key in seen: continue
+				seen.add(key)
+				(shows if media_type == 'tvshow' else movies).append(program)
+		append_programs(show_data, 'tvshow')
+		append_programs(genre_show_data, 'tvshow', channel.get('tv_genre'), True)
+		append_programs(movie_data, 'movie')
+		append_programs(genre_movie_data, 'movie', channel.get('movie_genre'), True)
 		programs = []
 		for index in range(max(len(shows), len(movies))):
-			if index < len(shows):
-				program = _program_record(shows[index], 'tvshow', icon)
-				if program: programs.append(program)
-			if index < len(movies):
-				program = _program_record(movies[index], 'movie', icon)
-				if program: programs.append(program)
-		if programs: return programs[:3]
+			if index < len(shows): programs.append(shows[index])
+			if index < len(movies): programs.append(movies[index])
+		if programs: return programs[:6]
 	except Exception:
 		pass
 	return []
 
 
-def _channel_item(handle, channel, start_time, fanart):
+def _source_check_cache_key(program):
+	from modules import settings
+	media_type = 'episode' if program.get('media_type') == 'tvshow' else 'movie'
+	providers = '-'.join(settings.active_internal_scrapers())
+	autoplay = media_type == 'episode' or settings.auto_play('movie')
+	quality_type = 'autoplay' if autoplay else 'results'
+	quality = ','.join(settings.quality_filter('%s_quality_%s' % (quality_type, media_type)))
+	return 'tvguide_source_v1_%s_%s_%s_%s' % (media_type, program['tmdb_id'], providers, quality)
+
+
+def _check_program_source(program, channel, progress_state):
+	"""Check and cache a playable source; for series, cache the exact episode tested."""
+	if program.get('media_type') not in ('tvshow', 'movie') or not str(program.get('tmdb_id', '')).isdigit():
+		return False
+	try:
+		progress_state['checked'] = progress_state.get('checked', 0) + 1
+		def update_progress():
+			progress = progress_state.get('dialog')
+			if not progress: return
+			percent = min(99, int(100.0 * progress_state['checked'] / max(progress_state.get('total', 1), 1)))
+			try: progress.update(percent, 'Preparing TV Guide', '%s: %s' % (channel['name'], program['title']))
+			except Exception: pass
+		from caches.main_cache import main_cache
+		from modules import settings
+		cache_key = _source_check_cache_key(program)
+		cached = main_cache.get(cache_key)
+		if isinstance(cached, dict) and 'available' in cached:
+			if cached.get('available'):
+				program['_guide_season'] = cached.get('season')
+				program['_guide_episode'] = cached.get('episode')
+			update_progress()
+			return bool(cached.get('available'))
+		progress_state['probed'] = progress_state.get('probed', 0) + 1
+		if progress_state.get('dialog') is None:
+			try:
+				progress_state['dialog'] = kodi_utils.kodi_progress_background()
+				progress_state['dialog'].create('Preparing TV Guide', 'Checking which programs have playable sources...')
+			except Exception:
+				progress_state['dialog'] = None
+		update_progress()
+		tmdb_id = str(program['tmdb_id'])
+		from modules import metadata
+		from modules.utils import get_datetime
+		season = episode = None
+		if program['media_type'] == 'movie':
+			meta = metadata.movie_meta('tmdb_id', tmdb_id, settings.tmdb_api_key(), settings.mpaa_region(), get_datetime())
+			params = {'media_type': 'movie', 'tmdb_id': tmdb_id}
+			playback_key = settings.playback_key()
+			params[playback_key] = playback_key
+		else:
+			meta = metadata.tvshow_meta('tmdb_id', tmdb_id, settings.tmdb_api_key(), settings.mpaa_region(), get_datetime())
+			if not meta or meta.get('blank_entry'):
+				return False
+			from modules.episode_tools import EpisodeTools
+			episode_params = EpisodeTools(meta).get_random_episode()
+			if not isinstance(episode_params, dict):
+				return False
+			season, episode = episode_params.get('season'), episode_params.get('episode')
+			if not str(season or '').isdigit() or not str(episode or '').isdigit():
+				return False
+			params = dict(episode_params)
+			params.update({'media_type': 'episode', 'tmdb_id': tmdb_id, 'autoplay': 'true'})
+		if not meta or meta.get('blank_entry'):
+			return False
+		params.update({'background': 'true', 'check_sources_only': 'true'})
+		from modules.sources import Sources
+		available = bool(Sources().playback_prep(params))
+		result = {'available': available}
+		if available and season is not None and episode is not None:
+			result.update({'season': int(season), 'episode': int(episode)})
+			program['_guide_season'], program['_guide_episode'] = int(season), int(episode)
+		# Positive checks stay warm through the next few guide hours. Negative
+		# checks expire sooner so a new source can appear without waiting long.
+		main_cache.set(cache_key, result, expiration=6 if available else 1)
+		return available
+	except Exception:
+		return False
+
+
+def _channel_item(handle, channel, start_time, fanart, progress_state):
+	candidates = _channel_programs(channel)
+	if not candidates: return
+	programs, probes_before = [], progress_state.get('probed', 0)
+	for program in candidates:
+		if _check_program_source(program, channel, progress_state):
+			programs.append(program)
+		if len(programs) >= 3 or progress_state.get('probed', 0) - probes_before >= 4: break
+	if not programs: return
 	item = kodi_utils.make_listitem()
-	programs = _channel_programs(channel)
 	icon = kodi_utils.get_icon(channel['icon'])
-	if not programs:
-		programs = [{
-			'title': title,
-			'plot': channel['description'],
-			'thumb': icon,
-			'fanart': '',
-			'media_type': 'video',
-		} for title in channel['slots']]
-	while len(programs) < 3:
-		programs.append(programs[-1])
 	programs = _rotate_programs_for_time(programs, start_time)
 	current_program = programs[0]
 	# Keep channel labels separate from the show's title in VideoInfoTag. Kodi
@@ -268,8 +357,11 @@ def _channel_item(handle, channel, start_time, fanart):
 		item.setProperty('IsPlayable', 'true')
 		item.setProperty('tmdb_id', str(tmdb_id))
 		info.setUniqueIDs({'tmdb': str(tmdb_id)})
-	url = kodi_utils.build_url({'mode': 'tvguide.play_channel', 'channel': channel['id'], 'tmdb_id': tmdb_id or '',
-								'media_type': current_program.get('media_type', '')})
+	url_params = {'mode': 'tvguide.play_channel', 'channel': channel['id'], 'tmdb_id': tmdb_id or '',
+				  'media_type': current_program.get('media_type', '')}
+	if current_program.get('media_type') == 'tvshow':
+		url_params.update({'season': current_program.get('_guide_season', ''), 'episode': current_program.get('_guide_episode', '')})
+	url = kodi_utils.build_url(url_params)
 	kodi_utils.add_item(handle, url, item, False)
 
 
@@ -281,11 +373,21 @@ def main(params=None):
 	# A previously-selected sort mode can otherwise reorder the schedule using
 	# the program titles. The guide is a fixed numbered channel lineup.
 	kodi_utils.set_sort_method(handle, 'none')
-	for channel in channels:
-		_channel_item(handle, channel, start_time, fanart)
-	kodi_utils.set_content(handle, 'files')
-	kodi_utils.set_category(handle, 'TV Guide')
-	kodi_utils.end_directory(handle, cacheToDisc=False)
+	progress_state = {'dialog': None, 'checked': 0, 'probed': 0, 'total': max(len(channels) * 4, 1)}
+	try:
+		for channel in channels:
+			try: _channel_item(handle, channel, start_time, fanart, progress_state)
+			except Exception: continue
+		kodi_utils.set_content(handle, 'files')
+		kodi_utils.set_category(handle, 'TV Guide')
+		kodi_utils.end_directory(handle, cacheToDisc=False)
+	finally:
+		progress = progress_state.get('dialog')
+		if progress:
+			try:
+				progress.update(100, 'TV Guide ready', 'Playable channel lineups are cached.')
+				progress.close()
+			except Exception: pass
 	if kodi_utils.current_skin() == 'skin.pirate':
 		from threading import Thread
 		Thread(target=_set_guide_view, daemon=True).start()
@@ -376,6 +478,12 @@ def play_channel(params):
 		meta = metadata.tvshow_meta('tmdb_id', tmdb_id, settings.tmdb_api_key(), settings.mpaa_region(), get_datetime())
 		if not meta or meta.get('blank_entry'):
 			return kodi_utils.notification('Could not load the selected series.', 4000)
+		season, episode = params.get('season'), params.get('episode')
+		if str(season or '').isdigit() and str(episode or '').isdigit():
+			from modules.sources import Sources
+			playback_key = settings.playback_key()
+			return Sources().playback_prep({'media_type': 'episode', 'tmdb_id': str(tmdb_id), 'season': int(season),
+											'episode': int(episode), 'autoplay': 'true', playback_key: playback_key})
 		return EpisodeTools(meta).play_random()
 	except Exception:
 		message = 'Could not play the selected movie.' if media_type == 'movie' else 'Could not play a random episode from this series.'
