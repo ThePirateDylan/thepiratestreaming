@@ -58,15 +58,15 @@ The percentages below are estimates until verified. They do not guarantee that a
 
 Main add-on functionality and integration.
 
-### External Players — 60%
+### External Players — 80%
 
-`[██████░░░░] 60%`
+`[████████░░] 80%`
 
 External player configuration and playback.
 
-### API Keys — 70%
+### API Keys — 100%
 
-`[███████░░░] 70%`
+`[██████████] 100%`
 
 Restored keys and related service functionality.
 
