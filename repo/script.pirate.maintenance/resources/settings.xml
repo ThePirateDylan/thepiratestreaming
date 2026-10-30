@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings version="1">
+    <section id="script.pirate.maintenance">
+        <category id="maintenance" label="32000" help="">
+            <group id="1">
+                <setting id="run_clean_now" type="action" label="32001" help="32002">
+                    <level>0</level>
+                    <data>RunScript(script.pirate.maintenance,action=cleanup)</data>
+                    <constraints>
+                        <allowempty>true</allowempty>
+                    </constraints>
+                    <control type="button" format="action"/>
+                </setting>
+                <setting id="startup_cleanup" type="boolean" label="32003" help="32004">
+                    <level>0</level>
+                    <default>true</default>
+                    <control type="toggle"/>
+                </setting>
+                <setting id="startup_clear_artwork" type="boolean" label="32005" help="32006">
+                    <level>0</level>
+                    <default>true</default>
+                    <control type="toggle"/>
+                </setting>
+                <setting id="startup_defaults_migrated" type="boolean" label="32027" help="32028">
+                    <level>0</level>
+                    <default>false</default>
+                    <visible>false</visible>
+                    <control type="toggle"/>
+                </setting>
+            </group>
+        </category>
+    </section>
+</settings>

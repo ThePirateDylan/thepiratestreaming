@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Pirate Maintenance\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#32000"
+msgid "Maintenance"
+msgstr "Maintenance"
+
+msgctxt "#32001"
+msgid "Clean now"
+msgstr "Clean now"
+
+msgctxt "#32002"
+msgid "Removes Kodi temporary files, old add-on installer packages, and cached artwork."
+msgstr "Removes Kodi temporary files, old add-on installer packages, and cached artwork."
+
+msgctxt "#32003"
+msgid "Automatically clean cache, packages, and thumbnails at startup"
+msgstr "Automatically clean cache, packages, and thumbnails at startup"
+
+msgctxt "#32004"
+msgid "Waits for Kodi startup to settle and for playback, busy dialogs, and TV Guide preparation to finish. Enabled by default."
+msgstr "Waits for Kodi startup to settle and for playback, busy dialogs, and TV Guide preparation to finish. Enabled by default."
+
+msgctxt "#32005"
+msgid "Also clear cached thumbnails at startup"
+msgstr "Also clear cached thumbnails at startup"
+
+msgctxt "#32006"
+msgid "Thumbnails will be downloaded again as you browse and may refill storage. This only runs when automatic cleanup is enabled."
+msgstr "Thumbnails will be downloaded again as you browse and may refill storage. This only runs when automatic cleanup is enabled."
+
+msgctxt "#32010"
+msgid "The Pirate Maintenance"
+msgstr "The Pirate Maintenance"
+
+msgctxt "#32011"
+msgid "Clean cache, packages, and artwork?"
+msgstr "Clean cache, packages, and artwork?"
+
+msgctxt "#32012"
+msgid "This removes temporary files, old add-on installer ZIPs, and cached artwork. Kodi will recreate or download artwork as needed."
+msgstr "This removes temporary files, old add-on installer ZIPs, and cached artwork. Kodi will recreate or download artwork as needed."
+
+msgctxt "#32013"
+msgid "Kodi is playing media or processing an add-on task. Try again when Kodi is idle."
+msgstr "Kodi is playing media or processing an add-on task. Try again when Kodi is idle."
+
+msgctxt "#32014"
+msgid "Cleanup complete"
+msgstr "Cleanup complete"
+
+msgctxt "#32015"
+msgid "Cleanup canceled. Some items may already have been removed."
+msgstr "Cleanup canceled. Some items may already have been removed."
+
+msgctxt "#32016"
+msgid "Cleanup could not remove every item."
+msgstr "Cleanup could not remove every item."
+
+msgctxt "#32017"
+msgid "Temporary files removed"
+msgstr "Temporary files removed"
+
+msgctxt "#32018"
+msgid "Old packages removed"
+msgstr "Old packages removed"
+
+msgctxt "#32019"
+msgid "Artwork entries removed"
+msgstr "Artwork entries removed"
+
+msgctxt "#32020"
+msgid "Items skipped or failed"
+msgstr "Items skipped or failed"
+
+msgctxt "#32021"
+msgid "Cleaning Kodi temporary files"
+msgstr "Cleaning Kodi temporary files"
+
+msgctxt "#32022"
+msgid "Removing old add-on packages"
+msgstr "Removing old add-on packages"
+
+msgctxt "#32023"
+msgid "Clearing Kodi artwork cache"
+msgstr "Clearing Kodi artwork cache"
+
+msgctxt "#32024"
+msgid "Preparing cleanup"
+msgstr "Preparing cleanup"
+
+msgctxt "#32025"
+msgid "Automatic startup cleanup"
+msgstr "Automatic startup cleanup"
+
+msgctxt "#32026"
+msgid "Kodi did not become idle, so automatic cleanup was skipped."
+msgstr "Kodi did not become idle, so automatic cleanup was skipped."
+
+msgctxt "#32027"
+msgid "Startup defaults migration"
+msgstr "Startup defaults migration"
+
+msgctxt "#32028"
+msgid "Internal migration marker; not shown in settings."
+msgstr "Internal migration marker; not shown in settings."
+
+msgctxt "#32029"
+msgid "Cancel"
+msgstr "Cancel"
+
+msgctxt "#32030"
+msgid "Removed %d temporary files, %d old packages, and %d artwork entries; freed %s."
+msgstr "Removed %d temporary files, %d old packages, and %d artwork entries; freed %s."
+
+msgctxt "#32031"
+msgid "Cleanup finished with issues"
+msgstr "Cleanup finished with issues"
+
+msgctxt "#32032"
+msgid "Some items could not be removed. See the Kodi log for details."
+msgstr "Some items could not be removed. See the Kodi log for details."
