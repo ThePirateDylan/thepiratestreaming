@@ -12,7 +12,7 @@
 				<animation effect="fade" end="100" time="200">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<include>FullscreenDimensions</include>
-				<texture background="true" colordiffuse="cc091420">colors/color_white.png</texture>
+				<texture background="true" colordiffuse="cc111315">colors/color_white.png</texture>
 			</control>
 			<control type="scrollbar" id="3000">
 				<include>HiddenObject</include>
@@ -26,18 +26,12 @@
 				<orientation>vertical</orientation>
 				<itemgap>25</itemgap>
 				<align>center</align>
-				<!-- logo -->
-				<control type="group">
-					<width>300</width>
-					<height>180</height>
-					<control type="image">
-						<left>290</left>
-						<align>left</align>
-						<width>100%</width>
-						<height>100%</height>
-						<aspectratio align="center">keep</aspectratio>
-						<texture background="true">bingie_logo.png</texture>
-					</control>
+				<!-- Pirate Streaming wordmark -->
+				<control type="group"><width>500</width><height>180</height>
+					<control type="label"><left>181</left><top>10</top><width>130</width><height>34</height><font>Bold24</font><textcolor>ffd7d9dc</textcolor><shadowcolor>cc000000</shadowcolor><align>left</align><aligny>center</aligny><label>The</label></control>
+					<control type="label"><left>144</left><top>25</top><width>390</width><height>75</height><font>Bold75</font><textcolor>ffff7417</textcolor><shadowcolor>e6000000</shadowcolor><align>left</align><aligny>center</aligny><label>Pirate</label></control>
+					<control type="label"><left>163</left><top>99</top><width>380</width><height>50</height><font>Bold38</font><textcolor>ffe5e7e9</textcolor><shadowcolor>cc000000</shadowcolor><align>left</align><aligny>center</aligny><label>Streaming</label></control>
+					<control type="image"><left>164</left><top>152</top><width>245</width><height>4</height><texture colordiffuse="ff78c92b">colors/color_white.png</texture></control>
 				</control>
 				<!-- message -->
 				<control id="5" type="textbox">
@@ -66,8 +60,8 @@
 						<height>54</height>
 						<font>Reg24</font>
 						<textcolor>a6ffffff</textcolor>
-						<focusedcolor>ff091420</focusedcolor>
-						<selectedcolor>ff091420</selectedcolor>
+						<focusedcolor>ff111315</focusedcolor>
+						<selectedcolor>ff111315</selectedcolor>
 						<textoffsetx>20</textoffsetx>
 						<aligny>center</aligny>
 						<align>center</align>
@@ -87,8 +81,8 @@
 						<height>54</height>
 						<font>Reg24</font>
 						<textcolor>a6ffffff</textcolor>
-						<focusedcolor>ff091420</focusedcolor>
-						<selectedcolor>ff091420</selectedcolor>
+						<focusedcolor>ff111315</focusedcolor>
+						<selectedcolor>ff111315</selectedcolor>
 						<textoffsetx>20</textoffsetx>
 						<aligny>center</aligny>
 						<align>center</align>
@@ -111,12 +105,12 @@
 					<control type="image">
 						<width>100%</width>
 						<height>100%</height>
-						<texture colordiffuse="ff16263a" border="2">colors/color_white.png</texture>
+						<texture colordiffuse="ff25292e" border="2">colors/color_white.png</texture>
 					</control>
 					<control type="image">
 						<width>50%</width>
 						<height>100%</height>
-						<texture colordiffuse="ffd4af37" border="4">diffuse/panel2.png</texture>
+						<texture colordiffuse="ffff7417" border="4">diffuse/panel2.png</texture>
 						<animation effect="zoom" end="200,100" easing="in" tween="cubic" time="600" condition="!String.IsEmpty(Window(Home).Property(finishBingieStartup2))">Conditional</animation>
 					</control>
 				</control>

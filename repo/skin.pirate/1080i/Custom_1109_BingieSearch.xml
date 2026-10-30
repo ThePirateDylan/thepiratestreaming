@@ -8,7 +8,7 @@
 	<onunload condition="!String.IsEmpty(Window(Home).Property(BaseWindow)) + String.IsEmpty(Window(Home).Property(ListItem.TVShowID)) + !Player.HasVideo">AlarmClock(loadinfo,Action(Info),00:00,silent)</onunload>
 	<onunload condition="!ControlGroup(77777).HasFocus()">SetFocus(101)</onunload>
 	<onunload>ClearProperty(KeepSuggestions)</onunload>
-    <backgroundcolor>cc091420</backgroundcolor>
+    <backgroundcolor>ff111315</backgroundcolor>
     <include>CustomBingieWinProps</include>
     <onload condition="String.IsEmpty(Skin.String(CustomSearchTerm))">SetProperty(CustomSearch,1,home)</onload>
 	<onload condition="String.IsEmpty(Window.Property(SearchPosterAnimation))">SetProperty(SearchPosterAnimation,1)</onload>
@@ -125,13 +125,13 @@
             <include>SearchSuggestionsAnim</include>
             <visible>!$EXP[IsActualKeyboardActive]</visible>
             <top>710</top>
-            <left>135</left>
+            <left>360</left>
             <width>595</width>
             <height>42</height>
             <control type="image">
                 <width>280</width>
                 <height>42</height>
-                <texture border="20" colordiffuse="cc9a6a2e">dialogs/keyboard/key-nf.png</texture>
+                <texture border="20" colordiffuse="ffff7417">dialogs/keyboard/key-nf.png</texture>
             </control>
             <control type="label">
                 <left>22</left>
@@ -169,7 +169,7 @@
 
         <!--- ########## Right Layout ########## -->
         <control type="group" id="9900">
-            <left>135</left>
+            <left>360</left>
             <top>105</top>
             <height>70</height>
             <width>620</width>
@@ -195,7 +195,7 @@
                 <font>Reg28</font>
                 <align>left</align>
                 <aligny>center</aligny>
-                <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                <textcolor>ffffffff</textcolor>
                 <label>Start typing...</label>
             </control>
 			<control type="multiimage">
@@ -234,7 +234,7 @@
                 <font>Reg28</font>
                 <align>left</align>
                 <aligny>center</aligny>
-                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                <textcolor>ffffffff</textcolor>
                 <label>$VAR[SearchString]</label>
 				<animation effect="slide" end="50" time="0" condition="[Container(5041).IsUpdating | Container(5042).IsUpdating | Container(5043).IsUpdating | Container(5044).IsUpdating | Container(5045).IsUpdating | Container(5046).IsUpdating | Container(5047).IsUpdating | Container(5048).IsUpdating | 
 				Container(5049).IsUpdating | Container(5050).IsUpdating | Container(5051).IsUpdating | Container(5052).IsUpdating | Container(5053).IsUpdating | Container(5054).IsUpdating | Container(5055).IsUpdating | Container(5056).IsUpdating | Container(5057).IsUpdating | Container(5058).IsUpdating | Container(5059).IsUpdating | Container(5060).IsUpdating] + !String.IsEmpty(Skin.String(CustomSearchTerm)) | !String.IsEmpty(Window.Property(SearchPosterAnimation)) + [Container(500).IsUpdating + Control.IsVisible(500)]">Conditional</animation>
@@ -287,7 +287,7 @@
 		<!-- Results -->
 		<control type="grouplist" id="77777">
             <top>145</top>
-            <left>785</left>
+            <left>930</left>
 			<include>Fixed_Focus_Bottom</include>
             <itemgap>1</itemgap>
             <orientation>vertical</orientation>

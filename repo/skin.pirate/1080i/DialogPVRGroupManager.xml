@@ -126,7 +126,7 @@
                                     <posy>0</posy>
                                     <width>400</width>
                                     <height>60</height>
-                                    <texture border="10">diffuse/panel.png</texture><colordiffuse>ffd4af37</colordiffuse>
+                                    <texture border="10">diffuse/panel.png</texture><colordiffuse>ffff7417</colordiffuse>
                                 </control>
                                 <control type="label">
                                     <posx>20</posx>
@@ -269,7 +269,7 @@
                                     <posy>0</posy>
                                     <width>400</width>
                                     <height>60</height>
-                                    <texture border="10">diffuse/panel.png</texture><colordiffuse>ffd4af37</colordiffuse>
+                                    <texture border="10">diffuse/panel.png</texture><colordiffuse>ffff7417</colordiffuse>
                                 </control>
                                 <control type="label">
                                     <posx>70</posx>
@@ -419,7 +419,7 @@
                                     <posy>0</posy>
                                     <width>400</width>
                                     <height>60</height>
-                                    <texture border="10">diffuse/panel.png</texture><colordiffuse>ffd4af37</colordiffuse>
+                                    <texture border="10">diffuse/panel.png</texture><colordiffuse>ffff7417</colordiffuse>
                                 </control>
                                 <control type="label">
                                     <posx>70</posx>

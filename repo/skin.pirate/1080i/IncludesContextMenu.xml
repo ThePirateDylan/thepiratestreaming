@@ -26,7 +26,7 @@
 			<width>520</width>
 			<height>1080</height>
 			<texture border="5">diffuse/panel2.png</texture>
-			<colordiffuse>cc091420</colordiffuse>
+			<colordiffuse>cc111315</colordiffuse>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<!-- header -->
@@ -96,7 +96,7 @@
                 <left>0</left>
                 <width>500</width>
                 <height>100%</height>
-                <colordiffuse>cc091420</colordiffuse>
+                <colordiffuse>cc111315</colordiffuse>
                 <aspectratio>stretch</aspectratio>
                 <texture background="true">diffuse/panel2.png</texture>
             </control>
@@ -769,7 +769,7 @@
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
 					<include>SideBladeMenuButton</include>
-					<alttexturefocus border="10" colordiffuse="ffd4af37">diffuse/panel.png</alttexturefocus>
+					<alttexturefocus border="10" colordiffuse="ffff7417">diffuse/panel.png</alttexturefocus>
 					<alttexturenofocus/>
 					<label>$LOCALIZE[21431]</label>
 					<altlabel>$LOCALIZE[21430]</altlabel>
@@ -824,7 +824,7 @@
 		<disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
 		<invalidcolor>FFFF0000</invalidcolor>
 		<pulseonselect>false</pulseonselect>
-		<texturefocus colordiffuse="ffd4af37" border="10">diffuse/panel.png</texturefocus>
+		<texturefocus colordiffuse="ffff7417" border="10">diffuse/panel.png</texturefocus>
         <texturenofocus/>
     </include>
 

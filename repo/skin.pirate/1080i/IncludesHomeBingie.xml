@@ -66,7 +66,7 @@
                 <control type="image">
                     <visible>!$EXP[IsPlayingRecognizedContent]</visible>
                     <include>FullscreenDimensions</include>
-                    <texture background="true" colordiffuse="cc091420">colors/color_white.png</texture>
+                    <texture background="true" colordiffuse="cc111315">colors/color_white.png</texture>
                     <animation effect="fade" start="100" end="90" delay="0" time="400">Visible</animation>
                     <animation effect="fade" start="90" end="0" delay="0" time="1200">Hidden</animation>
                 </control>
@@ -103,7 +103,7 @@
 					<height>625</height>
 					<width>900</width>
 					<align>right</align>
-                    <include>BingieLeftDefs</include>
+                    <include>BingieHomeLeftDefs</include>
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>15</itemgap> 
@@ -154,7 +154,7 @@
                         </animation>
                         <top>-185</top>
                         <height>195</height>
-                        <width max="800">auto</width>
+                        <width max="700">auto</width>
                         <align>left</align>
 						<aligny>center</aligny>
                         <font>title2</font>
@@ -183,7 +183,8 @@
 						<height>50</height>
 						<width>50</width>
 						<aspectratio>keep</aspectratio>
-						<texture>bingie/top250.png</texture>
+						<colordiffuse>ffffffff</colordiffuse>
+                        <texture>bingie/top250white.png</texture>
 					</control>
 					<!-- Home Spotlight Top250 White Icon -->
 					<control type="image">
@@ -194,14 +195,14 @@
 						<height>50</height>
 						<width>50</width>
 						<aspectratio>keep</aspectratio>
-						<colordiffuse>$INFO[Skin.String(BingieTop250IconColor)]</colordiffuse>
+						<colordiffuse>ffffffff</colordiffuse>
 						<texture>bingie/top250white.png</texture>
 					</control>
 					<!-- Home Spotlight on IMDB Today Text -->
 					<control type="label" id="823100">
 						<visible>!String.IsEmpty(Control.GetLabel(823100))</visible>
 						<font>bold29</font> 
-						<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> 
+						<textcolor>ffff7417</textcolor> 
 						<label>$VAR[IMDBTop250SubLabel,#, $LOCALIZE[31311]]</label>
 						<include>Default_Visible_Fade</include>
 					</control>
@@ -236,18 +237,14 @@
                     <control type="textbox">
 						<visible>!$EXP[IsMainMenuOpened]</visible>
 						<visible>!$EXP[IsMusicDBType]</visible>
-                     	<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMainMenuOpened]" reversible="false">
-                        <effect type="Fade" start="100" end="0" time="100" delay="6200" />
-                        <effect type="slide" start="0,0" end="0,75" tween="sine" easing="in" time="400" delay="6000" />
-                        </animation>
-						<include>Default_Visible_Fade</include>
-                        <bottom></bottom>
-						<height min="0" max="119">119</height>
-                        <width max="690">auto</width>
+                        <include>Default_Visible_Fade</include>
+                        <height min="0" max="240">240</height>
+                        <width max="700">auto</width>
                         <align>left</align>
-                        <font>Plots</font>
-                        <textcolor>$INFO[Skin.String(BingieSpotlightPlotTextColor)]</textcolor> 
+                        <font>Reg18</font>
+                        <textcolor>$INFO[Skin.String(BingieSpotlightPlotTextColor)]</textcolor>
                         <label>$VAR[BingiePlot]</label>
+                        <autoscroll delay="6000" time="3000" repeat="9000">true</autoscroll>
 					</control>
 					<!-- Plot - Music Spotlight -->
 					<control type="textbox">
@@ -259,10 +256,10 @@
                         </animation>
 						<include>Default_Visible_Fade</include>
                         <bottom></bottom>
-						<height min="0" max="119">119</height>
-                        <width max="690">auto</width>
+						<height min="0" max="160">160</height>
+                        <width max="820">auto</width>
                         <align>left</align>
-                        <font>Plots</font>
+                        <font>Reg24</font>
                         <textcolor>$INFO[Skin.String(BingieSpotlightPlotTextColor)]</textcolor> 
                         <label>$VAR[BingiePlot]</label>
 					</control>
@@ -468,8 +465,8 @@
                     <visible>!$EXP[IsCurrentWidgetSpotlight]</visible>
                     <animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
                     <include>WidgetsDisplaySpotlightTransition</include>
-                    <width>1500</width>
-                    <include>BingieLeftDefs</include>
+                    <width>1400</width>
+                    <include>BingieHomeLeftDefs</include>
                     <top>10</top>  
                     <height>600</height>
                     <orientation>vertical</orientation>
@@ -627,7 +624,7 @@
                                 <height>8</height>
                                 <texturebg colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="0">diffuse/panel2.png</texturebg>
                                 <lefttexture/>
-                                <midtexture colordiffuse="ffd4af37" border="4">diffuse/panel2.png</midtexture>
+                                <midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
                                 <righttexture/>
                                 <info>ListItem.PercentPlayed</info>
                             </control>
@@ -673,7 +670,8 @@
 								<height>50</height>
 								<width>50</width>
 								<aspectratio>keep</aspectratio>
-								<texture>bingie/top250.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<texture>bingie/top250white.png</texture>
 						</control>
 						<!-- Spotlight Details Row Top250 White Icon -->
 						<control type="image">
@@ -684,7 +682,7 @@
 								<height>50</height>
 								<width>50</width>
 								<aspectratio>keep</aspectratio>
-								<colordiffuse>$INFO[Skin.String(BingieTop250IconColor)]</colordiffuse>
+								<colordiffuse>ffffffff</colordiffuse>
 								<texture>bingie/top250white.png</texture>
 						</control>
 						<!-- Spotlight Text Label Top250 -->	
@@ -716,12 +714,13 @@
                         <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>
 						<visible>!String.IsEqual(ListItem.DBTYPE,song)</visible>
                         <include>Default_Visible_Fade</include>
-						<height min="30" max="121">auto</height>
-                        <width max="820">auto</width>
+                        <height>180</height>
+                        <width>700</width>
                         <align>left</align>
-                        <font>Plots</font>
+                        <font>Reg18</font>
 						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
                         <label>$VAR[BingiePlot]</label>
+                        <autoscroll delay="5000" time="3000" repeat="8000">true</autoscroll>
                     </control>
 
                     <!-- Additional Info -->
@@ -786,33 +785,37 @@
                 <include>Bingie_Left_Gradient</include>
 			</control>
 	
-			<!--Bingie Logo Diffuse-->
-			<control type="image">
-				<visible>!Skin.HasSetting(DisableBingieLogo) + [Window.IsActive(Home) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1120) | Window.IsActive(1114)]</visible> 
-				<description>diffuse behind Bingie logo</description>
-				<animation effect="slide" end="-66" time="0" condition="Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1114)">Conditional</animation>
-				<right>470</right>
-				<bottom>0</bottom>
-				<width>0</width>
-				<height>223</height>
-				<align>right</align>
-				<aspectratio align="right">keep</aspectratio>
-				<colordiffuse>80091420</colordiffuse>
-                <texture background="true">home/bingie_diffuse.png</texture>
-			</control>
-			<!--Bingie Logo-->
-			<control type="image">
-				<visible>!Skin.HasSetting(DisableBingieLogo) + !Window.IsActive(1110) + !Window.IsActive(1111) + !Window.IsActive(1114) + !Window.IsActive(1120)</visible>
-				<description>Bingie logo</description>
-				<right>314</right>
-				<bottom>5</bottom>
-				<width>0</width>
-				<height>165</height>
-				<align>right</align>
-				<aspectratio align="right">keep</aspectratio>
-				<texture>home/bingie_logo.png</texture>
-			</control>
+			<!-- Silver sidebar rail and straight Y2K divider stripes. -->
+            <control type="group">
+                <visible>!Player.HasVideo</visible>
+                <control type="image">
+                    <left>0</left><top>0</top><width>340</width><height>100%</height>
+                    <texture colordiffuse="ff50565c">colors/color_white.png</texture>
+                </control>
+                <control type="image">
+                    <left>340</left><top>0</top><width>7</width><height>100%</height>
+                    <texture colordiffuse="ff73c82a">colors/color_white.png</texture>
+                </control>
+                <control type="image">
+                    <left>347</left><top>0</top><width>8</width><height>100%</height>
+                    <texture colordiffuse="ffff7417">colors/color_white.png</texture>
+                </control>
+                <control type="image">
+                    <left>355</left><top>0</top><width>5</width><height>100%</height>
+                    <texture colordiffuse="ffd7dadd">colors/color_white.png</texture>
+                </control>
+            </control>
 
+            <!-- The Pirate Streaming wordmark -->
+			<control type="group">
+				<visible>!Skin.HasSetting(DisableBingieLogo) + !Window.IsActive(1110) + !Window.IsActive(1111) + !Window.IsActive(1114) + !Window.IsActive(1120)</visible>
+				<description>The Pirate Streaming brand wordmark</description>
+				<left>30</left><top>22</top><width>300</width><height>128</height>
+				<control type="label"><left>13</left><top>0</top><width>110</width><height>31</height><font>Bold24</font><textcolor>ffd7d9dc</textcolor><shadowcolor>cc000000</shadowcolor><align>left</align><aligny>center</aligny><label>The</label></control>
+				<control type="label"><left>0</left><top>19</top><width>300</width><height>62</height><font>Bold56</font><textcolor>ffff7417</textcolor><shadowcolor>e6000000</shadowcolor><align>left</align><aligny>center</aligny><label>Pirate</label></control>
+				<control type="label"><left>12</left><top>74</top><width>280</width><height>38</height><font>Bold28</font><textcolor>ffe5e7e9</textcolor><shadowcolor>cc000000</shadowcolor><align>left</align><aligny>center</aligny><label>Streaming</label></control>
+				<control type="image"><left>13</left><top>116</top><width>218</width><height>4</height><texture colordiffuse="ff78c92b">colors/color_white.png</texture></control>
+			</control>
 			<control type="grouplist">
 				<visible>!Skin.HasSetting(DisableBingieLogo) + [Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1120) | Window.IsActive(1114)]</visible>
 				<orientation>horizontal</orientation>
@@ -825,7 +828,7 @@
 			<control type="image">
 				<width>9</width>
 				<height>40</height>
-				<texture background="true" colordiffuse="ffd4af37">bingie/line.png</texture>
+				<texture background="true" colordiffuse="ffff7417">bingie/line.png</texture>
 			</control>
 			<control type="label">
 				<width>auto</width>
@@ -844,7 +847,7 @@
         </include>
 		<control type="group">
 			<include>BingieSideBladeMainMenu</include>
-			<animation effect="fade" start="100" end="50" time="300" condition="!Control.IsVisible(40003) + !$EXP[IsMainMenuOpened] + !$EXP[IsCurrentWidgetSpotlight] + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2]] + Container.HasPrevious">Conditional</animation>
+			<animation effect="fade" start="100" end="100" time="300" condition="!Control.IsVisible(40003) + !$EXP[IsMainMenuOpened] + !$EXP[IsCurrentWidgetSpotlight] + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2]] + Container.HasPrevious">Conditional</animation>
 		</control>	 
 		<!-- Snow Effect -->
         <include condition="Skin.HasSetting(EnableSnowAnimation)">SnowAnimation</include>

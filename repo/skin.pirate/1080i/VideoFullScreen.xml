@@ -5,6 +5,7 @@
 	<onload condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onload>
 	<onload condition="Player.HasVideo + !Window.IsVisible(videoosd) + !Player.Paused + !Skin.HasSetting(EnableOSDInfo)">AlarmClock(OpenMPAATopBar,SetProperty(DialogMPAATopBar,1,home),00:00,silent)</onload>
 	<onunload condition="![Player.HasVideo + VideoPlayer.Content(livetv)]">ClearProperty(pvrGuideOnFullscreenVideo,Home)</onunload>
+    <onunload condition="!Player.HasVideo">ClearProperty(TVGuidePlaybackLogo,Home)</onunload>
 	<onunload condition="!VideoPlayer.Content(livetv) + Skin.HasSetting(ForceVideoPlaybackStop) + ![Skin.HasSetting(EnableOSDInfo)]">AlarmClock(StopPlayback,PlayerControl(Stop),00:00,silent)</onunload>
 	<onunload>AlarmClock(LastPlayed,CancelAlarm(preview_delay,silent),00:01,silent)</onunload>
 	<onunload>ClearProperty(DialogMPAATopBar,home)</onunload>
@@ -124,5 +125,15 @@
 				<visible>!Skin.HasSetting(UseBingieOSD)</visible>
 			</control>
 		</control>
+        <!-- TV Guide channel logo stays on screen during its scheduled playback. -->
+        <control type="image" id="9077">
+            <visible>Player.HasVideo + !String.IsEmpty(Window(Home).Property(TVGuidePlaybackLogo))</visible>
+            <right>42</right>
+            <bottom>36</bottom>
+            <width>320</width>
+            <height>180</height>
+            <aspectratio>keep</aspectratio>
+            <texture>$INFO[Window(Home).Property(TVGuidePlaybackLogo)]</texture>
+        </control>
 	</controls>
 </window>

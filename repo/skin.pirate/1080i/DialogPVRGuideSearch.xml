@@ -107,7 +107,7 @@
                             <textwidth>484</textwidth>
                             <radioposx>492</radioposx>
                             <include>DialogButton</include>
-                            <texturefocus colordiffuse="ffd4af37">colors/color_white.png</texturefocus>
+                            <texturefocus colordiffuse="ffff7417">colors/color_white.png</texturefocus>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
                             <label>$LOCALIZE[19134]</label>
                             <onleft>12</onleft>
@@ -126,7 +126,7 @@
                             <textwidth>484</textwidth>
                             <radioposx>492</radioposx>
                             <include>DialogButton</include>
-                            <texturefocus colordiffuse="ffd4af37">colors/color_white.png</texturefocus>
+                            <texturefocus colordiffuse="ffff7417">colors/color_white.png</texturefocus>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
                             <label>$LOCALIZE[19135]</label>
                             <onleft>13</onleft>

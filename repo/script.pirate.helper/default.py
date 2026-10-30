@@ -16,6 +16,7 @@ class Main:
     def _parse_argv(self):
         args = sys.argv
         self.action = []
+        self.params = {}
         for arg in args:
             if arg == 'script.pirate.helper':
                 continue
@@ -36,6 +37,8 @@ class Main:
                             'playtrailer': playtrailer,
                             'searchbackspace': searchbackspace,
                             'searchspace': searchspace,
+                            'moreepisodes': moreepisodes,
+                            'nextpage': nextpage,
                             'installpauseosdkeymap': installpauseosdkeymap}
         for action in self.action:
             action_inventory[action](self.params)

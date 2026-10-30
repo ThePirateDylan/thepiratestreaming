@@ -19,9 +19,13 @@ class SetAddonConstants:
 	def run(self):
 		kodi_utils.logger('The Pirate', 'SetAddonConstants Service Starting')
 		import random
+		current_addon_version = kodi_utils.addon_info('version')
+		previous_addon_version = kodi_utils.get_property('fenlight.addon_version')
+		if previous_addon_version and previous_addon_version != current_addon_version:
+			set_setting('changelog.pending_previous_version', previous_addon_version)
 		addon_items = [
 			('fenlight.playback_key', str(random.randint(1000, 10000))),
-			('fenlight.addon_version', kodi_utils.addon_info('version')),
+			('fenlight.addon_version', current_addon_version),
 			('fenlight.addon_path', kodi_utils.addon_info('path')),
 			('fenlight.addon_profile', kodi_utils.translate_path(kodi_utils.addon_info('profile'))),
 			('fenlight.addon_icon', kodi_utils.translate_path(kodi_utils.addon_info('icon'))),
@@ -48,6 +52,11 @@ class SyncSettings:
 class OnUpdateChanges:
 	def run(self):
 		kodi_utils.logger('The Pirate', 'OnUpdateChanges Service Starting')
+		try:
+			from modules.updater import show_startup_changelog
+			show_startup_changelog()
+		except Exception as e:
+			kodi_utils.logger('OnUpdateChanges', 'Changelog notice failed: %s' % str(e))
 		try:
 			for method in list(filter(lambda x: x[0] != 'run', inspect.getmembers(OnUpdateChanges, predicate=inspect.isfunction))):
 				if not get_setting('fenlight.updatechecks.%s' % method[0], 'false') == 'true':
@@ -206,6 +215,96 @@ class WidgetRefresher:
 	def external(self):
 		return 'plugin' not in kodi_utils.get_infolabel('Container.PluginName')
 
+class TVGuidePreloader:
+	def run(self):
+		kodi_utils.logger('The Pirate', 'TVGuidePreloader Service Starting')
+		monitor, player = kodi_utils.kodi_monitor(), kodi_utils.kodi_player()
+		wait_for_abort = monitor.waitForAbort
+		if wait_for_abort(30):
+			return kodi_utils.logger('The Pirate', 'TVGuidePreloader Service Finished')
+		while not monitor.abortRequested():
+			try:
+				if kodi_utils.get_property(pause_services_prop) == 'true' or player.isPlayingVideo():
+					wait_for_abort(15)
+					continue
+				if not kodi_utils.get_visibility('Window.IsActive(Home)'):
+					wait_for_abort(15)
+					continue
+				kodi_utils.set_property('fenlight.tvguide_preload_running', 'true')
+				try:
+					from indexers.tv_guide import prewarm_snapshot
+					if prewarm_snapshot(monitor, player):
+						kodi_utils.logger('The Pirate', 'TV Guide startup snapshot is ready')
+						break
+					kodi_utils.logger('TV Guide Preload', 'startup snapshot incomplete; partial work is saved for retry')
+				finally:
+					kodi_utils.clear_property('fenlight.tvguide_preload_running')
+			except Exception as e:
+				kodi_utils.logger('TV Guide Preload', 'startup prewarm failed: %s' % str(e))
+			if wait_for_abort(60):
+				break
+		try: del monitor
+		except: pass
+		try: del player
+		except: pass
+		return kodi_utils.logger('The Pirate', 'TVGuidePreloader Service Finished')
+
+
+class TVGuideRefresher:
+	"""Refresh an already-built guide cache quietly during active playback."""
+	def run(self):
+		kodi_utils.logger('The Pirate', 'TVGuideRefresher Service Starting')
+		monitor, player = kodi_utils.kodi_monitor(), kodi_utils.kodi_player()
+		wait_for_abort = monitor.waitForAbort
+		playback_started, last_check = None, 0
+		playback_file, end_refresh_attempted = None, False
+		while not monitor.abortRequested():
+			if wait_for_abort(30): break
+			now = time()
+			if kodi_utils.get_property(pause_services_prop) == 'true':
+				playback_started = None
+				playback_file, end_refresh_attempted = None, False
+				continue
+			try:
+				is_playing = player.isPlayingVideo()
+			except Exception:
+				is_playing = False
+			if not is_playing:
+				playback_started = None
+				playback_file, end_refresh_attempted = None, False
+				continue
+			if playback_started is None:
+				playback_started = now
+				continue
+			# Let playback settle, then check at most once per minute. No guide cache
+			# is created at startup: the first guide open still owns the progress UI.
+			if now - playback_started < 60 or now - last_check < 60: continue
+			last_check = now
+			cache_key = kodi_utils.get_property('fenlight.tvguide_snapshot_key')
+			if not cache_key: continue
+			try:
+				from indexers.tv_guide import (
+					SNAPSHOT_PRE_END_REFRESH_SECONDS, playback_seconds_remaining,
+					refresh_snapshot_for_key, should_refresh_before_end,
+				)
+				try: current_file = player.getPlayingFile()
+				except Exception: current_file = None
+				if current_file != playback_file:
+					playback_file, end_refresh_attempted = current_file, False
+				remaining = playback_seconds_remaining(player)
+				if remaining is None or remaining > SNAPSHOT_PRE_END_REFRESH_SECONDS:
+					end_refresh_attempted = False
+				force_refresh = should_refresh_before_end(remaining, end_refresh_attempted)
+				if force_refresh: end_refresh_attempted = True
+				refresh_snapshot_for_key(cache_key, monitor, force=force_refresh)
+			except Exception as e:
+				kodi_utils.logger('TV Guide Refresh', 'Background refresh failed: %s' % str(e))
+		try: del monitor
+		except: pass
+		try: del player
+		except: pass
+		return kodi_utils.logger('The Pirate', 'TVGuideRefresher Service Finished')
+
 class AutoStart:
 	def run(self):
 		kodi_utils.logger('The Pirate', 'AutoStart Service Starting')
@@ -269,6 +368,8 @@ class FenLightMonitor(Monitor):
 		Thread(target=TraktMonitor().run).start()
 		Thread(target=UpdateCheck().run).start()
 		Thread(target=WidgetRefresher().run).start()
+		Thread(target=TVGuideRefresher().run).start()
+		Thread(target=TVGuidePreloader().run).start()
 		try: AutoStart().run()
 		except Exception as e: logger('AutoStart', str(e))
 

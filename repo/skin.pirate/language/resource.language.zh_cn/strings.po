@@ -1130,7 +1130,7 @@ msgstr "重置皮肤为默认设置"
 
 msgctxt "#31275"
 msgid "Disable Bingie logo on home"
-msgstr "在主界面禁用 Bingie 徽标"
+msgstr "在主界面禁用 The Pirate Streaming 标识"
 
 msgctxt "#31276"
 msgid "Auto hide menu"
@@ -2368,3 +2368,15 @@ msgstr "小组件"
 msgctxt "#31579"
 msgid "color for play icon"
 msgstr "播放图标颜色"
+
+msgctxt "#31580"
+msgid "Maintenance"
+msgstr "维护"
+
+msgctxt "#31581"
+msgid "Clean temporary files, packages, and artwork"
+msgstr "清理临时文件、安装包和图片缓存"
+
+msgctxt "#31582"
+msgid "Startup cleanup options"
+msgstr "启动清理选项"

@@ -5,13 +5,16 @@ import shutil
 from os import path
 from caches.settings_cache import get_setting, set_setting
 from modules.utils import string_alphanum_to_num, unzip
-from modules import kodi_utils 
+from modules import kodi_utils
+from modules.update_safety import block_private_updates, is_private_development_build
 logger = kodi_utils.logger
 
 def get_location(insert=''):
+	if is_private_development_build(): return None
 	return 'https://github.com/%s/%s/raw/main/packages/%s' % (get_setting('fenlight.update.username'), get_setting('update.location'), insert)
 
 def get_versions():
+	if block_private_updates(kodi_utils): return None, None
 	try:
 		result = requests.get(get_location('fenlightam_version'))
 		if result.status_code != 200: return None, None
@@ -21,6 +24,7 @@ def get_versions():
 	except: return None, None
 
 def get_changes(online_version=None):
+	if block_private_updates(kodi_utils): return
 	try:
 		if not online_version:
 			current_version, online_version = get_versions()
@@ -39,8 +43,37 @@ def get_changes(online_version=None):
 def version_check(current_version, online_version):
 	return string_alphanum_to_num(current_version) != string_alphanum_to_num(online_version)
 
+def record_changelog_version(version):
+	set_setting('changelog.last_version', version)
+	set_setting('changelog.pending_previous_version', '')
+
+def show_startup_changelog():
+	current_version = kodi_utils.addon_version()
+	last_version = get_setting('fenlight.changelog.last_version', '')
+	pending_previous = get_setting('fenlight.changelog.pending_previous_version', '')
+	previous_version = last_version or pending_previous
+	if not previous_version:
+		set_setting('changelog.last_version', current_version)
+		return False
+	if previous_version == current_version:
+		if pending_previous: set_setting('changelog.pending_previous_version', '')
+		return False
+
+	# Persist before opening UI so a restart cannot show this version twice.
+	record_changelog_version(current_version)
+	if not kodi_utils.confirm_dialog(
+		heading='The Pirate Updated',
+		text='The Pirate changed from [B]%s[/B] to [B]%s[/B].[CR]Would you like to view the changelog?' % (previous_version, current_version),
+		ok_label='Changelog', cancel_label='Close', default_control=10
+	):
+		return True
+	changelog_path = kodi_utils.translate_path('special://home/addons/plugin.video.pirate/resources/text/changelog.txt')
+	kodi_utils.show_text('The Pirate Changelog', file=changelog_path, font_size='large')
+	return True
+
 def update_check(action=4):
 	if action == 3: return
+	if block_private_updates(kodi_utils): return
 	current_version, online_version = get_versions()
 	if not current_version: return
 	show_after_action = True
@@ -60,6 +93,7 @@ def update_check(action=4):
 	return update_addon(online_version, action, show_after_action)
 
 def rollback_check():
+	if block_private_updates(kodi_utils): return
 	current_version = get_versions()[0]
 	url = 'https://api.github.com/repos/%s/%s/contents/packages' % (get_setting('update.username'), get_setting('update.location'))
 	kodi_utils.show_busy_dialog()
@@ -81,6 +115,7 @@ def rollback_check():
 	update_addon(rollback_version, 5)
 
 def update_addon(new_version, action, show_after_action=True):
+	if block_private_updates(kodi_utils): return
 	kodi_utils.close_all_dialog()
 	kodi_utils.execute_builtin('ActivateWindow(Home)', True)
 	kodi_utils.notification('The Pirate Performing Rollback' if action == 5 else 'The Pirate Performing Update', icon=kodi_utils.get_icon('downloads'))
@@ -96,6 +131,8 @@ def update_addon(new_version, action, show_after_action=True):
 	success = unzip(zip_location, kodi_utils.translate_path('special://home/addons/'), kodi_utils.translate_path('special://home/addons/plugin.video.pirate/'))
 	kodi_utils.delete_file(zip_location)
 	if not success: return kodi_utils.ok_dialog(heading='The Pirate Updater', text='Error Updating.[CR]Please install new update manually')
+	if action in (0, 4, 5):
+		record_changelog_version(new_version)
 	if action == 5:
 		set_setting('update.action', '3')
 		kodi_utils.ok_dialog(heading='The Pirate Updater', text='[CR]Success.[CR]The Pirate rolled back to version [B]%s[/B]' % new_version)

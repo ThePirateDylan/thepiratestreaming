@@ -141,7 +141,7 @@
                             <width>135</width>
                             <height>135</height>
                             <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="ffd4af37">$INFO[Player.TimeRemaining(ss),dialogs/nextup/,.png]</texture>
+                            <texture colordiffuse="ffff7417">$INFO[Player.TimeRemaining(ss),dialogs/nextup/,.png]</texture>
                             <visible>!Integer.IsGreater(Player.TimeRemaining(ss),30)</visible>
                         </control>
                         <!-- Sxx: Exx -->

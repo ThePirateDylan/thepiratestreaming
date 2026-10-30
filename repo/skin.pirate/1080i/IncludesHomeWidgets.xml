@@ -624,7 +624,7 @@
                 <width>100%</width>
 				<top>-1</top>
                 <font>Bold31</font>
-                <include>widget_header_leftalign</include>
+                <include>widget_header_home_leftalign</include>
 				<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
                 <label>$PARAM[widgetName]</label>
                 <animation effect="slide" end="50" time="0" condition="Container($PARAM[widgetid]).IsUpdating + Integer.IsEqual(Container($PARAM[widgetid]).NumItems,0)">Conditional</animation>
@@ -635,7 +635,7 @@
                 <width>100%</width>
 				<top>-1</top>
                 <font>Bold31</font>
-                <include>widget_header_leftalign</include>
+                <include>widget_header_home_leftalign</include>
 				<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
                 <label>$INFO[Container($PARAM[widgetid]).ListItem.Property(similartitle),$LOCALIZE[31333] ,]$INFO[Container($PARAM[widgetid]).ListItem.Property(genretitle)]</label>
                 <animation effect="slide" end="50" time="0" condition="Container($PARAM[widgetid]).IsUpdating + Integer.IsEqual(Container($PARAM[widgetid]).NumItems,0)">Conditional</animation>
@@ -645,7 +645,7 @@
                 <width>100%</width>
                 <height>30</height>
                 <top>5</top>
-                <include>widget_header_leftalign</include>
+                <include>widget_header_home_leftalign</include>
                 <aspectratio align="left">keep</aspectratio>
                 <imagepath background="true">spinner/widgets_busy_loader/</imagepath>
                 <timeperimage>85</timeperimage>
@@ -656,6 +656,12 @@
         </control>
     </include>
 	
+    <include name="widget_header_home_leftalign">
+        <include content="left">
+            <param name="left" value="325" />
+        </include>
+    </include>
+
     <include name="widget_header_leftalign">
         <include content="left">
             <param name="left" value="69" />
@@ -685,6 +691,7 @@
         <onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
         <onunfocus condition="Skin.HasSetting(BingieAutoTrailer) + $EXP[IsPlayingUnrecognizedContent] + String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">PlayerControl(Stop)</onunfocus>
         <onfocus condition="!String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">ClearProperty(KeepPlayingPreview,home)</onfocus>
+        <onclick condition="String.StartsWith(Container($PARAM[widgetid]).ListItem.Label,Next Page)">RunScript(script.pirate.helper,action=nextpage,folderpath=$ESCINFO[Container($PARAM[widgetid]).ListItem.FileNameAndPath])</onclick>
         <include content="ContainerShowInfoOnclick" condition="Skin.HasSetting(ShowInformationBypass)">
             <param name="widgetid" value="$PARAM[widgetid]" />
         </include>

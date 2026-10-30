@@ -1,4 +1,51 @@
+[COLOR dodgerblue][B]Version 2.2.80[/B][/COLOR]
+ - Restores normal movie, show, and list views when leaving the TV Guide.
+
+[COLOR dodgerblue][B]Version 2.2.70[/B][/COLOR]
+ - Fixes TV Guide channel configuration validation so the configured networks are retained instead of falling back to an empty lineup.
+
+[COLOR dodgerblue][B]Version 2.2.69[/B][/COLOR]
+ - Adds supplied, transparent 256 × 224 logos for all 31 TV Guide networks and the Halloween and Christmas seasonal channels.
+
+[COLOR dodgerblue][B]Version 2.2.67[/B][/COLOR]
+ - Adds a seek-gated join-in-progress attempt for today's current guide slot, with playback from the beginning when seeking is unavailable.
+ - Carries the TV Guide's validated aired episode through to playback so the selected show does not switch to an unchecked episode.
+
+[COLOR dodgerblue][B]Version 2.2.66[/B][/COLOR]
+ - Plays the same aired episode that passed the TV Guide source check, preventing playback from silently choosing an unverified episode.
+
+[COLOR dodgerblue][B]Version 2.2.65[/B][/COLOR]
+ - Rotates the TV Guide timeline every minute and keeps channel play actions stable as slots change.
+ - Adds previous and next day browsing across 30 days of history and 45 days ahead.
+ - Plays the program scheduled for the selected channel and guide day.
+
+[COLOR dodgerblue][B]Version 2.2.63[/B][/COLOR]
+ - Checks all six curated candidates during cold guide preparation so a channel is less likely to appear empty when playable sources are later in the list.
+ - Keeps the quiet playback-time refresh capped at four source probes per channel.
+
+[COLOR dodgerblue][B]Version 2.2.62[/B][/COLOR]
+ - The seasonal Halloween guide now uses horror-focused TV results and filters Halloween movies to Horror titles before checking playable Kodi sources.
+
+[COLOR dodgerblue][B]Version 2.2.61[/B][/COLOR]
+ - Shows the local changelog once after an add-on version change, with a persistent duplicate-notice guard.
+ - Preserves the prior add-on version across an in-session upgrade so the first release using this feature can notify correctly.
+ - Keeps private development update checks disabled and package distribution artifact-only.
+
+[COLOR dodgerblue][B]Version 2.2.60[/B][/COLOR]
+ - Quietly preloads the playable TV Guide after Kodi starts and resumes partial preparation when Kodi is idle.
+ - Keeps only parody network counterparts and the seasonal Halloween or Christmas channel in the guide.
+ - Matches network series to verified network feeds or exact curated titles; removes broad genre movie fillers.
+ - Uses holiday-tagged and source-verified seasonal programs so the guide does not list unrelated or unplayable picks.
+ - Reads runtime metadata and sizes the guide blocks proportionally to each program.
+
 [COLOR darkgoldenrod]I don't do everything - I just make sure everything runs[/COLOR]
+
+[COLOR dodgerblue][B]Version 2.2.48[/B][/COLOR]
+ - TV Guide refreshes its validated lineup quietly during playback after the guide has been opened.
+ - Cached guide data remains available while refreshes run and when a provider temporarily fails.
+
+[COLOR dodgerblue][B]Version 2.2.47[/B][/COLOR]
+ - Private development builds now block automatic and manual online update and rollback actions. Install private builds manually.
 
 [COLOR dodgerblue][B]Version 2.2.13[/B][/COLOR]
  - Changes to dependencies.

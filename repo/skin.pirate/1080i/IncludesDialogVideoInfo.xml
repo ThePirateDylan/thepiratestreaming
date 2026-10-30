@@ -7,7 +7,7 @@
 				<control type="group">
 					<control type="image">
 						<include>FullscreenDimensions</include>
-						<texture background="true" colordiffuse="cc091420">diffuse/panel2.png</texture>
+						<texture background="true" colordiffuse="cc111315">diffuse/panel2.png</texture>
 					</control>
 					<control type="image">
 						<width>1920</width>
@@ -71,7 +71,6 @@
 			<animation effect="fade" start="100" end="0" condition="!String.IsEmpty(Window(Home).Property(TMDbBingieHelper.Recommendations.HideInfo))">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(script-tmdbbingiehelper-wikipedia.xml)">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
-			<visible>String.IsEmpty(Window(Home).Property(Recommendations.IsLoading))</visible>
 		<control type="group">	
 			<!-- additional info header -->
 			<control type="label">
@@ -163,10 +162,10 @@
 						<animation effect="fade" start="100" end="0" time="200">Conditional</animation>
 						<width>820</width>
 						<top>14</top>
-						<height min="50" max="120">auto</height>
+						<height min="50" max="160">auto</height>
 						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
 						<align>left</align>
-						<font>Plots</font>
+						<font>Reg20</font>
 						<label>$VAR[BingieDialogInfoPlot]</label>
 					</control>
 					
@@ -536,25 +535,11 @@
                                 <radioposx>15</radioposx>
                                 <radiowidth>24</radiowidth>
                                 <radioheight>24</radioheight>
-								<textwidth>158</textwidth>			
-                                <onclick>SetProperty(BaseWindow,1,Home)</onclick>
-								<onclick>SetProperty(NoFadeOut,1,Home)</onclick>
-								<onclick>SetProperty(AnimationRight,1,Home)</onclick>
-								<onclick condition="!String.IsEmpty(Window(Home).Property(FullImage))">SetProperty(EpisodesAnimation,1,Home)</onclick>
-                                <onclick condition="!Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">Dialog.Close(movieinformation)</onclick>
-                                <!-- activate ALL EPISODES view -->
-                                <!-- from episode infodialog -->
-                                <onclick condition="String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.DBID) + !String.IsEmpty(Window(Home).Property(ListItem.TVShowID))">SetProperty(KeepTVShowID,1,Home)</onclick>
-                                <onclick condition="String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.DBID) + !String.IsEmpty(Window(Home).Property(ListItem.TVShowID))">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[Window(Home).Property(ListItem.TVShowID)]/-2/,return)</onclick>
-                                <!-- from tvshow infodialog for library content -->
-                                <onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEmpty(ListItem.DBID) + !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">SetProperty(ListItem.TVShowID,$INFO[ListItem.DBID],Home)</onclick>
-                                <onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEmpty(ListItem.DBID) + !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">SetProperty(KeepTVShowID,1,Home)</onclick>
-								<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEmpty(ListItem.DBID) + !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[ListItem.DBID]/-2/,return)</onclick>
-								<onclick condition="ListItem.IsFolder + !Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow) + Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">RunScript(plugin.video.tmdb.pirate.helper,close_dialog=1190,call_path=$INFO[ListItem.DBID,videodb://tvshows/titles/,/-2/return])</onclick>
-                                <!-- from tvshow infodialog for non-library content -->
-								<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + String.IsEmpty(ListItem.DBID) + !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">ActivateWindow(Videos,$ESCINFO[ListItem.FileNameAndPath],return)</onclick>
-								<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + String.IsEmpty(ListItem.DBID) + Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">RunScript(plugin.video.tmdb.pirate.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])</onclick>
-                            </control>
+								<textwidth>158</textwidth>
+                                <onclick>RunScript(script.pirate.helper,action=moreepisodes,dbtype=$INFO[ListItem.DBTYPE],propertydbtype=$INFO[ListItem.Property(DBTYPE)],dbid=$INFO[ListItem.DBID],tvshowid=$INFO[Window(Home).Property(ListItem.TVShowID)],tmdb_id=$INFO[ListItem.Property(tmdb_id)],media_type=$INFO[ListItem.Property(tmdb_type)],show_tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],uniqueid=$INFO[ListItem.UniqueID(tmdb)],season=$INFO[ListItem.Season],folderpath=$ESCINFO[ListItem.FileNameAndPath])</onclick>
+
+
+				</control>
 
 							<!-- Trailer -->
                             <control type="radiobutton" id="54">
@@ -1200,7 +1185,7 @@
 			<!-- base bg -->
 			<control type="image">
 				<include>FullscreenDimensions</include>
-				<texture background="true" colordiffuse="cc091420">diffuse/panel2.png</texture>
+				<texture background="true" colordiffuse="cc111315">diffuse/panel2.png</texture>
 				<visible>!Player.HasVideo</visible>
 			</control>
 			<control type="image">
@@ -1217,8 +1202,7 @@
 				<animation effect="fade" start="100" end="0" condition="!String.IsEmpty(Window(Home).Property(TMDbBingieHelper.Recommendations.HideInfo))">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(script-tmdbbingiehelper-wikipedia.xml)">Conditional</animation>
 				<animation effect="fade" start="0" end="100" time="200">Visible</animation>
-				<visible>!ControlGroup(6000).HasFocus()</visible>
-				<visible>String.IsEmpty(Window(Home).Property(Recommendations.IsLoading))</visible>								
+				<visible>!ControlGroup(6000).HasFocus()</visible>								
 				<!-- hidden my rating button -->
 				<control type="button" id="7">
 					<include>HiddenObject</include>
@@ -1277,7 +1261,7 @@
 					<control type="image">
 						<visible>!Control.HasFocus(70011)</visible>
 						<texture background="true">overlays/gradient_videoinfo.png</texture>
-						<colordiffuse>cc091420</colordiffuse>
+						<colordiffuse>cc111315</colordiffuse>
 					</control>
 					<include content="DialogInfo_VideoTrailerControl">
 						<param name="onback">8000</param>
@@ -1303,7 +1287,7 @@
 					<visible>!String.IsEmpty(Window.Property(AdditionalInfo)) + !String.IsEqual(Window.Property(AdditionalInfo),set)</visible>
 					<width>100%</width>
 					<height>100%</height>
-					<texture background="true" colordiffuse="cc091420">colors/color_white.png</texture>
+					<texture background="true" colordiffuse="cc111315">colors/color_white.png</texture>
 					<animation effect="fade" start="0" end="60" time="300">Visible</animation>
 					<animation effect="fade" start="60" end="0" time="300">Hidden</animation>
 				</control>
@@ -1391,10 +1375,10 @@
 						<animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Window.Property(AdditionalInfo), trailers) | String.IsEqual(Window.Property(AdditionalInfo),similar) | String.IsEqual(Window.Property(AdditionalInfo),cast) | String.IsEqual(Window.Property(AdditionalInfo),plot)">Conditional</animation>
 						<width>820</width>
 						<top>14</top>
-						<height min="50" max="120">auto</height>
+						<height min="50" max="160">auto</height>
 						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
 						<align>left</align>
-						<font>Plots</font>
+						<font>Reg20</font>
 						<label>$VAR[BingieDialogInfoPlot]</label>   <!-- BingieInfoDialogPlot -->
 					</control>
 					
@@ -1406,7 +1390,7 @@
 						<height>120</height>
 						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
 						<align>left</align>
-						<font>Plots</font>
+						<font>Reg20</font>
 						<label>$VAR[BingieDialogInfoPlot]</label>   <!-- BingieInfoDialogPlot -->
 					</control>
 
@@ -1802,28 +1786,10 @@
                                 <radioposx>18</radioposx>
                                 <radiowidth>24</radiowidth>
                                 <radioheight>24</radioheight>
-                                <onclick>SetProperty(BaseWindow,1,Home)</onclick>
-								<onclick>SetProperty(FadeFanart,1,Home)</onclick>
-								<onclick>SetProperty(NoFadeOut,1,Home)</onclick>
-								<onclick>SetProperty(AnimationRight,1,Home)</onclick>
-								<onclick condition="!String.IsEmpty(Window(Home).Property(FullImage))">SetProperty(EpisodesAnimation,1,Home)</onclick>
-                                <onclick condition="!Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">Dialog.Close(movieinformation)</onclick>
-                                <!-- activate ALL EPISODES view -->
-                                <!-- from episode infodialog -->
-                                <onclick condition="String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.DBID) + !String.IsEmpty(Window(Home).Property(ListItem.TVShowID))">SetProperty(KeepTVShowID,1,Home)</onclick>
-                                <onclick condition="String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.DBID) + !String.IsEmpty(Window(Home).Property(ListItem.TVShowID))">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[Window(Home).Property(ListItem.TVShowID)]/-2/,return)</onclick>
-								<!-- from season infodialog -->
-                                <onclick condition="String.IsEqual(ListItem.DBTYPE,season) + !String.IsEmpty(ListItem.DBID)">ActivateWindow(Videos,$ESCINFO[ListItem.FolderPath],return)</onclick>
-                                <!-- from tvshow infodialog for library content -->
-                                <onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEmpty(ListItem.DBID) + !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">SetProperty(ListItem.TVShowID,$INFO[ListItem.DBID],Home)</onclick>
-                                <onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEmpty(ListItem.DBID) + !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">SetProperty(KeepTVShowID,1,Home)</onclick>
-								<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEmpty(ListItem.DBID) + !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[ListItem.DBID]/-2/,return)</onclick>
-								<onclick condition="ListItem.IsFolder + !Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow) + Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">RunScript(plugin.video.tmdb.pirate.helper,close_dialog=1190,call_path=$INFO[ListItem.DBID,videodb://tvshows/titles/,/-2/return])</onclick>
-                                <!-- from tvshow infodialog for non-library content -->
-								<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + String.IsEmpty(ListItem.DBID) + !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">ActivateWindow(Videos,$ESCINFO[ListItem.FileNameAndPath],return)</onclick>
-								<onclick condition="String.IsEqual(ListItem.DBTYPE,season) + String.IsEmpty(ListItem.DBID) + !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">ActivateWindow(Videos,$ESCINFO[ListItem.FolderPath],return)</onclick>
-								<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow) + String.IsEmpty(ListItem.DBID) + Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)">RunScript(plugin.video.tmdb.pirate.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])</onclick>
-							</control>						
+                                <onclick>RunScript(script.pirate.helper,action=moreepisodes,dbtype=$INFO[ListItem.DBTYPE],propertydbtype=$INFO[ListItem.Property(DBTYPE)],dbid=$INFO[ListItem.DBID],tvshowid=$INFO[Window(Home).Property(ListItem.TVShowID)],tmdb_id=$INFO[ListItem.Property(tmdb_id)],media_type=$INFO[ListItem.Property(tmdb_type)],show_tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],uniqueid=$INFO[ListItem.UniqueID(tmdb)],season=$INFO[ListItem.Season],folderpath=$ESCINFO[ListItem.FileNameAndPath])</onclick>
+
+
+				</control>						
 
 							<!-- Trailer -->
                             <control type="radiobutton" id="54">
@@ -2124,7 +2090,7 @@
 								<height>8</height>
 								<texturebg colordiffuse="$INFO[Skin.String(BingieProgressBarBackgroundColor)]" border="0">diffuse/panel2.png</texturebg>
 								<lefttexture/>
-								<midtexture colordiffuse="ffd4af37" border="4">diffuse/panel2.png</midtexture>
+								<midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
 								<righttexture/>
 								<info>ListItem.PercentPlayed</info>
 							</control>
@@ -2138,7 +2104,7 @@
 								<height>8</height>
 								<texturebg colordiffuse="$INFO[Skin.String(BingieProgressBarBackgroundColor)]" border="0">diffuse/panel2.png</texturebg>
 								<lefttexture/>
-								<midtexture colordiffuse="ffd4af37" border="4">diffuse/panel2.png</midtexture>
+								<midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
 								<righttexture/>
 								<info>Container(5050).ListItem.PercentPlayed</info>
 							</control>
@@ -2152,7 +2118,7 @@
 								<height>8</height>
 								<texturebg colordiffuse="$INFO[Skin.String(BingieProgressBarBackgroundColor)]" border="0">diffuse/panel2.png</texturebg>
 								<lefttexture/>
-								<midtexture colordiffuse="ffd4af37" border="4">diffuse/panel2.png</midtexture>
+								<midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
 								<righttexture/>
 								<info>Container(1234).ListItem.PercentPlayed</info>
 							</control>
@@ -3118,7 +3084,7 @@
 		<control type="group">
 			<control type="image">
 				<include>FullscreenDimensions</include>
-				<texture background="true" colordiffuse="cc091420">diffuse/panel2.png</texture>
+				<texture background="true" colordiffuse="cc111315">diffuse/panel2.png</texture>
 			</control>
 			<control type="image">
 				<visible>String.IsEqual(ListItem.Property(tmdb_type),person) + !Player.HasVideo</visible>

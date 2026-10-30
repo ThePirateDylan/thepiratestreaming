@@ -306,8 +306,8 @@
 		<height>50</height>
         <align>left</align>
 		<textoffsetx>38</textoffsetx>
-        <alttexturefocus colordiffuse="ffd4af37" border="10">diffuse/panel.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="ffd4af37" border="10">diffuse/panel_trans.png</alttexturenofocus>
+        <alttexturefocus colordiffuse="ffff7417" border="10">diffuse/panel.png</alttexturefocus>
+        <alttexturenofocus colordiffuse="ffff7417" border="10">diffuse/panel_trans.png</alttexturenofocus>
     </include>
 
     <!-- Default Skin Setting Small Menu Button -->
@@ -322,10 +322,10 @@
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="ffd4af37" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
+        <texturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
         <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2-trans.png</texturenofocus>
-        <alttexturefocus colordiffuse="ffd4af37" border="20">dialogs/keyboard/key-nf-2.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="ffd4af37" border="20">dialogs/keyboard/key-nf-2-trans.png</alttexturenofocus>
+        <alttexturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</alttexturefocus>
+        <alttexturenofocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2-trans.png</alttexturenofocus>
     </include>
 
     <!-- Default Skin Settings Action Button -->
@@ -2054,6 +2054,22 @@
             <param name="action" value="RunPlugin(plugin://script.skin.helper.skinbackup)" />
             <param name="visible" value="!System.HasAddon(script.skin.helper.skinbackup)" />
         </include>
+        <control type="label" id="31580">
+            <include>SkinSettings_Header</include>
+            <label>$LOCALIZE[31580]</label>
+        </control>
+        <control type="button" id="31581">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31581]</label>
+            <onclick>RunScript(script.pirate.maintenance,action=cleanup)</onclick>
+            <visible>System.HasAddon(script.pirate.maintenance)</visible>
+        </control>
+        <control type="button" id="31582">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31582]</label>
+            <onclick>Addon.OpenSettings(script.pirate.maintenance)</onclick>
+            <visible>System.HasAddon(script.pirate.maintenance)</visible>
+        </control>
     </include>
 
     <!-- General Tab -->
@@ -2406,7 +2422,7 @@
             <label2>$INFO[Skin.String(scrollbar_visibility.label)]</label2>
             <onclick>RunScript(script.pirate.toolbox,action=setskinsetting,setting=scrollbar_visibility,header=$LOCALIZE[31344])</onclick>
         </control>
-        <!-- Enable Bingie Logo on Home -->
+        <!-- Show The Pirate Streaming logo on Home -->
         <control type="radiobutton" id="31275">
             <include>SkinSettings_Button</include>
             <label>$LOCALIZE[31275]</label>

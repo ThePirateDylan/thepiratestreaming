@@ -3,7 +3,7 @@
 		<defaultID>10000</defaultID>
 		<label>10000</label>
 		<label2 />
-		<icon>shortcuts/home.png</icon>
+		<icon>special://skin/shortcut-icons/home.png</icon>
 		<thumb />
 		<action>ActivateWindow(home,return)</action>
 		</shortcut>
@@ -11,7 +11,7 @@
 		<defaultID>137</defaultID>
 		<label>137</label>
 		<label2 />
-		<icon>shortcuts/search.png</icon>
+		<icon>special://skin/shortcut-icons/search.png</icon>
 		<thumb />
 		<action>ActivateWindow(1109,return)</action>
 		</shortcut>
@@ -19,7 +19,7 @@
 		<defaultID>shows</defaultID>
 		<label>TV Shows</label>
 		<label2>Custom item</label2>
-		<icon>shortcuts/tv.png</icon>
+		<icon>special://skin/shortcut-icons/tvshows.png</icon>
 		<thumb />
 		<action>ActivateWindow(1110,return)</action>
 		</shortcut>
@@ -27,7 +27,7 @@
 		<defaultID>tvguide</defaultID>
 		<label>TV Guide</label>
 		<label2>Video Add-On</label2>
-		<icon>shortcuts/tv.png</icon>
+		<icon>special://skin/shortcut-icons/tvguide.png</icon>
 		<thumb />
 		<action>ActivateWindow(Videos,plugin://plugin.video.pirate/?mode=tvguide.main,return)</action>
 		</shortcut>
@@ -35,15 +35,23 @@
 		<defaultID>movies</defaultID>
 		<label>342</label>
 		<label2 />
-		<icon>shortcuts/clapperboard.png</icon>
+		<icon>special://skin/shortcut-icons/movies.png</icon>
 		<thumb />
 		<action>ActivateWindow(1111,return)</action>
 		</shortcut>
 	<shortcut>
+		<defaultID>mystars</defaultID>
+		<label>My Stars</label>
+		<label2>Favorites</label2>
+		<icon>special://skin/shortcut-icons/favorites.png</icon>
+		<thumb />
+		<action>ActivateWindow(1114,return)</action>
+	</shortcut>
+	<shortcut>
 		<defaultID />
 		<label>Cloud Services</label>
 		<label2>Video Add-On</label2>
-		<icon>DefaultShortcut.png</icon>
+		<icon>special://skin/shortcut-icons/cloud.png</icon>
 		<thumb />
 		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=My+Services&amp;mode=navigator.premium&amp;iconImage=premium",return)</action>
 		</shortcut>
@@ -51,7 +59,7 @@
 		<defaultID>arghsettings</defaultID>
 		<label>Settings</label>
 		<label2>Custom item</label2>
-		<icon>shortcuts/piratesettings.png</icon>
+		<icon>special://skin/shortcut-icons/settings.png</icon>
 		<thumb />
 		<action>RunPlugin(plugin://plugin.video.pirate/?mode=open_settings)</action>
 		</shortcut>

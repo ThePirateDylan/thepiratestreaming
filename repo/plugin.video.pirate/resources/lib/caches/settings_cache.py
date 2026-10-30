@@ -217,6 +217,8 @@ def default_settings():
 {'setting_id': 'window_theme', 'setting_type': 'string', 'setting_default': 'FF091420'},
 {'setting_id': 'window_theme_opacity', 'setting_type': 'string', 'setting_default': '60'},
 #==================== Manage Updates
+{'setting_id': 'changelog.last_version', 'setting_type': 'string', 'setting_default': ''},
+{'setting_id': 'changelog.pending_previous_version', 'setting_type': 'string', 'setting_default': ''},
 {'setting_id': 'update.action', 'setting_type': 'action', 'setting_default': '3', 'settings_options': {'0': 'Prompt', '1': 'Automatic', '2': 'Notification', '3': 'Off'}},
 {'setting_id': 'update.delay', 'setting_type': 'action', 'setting_default': '10', 'min_value': '10', 'max_value': '300'},
 {'setting_id': 'update.username', 'setting_type': 'string', 'setting_default': 'ThePirateDylan'},

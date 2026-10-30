@@ -42,6 +42,8 @@ class Sources():
 	#	if not kodi_utils.external_playback_check(self.params): return #
 		self.play_type = params_get('play_type', '')
 		self.background = params_get('background', 'false') == 'true'
+		try: self.tv_guide_join_seconds = max(int(params_get('tv_guide_join_seconds', 0)), 0)
+		except (TypeError, ValueError): self.tv_guide_join_seconds = 0
 		self.check_sources_only = params_get('check_sources_only', 'false') == 'true'
 		self.prescrape = params_get('prescrape', self.prescrape) == 'true'
 		self.random, self.random_continual = params_get('random', 'false') == 'true', params_get('random_continual', 'false') == 'true'

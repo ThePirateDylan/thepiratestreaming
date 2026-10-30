@@ -70,7 +70,7 @@
 							<width>571</width>
 							<height>79</height>
 							<aligny>center</aligny>
-							<texture border="10" colordiffuse="ffd4af37">diffuse/panel.png</texture>
+							<texture border="10" colordiffuse="ffff7417">diffuse/panel.png</texture>
 							<visible>Control.HasFocus(211)</visible>
 						</control>
 						<control type="image">
@@ -84,7 +84,7 @@
 							<width>571</width>
 							<height>79</height>
 							<aligny>center</aligny>
-							<texture border="10" colordiffuse="ffd4af37">diffuse/panel_trans.png</texture>
+							<texture border="10" colordiffuse="ffff7417">diffuse/panel_trans.png</texture>
 							<visible>!Control.HasFocus(211)</visible>
 						</control>
 						<!-- thumb -->
@@ -498,7 +498,7 @@
 				<control type="list" id="111"> 
 					<visible>false</visible>
 					<orientation>vertical</orientation>
-					<selectedcolor>FF00b8ff</selectedcolor>
+					<selectedcolor>ffff7417</selectedcolor>
 					<itemlayout width="1000" height="65">
 					</itemlayout>
 					<focusedlayout width="1000" height="65">			

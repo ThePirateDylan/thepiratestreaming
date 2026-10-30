@@ -133,7 +133,7 @@
                                 <width>100%</width>
                                 <height>60</height>
                                 <texture border="10">diffuse/panel.png</texture>
-								<colordiffuse>ffd4af37</colordiffuse>
+								<colordiffuse>ffff7417</colordiffuse>
                             </control>
                             <control type="label">
                                 <posx>20</posx>

@@ -164,9 +164,64 @@ def end_directory(handle, cacheToDisc=True):
 	xbmcplugin.endOfDirectory(handle, cacheToDisc=cacheToDisc)
 
 def set_view_mode(view_type, content='files', is_external=None):
-	if not get_property('fenlight.use_viewtypes') == 'true': return
-	if is_external == None: is_external = external()
+	if is_external is None: is_external = external()
 	if is_external: return
+	guide_view_active = (get_property('fenlight.tvguide_view_active') == 'true'
+			or get_property('PirateTVGuideView') == '1'
+			or get_infolabel('Container.Viewmode').strip().lower() == 'tv guide')
+	if content in ('episodes', 'seasons'):
+		view_id = None
+		if get_property('fenlight.use_viewtypes') == 'true':
+			view_id = get_property('fenlight.%s' % view_type) or None
+		try:
+			pirate_skin = xbmc.getSkinDir().strip().lower() == 'skin.pirate'
+		except NameError:
+			# Keep generic behavior in isolated loaders that do not provide xbmc.
+			pirate_skin = False
+		if pirate_skin and (guide_view_active or not view_id or str(view_id) == '58'):
+			# View 58 belongs only to TV Guide. The Pirate has dedicated episode
+			# and season layouts; select them when leaving the guide or when no
+			# user view type is configured.
+			view_id = '525' if content == 'episodes' else '527'
+		elif guide_view_active or str(view_id) == '58':
+			if not view_id or str(view_id) == '58':
+				view_id = 50
+		elif not view_id:
+			return
+		try:
+			hold = 0
+			sleep(100)
+			while not container_content() == content:
+				hold += 1
+				if hold < 3000: sleep(1)
+				else: return
+			execute_builtin('Container.SetViewMode(%s)' % view_id)
+		except: return
+		if guide_view_active:
+			clear_property('fenlight.tvguide_view_active')
+			execute_builtin('ClearProperty(PirateTVGuideView,Home)')
+		return
+	if guide_view_active:
+		# Guide view 58 has controls only on the TV Guide route. Restore a normal
+		# view when movie, show, or list folders open after leaving the Guide.
+		view_id = None
+		if get_property('fenlight.use_viewtypes') == 'true':
+			view_id = get_property('fenlight.%s' % view_type) or None
+		if not view_id or str(view_id) == '58':
+			view_id = 50
+		try:
+			hold = 0
+			sleep(100)
+			while not container_content() == content:
+				hold += 1
+				if hold < 3000: sleep(1)
+				else: return
+			execute_builtin('Container.SetViewMode(%s)' % view_id)
+		except: return
+		clear_property('fenlight.tvguide_view_active')
+		execute_builtin('ClearProperty(PirateTVGuideView,Home)')
+		return
+	if not get_property('fenlight.use_viewtypes') == 'true': return
 	view_id = get_property('fenlight.%s' % view_type) or None
 	if not view_id: return
 	try:
@@ -301,7 +356,11 @@ def run_addon(addon='plugin.video.pirate', block=False):
 	return execute_builtin('RunAddon(%s)' % addon, block)
 
 def external():
-	return 'fenlight' not in get_infolabel('Container.PluginName')
+	plugin_name = get_infolabel('Container.PluginName').strip().lower()
+	folder_path = get_infolabel('Container.FolderPath').strip().lower()
+	is_pirate = ('plugin.video.pirate' in plugin_name or plugin_name == 'the pirate streaming'
+			or folder_path.startswith('plugin://plugin.video.pirate'))
+	return not (is_pirate or 'fenlight' in plugin_name or 'fenlight' in folder_path)
 
 def home():
 	return xbmcgui.getCurrentWindowId() == 10000

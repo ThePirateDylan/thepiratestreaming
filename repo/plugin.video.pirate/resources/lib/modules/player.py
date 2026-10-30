@@ -61,6 +61,8 @@ class FenLightPlayer(xbmc.Player):
 	def monitor(self):
 		try:
 			ensure_dialog_dead, total_check_time = False, 0
+			guide_join_pending = bool(getattr(self, 'tv_guide_join_seconds', 0))
+			guide_join_checks = 0
 			if self.media_type == 'episode':
 				play_random_continual = self.sources_object.random_continual
 				play_random = self.sources_object.random
@@ -85,6 +87,26 @@ class FenLightPlayer(xbmc.Player):
 					ku.sleep(1000)
 					try: self.total_time, self.curr_time = self.getTotalTime(), self.getTime()
 					except: ku.sleep(250); continue
+					if guide_join_pending:
+						guide_join_checks += 1
+						try:
+							from indexers.tv_guide import safe_guide_join_target
+							seek_enabled = ku.get_visibility('Player.SeekEnabled')
+							target = safe_guide_join_target(
+								self.tv_guide_join_seconds, self.total_time, self.curr_time, seek_enabled,
+							)
+							if target is not None:
+								self.seekTime(target)
+								ku.sleep(500)
+								seek_position = float(self.getTime())
+								tolerance = max(3.0, min(15.0, target * 0.05))
+								if abs(seek_position - target) > tolerance:
+									ku.logger('TV Guide Join', 'Seek did not reach the requested position; continuing normally.')
+								guide_join_pending = False
+							elif float(self.curr_time or 0) > 5 or float(self.total_time or 0) > 0 and self.tv_guide_join_seconds >= float(self.total_time) * 0.90 or guide_join_checks >= 10:
+								guide_join_pending = False
+						except Exception:
+							guide_join_pending = False
 					self.current_point = round(float(self.curr_time/self.total_time * 100), 1)
 					if self.current_point >= 90:
 						if play_random_continual: self.run_random_continual(); break
@@ -238,6 +260,8 @@ class FenLightPlayer(xbmc.Player):
 			self.media_marked, self.nextep_info_gathered, self.movie_stingers_run = False, False, False
 			self.playback_successful, self.cancel_all_playback = None, False
 			self.playing_item = self.sources_object.playing_item
+			try: self.tv_guide_join_seconds = max(int(getattr(self.sources_object, 'tv_guide_join_seconds', 0)), 0)
+			except (TypeError, ValueError): self.tv_guide_join_seconds = 0
 
 	def set_playback_properties(self):
 		try:

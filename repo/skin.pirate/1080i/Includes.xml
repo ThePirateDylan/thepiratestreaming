@@ -59,12 +59,12 @@
     <include file="IncludesDebugInfo.xml" condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)" />
 
     <!-- Constants -->
-    <constant name="bingie_no_circular_posx">131</constant>
+    <constant name="bingie_no_circular_posx">390</constant>
     <constant name="search_widget_height">420</constant>
     <constant name="search_widget_thumb_width">295</constant>
     <constant name="search_key_size">80</constant>
     <constant name="search_radiokey_width">220</constant>
-    <constant name="bingie_menu_width">500</constant>
+    <constant name="bingie_menu_width">360</constant>
     <constant name="episodes_thumb_height">266</constant>
     <constant name="episodes_thumb_width">466</constant>
 
@@ -201,6 +201,11 @@
         <left>138</left>
     </include>
 
+    <!-- Home content starts after the persistent navigation rail. -->
+    <include name="BingieHomeLeftDefs">
+        <left>390</left>
+    </include>
+
     <!--Dialog Color/Font-->
     <include name="DialogHeader">
         <!--Dialog Header-->
@@ -214,7 +219,7 @@
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
 		<texturenofocus></texturenofocus>
-		<texturefocus colordiffuse="ffd4af37" border="10">diffuse/panel.png</texturefocus>
+		<texturefocus colordiffuse="ffff7417" border="10">diffuse/panel.png</texturefocus>
     </include>
 
     <include name="DialogListNF">
@@ -281,7 +286,7 @@
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="ffd4af37" border="10">diffuse/panel.png</texturefocus>
+        <texturefocus colordiffuse="ffff7417" border="10">diffuse/panel.png</texturefocus>
     </include>
     <include name="KeyBoardKey">
         <height>70</height>
@@ -294,7 +299,7 @@
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="ffd4af37" border="10">diffuse/panel.png</texturefocus>
+        <texturefocus colordiffuse="ffff7417" border="10">diffuse/panel.png</texturefocus>
         <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="10">diffuse/panel.png</texturenofocus>
      </include>
     <include name="KeyBoardKeyRadio">
@@ -320,9 +325,9 @@
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="ffd4af37" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
+        <texturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
         <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
-        <alttexturefocus colordiffuse="ffd4af37" border="20">dialogs/keyboard/key-nf-2.png</alttexturefocus>
+        <alttexturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</alttexturefocus>
         <alttexturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</alttexturenofocus>
     </include>
 
@@ -513,7 +518,7 @@
 					<width>1152</width>
 					<texturebg colordiffuse="4dffffff">diffuse/panel2.png</texturebg>
 					<lefttexture/>
-					<midtexture colordiffuse="ffd4af37">diffuse/panel2.png</midtexture>
+					<midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 					<info>Player.SeekBar</info>
@@ -648,7 +653,7 @@
 					<visible>!VideoPlayer.HasEpg</visible>
 					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="ffd4af37">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="ffff7417">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>
@@ -662,7 +667,7 @@
 					<visible>VideoPlayer.HasEpg</visible>
 					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="ffd4af37">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="ffff7417">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>
@@ -890,7 +895,7 @@
 					<right>0</right>
 					<bottom>0</bottom>
 					<texture border="10">diffuse/panel.png</texture>
-					<colordiffuse>ffd4af37</colordiffuse>
+					<colordiffuse>ffff7417</colordiffuse>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -944,7 +949,7 @@
 				<onclick>$PARAM[onclick]</onclick>
 				<wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
 				<align>center</align>
-				<texturefocus border="15" colordiffuse="ffd4af37">diffuse/panel.png</texturefocus>
+				<texturefocus border="15" colordiffuse="ffff7417">diffuse/panel.png</texturefocus>
 				<texturenofocus/>
 				<visible>$PARAM[visible]</visible>
 				<enable>$PARAM[enable]</enable>

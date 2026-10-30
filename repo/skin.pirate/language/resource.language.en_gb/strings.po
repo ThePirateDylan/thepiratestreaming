@@ -2377,3 +2377,15 @@ msgstr "Widget"
 msgctxt "#31579"
 msgid "color for play icon"
 msgstr "Color para icono de reproducción"
+
+msgctxt "#31580"
+msgid "Maintenance"
+msgstr "Maintenance"
+
+msgctxt "#31581"
+msgid "Clean temporary files, packages, and artwork"
+msgstr "Clean temporary files, packages, and artwork"
+
+msgctxt "#31582"
+msgid "Startup cleanup options"
+msgstr "Startup cleanup options"

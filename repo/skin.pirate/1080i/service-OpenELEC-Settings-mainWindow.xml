@@ -263,7 +263,7 @@
                                 <width>120</width>
                                 <height>60</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="ffd4af37">common/radio/radio-button-fo.png</texture>
+                                <texture colordiffuse="ffff7417">common/radio/radio-button-fo.png</texture>
                                 <visible>String.IsEqual(ListItem.Property(value), 1) | String.IsEqual(ListItem.Property(value), true)</visible>
                             </control>
                         </control>
@@ -288,7 +288,7 @@
                                 <width>1200</width>
                                 <height>38</height>
 								<visible>Control.HasFocus(1100)</visible>
-                                <texture diffuse="diffuse/panel.png" border="10" colordiffuse="ffd4af37">colors/color_white.png</texture>
+                                <texture diffuse="diffuse/panel.png" border="10" colordiffuse="ffff7417">colors/color_white.png</texture>
                             </control>
 							<control type="image">
                                 <left>0</left>
@@ -377,7 +377,7 @@
                                 <width>120</width>
                                 <height>60</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="ffd4af37">common/radio/radio-button-fo.png</texture>
+                                <texture colordiffuse="ffff7417">common/radio/radio-button-fo.png</texture>
                                 <visible>String.IsEqual(ListItem.Property(value), 1) | String.IsEqual(ListItem.Property(value), true)</visible>
                             </control>
                         </control>
@@ -518,7 +518,7 @@
 								<top>2</top>
 								<width>1200</width>
 								<height>98</height>
-								<texture diffuse="diffuse/panel.png" border="10" colordiffuse="ffd4af37">colors/color_white.png</texture>
+								<texture diffuse="diffuse/panel.png" border="10" colordiffuse="ffff7417">colors/color_white.png</texture>
 							</control>
 							<!-- Icon ethernet -->
                         <control type="image">
@@ -935,7 +935,7 @@
 								<top>2</top>
 								<width>1200</width>
 								<height>98</height>
-								<texture diffuse="diffuse/panel.png" border="10" colordiffuse="ffd4af37">colors/color_white.png</texture>
+								<texture diffuse="diffuse/panel.png" border="10" colordiffuse="ffff7417">colors/color_white.png</texture>
 							</control>
 							 <!-- default -->
 							<control type="image">

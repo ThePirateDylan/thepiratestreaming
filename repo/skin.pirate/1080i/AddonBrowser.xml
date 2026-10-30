@@ -50,7 +50,7 @@
                 <control type="togglebutton" id="4">
                     <!--Ascending-->
                     <include>SideBladeMenuButton</include>
-					<alttexturefocus border="10" colordiffuse="ffd4af37">diffuse/panel.png</alttexturefocus>
+					<alttexturefocus border="10" colordiffuse="ffff7417">diffuse/panel.png</alttexturefocus>
 					<alttexturenofocus/>
                     <label>$LOCALIZE[584]</label>
                     <altlabel>$LOCALIZE[585]</altlabel>

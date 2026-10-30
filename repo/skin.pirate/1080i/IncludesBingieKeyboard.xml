@@ -40,36 +40,22 @@
                 <onup>312</onup>
                 <ondown>2000</ondown>
                 <!-- SPACE -->
-                <control type="radiobutton" id="32">
+                <control type="button" id="32">
                     <height>search_key_size</height>
                     <width>search_radiokey_width</width>
-                    <label/>
-                    <radioposx>60</radioposx>
-                    <radioposy>20</radioposy>
-                    <radiowidth>100</radiowidth>
-                    <radioheight>40</radioheight>
-                    <textureradioonfocus colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">bingie/keyboard/space.png</textureradioonfocus>
-                    <textureradioofffocus colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">bingie/keyboard/space.png</textureradioofffocus>
-                    <textureradioonnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/keyboard/space.png</textureradioonnofocus>
-                    <textureradiooffnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/keyboard/space.png</textureradiooffnofocus>
+                    <label>$LOCALIZE[20182]</label>
                     <include>SearchKeyDefs</include>
+                    <onclick>RunScript(script.pirate.helper,action=searchspace)</onclick>
                     <onup>312</onup>
                     <ondown>2000</ondown>
                 </control>
                 <!-- BACKSPACE -->
-                <control type="radiobutton" id="8">
+                <control type="button" id="8">
                     <height>search_key_size</height>
                     <width>search_radiokey_width</width>
-                    <label/>
-                    <radioposx>30</radioposx>
-                    <radioposy>20</radioposy>
-                    <radiowidth>160</radiowidth>
-                    <radioheight>40</radioheight>
-                    <textureradioonfocus colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">bingie/keyboard/backspace.png</textureradioonfocus>
-                    <textureradioofffocus colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">bingie/keyboard/backspace.png</textureradioofffocus>
-                    <textureradioonnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/keyboard/backspace.png</textureradioonnofocus>
-                    <textureradiooffnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/keyboard/backspace.png</textureradiooffnofocus>
+                    <label>$LOCALIZE[20181]</label>
                     <include>SearchKeyDefs</include>
+                    <onclick>RunScript(script.pirate.helper,action=searchbackspace)</onclick>
                     <onup>312</onup>
                     <ondown>2000</ondown>
                 </control>
@@ -524,7 +510,7 @@
                     <control type="image">
                         <width>350</width>
                         <height>60</height>
-                        <texture border="10" colordiffuse="ffd4af37">diffuse/panel.png</texture>
+                        <texture border="10" colordiffuse="ffff7417">diffuse/panel.png</texture>
                         <visible>Control.HasFocus(8000)</visible>
                     </control>
                     <control type="label">

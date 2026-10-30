@@ -330,21 +330,14 @@
     <!-- Search Radio Key -->
     <include name="SearchRadioKey">
         <param name="force_refresh" value="false"/>
+        <param name="label" default=""/>
         <param name="onclick2Cond" default="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
         <param name="onclick2" default="Skin.SetString(CustomSearchTerm)" />
         <definition>
-            <control type="radiobutton" id="$PARAM[id]">
+            <control type="button" id="$PARAM[id]">
                 <height>search_key_size</height>
                 <width>search_radiokey_width</width>
-                <label/>
-                <radioposx>$PARAM[radioposx]</radioposx>
-                <radioposy>$PARAM[radioposy]</radioposy>
-                <radiowidth>$PARAM[radiowidth]</radiowidth>
-                <radioheight>$PARAM[radioheight]</radioheight>
-                <textureradioonfocus colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$PARAM[texture]</textureradioonfocus>
-                <textureradioofffocus colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$PARAM[texture]</textureradioofffocus>
-                <textureradioonnofocus colordiffuse="ffd8c08a">$PARAM[texture]</textureradioonnofocus>
-                <textureradiooffnofocus colordiffuse="ffd8c08a">$PARAM[texture]</textureradiooffnofocus>
+                <label>$PARAM[label]</label>
                 <ondown>$PARAM[ondown]</ondown>
                 <onclick condition="$PARAM[force_refresh]">SetProperty(CustomSearch,1,home)</onclick>
                 <onclick>$PARAM[onclick]</onclick>
@@ -390,9 +383,9 @@
         <align>center</align>
         <font>Reg34</font>
         <textoffsetx>0</textoffsetx>
-        <selectedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</selectedcolor>
-        <textcolor>ffd8c08a</textcolor>
-		<focusedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</focusedcolor>
+        <selectedcolor>ffffffff</selectedcolor>
+        <textcolor>ffff7417</textcolor>
+		<focusedcolor>ffffffff</focusedcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus border="20">dialogs/keyboard/key-nf2.png</texturefocus>
         <texturenofocus colordiffuse="ff1b1b1b" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
@@ -403,9 +396,9 @@
         <font>Reg30</font>
         <textoffsetx>0</textoffsetx>
 		<textwidth>254</textwidth>
-        <selectedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</selectedcolor>
-        <textcolor>ffd8c08a</textcolor>
-		<focusedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</focusedcolor>
+        <selectedcolor>ffffffff</selectedcolor>
+        <textcolor>ffff7417</textcolor>
+		<focusedcolor>ffffffff</focusedcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus border="20">dialogs/keyboard/key-nf2.png</texturefocus>
         <texturenofocus colordiffuse="ff1b1b1b" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
@@ -428,11 +421,7 @@
         <!-- Backspace -->
         <include content="SearchRadioKey">
             <param name="id" value="11" />
-            <param name="radioposx" value="30" />
-            <param name="radioposy" value="20" />
-            <param name="radiowidth" value="160" />
-            <param name="radioheight" value="40" />
-            <param name="texture" value="bingie/keyboard/backspace.png" />
+            <param name="label" value="$LOCALIZE[20181]" />
             <param name="ondown" value="1007" />
             <param name="onclick" value="RunScript(script.pirate.helper,action=searchbackspace)" />
             <param name="onclick2Cond" value="false" />
@@ -440,11 +429,7 @@
         <!-- Space -->
         <include content="SearchRadioKey">
             <param name="id" value="10" />
-            <param name="radioposx" value="60" />
-            <param name="radioposy" value="20" />
-            <param name="radiowidth" value="100" />
-            <param name="radioheight" value="40" />
-            <param name="texture" value="bingie/keyboard/space.png" />
+            <param name="label" value="$LOCALIZE[20182]" />
             <param name="ondown" value="1007" />
             <param name="onclick" value="RunScript(script.pirate.helper,action=searchspace)" />
             <param name="onclick2Cond" value="false" />
@@ -778,7 +763,7 @@
                             <aligny>center</aligny>
                             <align>left</align>
                             <font>Reg26</font>
-                            <textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
+                            <textcolor>ffffffff</textcolor>
                             <scroll>true</scroll>
                             <label>$INFO[ListItem.Label]</label>
                         </control>

@@ -196,7 +196,7 @@
 						<width>660</width>
 						<height>175</height>
 						<texture border="10">diffuse/panel.png</texture>
-						<colordiffuse>ffd4af37</colordiffuse>
+						<colordiffuse>ffff7417</colordiffuse>
 					</control>
 					<control type="label">
 						<!--Time-->

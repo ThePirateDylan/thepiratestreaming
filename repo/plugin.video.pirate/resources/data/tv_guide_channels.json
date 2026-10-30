@@ -1,0 +1,723 @@
+{
+  "seasonal_channels": {
+    "10": {
+      "id": "holiday",
+      "number": "199",
+      "name": "Halloween Channel",
+      "season": "Halloween",
+      "icon": "horror",
+      "movie_keyword": "halloween",
+      "tv_keyword": "horror",
+      "description": "Seasonal Halloween picks, with spooky shows and movies.",
+      "slots": [
+        "Halloween Series",
+        "Halloween Movies",
+        "Spooky Encore"
+      ],
+      "logo_style": "halloween",
+      "logo_text": "Halloween Channel",
+      "logo_path": "resources/media/tv_guide/channels/halloween.png"
+    },
+    "12": {
+      "id": "holiday",
+      "number": "199",
+      "name": "Christmas Channel",
+      "season": "Christmas",
+      "icon": "genre_family",
+      "movie_keyword": "christmas",
+      "tv_keyword": "christmas",
+      "description": "Seasonal Christmas picks for cozy TV and movie nights.",
+      "slots": [
+        "Holiday Series",
+        "Christmas Movies",
+        "Holiday Encore"
+      ],
+      "logo_style": "christmas",
+      "logo_text": "Christmas Channel",
+      "logo_path": "resources/media/tv_guide/channels/christmas.png"
+    }
+  },
+  "network_channels": [
+    {
+      "id": "disnoy",
+      "number": "112",
+      "name": "Diznoy",
+      "icon": "genre_family",
+      "description": "Series aired on Disney Channel, checked against the network's TV catalog.",
+      "tv_network_id": "54",
+      "slots": [
+        "Diznoy Series",
+        "Diznoy Rewind",
+        "Diznoy Encore"
+      ],
+      "expected_tv_network_names": [
+        "Disney Channel"
+      ],
+      "logo_style": "diznoy",
+      "logo_text": "Diznoy",
+      "movie_candidate_titles": [
+        "Descendants",
+        "High School Musical",
+        "Camp Rock",
+        "The Cheetah Girls",
+        "Wizards of Waverly Place: The Movie"
+      ],
+      "logo_path": "resources/media/tv_guide/channels/disnoy.png"
+    },
+    {
+      "id": "disnoy_exb",
+      "number": "113",
+      "name": "Diznoy EXB",
+      "icon": "genre_action",
+      "description": "Series aired on Disney XD, checked against the network's TV catalog.",
+      "tv_network_id": "44",
+      "slots": [
+        "Diznoy EXB Series",
+        "Diznoy EXB Rewind",
+        "Diznoy EXB Encore"
+      ],
+      "expected_tv_network_names": [
+        "Disney XD"
+      ],
+      "logo_style": "diznoy_exb",
+      "logo_text": "Diznoy EXB",
+      "movie_candidate_titles": [
+        "Phineas and Ferb the Movie: Across the 2nd Dimension",
+        "Kim Possible: So the Drama",
+        "Star Wars: The Clone Wars",
+        "Phineas and Ferb: Mission Marvel"
+      ],
+      "logo_path": "resources/media/tv_guide/channels/disnoy_exb.png"
+    },
+    {
+      "id": "disnoy_jr",
+      "number": "114",
+      "name": "Diznoy Jr",
+      "icon": "genre_family",
+      "description": "Preschool and family series aired on Disney Junior.",
+      "tv_network_id": "281",
+      "slots": [
+        "Diznoy Jr Series",
+        "Diznoy Jr Rewind",
+        "Diznoy Jr Encore"
+      ],
+      "expected_tv_network_names": [
+        "Disney Junior"
+      ],
+      "logo_style": "diznoy_jr",
+      "logo_text": "Diznoy Jr",
+      "movie_candidate_titles": [
+        "Mickey's Once Upon a Christmas",
+        "Mickey's Twice Upon a Christmas",
+        "The Tigger Movie"
+      ],
+      "logo_path": "resources/media/tv_guide/channels/disnoy_jr.png"
+    },
+    {
+      "id": "toon_diznoy",
+      "number": "115",
+      "name": "Toon Diznoy",
+      "icon": "genre_animation",
+      "description": "Classic animated series from the Toon Disney era, with family-animation movie breaks.",
+      "tv_candidate_titles": [
+        "DuckTales",
+        "TaleSpin",
+        "Gargoyles",
+        "Hercules: The Animated Series",
+        "The Emperor's New School",
+        "House of Mouse"
+      ],
+      "movie_candidate_titles": [
+        "Mickey's Once Upon a Christmas",
+        "The Tigger Movie",
+        "The Lion King"
+      ],
+      "slots": [
+        "Toon Diznoy Series",
+        "Toon Diznoy Movies",
+        "Toon Diznoy Encore"
+      ],
+      "logo_style": "toon_diznoy",
+      "logo_text": "Toon Diznoy",
+      "logo_path": "resources/media/tv_guide/channels/toon_diznoy.png"
+    },
+    {
+      "id": "nickelodium",
+      "number": "116",
+      "name": "Nickelodium",
+      "icon": "genre_animation",
+      "description": "Series aired on Nickelodeon, checked against the network's TV catalog.",
+      "tv_network_id": "13",
+      "slots": [
+        "Nickelodium Series",
+        "Nickelodium Rewind",
+        "Nickelodium Encore"
+      ],
+      "expected_tv_network_names": [
+        "Nickelodeon"
+      ],
+      "movie_candidate_titles": [
+        "The SpongeBob SquarePants Movie",
+        "Rugrats in Paris: The Movie",
+        "Good Burger",
+        "Jimmy Neutron: Boy Genius"
+      ],
+      "logo_style": "nickelodium",
+      "logo_text": "Nickelodium",
+      "logo_path": "resources/media/tv_guide/channels/nickelodium.png"
+    },
+    {
+      "id": "cartoon_signal",
+      "number": "117",
+      "name": "Cartoon Signal",
+      "icon": "genre_animation",
+      "description": "Series aired on Cartoon Network, checked against the network's TV catalog.",
+      "tv_network_id": "56",
+      "slots": [
+        "Cartoon Signal Series",
+        "Cartoon Signal Rewind",
+        "Cartoon Signal Encore"
+      ],
+      "expected_tv_network_names": [
+        "Cartoon Network"
+      ],
+      "movie_candidate_titles": [
+        "The Powerpuff Girls Movie",
+        "Steven Universe: The Movie",
+        "Ed, Edd n Eddy's Big Picture Show",
+        "Ben 10: Secret of the Omnitrix"
+      ],
+      "logo_style": "cartoon_signal",
+      "logo_text": "Cartoon Signal",
+      "logo_path": "resources/media/tv_guide/channels/cartoon_signal.png"
+    },
+    {
+      "id": "doomerwang",
+      "number": "118",
+      "name": "DoomerWang",
+      "icon": "genre_animation",
+      "description": "Classic cartoons associated with Boomerang's programming era; only exact title matches with playable sources appear.",
+      "tv_candidate_titles": [
+        "The Tom and Jerry Show",
+        "Scooby-Doo, Where Are You!",
+        "The Flintstones",
+        "The Jetsons",
+        "The Yogi Bear Show",
+        "The Bugs Bunny Show"
+      ],
+      "slots": [
+        "DoomerWang Cartoons",
+        "Classic Cartoon Rewind",
+        "DoomerWang Encore"
+      ],
+      "movie_candidate_titles": [
+        "Scooby-Doo on Zombie Island",
+        "Scooby-Doo and the Witch's Ghost",
+        "Tom and Jerry: The Movie",
+        "The Jetsons Meet the Flintstones"
+      ],
+      "logo_style": "doomerwang",
+      "logo_text": "DoomerWang",
+      "logo_path": "resources/media/tv_guide/channels/doomerwang.png"
+    },
+    {
+      "id": "adult_svim",
+      "number": "119",
+      "name": "Adult Svim",
+      "icon": "genre_animation",
+      "description": "Adult Swim animation and late-night comedy from its own programming catalog.",
+      "tv_network_id": "80",
+      "expected_tv_network_names": [
+        "Adult Swim"
+      ],
+      "movie_candidate_titles": [
+        "Aqua Teen Hunger Force Colon Movie Film for Theaters",
+        "Metalocalypse: Army of the Doomstar",
+        "The Venture Bros.: Radiant Is the Blood of the Baboon Heart"
+      ],
+      "slots": [
+        "Adult Svim Series",
+        "Adult Svim Movies",
+        "Adult Svim Encore"
+      ],
+      "logo_style": "adult_svim",
+      "logo_text": "Adult Svim",
+      "logo_path": "resources/media/tv_guide/channels/adult_svim.png"
+    },
+    {
+      "id": "teelsee",
+      "number": "120",
+      "name": "TeeLSee",
+      "icon": "genre_documentary",
+      "description": "TLC reality, lifestyle, and documentary programming.",
+      "tv_network_id": "84",
+      "expected_tv_network_names": [
+        "TLC"
+      ],
+      "slots": [
+        "TeeLSee Series",
+        "TeeLSee Movies",
+        "TeeLSee Encore"
+      ],
+      "logo_style": "tlc",
+      "logo_text": "TeeLSee",
+      "logo_path": "resources/media/tv_guide/channels/teelsee.png"
+    },
+    {
+      "id": "usaye",
+      "number": "121",
+      "name": "U.S.Aye",
+      "icon": "genre_drama",
+      "description": "USA-inspired channel reserved for the owner's show list; programming is not enabled yet.",
+      "enabled": false,
+      "slots": [
+        "U.S.Aye Movie Block",
+        "Feature Presentation",
+        "U.S.Aye Encore"
+      ],
+      "logo_style": "usa",
+      "logo_text": "U.S.Aye",
+      "logo_path": "resources/media/tv_guide/channels/usaye.png"
+    },
+    {
+      "id": "truetv",
+      "number": "122",
+      "name": "TrueTV",
+      "icon": "genre_comedy",
+      "description": "truTV reality and comedy programming.",
+      "tv_network_id": "364",
+      "expected_tv_network_names": [
+        "truTV"
+      ],
+      "slots": [
+        "TrueTV Series",
+        "TrueTV Movies",
+        "TrueTV Encore"
+      ],
+      "logo_style": "truetv",
+      "logo_text": "TrueTV",
+      "logo_path": "resources/media/tv_guide/channels/truetv.png"
+    },
+    {
+      "id": "hystory",
+      "number": "123",
+      "name": "Hystory",
+      "icon": "genre_documentary",
+      "description": "History-focused factual series and historical documentaries.",
+      "tv_network_id": "65",
+      "expected_tv_network_names": [
+        "History",
+        "The History Channel"
+      ],
+      "slots": [
+        "Hystory Series",
+        "Hystory Movies",
+        "Hystory Encore"
+      ],
+      "logo_style": "history",
+      "logo_text": "Hystory",
+      "logo_path": "resources/media/tv_guide/channels/hystory.png"
+    },
+    {
+      "id": "animal_plan_it",
+      "number": "124",
+      "name": "Animal Plan-It",
+      "icon": "genre_documentary",
+      "description": "Wildlife, animal, and nature series from Animal Planet.",
+      "tv_network_id": "91",
+      "expected_tv_network_names": [
+        "Animal Planet"
+      ],
+      "slots": [
+        "Animal Plan-It Series",
+        "Animal Plan-It Movies",
+        "Animal Plan-It Encore"
+      ],
+      "logo_style": "animal_planet",
+      "logo_text": "Animal Plan-It",
+      "logo_path": "resources/media/tv_guide/channels/animal_plan_it.png"
+    },
+    {
+      "id": "a_and_y",
+      "number": "125",
+      "name": "A&Y",
+      "icon": "genre_crime",
+      "description": "A&E crime, documentary, and factual entertainment.",
+      "tv_network_id": "129",
+      "expected_tv_network_names": [
+        "A&E",
+        "A&E Network"
+      ],
+      "slots": [
+        "A&Y Series",
+        "A&Y Movies",
+        "A&Y Encore"
+      ],
+      "logo_style": "ae",
+      "logo_text": "A&Y",
+      "logo_path": "resources/media/tv_guide/channels/a_and_y.png"
+    },
+    {
+      "id": "h_b_oh",
+      "number": "126",
+      "name": "H-B-Oh",
+      "icon": "genre_drama",
+      "description": "HBO original drama and premium series with a rotating premium-film block.",
+      "tv_network_id": "49",
+      "expected_tv_network_names": [
+        "HBO"
+      ],
+      "movie_candidate_titles": [
+        "The Normal Heart",
+        "Recount",
+        "Game Change",
+        "The Tale",
+        "Bad Education"
+      ],
+      "slots": [
+        "H-B-Oh Series",
+        "H-B-Oh Movies",
+        "H-B-Oh Encore"
+      ],
+      "logo_style": "hbo",
+      "logo_text": "H-B-Oh",
+      "logo_path": "resources/media/tv_guide/channels/h_b_oh.png"
+    },
+    {
+      "id": "comedy_sentrall",
+      "number": "127",
+      "name": "Comedy Sentrall",
+      "icon": "genre_comedy",
+      "description": "Comedy Central original comedy and animated series.",
+      "tv_network_id": "47",
+      "expected_tv_network_names": [
+        "Comedy Central"
+      ],
+      "movie_candidate_titles": [
+        "South Park: Bigger, Longer & Uncut",
+        "Beavis and Butt-Head Do America"
+      ],
+      "slots": [
+        "Comedy Sentrall Series",
+        "Comedy Sentrall Movies",
+        "Comedy Sentrall Encore"
+      ],
+      "logo_style": "comedy_central",
+      "logo_text": "Comedy Sentrall",
+      "logo_path": "resources/media/tv_guide/channels/comedy_sentrall.png"
+    },
+    {
+      "id": "tnt",
+      "number": "128",
+      "name": "T'N'T",
+      "icon": "genre_action",
+      "description": "TNT drama, action, and crime series with matching feature-film breaks.",
+      "tv_network_id": "41",
+      "expected_tv_network_names": [
+        "TNT"
+      ],
+      "slots": [
+        "T'N'T Series",
+        "T'N'T Movies",
+        "T'N'T Encore"
+      ],
+      "logo_style": "tnt",
+      "logo_text": "T'N'T",
+      "movie_candidate_titles": [
+        "The Fugitive",
+        "Twister",
+        "A Few Good Men",
+        "The Dark Knight",
+        "The Shawshank Redemption"
+      ],
+      "logo_path": "resources/media/tv_guide/channels/tnt.png"
+    },
+    {
+      "id": "scy_fy",
+      "number": "129",
+      "name": "Sci-Fy",
+      "icon": "genre_scifi",
+      "description": "SYFY science-fiction, fantasy, and horror series with genre-film breaks.",
+      "tv_network_id": "77",
+      "expected_tv_network_names": [
+        "Syfy",
+        "SYFY"
+      ],
+      "movie_candidate_titles": [
+        "Sharknado",
+        "Sharknado 2: The Second One",
+        "Lavalantula"
+      ],
+      "slots": [
+        "Sci-Fy Series",
+        "Sci-Fy Movies",
+        "Sci-Fy Encore"
+      ],
+      "logo_style": "syfy",
+      "logo_text": "Sci-Fy",
+      "logo_path": "resources/media/tv_guide/channels/scy_fy.png"
+    },
+    {
+      "id": "abee_family",
+      "number": "130",
+      "name": "ABee Family",
+      "icon": "genre_family",
+      "description": "ABC Family-era series and family entertainment.",
+      "tv_network_id": "126",
+      "expected_tv_network_names": [
+        "ABC Family",
+        "Freeform"
+      ],
+      "movie_candidate_titles": [
+        "The Lizzie McGuire Movie",
+        "High School Musical",
+        "Camp Rock"
+      ],
+      "slots": [
+        "ABee Family Series",
+        "ABee Family Movies",
+        "ABee Family Encore"
+      ],
+      "logo_style": "abc_family",
+      "logo_text": "ABee Family",
+      "logo_path": "resources/media/tv_guide/channels/abee_family.png"
+    },
+    {
+      "id": "emtv",
+      "number": "131",
+      "name": "EmTV",
+      "icon": "genre_comedy",
+      "description": "MTV reality, comedy, and youth-culture series.",
+      "tv_network_id": "33",
+      "expected_tv_network_names": [
+        "MTV"
+      ],
+      "slots": [
+        "EmTV Series",
+        "EmTV Movies",
+        "EmTV Encore"
+      ],
+      "logo_style": "mtv",
+      "logo_text": "EmTV",
+      "logo_path": "resources/media/tv_guide/channels/emtv.png"
+    },
+    {
+      "id": "lifetyme",
+      "number": "132",
+      "name": "LifeTyme",
+      "icon": "genre_drama",
+      "description": "Lifetime drama, mystery, and made-for-TV stories.",
+      "tv_network_id": "34",
+      "expected_tv_network_names": [
+        "Lifetime"
+      ],
+      "slots": [
+        "LifeTyme Series",
+        "LifeTyme Movies",
+        "LifeTyme Encore"
+      ],
+      "logo_style": "lifetime",
+      "logo_text": "LifeTyme",
+      "logo_path": "resources/media/tv_guide/channels/lifetyme.png"
+    },
+    {
+      "id": "amcee",
+      "number": "133",
+      "name": "A.M.Cee",
+      "icon": "genre_drama",
+      "description": "AMC original dramas and genre series with matching feature-film breaks.",
+      "tv_network_id": "174",
+      "expected_tv_network_names": [
+        "AMC"
+      ],
+      "slots": [
+        "A.M.Cee Series",
+        "A.M.Cee Movies",
+        "A.M.Cee Encore"
+      ],
+      "logo_style": "amc",
+      "logo_text": "A.M.Cee",
+      "logo_path": "resources/media/tv_guide/channels/amcee.png"
+    },
+    {
+      "id": "better",
+      "number": "134",
+      "name": "B.E.Tter",
+      "icon": "genre_drama",
+      "description": "BET original drama, comedy, and reality programming.",
+      "tv_network_id": "24",
+      "expected_tv_network_names": [
+        "BET"
+      ],
+      "slots": [
+        "B.E.Tter Series",
+        "B.E.Tter Movies",
+        "B.E.Tter Encore"
+      ],
+      "logo_style": "bet",
+      "logo_text": "B.E.Tter",
+      "logo_path": "resources/media/tv_guide/channels/better.png"
+    },
+    {
+      "id": "braavo",
+      "number": "135",
+      "name": "Braavo",
+      "icon": "genre_comedy",
+      "description": "Bravo reality and lifestyle series.",
+      "tv_network_id": "74",
+      "expected_tv_network_names": [
+        "Bravo"
+      ],
+      "slots": [
+        "Braavo Series",
+        "Braavo Movies",
+        "Braavo Encore"
+      ],
+      "logo_style": "bravo",
+      "logo_text": "Braavo",
+      "logo_path": "resources/media/tv_guide/channels/braavo.png"
+    },
+    {
+      "id": "food_network",
+      "number": "136",
+      "name": "Food NetWurk",
+      "icon": "genre_documentary",
+      "description": "Food Network cooking, competition, and food-travel series.",
+      "tv_network_id": "53",
+      "expected_tv_network_names": [
+        "Food Network"
+      ],
+      "slots": [
+        "Food NetWurk Series",
+        "Food NetWurk Movies",
+        "Food NetWurk Encore"
+      ],
+      "logo_style": "food_network",
+      "logo_text": "Food NetWurk",
+      "logo_path": "resources/media/tv_guide/channels/food_network.png"
+    },
+    {
+      "id": "showtyme",
+      "number": "137",
+      "name": "Showtyme",
+      "icon": "genre_drama",
+      "description": "Showtime original drama and premium series with a rotating premium-film block.",
+      "tv_network_id": "67",
+      "expected_tv_network_names": [
+        "Showtime"
+      ],
+      "slots": [
+        "Showtyme Series",
+        "Showtyme Movies",
+        "Showtyme Encore"
+      ],
+      "logo_style": "showtime",
+      "logo_text": "Showtyme",
+      "logo_path": "resources/media/tv_guide/channels/showtyme.png"
+    },
+    {
+      "id": "natural_geographic",
+      "number": "138",
+      "name": "Natural Geographic",
+      "icon": "genre_documentary",
+      "description": "National Geographic factual, science, exploration, and nature series.",
+      "tv_network_id": "43",
+      "expected_tv_network_names": [
+        "National Geographic"
+      ],
+      "slots": [
+        "Natural Geographic Series",
+        "Natural Geographic Movies",
+        "Natural Geographic Encore"
+      ],
+      "logo_style": "natgeo",
+      "logo_text": "Natural Geographic",
+      "logo_path": "resources/media/tv_guide/channels/natural_geographic.png"
+    },
+    {
+      "id": "discoveree",
+      "number": "139",
+      "name": "Discoveree",
+      "icon": "genre_documentary",
+      "description": "Discovery factual, science, adventure, and reality programming.",
+      "tv_network_id": "64",
+      "expected_tv_network_names": [
+        "Discovery",
+        "Discovery Channel"
+      ],
+      "slots": [
+        "Discoveree Series",
+        "Discoveree Movies",
+        "Discoveree Encore"
+      ],
+      "logo_style": "discovery",
+      "logo_text": "Discoveree",
+      "logo_path": "resources/media/tv_guide/channels/discoveree.png"
+    },
+    {
+      "id": "nicktoonz",
+      "number": "140",
+      "name": "NickToonz",
+      "icon": "genre_animation",
+      "description": "Animated series carried by the Nicktoons channel, kept distinct from the main Nickelodeon feed.",
+      "tv_candidate_titles": [
+        "The Fairly OddParents",
+        "Danny Phantom",
+        "Invader Zim",
+        "Avatar: The Last Airbender",
+        "Teenage Mutant Ninja Turtles"
+      ],
+      "slots": [
+        "NickToonz Series",
+        "NickToonz Movies",
+        "NickToonz Encore"
+      ],
+      "logo_style": "nicktoonz",
+      "logo_text": "NickToonz",
+      "logo_path": "resources/media/tv_guide/channels/nicktoonz.png"
+    },
+    {
+      "id": "foxx_movie_channel",
+      "number": "141",
+      "name": "Foxx Movie Channel",
+      "icon": "genre_drama",
+      "description": "A rotating feature-film channel across familiar movie genres.",
+      "slots": [
+        "Foxx Movie Channel Movie Block",
+        "Feature Presentation",
+        "Foxx Movie Channel Encore"
+      ],
+      "logo_style": "fox_movie",
+      "logo_text": "Foxx Movie Channel",
+      "movie_candidate_titles": [
+        "Avatar",
+        "Home Alone",
+        "Titanic",
+        "The Sound of Music",
+        "Alien",
+        "Die Hard",
+        "The Simpsons Movie"
+      ],
+      "logo_path": "resources/media/tv_guide/channels/foxx_movie_channel.png"
+    },
+    {
+      "id": "starzz",
+      "number": "142",
+      "name": "Starzz",
+      "icon": "genre_drama",
+      "description": "Starz original drama and premium series with a rotating premium-film block.",
+      "tv_network_id": "318",
+      "expected_tv_network_names": [
+        "Starz"
+      ],
+      "slots": [
+        "Starzz Series",
+        "Starzz Movies",
+        "Starzz Encore"
+      ],
+      "logo_style": "starz",
+      "logo_text": "Starzz",
+      "logo_path": "resources/media/tv_guide/channels/starzz.png"
+    }
+  ]
+}

@@ -35,7 +35,7 @@
             <control type="image">
                 <width>1000</width>
                 <height>100%</height>
-                <texture background="true" colordiffuse="cc091420">diffuse/panel2.png</texture>
+                <texture background="true" colordiffuse="cc111315">diffuse/panel2.png</texture>
             </control>
 
             <control type="grouplist">

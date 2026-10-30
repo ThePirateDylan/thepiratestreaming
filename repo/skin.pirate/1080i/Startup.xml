@@ -3,6 +3,7 @@
 <window>
     <defaultcontrol always="true">10</defaultcontrol>
     <include>DefaultSkinSettings</include>
+    <onload>RunScript(script.pirate.helper,action=installpauseosdkeymap)</onload>
     <onload>SetProperty(Random,$INFO[System.Time(ss)],Home)</onload>
     <!-- start up mask - preload -->
     <onload condition="String.IsEmpty(Skin.String(SplashScreen))">SetProperty(StartupMask,1,home)</onload>

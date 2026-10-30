@@ -1,0 +1,3 @@
+Private development package.
+The built-in online updater and rollback actions must remain disabled.
+Install updates through manually transferred ZIP packages.

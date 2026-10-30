@@ -197,7 +197,7 @@
 					<visible>!VideoPlayer.HasEpg</visible>
 					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="ffd4af37">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="ffff7417">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>
@@ -211,7 +211,7 @@
 					<visible>VideoPlayer.HasEpg</visible>
 					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="ffd4af37">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="ffff7417">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>
@@ -525,7 +525,7 @@
 					<width>1152</width>
 					<texturebg colordiffuse="4dffffff">diffuse/panel2.png</texturebg>
 					<lefttexture/>
-					<midtexture colordiffuse="ffd4af37">diffuse/panel2.png</midtexture>
+					<midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 					<info>Player.Progress</info>
@@ -540,7 +540,7 @@
 					<info>PVR.EpgEventProgress</info>
 					<texturebg colordiffuse="4dffffff">diffuse/panel2.png</texturebg>
 					<lefttexture/>
-					<midtexture colordiffuse="ffd4af37">diffuse/panel2.png</midtexture>
+					<midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>

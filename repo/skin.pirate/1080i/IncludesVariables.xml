@@ -9,6 +9,19 @@
         <value>$INFO[System.StartupWindow]</value>
     </variable>
 
+    <!-- Use bundled Y2K navigation icons even when Kodi keeps older shortcut artwork in the profile. -->
+    <variable name="PirateSidebarIcon">
+        <value condition="String.Contains(ListItem.Property(path),mode=tvguide.main) | String.IsEqual(ListItem.Property(defaultID),tvguide)">special://skin/shortcut-icons/tvguide.png</value>
+        <value condition="String.Contains(ListItem.Property(path),mode=navigator.premium) | String.IsEqual(ListItem.Property(defaultID),cloud)">special://skin/shortcut-icons/cloud.png</value>
+        <value condition="String.Contains(ListItem.Property(path),open_settings) | String.IsEqual(ListItem.Property(defaultID),arghsettings)">special://skin/shortcut-icons/settings.png</value>
+        <value condition="String.Contains(ListItem.Property(path),1114) | String.IsEqual(ListItem.Property(defaultID),mystars)">special://skin/shortcut-icons/favorites.png</value>
+        <value condition="String.Contains(ListItem.Property(path),1111) | String.IsEqual(ListItem.Property(defaultID),movies)">special://skin/shortcut-icons/movies.png</value>
+        <value condition="String.Contains(ListItem.Property(path),1110) | String.IsEqual(ListItem.Property(defaultID),shows)">special://skin/shortcut-icons/tvshows.png</value>
+        <value condition="String.Contains(ListItem.Property(path),1109) | String.IsEqual(ListItem.Property(defaultID),137)">special://skin/shortcut-icons/search.png</value>
+        <value condition="String.Contains(ListItem.Property(path),home) | String.IsEqual(ListItem.Property(defaultID),10000)">special://skin/shortcut-icons/home.png</value>
+        <value>$INFO[ListItem.Icon]</value>
+    </variable>
+
     <!-- Focus Override for menu entries -->
     <variable name="MenuEntryOverrideFocus">
         <value condition="Integer.IsGreater(Container(77777).NumItems,0)">77777</value>
@@ -481,7 +494,7 @@
 		<value condition="String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31456]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31448]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31428]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31381]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31372])">FFFFA10B</value>
 		<value condition="String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31457]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31414]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31352]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31382])">FFCE3A00</value>
 		<value condition="String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31469]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31446]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31398]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31386]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31373])">FFA60A5E</value>
-		<value condition="String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31451]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31442]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31374]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31376])">ffd4af37</value>
+		<value condition="String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31451]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31442]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31374]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31376])">ffff7417</value>
 		<value condition="String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31452]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31049])">FF7D2889</value>
 		<value condition="String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31159]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31435]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31377]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31364])">FF3F54FF</value>
 		<value condition="String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31046]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31399]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31427]) | String.IsEqual(Container.ListItem.Label2,$LOCALIZE[31353])">FF007A63</value>
@@ -513,7 +526,7 @@
     </variable>
 	
 	<variable name="IMDBTop250IconColor">
-        <value condition="!Skin.HasSetting(EnableTop250WhiteLabel)">bingie/top250.png</value>
+        <value condition="!Skin.HasSetting(EnableTop250WhiteLabel)">bingie/top250white.png</value>
         <value condition="Skin.HasSetting(EnableTop250WhiteLabel)">bingie/top250white.png</value>
     </variable>
 	

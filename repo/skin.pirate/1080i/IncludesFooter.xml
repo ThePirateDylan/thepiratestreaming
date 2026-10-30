@@ -146,7 +146,7 @@
             <onup>900</onup>
             <onright>900</onright>
             <onleft>900</onleft>
-            <texturefocus colordiffuse="ffd4af37">common/shutdown2.png</texturefocus>
+            <texturefocus colordiffuse="ffff7417">common/shutdown2.png</texturefocus>
             <texturenofocus colordiffuse="white">common/shutdown2.png</texturenofocus>
             <onclick>ActivateWindow(111)</onclick>
             <onfocus>ActivateWindow(111)</onfocus>
@@ -194,7 +194,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/letterboxd.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/letterboxdwhite.png</texture>
 		    </control>
 			<control type="image">
 				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
@@ -238,7 +239,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/metacritic.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/metacriticwhite.png</texture>
 		    </control>
 			<control type="image">
 				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
@@ -282,7 +284,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/trakt.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/traktwhite.png</texture>
 		    </control>
 			<control type="image">
 				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
@@ -326,7 +329,8 @@
                 <height>42</height>
 				<aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/tmdb.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <texture background="true">bingie/ratings/tmdbwhite.png</texture>
 			</control>
             <control type="image">
 				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
@@ -335,7 +339,7 @@
                 <height>42</height>
 				<aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-				<colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+				<colordiffuse>ffffffff</colordiffuse>
                 <texture background="true">bingie/ratings/tmdbwhite.png</texture>
 			</control>				
 		</control>	
@@ -371,7 +375,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/imdb.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/imdbwhite.png</texture>
 			</control>
 			<control type="image">
 				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
@@ -415,7 +420,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture>bingie/ratings/top250.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <texture>bingie/ratings/top250white.png</texture>
 		    </control>	
 			<control type="image">
 				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
@@ -424,7 +430,7 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-				<colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+				<colordiffuse>ffffffff</colordiffuse>
                 <texture>bingie/ratings/top250white.png</texture>
 		    </control>	
 			</control>
@@ -965,7 +971,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/top250.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <texture background="true">bingie/ratings/top250white.png</texture>
 				</control>	
 				
 				<!--Top250 White-->
@@ -978,7 +985,7 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-				<colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+				<colordiffuse>ffffffff</colordiffuse>
                 <texture background="true">bingie/ratings/top250white.png</texture>
 				</control>	
 				
@@ -1005,7 +1012,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/imdb.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/imdbwhite.png</texture>
 				</control>	
 				
 				<!--imdb White-->
@@ -1211,7 +1219,8 @@
                 <height>42</height>
 				<aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/tmdb.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <texture background="true">bingie/ratings/tmdbwhite.png</texture>
 				</control>	
 				
 				<!--TMDB White-->
@@ -1224,7 +1233,7 @@
                 <height>42</height>
 				<aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-				<colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+				<colordiffuse>ffffffff</colordiffuse>
                 <texture background="true">bingie/ratings/tmdbwhite.png</texture>
 				</control>	
 				
@@ -1252,7 +1261,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/trakt.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/traktwhite.png</texture>
 				</control>	
 				
 				<!--Trakt White-->
@@ -1292,7 +1302,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/metacritic.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/metacriticwhite.png</texture>
 				</control>	
 				
 				<!--Metacritic White-->
@@ -1332,7 +1343,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/letterboxd.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/letterboxdwhite.png</texture>
 				</control>	
 				
 				<!--Letterboxd White-->
@@ -1411,7 +1423,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/letterboxd.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/letterboxdwhite.png</texture>
 				</control>	
 				
 				<!--Letterboxd White logo VD-->
@@ -1452,7 +1465,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/metacritic.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/metacriticwhite.png</texture>
 				</control>	
 				
 				<!--Metacritic White logo VD-->
@@ -1493,7 +1507,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/trakt.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/traktwhite.png</texture>
 				</control>	
 				
 				<!--Trakt White logo VD-->
@@ -1534,7 +1549,8 @@
                 <height>42</height>
 				<aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/tmdb.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <texture background="true">bingie/ratings/tmdbwhite.png</texture>
 				</control>	
 				
 				<!--TMDB White logo VD-->
@@ -1547,7 +1563,7 @@
                 <height>42</height>
 				<aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-				<colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+				<colordiffuse>ffffffff</colordiffuse>
                 <texture background="true">bingie/ratings/tmdbwhite.png</texture>
 				</control>	
 				
@@ -1741,7 +1757,8 @@
 				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
-                <texture background="true">bingie/ratings/imdb.png</texture>
+                <colordiffuse>$INFO[Skin.String(FooterIconColor)]</colordiffuse>
+                <texture background="true">bingie/ratings/imdbwhite.png</texture>
 				</control>	
 				
 				<!--imdb logo White VD -->

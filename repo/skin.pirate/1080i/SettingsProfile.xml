@@ -106,7 +106,7 @@
                         <control type="image">
                             <height>80</height>
                             <width>1230</width>
-                            <texture border="10" colordiffuse="ffd4af37">diffuse/panel.png</texture>
+                            <texture border="10" colordiffuse="ffff7417">diffuse/panel.png</texture>
                         </control>
                         <control type="image">
                             <posx>20</posx>

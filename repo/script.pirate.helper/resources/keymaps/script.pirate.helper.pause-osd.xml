@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Match the fullscreen ENTER/select path so VideoOSD owns pause and focus. -->
 <keymap>
-    <!-- Use Kodi's standard mouse selection for every control in the video information dialog. -->
+    <!-- Preserve Kodi's native pointer hit-testing in the video information dialog. -->
     <movieinformation>
         <mouse>
-            <leftclick>Select</leftclick>
+            <leftclick>leftclick</leftclick>
         </mouse>
     </movieinformation>
     <FullscreenVideo>

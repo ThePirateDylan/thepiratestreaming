@@ -2,6 +2,7 @@
 from caches.settings_cache import get_setting, set_setting, default_setting_values
 from modules.kodi_utils import translate_path, get_property
 from modules.kodi_utils import logger
+from modules.update_safety import is_private_development_build
 
 def tmdb_api_key():
 	return get_setting('fenlight.tmdb_api', '')
@@ -427,6 +428,7 @@ def update_delay():
 	return int(get_setting('fenlight.update.delay', '45'))
 
 def update_action():
+	if is_private_development_build(): return 3
 	return int(get_setting('fenlight.update.action', '2'))
 
 def rescrape_settings():

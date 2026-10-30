@@ -84,7 +84,7 @@
     </include>
 
     <include name="ContainerShowInfoOnclick">
-        <onclick condition="String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,episode) | !String.IsEmpty(Container($PARAM[widgetid]).ListItem.AddonName)">Action(info)</onclick>
+        <onclick condition="[String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,episode) | !String.IsEmpty(Container($PARAM[widgetid]).ListItem.AddonName)] + !String.StartsWith(Container($PARAM[widgetid]).ListItem.Label,Next Page)">Action(info)</onclick>
     </include>
 
     <include name="CustomBingieWinProps">
@@ -1743,13 +1743,13 @@
                     <!--this red line just for slim menu-->
                     <include content="Bingie_Menu_Current_Indicator"> 
                          <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
-                         <param name="left" value="65" /> 
+                         <param name="left" value="112" /> 
 						 <param name="includeAnimCond" value="true" />
                      </include> 
 					 <!--added to keep the red line stationary on sideblade menu instead of moving with focus-->
 						<include content="Bingie_Menu_Current_Indicator"> 
                         <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
-						<param name="left" value="65" />
+						<param name="left" value="112" />
 						</include>
                     <include content="Bingie_Menu_IconFOCUS_2">
                         <param name="includeAnimCond" value="true" />
@@ -1759,41 +1759,41 @@
                     </include>
                 </itemlayout>
                 <focusedlayout height="82" width="bingie_menu_width" condition="[Control.HasFocus(900) | Control.HasFocus(4444)]">
+                    <!--Keep the active label plate behind its text.-->
+                    <include content="Bingie_Menu_Current_Indicator">
+                        <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
+                        <param name="left" value="112" />
+                    </include>
                     <include content="Bingie_Menu_IconFOCUS">
                         <param name="includeAnimCond" value="false" />
                     </include>
                     <include>Bingie_Menu_LabelFOCUS</include>
-                     <!--Red line under sideblade icons and slim menu-->
-                    <include content="Bingie_Menu_Current_Indicator">
-                        <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
-						<param name="left" value="65" /> 
-                    </include>
                     <!-- home behavior onfocus -->
                     <include>HiddenHomeMenuButton</include>
                 </focusedlayout>
 				<focusedlayout height="82" width="bingie_menu_width" condition="[Control.HasFocus(40000) | Control.HasFocus(40003)]">
+                    <!--Keep the active label plate behind its text.-->
+                    <include content="Bingie_Menu_Current_Indicator">
+                        <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
+                        <param name="left" value="112" />
+                    </include>
                     <include content="Bingie_Menu_Icon">
                         <param name="includeAnimCond" value="false" />
                     </include>
                     <include>Bingie_Menu_Label</include>
-                     <!--Red line under sideblade icons and slim menu-->
-                    <include content="Bingie_Menu_Current_Indicator">
-                        <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
-						<param name="left" value="65" /> 
-                    </include>
                     <!-- home behavior onfocus -->
                     <include>HiddenHomeMenuButton</include>
                 </focusedlayout>
                 <focusedlayout height="82" width="bingie_menu_width" condition="![Control.HasFocus(900) | Control.HasFocus(4444)]">
 					<include content="Bingie_Menu_Current_Indicator"> 
                          <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
-                         <param name="left" value="65" /> 
+                         <param name="left" value="112" /> 
 						 <param name="includeAnimCond" value="true" />
                      </include> 
 					 <!--added to keep the red line stationary on sideblade menu instead of moving with focus-->
 						<include content="Bingie_Menu_Current_Indicator"> 
                         <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
-						<param name="left" value="65" />
+						<param name="left" value="112" />
 						</include>
                     <include content="Bingie_Menu_IconFOCUS">
                         <param name="includeAnimCond" value="true" />
@@ -1941,20 +1941,19 @@
 	<!-- Bingie Menu  Indicator - Red line Under Menu Icons-->
     <include name="Bingie_Menu_Current_Indicator">
         <definition>
-		<control type="group">
-			<include condition="$PARAM[includeAnimCond]">Bingie_Menu_Icon_Anim</include>
-            <control type="image">
-                <visible>$PARAM[visibility]</visible>
-                <left>$PARAM[left]</left>
-                <width>38</width>
-                <bottom>-28</bottom>
-				<height>60</height>
-                <texture>indication/sword.png</texture>
-                <colordiffuse>$INFO[Skin.String(LineUnderMenuIconsColor)]</colordiffuse>
-                <aspectratio>stretch</aspectratio>
-                <animation effect="fade" start="0" end="100" delay="200" time="150">Visible</animation>				
+            <control type="group">
+                <include condition="$PARAM[includeAnimCond]">Bingie_Menu_Icon_Anim</include>
+                <control type="image">
+                    <visible>$PARAM[visibility]</visible>
+                    <left>$PARAM[left]</left>
+                    <top>14</top>
+                    <width>220</width>
+                    <height>54</height>
+                    <texture border="18" colordiffuse="ffff7417">dialogs/keyboard/key-nf.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                    <animation effect="fade" start="0" end="100" delay="100" time="150">Visible</animation>
+                </control>
             </control>
-		</control>	
         </definition>
     </include>
 
@@ -1994,7 +1993,7 @@
             <top>20</top>
             <control type="image">
                 <include>Bingie_Menu_Icon_Defs</include>
-                <colordiffuse>$INFO[Skin.String(MainMenuButtonColor)]</colordiffuse>
+                <colordiffuse>ffffffff</colordiffuse>
             </control>
         </control>
     </include>
@@ -2006,7 +2005,7 @@
             <top>20</top>
             <control type="image">
                 <include>Bingie_Menu_Icon_Defs</include>
-                <colordiffuse>$INFO[Skin.String(MainMenuFocusButtonColor)]</colordiffuse>
+                <colordiffuse>ffffffff</colordiffuse>
             </control>
         </control>
     </include>
@@ -2018,7 +2017,7 @@
             <top>20</top>
             <control type="image">
                 <include>Bingie_Menu_Icon_Defs</include>
-                <colordiffuse>$VAR[MenuIconColor]</colordiffuse>
+                <colordiffuse>ffffffff</colordiffuse>
             </control>
         </control>
     </include>
@@ -2030,19 +2029,13 @@
     <include name="Bingie_Menu_Icon_Defs">
         <width>56</width>
         <height>56</height>
-        <texture background="true">$INFO[ListItem.Icon]</texture>
+        <texture background="true">$VAR[PirateSidebarIcon]</texture>
     </include>
 
     <include name="Bingie_Menu_Label_Defs">
-        <width>350</width>
-        <height>92</height>
-        <align>left</align>
-        <left>130</left>
-        <aligny>center</aligny>
-        <font>Reg34</font>
-		<textcolor>$INFO[Skin.String(MainMenuTextColor)]</textcolor>
-        <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
-        <animation effect="fade" start="100" end="0" time="300" condition="!$EXP[IsMainMenuOpened]">Conditional</animation>
+        <visible>true</visible><width>230</width><height>82</height><align>left</align><left>130</left><aligny>center</aligny><font>Reg24</font>
+        <animation effect="slide" start="0" end="385" time="1" delay="200" condition="!$EXP[IsMainMenuOpened]">Conditional</animation>
+        <textcolor>ffffffff</textcolor><label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label><scroll>false</scroll>
     </include>
 
     <include name="Bingie_Menu_Label">
@@ -2060,16 +2053,9 @@
 <!--Side Menu Icon Names on Focus-->
  <include name="Bingie_Menu_LabelFOCUS">
         <control type="label">
-        <width>350</width>
-        <height>92</height>
-        <align>left</align>
-        <left>132</left>
-		<aligny>center</aligny>
-        <font>Bold34</font>
-		<textcolor>$INFO[Skin.String(MainMenuFocusTextColor)]</textcolor>
-        <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
-        <animation effect="fade" start="100" end="0" time="300" condition="!$EXP[IsMainMenuOpened]">Conditional</animation>
-		</control>
+            <visible>true</visible><width>230</width><height>82</height><align>left</align><left>130</left><aligny>center</aligny><font>Bold24</font>
+            <textcolor>ffffffff</textcolor><label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label><scroll>false</scroll>
+        </control>
     </include>
 			
 	<include name="Bingie_Submenu_LabelFOCUS">
@@ -2129,7 +2115,7 @@
             <width>130</width>
             <aspectratio scalediffuse="true">scale</aspectratio>
             <texture border="2" background="true">bingie/sidediffuse.png</texture>
-            <colordiffuse>80091420</colordiffuse>  
+            <colordiffuse>80111315</colordiffuse>  
 			<!-- Never Change or Remove / It will give everything a Grey Effect on Screen. It's very Hard to see on Smaller TV but Very Noticable on a Larger One -->
 			<visible>!$EXP[IsRecognizedVideoContent] + !$EXP[IsCurrentWidgetSpotlight]</visible>
 		</control>
@@ -2463,7 +2449,7 @@
                 <width>$PARAM[width]</width>
                 <height>$PARAM[height]</height>
 				<texture background="true">overlays/gradient_videoinfo.png</texture>
-				<colordiffuse>cc091420</colordiffuse>
+				<colordiffuse>cc111315</colordiffuse>
 				<animation effect="fade" start="100" end="70" time="300" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + !String.IsEmpty(Window(Home).Property(FullImage))">WindowClose</animation>
 			</control>
 	    </definition>
@@ -2549,7 +2535,7 @@
                 </control>
                 <control type="image">
                     <visible>!$PARAM[isFullscreen] + !$EXP[IsCurrentWidgetSpotlight]</visible>
-                    <texture background="true" colordiffuse="cc091420" border="20">overlays/bingie_corner.png</texture>
+                    <texture background="true" colordiffuse="cc111315" border="20">overlays/bingie_corner.png</texture>
                 </control>
             </control>
             <control type="image">
@@ -2560,7 +2546,7 @@
                 <height>$PARAM[overlayheight]</height>
                 <aligny>top</aligny>
                 <aspectratio>scale</aspectratio>
-                <colordiffuse>cc091420</colordiffuse>
+                <colordiffuse>cc111315</colordiffuse>
                 <texture background="true">diffuse/panel2.png</texture>
                 <animation effect="fade" start="100" end="0" time="1200" delay="500" condition="Player.HasVideo">Conditioanl</animation>
             </control>
@@ -2656,7 +2642,7 @@
         <control type="image">
             <visible>$PARAM[visibility]</visible>
             <include>FullscreenDimensions</include>
-            <texture background="true" colordiffuse="cc091420">diffuse/panel2.png</texture>
+            <texture background="true" colordiffuse="cc111315">diffuse/panel2.png</texture>
         </control>
     </include>
 
@@ -2795,7 +2781,7 @@
                                 <height>8</height>
                                 <texturebg colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="0">diffuse/panel2.png</texturebg>
                                 <lefttexture/>
-                                <midtexture colordiffuse="ffd4af37" border="4">diffuse/panel2.png</midtexture>
+                                <midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
                                 <righttexture/>
                                 <info>ListItem.PercentPlayed</info>
                             </control>
@@ -2873,14 +2859,15 @@
 							<height>50</height>
 							<width>50</width>
 							<aspectratio>keep</aspectratio>
-							<texture>bingie/top250.png</texture>
+							<colordiffuse>$INFO[Skin.String(BingieTop250IconColor)]</colordiffuse>
+                            <texture>bingie/top250white.png</texture>
 					</control>
 						
 					<control type="label" id="8231">
 						<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
 						<visible>Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings)</visible>
 						<font>bold29</font> 
-						<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> 
+						<textcolor>ffff7417</textcolor> 
 						<label>$VAR[IMDBTop250SubLabel,#, $LOCALIZE[31311]]</label>
 						<include>Default_Visible_Fade</include>
 					</control>
