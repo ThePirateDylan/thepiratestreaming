@@ -237,7 +237,7 @@
         <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.widgets</website>
         <source />
     </extension>
-</addon><addon id="skin.pirate" version="2.2.88" name="The Pirate Skin" provider-name="The Pirate Dylan">
+</addon><addon id="skin.pirate" version="2.2.89" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui" />
 		<import addon="script.pirate.helper" version="1.1.38" />

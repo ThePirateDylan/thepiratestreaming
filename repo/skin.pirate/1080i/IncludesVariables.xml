@@ -11,14 +11,14 @@
 
     <!-- Use bundled Y2K navigation icons even when Kodi keeps older shortcut artwork in the profile. -->
     <variable name="PirateSidebarIcon">
-        <value condition="String.Contains(ListItem.Property(path),mode=tvguide.main) | String.IsEqual(ListItem.Property(defaultID),tvguide)">special://skin/shortcut-icons/tvguide.png</value>
-        <value condition="String.Contains(ListItem.Property(path),mode=navigator.premium) | String.IsEqual(ListItem.Property(defaultID),cloud)">special://skin/shortcut-icons/cloud.png</value>
-        <value condition="String.Contains(ListItem.Property(path),open_settings) | String.IsEqual(ListItem.Property(defaultID),arghsettings)">special://skin/shortcut-icons/settings.png</value>
-        <value condition="String.Contains(ListItem.Property(path),1114) | String.IsEqual(ListItem.Property(defaultID),mystars)">special://skin/shortcut-icons/favorites.png</value>
-        <value condition="String.Contains(ListItem.Property(path),1111) | String.IsEqual(ListItem.Property(defaultID),movies)">special://skin/shortcut-icons/movies.png</value>
-        <value condition="String.Contains(ListItem.Property(path),1110) | String.IsEqual(ListItem.Property(defaultID),shows)">special://skin/shortcut-icons/tvshows.png</value>
-        <value condition="String.Contains(ListItem.Property(path),1109) | String.IsEqual(ListItem.Property(defaultID),137)">special://skin/shortcut-icons/search.png</value>
-        <value condition="String.Contains(ListItem.Property(path),home) | String.IsEqual(ListItem.Property(defaultID),10000)">special://skin/shortcut-icons/home.png</value>
+        <value condition="String.Contains(ListItem.Property(path),mode=tvguide.main) | String.IsEqual(ListItem.Property(defaultID),tvguide)">special://skin/shortcut-icons/white/tvguide.png</value>
+        <value condition="String.Contains(ListItem.Property(path),mode=navigator.premium) | String.IsEqual(ListItem.Property(defaultID),cloud)">special://skin/shortcut-icons/white/cloud.png</value>
+        <value condition="String.Contains(ListItem.Property(path),open_settings) | String.IsEqual(ListItem.Property(defaultID),arghsettings)">special://skin/shortcut-icons/white/settings.png</value>
+        <value condition="String.Contains(ListItem.Property(path),1114) | String.IsEqual(ListItem.Property(defaultID),mystars)">special://skin/shortcut-icons/white/favorites.png</value>
+        <value condition="String.Contains(ListItem.Property(path),1111) | String.IsEqual(ListItem.Property(defaultID),movies)">special://skin/shortcut-icons/white/movies.png</value>
+        <value condition="String.Contains(ListItem.Property(path),1110) | String.IsEqual(ListItem.Property(defaultID),shows)">special://skin/shortcut-icons/white/tvshows.png</value>
+        <value condition="String.Contains(ListItem.Property(path),1109) | String.IsEqual(ListItem.Property(defaultID),137)">special://skin/shortcut-icons/white/search.png</value>
+        <value condition="String.Contains(ListItem.Property(path),home) | String.IsEqual(ListItem.Property(defaultID),10000)">special://skin/shortcut-icons/white/home.png</value>
         <value>$INFO[ListItem.Icon]</value>
     </variable>
 
