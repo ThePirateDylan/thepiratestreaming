@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <window id="1114">
+    <!-- Existing My Stars shortcuts target this ID. Replace it so Back returns to Home. -->
+    <onload>ReplaceWindow(FavouritesBrowser)</onload>
     <defaultcontrol always="true">77777</defaultcontrol>
     <menucontrol>900</menucontrol>
     <include>CustomBingieWinProps</include>

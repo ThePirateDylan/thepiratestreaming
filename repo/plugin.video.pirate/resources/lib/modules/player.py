@@ -36,6 +36,9 @@ class FenLightPlayer(xbmc.Player):
 	def check_playback_start(self):
 		resolve_percent = 0
 		while self.playback_successful is None:
+			if self.playback_interrupted():
+				self.cancel_all_playback, self.playback_successful = True, False
+				break
 			ku.hide_busy_dialog()
 			if not self.sources_object.progress_dialog: self.playback_successful = True
 			elif self.sources_object.progress_dialog.skip_resolved(): self.playback_successful = False
@@ -51,6 +54,13 @@ class FenLightPlayer(xbmc.Player):
 			resolve_percent = round(resolve_percent + 26.0/100, 1)
 			self.sources_object.progress_dialog.update_resolver(percent=resolve_percent)
 			ku.sleep(50)
+
+	def playback_interrupted(self):
+		return False
+
+	def wait_for_sample(self):
+		ku.sleep(1000)
+		return True
 
 	def playback_close_dialogs(self):
 		self.sources_object.playback_successful = True
@@ -73,18 +83,18 @@ class FenLightPlayer(xbmc.Player):
 			else:
 				show_stinger, stinger_use_chapters, stingers_percentage_fallback = st.stingers_show(), st.stingers_use_chapters(), st.stingers_percentage()
 				play_random_continual, self.autoplay_nextep, self.autoscrape_nextep = False, False, False
-			while total_check_time <= 30 and not ku.get_visibility('Window.IsActive(fullscreenvideo)'):
+			while total_check_time <= 30 and not self.playback_interrupted() and not ku.get_visibility('Window.IsActive(fullscreenvideo)'):
 				ku.sleep(100)
 				total_check_time += 0.10
 			ku.hide_busy_dialog()
 			ku.sleep(1000)
-			if st.auto_enable_subs(): self.showSubtitles(True)
-			while self.isPlayingVideo():
+			if not self.playback_interrupted() and st.auto_enable_subs(): self.showSubtitles(True)
+			while not self.playback_interrupted() and self.isPlayingVideo():
 				try:
 					if not ensure_dialog_dead:
 						ensure_dialog_dead = True
 						self.playback_close_dialogs()
-					ku.sleep(1000)
+					if not self.wait_for_sample(): break
 					try: self.total_time, self.curr_time = self.getTotalTime(), self.getTime()
 					except: ku.sleep(250); continue
 					if guide_join_pending:
@@ -183,14 +193,17 @@ class FenLightPlayer(xbmc.Player):
 				watched_function = ws.mark_movie if self.media_type == 'movie' else ws.mark_episode
 				watched_params = {'action': 'mark_as_watched', 'tmdb_id': self.tmdb_id, 'title': self.title, 'year': self.year, 'season': self.season, 'episode': self.episode,
 									'tvdb_id': self.tvdb_id, 'from_playback': 'true'}
-				Thread(target=self.run_media_progress, args=(watched_function, watched_params)).start()
+				self.dispatch_progress(watched_function, watched_params)
 			else:
 				ku.clear_property('fenlight.random_episode_history')
 				if self.current_point >= 5:
 					progress_params = {'media_type': self.media_type, 'tmdb_id': self.tmdb_id, 'curr_time': self.curr_time, 'total_time': self.total_time,
 									'title': self.title, 'season': self.season, 'episode': self.episode, 'from_playback': 'true'}
-					Thread(target=self.run_media_progress, args=(ws.set_bookmark, progress_params)).start()
+					self.dispatch_progress(ws.set_bookmark, progress_params)
 		except: pass
+
+	def dispatch_progress(self, function, params):
+		Thread(target=self.run_media_progress, args=(function, params)).start()
 
 	def run_media_progress(self, function, params):
 		try: function(params)

@@ -1,334 +1,712 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Cable-style guide layout for the TV Guide plugin directory. -->
 <includes>
-    <include name="View_58_TVGuide">
-        <control type="group">
-            <visible>Control.IsVisible(58) + String.Contains(Container.FolderPath,mode=tvguide.main)</visible>
-            <include>animation_view_change</include>
-
-            <control type="image">
-                <left>35</left>
-                <top>35</top>
-                <width>1850</width>
-                <height>985</height>
-                <texture>diffuse/panel2.png</texture>
-                <colordiffuse>DD111315</colordiffuse>
-            </control>
-
-            <control type="label">
-                <left>75</left>
-                <top>52</top>
-                <width>880</width>
-                <height>55</height>
-                <font>Bold45</font>
-                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
-                <label>TV GUIDE</label>
-            </control>
-            <control type="label">
-                <left>78</left>
-                <top>110</top>
-                <width>1320</width>
-                <height>35</height>
-                <font>Reg26</font>
-                <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                <label>$INFO[Container(58).ListItem.Property(guide_header)]</label>
-            </control>
-
-            <control type="button" id="59">
-                <left>75</left>
-                <top>160</top>
-                <width>220</width>
-                <height>52</height>
-                <label>PREVIOUS DAY</label>
-                <font>Bold22</font>
-                <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
-                <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                <texturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
-                <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
-                <onleft>9000</onleft>
-                <onright>61</onright>
-                <onup>58</onup>
-                <ondown>58</ondown>
-                <onclick>Container.Update($INFO[Container(58).ListItem.Property(guide_previous_url)],replace)</onclick>
-            </control>
-            <control type="button" id="61">
-                <left>315</left>
-                <top>160</top>
-                <width>220</width>
-                <height>52</height>
-                <label>NEXT DAY</label>
-                <font>Bold22</font>
-                <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
-                <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                <texturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
-                <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
-                <onleft>59</onleft>
-                <onright>58</onright>
-                <onup>58</onup>
-                <ondown>58</ondown>
-                <onclick>Container.Update($INFO[Container(58).ListItem.Property(guide_next_url)],replace)</onclick>
-            </control>
-
-            <!-- Small poster and channel description, updated as the guide is browsed. -->
-            <control type="image">
-                <left>1470</left>
-                <top>55</top>
-                <width>145</width>
-                <height>175</height>
-                <aspectratio>keep</aspectratio>
-                <texture diffuse="fenlight_diffuse/poster-50.png" background="true">$INFO[Container(58).ListItem.Art(thumb)]</texture>
-            </control>
-            <control type="label">
-                <left>1635</left>
-                <top>62</top>
-                <width>220</width>
-                <height>42</height>
-                <font>Bold30</font>
-                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
-                <label>$INFO[Container(58).ListItem.Title]</label>
-            </control>
-            <control type="textbox">
-                <left>1635</left>
-                <top>105</top>
-                <width>220</width>
-                <height>123</height>
-                <font>Reg24</font>
-                <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                <label>$INFO[Container(58).ListItem.Plot]</label>
-            </control>
-
-            <!-- Timeline headings -->
-            <control type="label">
-                <left>75</left>
-                <top>245</top>
-                <width>360</width>
-                <height>34</height>
-                <font>Bold26</font>
-                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
-                <label>CHANNEL</label>
-            </control>
-            <control type="label">
-                <left>519</left>
-                <top>245</top>
-                <width>440</width>
-                <height>34</height>
-                <font>Bold24</font>
-                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
-                <label>ON NOW</label>
-            </control>
-            <control type="label">
-                <left>979</left>
-                <top>245</top>
-                <width>440</width>
-                <height>34</height>
-                <font>Bold24</font>
-                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
-                <label>UP NEXT</label>
-            </control>
-            <control type="label">
-                <left>1439</left>
-                <top>245</top>
-                <width>416</width>
-                <height>34</height>
-                <font>Bold24</font>
-                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
-                <label>LATER</label>
-            </control>
-
-            <control type="list" id="58">
-                <left>65</left>
-                <top>278</top>
-                <width>1790</width>
-                <height>682</height>
-                <onleft>9000</onleft>
-                <onright>60</onright>
-                <onup>58</onup>
-                <ondown>58</ondown>
-                <pagecontrol>60</pagecontrol>
-                <autoscroll>false</autoscroll>
-                <onfocus condition="!System.HasAlarm(PirateTVGuideRefresh)">AlarmClock(PirateTVGuideRefresh,Container.Refresh(),00:01:00,silent,loop)</onfocus>
-                <onunfocus condition="System.HasAlarm(PirateTVGuideRefresh)">CancelAlarm(PirateTVGuideRefresh,silent)</onunfocus>
-                <scrolltime tween="quadratic">250</scrolltime>
-                <viewtype label="TV Guide">TV Guide</viewtype>
-                <itemlayout width="1790" height="92">
-                    <control type="image">
-                        <left>0</left>
-                        <top>3</top>
-                        <width>1790</width>
-                        <height>84</height>
-                        <texture colordiffuse="99111315">diffuse/panel.png</texture>
-                    </control>
-                    <control type="label">
-                        <left>4</left>
-                        <top>5</top>
-                        <width>66</width>
-                        <height>70</height>
-                        <font>Bold24</font>
-                        <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(channel_number)]</label>
-                    </control>
-                    <control type="image">
-                        <left>82</left>
-                        <top>10</top>
-                        <width>64</width>
-                        <height>62</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Art(icon)]</texture>
-                    </control>
-                    <control type="label">
-                        <left>151</left>
-                        <top>5</top>
-                        <width>279</width>
-                        <height>70</height>
-                        <font>Bold22</font>
-                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(channel_name)]</label>
-                        <scroll>false</scroll>
-                    </control>
-                    <control type="image">
-                        <left>440</left>
-                        <top>10</top>
-                        <width>2</width>
-                        <height>64</height>
-                        <texture>common/separator.png</texture>
-                    </control>
-                    <control type="label">
-                        <left>454</left>
-                        <top>5</top>
-                        <width>440</width>
-                        <height>70</height>
-                        <font>Reg22</font>
-                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(slot_1)]</label>
-                        <scroll>false</scroll>
-                    </control>
-                    <control type="image">
-                        <left>900</left>
-                        <top>10</top>
-                        <width>2</width>
-                        <height>64</height>
-                        <texture>common/separator.png</texture>
-                    </control>
-                    <control type="label">
-                        <left>914</left>
-                        <top>5</top>
-                        <width>440</width>
-                        <height>70</height>
-                        <font>Reg22</font>
-                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(slot_2)]</label>
-                        <scroll>false</scroll>
-                    </control>
-                    <control type="image">
-                        <left>1360</left>
-                        <top>10</top>
-                        <width>2</width>
-                        <height>64</height>
-                        <texture>common/separator.png</texture>
-                    </control>
-                    <control type="label">
-                        <left>1374</left>
-                        <top>5</top>
-                        <width>416</width>
-                        <height>70</height>
-                        <font>Reg22</font>
-                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(slot_3)]</label>
-                        <scroll>false</scroll>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="1790" height="92">
-                    <control type="image">
-                        <left>0</left>
-                        <top>0</top>
-                        <width>1790</width>
-                        <height>88</height>
-                        <texture colordiffuse="$INFO[Skin.String(ViewDetailsFocusColor)]" border="10">diffuse/panel.png</texture>
-                    </control>
-                    <control type="image"><left>440</left><top>10</top><width>2</width><height>64</height><texture>common/separator.png</texture></control>
-                    <control type="image"><left>900</left><top>10</top><width>2</width><height>64</height><texture>common/separator.png</texture></control>
-                    <control type="image"><left>1360</left><top>10</top><width>2</width><height>64</height><texture>common/separator.png</texture></control>
-                    <control type="label">
-                        <left>4</left>
-                        <top>5</top>
-                        <width>66</width>
-                        <height>70</height>
-                        <font>Bold24</font>
-                        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(channel_number)]</label>
-                    </control>
-                    <control type="image">
-                        <left>82</left>
-                        <top>10</top>
-                        <width>64</width>
-                        <height>62</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[ListItem.Art(icon)]</texture>
-                    </control>
-                    <control type="label">
-                        <left>151</left>
-                        <top>5</top>
-                        <width>279</width>
-                        <height>70</height>
-                        <font>Bold22</font>
-                        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(channel_name)]</label>
-                        <scroll>false</scroll>
-                    </control>
-                    <control type="label">
-                        <left>454</left>
-                        <top>5</top>
-                        <width>440</width>
-                        <height>70</height>
-                        <font>Reg22</font>
-                        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(slot_1)]</label>
-                        <scroll>false</scroll>
-                    </control>
-                    <control type="label">
-                        <left>914</left>
-                        <top>5</top>
-                        <width>440</width>
-                        <height>70</height>
-                        <font>Reg22</font>
-                        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(slot_2)]</label>
-                        <scroll>false</scroll>
-                    </control>
-                    <control type="label">
-                        <left>1374</left>
-                        <top>5</top>
-                        <width>416</width>
-                        <height>70</height>
-                        <font>Reg22</font>
-                        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Property(slot_3)]</label>
-                        <scroll>false</scroll>
-                    </control>
-                </focusedlayout>
-            </control>
-            <control type="scrollbar" id="60">
-                <right>28</right>
-                <top>278</top>
-                <width>20</width>
-                <height>682</height>
-                <onleft>58</onleft>
-                <onright>59</onright>
-                <onup>60</onup>
-                <ondown>60</ondown>
-            </control>
-        </control>
-    </include>
+  <include name="View_58_TVGuide">
+    <control type="group">
+      <visible>Control.IsVisible(58) + String.Contains(Container.FolderPath,mode=tvguide.main)</visible>
+      <include>animation_view_change</include>
+      <control type="image">
+        <left>35</left>
+        <top>35</top>
+        <width>1850</width>
+        <height>985</height>
+        <texture>diffuse/panel2.png</texture>
+        <colordiffuse>DD111315</colordiffuse>
+      </control>
+      <control type="label">
+        <left>75</left>
+        <top>52</top>
+        <width>880</width>
+        <height>55</height>
+        <font>Bold45</font>
+        <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+        <label>TV GUIDE</label>
+      </control>
+      <control type="label">
+        <left>78</left>
+        <top>110</top>
+        <width>1320</width>
+        <height>35</height>
+        <font>Reg26</font>
+        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+        <label>$INFO[Container(58).ListItem.Property(guide_header)]</label>
+      </control>
+      <control type="button" id="59">
+        <left>75</left>
+        <top>160</top>
+        <width>220</width>
+        <height>52</height>
+        <label>PREVIOUS DAY</label>
+        <font>Bold22</font>
+        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <texturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
+        <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
+        <onleft>9000</onleft>
+        <onright>61</onright>
+        <onup>58</onup>
+        <ondown>58</ondown>
+        <onclick>Container.Update($INFO[Container(58).ListItem.Property(guide_previous_url)],replace)</onclick>
+      </control>
+      <control type="button" id="61">
+        <left>315</left>
+        <top>160</top>
+        <width>220</width>
+        <height>52</height>
+        <label>NEXT DAY</label>
+        <font>Bold22</font>
+        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <texturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
+        <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
+        <onleft>59</onleft>
+        <onright>58</onright>
+        <onup>58</onup>
+        <ondown>58</ondown>
+        <onclick>Container.Update($INFO[Container(58).ListItem.Property(guide_next_url)],replace)</onclick>
+      </control>
+      <control type="image">
+        <left>1470</left>
+        <top>55</top>
+        <width>145</width>
+        <height>175</height>
+        <aspectratio>keep</aspectratio>
+        <texture diffuse="fenlight_diffuse/poster-50.png" background="true">$INFO[Container(58).ListItem.Art(thumb)]</texture>
+      </control>
+      <control type="label">
+        <left>1635</left>
+        <top>62</top>
+        <width>220</width>
+        <height>42</height>
+        <font>Bold30</font>
+        <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+        <label>$INFO[Container(58).ListItem.Title]</label>
+      </control>
+      <control type="textbox">
+        <left>1635</left>
+        <top>105</top>
+        <width>220</width>
+        <height>123</height>
+        <font>Reg24</font>
+        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+        <label>$INFO[Container(58).ListItem.Plot]</label>
+      </control>
+      <control type="label">
+        <left>75</left>
+        <top>245</top>
+        <width>360</width>
+        <height>34</height>
+        <font>Bold26</font>
+        <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+        <label>CHANNEL</label>
+      </control>
+      <control type="label">
+        <left>519</left>
+        <top>245</top>
+        <width>320</width>
+        <height>34</height>
+        <font>Bold26</font>
+        <textcolor>white</textcolor>
+        <aligny>center</aligny>
+        <label>$INFO[Container(58).ListItem.Property(guide_tick_0)]</label>
+      </control>
+      <control type="label">
+        <left>853</left>
+        <top>245</top>
+        <width>320</width>
+        <height>34</height>
+        <font>Bold26</font>
+        <textcolor>white</textcolor>
+        <aligny>center</aligny>
+        <label>$INFO[Container(58).ListItem.Property(guide_tick_1)]</label>
+      </control>
+      <control type="label">
+        <left>1187</left>
+        <top>245</top>
+        <width>320</width>
+        <height>34</height>
+        <font>Bold26</font>
+        <textcolor>white</textcolor>
+        <aligny>center</aligny>
+        <label>$INFO[Container(58).ListItem.Property(guide_tick_2)]</label>
+      </control>
+      <control type="label">
+        <left>1521</left>
+        <top>245</top>
+        <width>320</width>
+        <height>34</height>
+        <font>Bold26</font>
+        <textcolor>white</textcolor>
+        <aligny>center</aligny>
+        <label>$INFO[Container(58).ListItem.Property(guide_tick_3)]</label>
+      </control>
+      <control type="list" id="58">
+        <left>65</left>
+        <top>278</top>
+        <width>1790</width>
+        <height>682</height>
+        <onleft>9000</onleft>
+        <onright>60</onright>
+        <onup>58</onup>
+        <ondown>58</ondown>
+        <pagecontrol>60</pagecontrol>
+        <autoscroll>false</autoscroll>
+        <onfocus condition="!System.HasAlarm(PirateTVGuideRefresh)">AlarmClock(PirateTVGuideRefresh,Container.Refresh(),00:01:00,silent,loop)</onfocus>
+        <onunfocus condition="System.HasAlarm(PirateTVGuideRefresh)">CancelAlarm(PirateTVGuideRefresh,silent)</onunfocus>
+        <scrolltime tween="quadratic">250</scrolltime>
+        <viewtype label="TV Guide">TV Guide</viewtype>
+        <itemlayout width="1790" height="92">
+          <control type="image">
+            <left>0</left>
+            <top>3</top>
+            <width>1790</width>
+            <height>84</height>
+            <texture colordiffuse="99111315">diffuse/panel.png</texture>
+          </control>
+          <control type="label">
+            <left>4</left>
+            <top>5</top>
+            <width>66</width>
+            <height>70</height>
+            <font>Bold24</font>
+            <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>$INFO[ListItem.Property(channel_number)]</label>
+          </control>
+          <control type="image">
+            <left>82</left>
+            <top>10</top>
+            <width>64</width>
+            <height>62</height>
+            <aspectratio>keep</aspectratio>
+            <texture>$INFO[ListItem.Art(icon)]</texture>
+          </control>
+          <control type="label">
+            <left>151</left>
+            <top>5</top>
+            <width>279</width>
+            <height>70</height>
+            <font>Bold22</font>
+            <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+            <aligny>center</aligny>
+            <label>$INFO[ListItem.Property(channel_name)]</label>
+            <scroll>false</scroll>
+          </control>
+          <include>PirateGuideTimeBlocks</include>
+        </itemlayout>
+        <focusedlayout width="1790" height="92">
+          <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1790</width>
+            <height>88</height>
+            <texture colordiffuse="$INFO[Skin.String(ViewDetailsFocusColor)]" border="10">diffuse/panel.png</texture>
+          </control>
+          <control type="label">
+            <left>4</left>
+            <top>5</top>
+            <width>66</width>
+            <height>70</height>
+            <font>Bold24</font>
+            <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>$INFO[ListItem.Property(channel_number)]</label>
+          </control>
+          <control type="image">
+            <left>82</left>
+            <top>10</top>
+            <width>64</width>
+            <height>62</height>
+            <aspectratio>keep</aspectratio>
+            <texture>$INFO[ListItem.Art(icon)]</texture>
+          </control>
+          <control type="label">
+            <left>151</left>
+            <top>5</top>
+            <width>279</width>
+            <height>70</height>
+            <font>Bold22</font>
+            <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+            <aligny>center</aligny>
+            <label>$INFO[ListItem.Property(channel_name)]</label>
+            <scroll>false</scroll>
+          </control>
+          <include>PirateGuideTimeBlocks</include>
+        </focusedlayout>
+      </control>
+      <control type="scrollbar" id="60">
+        <right>28</right>
+        <top>278</top>
+        <width>20</width>
+        <height>682</height>
+        <onleft>58</onleft>
+        <onright>59</onright>
+        <onup>60</onup>
+        <ondown>60</ondown>
+      </control>
+    </control>
+  </include>
+  <include name="PirateGuideTimeBlocks">
+    <control type="label">
+      <left>449</left>
+      <top>5</top>
+      <width>150</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_0)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_0),1)</visible>
+    </control>
+    <control type="label">
+      <left>449</left>
+      <top>5</top>
+      <width>319</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_0)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_0),2)</visible>
+    </control>
+    <control type="label">
+      <left>449</left>
+      <top>5</top>
+      <width>488</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_0)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_0),3)</visible>
+    </control>
+    <control type="label">
+      <left>449</left>
+      <top>5</top>
+      <width>657</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_0)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_0),4)</visible>
+    </control>
+    <control type="label">
+      <left>449</left>
+      <top>5</top>
+      <width>825</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_0)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_0),5)</visible>
+    </control>
+    <control type="label">
+      <left>449</left>
+      <top>5</top>
+      <width>994</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_0)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_0),6)</visible>
+    </control>
+    <control type="label">
+      <left>449</left>
+      <top>5</top>
+      <width>1163</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_0)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_0),7)</visible>
+    </control>
+    <control type="label">
+      <left>449</left>
+      <top>5</top>
+      <width>1332</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_0)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_0),8)</visible>
+    </control>
+    <control type="image">
+      <left>440</left>
+      <top>10</top>
+      <height>62</height>
+      <width>2</width>
+      <texture>common/separator.png</texture>
+      <visible>!String.IsEmpty(ListItem.Property(guide_block_0))</visible>
+    </control>
+    <control type="label">
+      <left>617</left>
+      <top>5</top>
+      <width>151</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_1)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_1),1)</visible>
+    </control>
+    <control type="label">
+      <left>617</left>
+      <top>5</top>
+      <width>320</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_1)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_1),2)</visible>
+    </control>
+    <control type="label">
+      <left>617</left>
+      <top>5</top>
+      <width>489</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_1)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_1),3)</visible>
+    </control>
+    <control type="label">
+      <left>617</left>
+      <top>5</top>
+      <width>657</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_1)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_1),4)</visible>
+    </control>
+    <control type="label">
+      <left>617</left>
+      <top>5</top>
+      <width>826</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_1)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_1),5)</visible>
+    </control>
+    <control type="label">
+      <left>617</left>
+      <top>5</top>
+      <width>995</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_1)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_1),6)</visible>
+    </control>
+    <control type="label">
+      <left>617</left>
+      <top>5</top>
+      <width>1164</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_1)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_1),7)</visible>
+    </control>
+    <control type="image">
+      <left>608</left>
+      <top>10</top>
+      <height>62</height>
+      <width>2</width>
+      <texture>common/separator.png</texture>
+      <visible>!String.IsEmpty(ListItem.Property(guide_block_1))</visible>
+    </control>
+    <control type="label">
+      <left>786</left>
+      <top>5</top>
+      <width>151</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_2)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_2),1)</visible>
+    </control>
+    <control type="label">
+      <left>786</left>
+      <top>5</top>
+      <width>320</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_2)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_2),2)</visible>
+    </control>
+    <control type="label">
+      <left>786</left>
+      <top>5</top>
+      <width>488</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_2)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_2),3)</visible>
+    </control>
+    <control type="label">
+      <left>786</left>
+      <top>5</top>
+      <width>657</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_2)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_2),4)</visible>
+    </control>
+    <control type="label">
+      <left>786</left>
+      <top>5</top>
+      <width>826</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_2)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_2),5)</visible>
+    </control>
+    <control type="label">
+      <left>786</left>
+      <top>5</top>
+      <width>995</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_2)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_2),6)</visible>
+    </control>
+    <control type="image">
+      <left>777</left>
+      <top>10</top>
+      <height>62</height>
+      <width>2</width>
+      <texture>common/separator.png</texture>
+      <visible>!String.IsEmpty(ListItem.Property(guide_block_2))</visible>
+    </control>
+    <control type="label">
+      <left>955</left>
+      <top>5</top>
+      <width>151</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_3)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_3),1)</visible>
+    </control>
+    <control type="label">
+      <left>955</left>
+      <top>5</top>
+      <width>319</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_3)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_3),2)</visible>
+    </control>
+    <control type="label">
+      <left>955</left>
+      <top>5</top>
+      <width>488</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_3)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_3),3)</visible>
+    </control>
+    <control type="label">
+      <left>955</left>
+      <top>5</top>
+      <width>657</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_3)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_3),4)</visible>
+    </control>
+    <control type="label">
+      <left>955</left>
+      <top>5</top>
+      <width>826</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_3)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_3),5)</visible>
+    </control>
+    <control type="image">
+      <left>946</left>
+      <top>10</top>
+      <height>62</height>
+      <width>2</width>
+      <texture>common/separator.png</texture>
+      <visible>!String.IsEmpty(ListItem.Property(guide_block_3))</visible>
+    </control>
+    <control type="label">
+      <left>1124</left>
+      <top>5</top>
+      <width>150</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_4)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_4),1)</visible>
+    </control>
+    <control type="label">
+      <left>1124</left>
+      <top>5</top>
+      <width>319</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_4)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_4),2)</visible>
+    </control>
+    <control type="label">
+      <left>1124</left>
+      <top>5</top>
+      <width>488</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_4)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_4),3)</visible>
+    </control>
+    <control type="label">
+      <left>1124</left>
+      <top>5</top>
+      <width>657</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_4)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_4),4)</visible>
+    </control>
+    <control type="image">
+      <left>1115</left>
+      <top>10</top>
+      <height>62</height>
+      <width>2</width>
+      <texture>common/separator.png</texture>
+      <visible>!String.IsEmpty(ListItem.Property(guide_block_4))</visible>
+    </control>
+    <control type="label">
+      <left>1292</left>
+      <top>5</top>
+      <width>151</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_5)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_5),1)</visible>
+    </control>
+    <control type="label">
+      <left>1292</left>
+      <top>5</top>
+      <width>320</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_5)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_5),2)</visible>
+    </control>
+    <control type="label">
+      <left>1292</left>
+      <top>5</top>
+      <width>489</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_5)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_5),3)</visible>
+    </control>
+    <control type="image">
+      <left>1283</left>
+      <top>10</top>
+      <height>62</height>
+      <width>2</width>
+      <texture>common/separator.png</texture>
+      <visible>!String.IsEmpty(ListItem.Property(guide_block_5))</visible>
+    </control>
+    <control type="label">
+      <left>1461</left>
+      <top>5</top>
+      <width>151</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_6)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_6),1)</visible>
+    </control>
+    <control type="label">
+      <left>1461</left>
+      <top>5</top>
+      <width>320</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_6)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_6),2)</visible>
+    </control>
+    <control type="image">
+      <left>1452</left>
+      <top>10</top>
+      <height>62</height>
+      <width>2</width>
+      <texture>common/separator.png</texture>
+      <visible>!String.IsEmpty(ListItem.Property(guide_block_6))</visible>
+    </control>
+    <control type="label">
+      <left>1630</left>
+      <top>5</top>
+      <width>151</width>
+      <height>70</height>
+      <font>Reg22</font>
+      <textcolor>white</textcolor>
+      <aligny>center</aligny>
+      <label>$INFO[ListItem.Property(guide_text_7)]</label>
+      <visible>String.IsEqual(ListItem.Property(guide_block_7),1)</visible>
+    </control>
+    <control type="image">
+      <left>1621</left>
+      <top>10</top>
+      <height>62</height>
+      <width>2</width>
+      <texture>common/separator.png</texture>
+      <visible>!String.IsEmpty(ListItem.Property(guide_block_7))</visible>
+    </control>
+  </include>
 </includes>

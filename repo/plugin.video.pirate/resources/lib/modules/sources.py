@@ -676,7 +676,7 @@ class Sources():
 					url, self.playback_successful, self.cancel_all_playback = None, None, False
 					self.playing_filename = item['name']
 					self.playing_item = item
-					player = FenLightPlayer()
+					player = getattr(self, 'player_class', FenLightPlayer)()
 					try:
 						if self.progress_dialog.iscanceled() or monitor.abortRequested(): break
 						url = self.resolve_sources(item)

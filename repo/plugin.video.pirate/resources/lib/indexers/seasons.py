@@ -54,7 +54,7 @@ def build_season_list(params):
 				if progress:
 					cm_append(['mark_watched', ('[B]Mark Unwatched[/B]', 'RunPlugin(%s)' % build_url({'mode': 'watched_status.mark_season', 'action': 'mark_as_unwatched',
 														'title': show_title, 'tmdb_id': tmdb_id, 'tvdb_id': tvdb_id, 'season': season_number}))])
-				set_properties({'watchedepisodes': str(watched), 'unwatchedepisodes': str(unwatched)})
+				set_properties({'PirateSeasonNumber': str(season_number), 'watchedepisodes': str(watched), 'unwatchedepisodes': str(unwatched)})
 				set_properties({'totalepisodes': str(aired_eps), 'watchedprogress': str(visible_progress),
 								'fenlight.extras_params': extras_params, 'fenlight.options_params': options_params})
 				if is_external:

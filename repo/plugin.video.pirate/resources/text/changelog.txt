@@ -1,3 +1,20 @@
+[COLOR dodgerblue][B]Version 2.2.90[/B][/COLOR]
+ - Food Netwurk now airs 15 cooking, competition and restaurant shows from the 2000s through the current era. Its five Eastern-time blocks favor the eight primary series, with weekend variety and published schedules retained across restarts.
+ - Channel 136 remembers confirmed starts and failed episodes, tries substitutes when available and updates the guide to match the episode that started.
+ - TV Guide playback now handles Stop and natural end per session, closes its own resolver dialog, and finishes progress updates before its invocation exits.
+
+[COLOR dodgerblue][B]Version 2.2.89[/B][/COLOR]
+ - Channel 136 Food Netwurk now has its own logo, 20 cooking series and a rotating schedule of episodes from 2000 through 2009.
+ - Browse morning cooking, afternoon favorites, evening competitions, primetime and late-night blocks on New York time. Hell's Kitchen and Kitchen Nightmares alternate as primetime openers.
+ - Joining channel 136 uses the scheduled episode and live offset. If the configured providers have no results, the channel tries another episode within the same programming block.
+
+[B]Also included since the previous public build[/B]
+ - More Episodes opens the show's full episode list. Selecting a season jumps to its episodes. The companion skin fits three results across the search grid and makes the focused pause control easier to see.
+ - The guide prepares channels in the background at startup and displays preparation progress. Guide rows use a shared two-hour timeline with program widths based on their time slots.
+ - Diznoy and Nick sister channels appear together. Guide playback uses channel artwork for the playing item and supports joining a program in progress.
+ - Regular movie and episode playback uses The Pirate's existing source selection. Guide channel actions resolve the current slot, and guide maintenance retires empty results left by older source probes.
+ - The companion Maintenance add-on reports its startup cleanup, including files it could not remove.
+
 [COLOR dodgerblue][B]Version 2.2.80[/B][/COLOR]
  - Restores normal movie, show, and list views when leaving the TV Guide.
 

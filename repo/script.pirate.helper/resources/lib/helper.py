@@ -219,6 +219,51 @@ def _wait_for_episode_folder(target, cycles):
     return False, folder_path, folder_content
 
 
+def jumpseason(params):
+    """Move the cursor in the rendered list, including Kodi's optional parent row."""
+    season = str(params.get('number') or params.get('season') or '').strip()
+    if not season.isdigit() or not xbmc.getCondVisibility('Window.IsActive(Videos)'):
+        return
+    count = xbmc.getInfoLabel('Container(525).NumAllItems')
+    count = int(count) if count.isdigit() else 0
+    best = None
+    for start in range(0, count, 64):
+        if not xbmc.getCondVisibility('Window.IsActive(Videos)'):
+            return
+        indices = range(start, min(start + 64, count))
+        labels = ['Container(525).ListItemAbsolute(%d).%s' % (i, key)
+                  for i in indices for key in ('Season', 'Episode')]
+        query = {'jsonrpc': '2.0', 'id': 1, 'method': 'XBMC.GetInfoLabels', 'params': {'labels': labels}}
+        values = simplejson.loads(xbmc.executeJSONRPC(simplejson.dumps(query))).get('result', {})
+        for i in indices:
+            prefix = 'Container(525).ListItemAbsolute(%d).' % i
+            ep = values.get(prefix + 'Episode', '')
+            if values.get(prefix + 'Season') == season and ep.isdigit():
+                if int(ep) == 1:
+                    best = (1, i)
+                    break
+                if best is None or int(ep) < best[0]:
+                    best = (int(ep), i)
+        if best is not None and best[0] == 1:
+            break
+    if not xbmc.getCondVisibility('Window.IsActive(Videos)'):
+        return
+    if best is not None:
+        xbmc.executebuiltin('SetFocus(525,%d,absolute)' % best[1], True)
+        log('Season jump: season=%s episode=%s row=%s' % (season, best[0], best[1]), DEBUG, True)
+        return
+    # A single-season folder legitimately does not contain other seasons.
+    # Only a positively identified filtered list may navigate to another folder.
+    scope = str(params.get('scope') or '')
+    show = _positive_numeric_id(params.get('show_tmdb_id'))
+    if scope.isdigit() and scope != season and show:
+        target = 'plugin://plugin.video.pirate/?mode=build_episode_list&tmdb_id=%s&season=%s' % (show, season)
+        xbmc.executebuiltin('Container.Update("%s",replace)' % target)
+        return
+    log('Season jump: no match for season=%s in %d rows (scope=%s)' % (season, count, scope), WARNING, True)
+    xbmcgui.Dialog().notification('The Pirate', 'No episodes for this season in the current list.')
+
+
 def moreepisodes(params):
     """Open a show's selected episode folder and verify Kodi loaded that exact list."""
     params = params or {}

@@ -220,28 +220,42 @@ class TVGuidePreloader:
 		kodi_utils.logger('The Pirate', 'TVGuidePreloader Service Starting')
 		monitor, player = kodi_utils.kodi_monitor(), kodi_utils.kodi_player()
 		wait_for_abort = monitor.waitForAbort
-		if wait_for_abort(30):
+		if wait_for_abort(5):
 			return kodi_utils.logger('The Pirate', 'TVGuidePreloader Service Finished')
+		try:
+			from indexers.tv_guide import retire_guide_probe_misses
+			retire_guide_probe_misses()
+		except Exception as exc:
+			kodi_utils.logger('TV Guide', 'cache migration deferred: %s' % exc)
 		while not monitor.abortRequested():
 			try:
 				if kodi_utils.get_property(pause_services_prop) == 'true' or player.isPlayingVideo():
 					wait_for_abort(15)
 					continue
-				if not kodi_utils.get_visibility('Window.IsActive(Home)'):
-					wait_for_abort(15)
-					continue
 				kodi_utils.set_property('fenlight.tvguide_preload_running', 'true')
 				try:
 					from indexers.tv_guide import prewarm_snapshot
-					if prewarm_snapshot(monitor, player):
-						kodi_utils.logger('The Pirate', 'TV Guide startup snapshot is ready')
-						break
-					kodi_utils.logger('TV Guide Preload', 'startup snapshot incomplete; partial work is saved for retry')
+					ready = prewarm_snapshot(monitor, player)
 				finally:
 					kodi_utils.clear_property('fenlight.tvguide_preload_running')
+				# Only refresh a Guide which actually rendered pending rows. Let
+				# Kodi finish its first directory load before issuing the refresh.
+				if kodi_utils.get_property('fenlight.tvguide_refresh_when_ready') == 'true':
+					kodi_utils.clear_property('fenlight.tvguide_refresh_when_ready')
+					for _ in range(30):
+						if monitor.waitForAbort(0.1) or not kodi_utils.get_visibility('Window.IsActive(Videos)'):
+							break
+						if not kodi_utils.get_visibility('Container.IsUpdating'):
+							if 'mode=tvguide.main' in kodi_utils.folder_path():
+								kodi_utils.execute_builtin('Container.Refresh')
+							break
+				if ready:
+					kodi_utils.logger('The Pirate', 'TV Guide startup snapshot is ready')
+					break
+				kodi_utils.logger('TV Guide Preload', 'startup snapshot incomplete; partial work is saved for retry')
 			except Exception as e:
 				kodi_utils.logger('TV Guide Preload', 'startup prewarm failed: %s' % str(e))
-			if wait_for_abort(60):
+			if wait_for_abort(600):
 				break
 		try: del monitor
 		except: pass

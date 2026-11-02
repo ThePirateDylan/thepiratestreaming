@@ -80,6 +80,7 @@ def build_episode_list(params):
 				listitem.setArt({'poster': show_poster, 'fanart': show_fanart, 'thumb': thumb, 'icon':thumb, 'clearlogo': show_clearlogo, 'landscape': show_landscape,
 								'season.poster': season_poster, 'tvshow.poster': show_poster, 'tvshow.clearlogo': show_clearlogo})
 				set_properties({
+					'PirateEpisodeScope': str(params.get('season', '')),
 					'episode_type': episode_type, 'fenlight.extras_params': extras_params, 'fenlight.options_params': options_params,
 					'fenlight.playback_options_params': playback_options_params
 					})

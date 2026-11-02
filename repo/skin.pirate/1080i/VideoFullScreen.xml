@@ -127,13 +127,13 @@
 		</control>
         <!-- TV Guide channel logo stays on screen during its scheduled playback. -->
         <control type="image" id="9077">
-            <visible>Player.HasVideo + !String.IsEmpty(Window(Home).Property(TVGuidePlaybackLogo))</visible>
+            <visible>Player.HasVideo + !String.IsEmpty(Player.Art(pirate_channel_logo))</visible>
             <right>42</right>
             <bottom>36</bottom>
             <width>320</width>
             <height>180</height>
             <aspectratio>keep</aspectratio>
-            <texture>$INFO[Window(Home).Property(TVGuidePlaybackLogo)]</texture>
+            <texture>$INFO[Player.Art(pirate_channel_logo)]</texture>
         </control>
 	</controls>
 </window>

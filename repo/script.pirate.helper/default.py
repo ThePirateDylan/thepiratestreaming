@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import sys
 import xbmcgui
 from resources.lib.utils import *
 from resources.lib.helper import *
@@ -38,6 +39,7 @@ class Main:
                             'searchbackspace': searchbackspace,
                             'searchspace': searchspace,
                             'moreepisodes': moreepisodes,
+                            'jumpseason': jumpseason,
                             'nextpage': nextpage,
                             'installpauseosdkeymap': installpauseosdkeymap}
         for action in self.action:

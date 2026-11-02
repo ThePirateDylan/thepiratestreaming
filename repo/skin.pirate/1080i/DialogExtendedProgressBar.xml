@@ -79,5 +79,12 @@
 				<height>15</height>
 			</control>
 		</control>
-	</controls>
+	<control type="group">
+            <visible>String.IsEqual(Control.GetLabel(30),Preparing TV Guide) + Window.IsActive(Videos) + String.Contains(Container.FolderPath,mode=tvguide.main)</visible>
+            <control type="label"><left>260</left><top>360</top><width>1400</width><height>100</height><align>center</align><font>Bold60</font><label>Loading TV Guide</label></control>
+            <control type="progress"><left>500</left><top>494</top><width>920</width><height>22</height><info>Control.GetLabel(32)</info></control>
+            <control type="label"><left>260</left><top>534</top><width>1400</width><height>60</height><align>center</align><font>Reg26</font><label>$INFO[Control.GetLabel(32),,%]  $INFO[Control.GetLabel(31)]</label></control>
+            <control type="label"><left>110</left><top>612</top><width>1700</width><height>65</height><align>center</align><font>Reg26</font><label>You can go back and watch something else. Return when the indicator at the top right finishes.</label></control>
+        </control>
+    </controls>
 </window>

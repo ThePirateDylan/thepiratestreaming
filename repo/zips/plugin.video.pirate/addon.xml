@@ -1,4 +1,4 @@
-<addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.81">
+<addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.90">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
@@ -20,6 +20,6 @@
             <icon>resources/media/addon_icons/pirate_icon.png</icon>
             <fanart>resources/media/fenlight_fanart_01.jpg</fanart>
         </assets>
-        <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
+        <news>Food Netwurk now airs 15 cooking and restaurant shows. Guide playback handles stop and end events per session. See Tools for the full release changelog.</news>
     </extension>
 </addon>

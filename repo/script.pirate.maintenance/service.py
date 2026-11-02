@@ -11,7 +11,7 @@ from resources.lib.maintenance import run_cleanup
 
 
 ADDON_ID = "script.pirate.maintenance"
-STARTUP_DELAY = 90
+STARTUP_DELAY = 3
 MAX_IDLE_WAIT = 1800
 
 
@@ -43,7 +43,7 @@ def kodi_is_busy():
         pass
 
     try:
-        return bool(xbmc.getCondVisibility("Window.IsActive(DialogBusy)"))
+        return bool(xbmc.getCondVisibility("Window.IsActive(busydialog)"))
     except Exception:
         return False
 
@@ -62,9 +62,9 @@ def run():
         return
 
     deadline = time.time() + MAX_IDLE_WAIT
-    while not monitor.abortRequested() and (kodi_is_busy() or guide_preload_running()):
+    while not monitor.abortRequested() and kodi_is_busy():
         if time.time() >= deadline:
-            log("startup cleanup skipped because Kodi did not become idle or TV Guide preparation did not finish")
+            log("startup cleanup skipped because Kodi did not become idle")
             return
         if monitor.waitForAbort(10):
             return

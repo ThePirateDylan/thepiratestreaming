@@ -809,6 +809,9 @@
         <onload condition="!Skin.HasSetting(PirateAfterHoursPaletteV2)">Skin.SetString(PVRGuideItemTextColorFocus,ff111315)</onload>
         <onload condition="!Skin.HasSetting(PirateAfterHoursPaletteV2)">Skin.SetString(PVRGuideProgressIndicatorColor,ffff7417)</onload>
         <onload condition="!Skin.HasSetting(PirateAfterHoursPaletteV2)">Skin.SetBool(PirateAfterHoursPaletteV2)</onload>
+        <onload condition="!Skin.HasSetting(PirateOSDFocusV3) + String.IsEqual(Skin.String(OSDButtonsFocusColor),ffffffff)">Skin.SetString(OSDButtonsFocusColor,ffff7816)</onload>
+        <onload condition="!Skin.HasSetting(PirateOSDFocusV3) + String.IsEqual(Skin.String(OSDBingieButtonsFocusColor),ffffffff)">Skin.SetString(OSDBingieButtonsFocusColor,ffff7816)</onload>
+        <onload>Skin.SetBool(PirateOSDFocusV3)</onload>
         <!-- One-time Y2K palette repair for existing profiles. Ratings and watched-state colors remain unchanged. -->
         <onload condition="!Skin.HasSetting(PirateY2KPaletteV3)">Skin.SetString(ViewDetailsTextColor,ffffffff)</onload>
         <onload condition="!Skin.HasSetting(PirateY2KPaletteV3)">Skin.SetString(ViewDetailsHighlightTextColor,ffffffff)</onload>

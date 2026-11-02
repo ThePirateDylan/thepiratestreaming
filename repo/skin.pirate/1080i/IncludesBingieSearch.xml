@@ -1072,7 +1072,7 @@
                     <nested />
                     <include condition="Skin.HasSetting(ShowInformationBypass) + $PARAM[allow_showinfo_onclick]">ContainerShowInfoOnclick</include>
                     <param name="id" value="$PARAM[id]"/>
-                    <param name="width" value="1188" />
+                    <param name="width" value="885" />
                     <param name="height" value="975" />
                     <param name="orientation" value="$PARAM[orientation]" />
                     <param name="layout" value="$PARAM[layout]" />
@@ -1090,7 +1090,7 @@
                     <nested />
                     <include condition="Skin.HasSetting(ShowInformationBypass) + $PARAM[allow_showinfo_onclick]">ContainerShowInfoOnclick</include>
                     <param name="id" value="$PARAM[id]"/>
-                    <param name="width" value="1188" />
+                    <param name="width" value="885" />
                     <param name="height" value="$PARAM[height]" />
                     <param name="orientation" value="$PARAM[orientation]" />
                     <param name="layout" value="$PARAM[layout]" />
