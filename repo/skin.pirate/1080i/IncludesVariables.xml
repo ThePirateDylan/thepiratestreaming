@@ -681,4 +681,6 @@
 	    <value condition="!String.IsEmpty(Container(17195).ListItem.Property(imdb_id))">$INFO[Container(17195).ListItem.Property(imdb_id)]</value>
     </variable>
 	
+    <expression name="PirateGuideLoading">Window.IsActive(Videos) + !String.IsEmpty(Window(Home).Property(fenlight.tvguide_loading)) + String.IsEmpty(Window(Home).Property(fenlight.tvguide_tuning))</expression>
+    <expression name="PirateGuidePreparing">Window.IsActive(Videos) + String.Contains(Container.FolderPath,mode=tvguide.main) + !String.IsEmpty(Window(Home).Property(fenlight.tvguide_preparing_percent)) + String.IsEmpty(Window(Home).Property(fenlight.tvguide_tuning))</expression>
 </includes>

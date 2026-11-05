@@ -149,7 +149,7 @@ def make_listitem():
 	return xbmcgui.ListItem(offscreen=True)
 
 def add_item(handle, url, listitem, isFolder):
-	xbmcplugin.addDirectoryItem(handle, url, listitem, isFolder)
+	return xbmcplugin.addDirectoryItem(handle, url, listitem, isFolder)
 
 def add_items(handle, item_list):
 	xbmcplugin.addDirectoryItems(handle, item_list)
@@ -160,8 +160,8 @@ def set_content(handle, content):
 def set_category(handle, label):
 	xbmcplugin.setPluginCategory(handle, label)
 
-def end_directory(handle, cacheToDisc=True):
-	xbmcplugin.endOfDirectory(handle, cacheToDisc=cacheToDisc)
+def end_directory(handle, cacheToDisc=True, succeeded=True):
+	xbmcplugin.endOfDirectory(handle, succeeded=succeeded, cacheToDisc=cacheToDisc)
 
 def set_view_mode(view_type, content='files', is_external=None):
 	if is_external is None: is_external = external()

@@ -1,4 +1,5 @@
 """Single-owner playback lifecycle for programs launched from the guide."""
+from indexers.tv_guide_trace import event
 from threading import Event
 from uuid import uuid4
 
@@ -25,10 +26,16 @@ class GuidePlayer(FenLightPlayer):
 	def __init__(self):
 		self._ended = Event()
 		self._failed = False
-		self._closed = False
+		self._closed = True
 		self._stop_sent = False
 		self._owner = uuid4().hex
 		super().__init__()
+
+	def play(self, *args, **kwargs):
+		# Terminal events are broadcast to registered players, including other
+		# attempts. Only accept them during our own native play call and monitor.
+		self._closed = False
+		return super().play(*args, **kwargs)
 
 	def run(self, url=None, obj=None):
 		ku.set_property(self.owner_key, self._owner)
@@ -41,6 +48,7 @@ class GuidePlayer(FenLightPlayer):
 				self.clear_playback_properties()
 				ku.clear_property(self.owner_key)
 			self.sources_object = None
+			event('player cleanup complete')
 
 	def _owns_session(self):
 		return ku.get_property(self.owner_key) == self._owner
@@ -50,12 +58,15 @@ class GuidePlayer(FenLightPlayer):
 			super().clear_playback_properties()
 
 	def onPlayBackStopped(self):
+		if self._closed: return
 		self._ended.set()
+		event('stop callback')
 
 	def onPlayBackEnded(self):
-		self._ended.set()
+		if not self._closed: self._ended.set()
 
 	def onPlayBackError(self):
+		if self._closed: return
 		self._failed = True
 		self._ended.set()
 
@@ -78,6 +89,8 @@ class GuidePlayer(FenLightPlayer):
 			self.playback_successful = False
 		if self.playback_successful:
 			self.sources_object.playback_successful = True
+			from indexers.tv_guide_guard import playback_started
+			playback_started()
 			self.playback_started()
 
 	def playback_started(self):

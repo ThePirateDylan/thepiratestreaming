@@ -12,7 +12,9 @@
     <onload>CancelAlarm(loadinfo,silent)</onload>
     <onload>ClearProperty(CloseInfoDialog,Home)</onload>
 	<onload>ClearProperty(ShowViewSubMenu,Home)</onload>
+    <onunload condition="System.GetBool(debug.showloginfo) + [String.Contains(Container.FolderPath,mode=tvguide.main) | String.IsEqual(Window(Home).Property(PirateTVGuideView),1)]">NotifyAll(plugin.video.pirate,GuideTraceUnload)</onunload>
     <onunload>ClearProperty(ShowViewSubMenu,Home)</onunload>
+    <onunload condition="System.HasAlarm(PirateTVGuideRefresh)">CancelAlarm(PirateTVGuideRefresh,silent)</onunload>
     <onunload>CancelAlarm(PirateTVGuideRefresh,silent)</onunload>
     <!-- return to infodialog if previous window -->
     <onunload condition="!String.IsEmpty(Window(Home).Property(BaseWindow)) + String.IsEmpty(Window(Home).Property(ListItem.TVShowID)) + !Player.HasVideo">AlarmClock(loadinfo,Action(Info),00:00,silent)</onunload>
@@ -135,5 +137,9 @@
 		<!--Header-->
         <include>Header</include>
         <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
-	</controls>
+	<control type="group">
+            <visible>!Window.IsVisible(busydialog)</visible>
+            <include>PirateGuideLoadingOverlay</include>
+        </control>
+    </controls>
 </window>

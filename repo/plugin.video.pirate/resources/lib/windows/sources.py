@@ -313,7 +313,8 @@ class SourcesResults(BaseDialog):
 
 class SourcesPlayback(BaseDialog):
 	def __init__(self, *args, **kwargs):
-		BaseDialog.__init__(self, *args)
+		# This dialog displays progress and never plays media.
+		BaseDialog.__init__(self, *args, needs_player=False)
 		self.meta = kwargs.get('meta')
 		self.is_canceled, self.skip_resolve, self.resume_choice = False, False, None
 		self.meta_get = self.meta.get

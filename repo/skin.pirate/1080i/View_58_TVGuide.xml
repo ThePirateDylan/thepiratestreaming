@@ -150,7 +150,7 @@
         <ondown>58</ondown>
         <pagecontrol>60</pagecontrol>
         <autoscroll>false</autoscroll>
-        <onfocus condition="!System.HasAlarm(PirateTVGuideRefresh)">AlarmClock(PirateTVGuideRefresh,Container.Refresh(),00:01:00,silent,loop)</onfocus>
+        <onfocus condition="!System.HasAlarm(PirateTVGuideRefresh)">AlarmClock(PirateTVGuideRefresh,RunPlugin(plugin://plugin.video.pirate/?mode=tvguide.refresh),00:01:00,silent,loop)</onfocus>
         <onunfocus condition="System.HasAlarm(PirateTVGuideRefresh)">CancelAlarm(PirateTVGuideRefresh,silent)</onunfocus>
         <scrolltime tween="quadratic">250</scrolltime>
         <viewtype label="TV Guide">TV Guide</viewtype>
@@ -707,6 +707,28 @@
       <width>2</width>
       <texture>common/separator.png</texture>
       <visible>!String.IsEmpty(ListItem.Property(guide_block_7))</visible>
+    </control>
+  </include>
+  <include name="PirateGuideLoadingPanel">
+            <control type="label"><left>260</left><top>360</top><width>1400</width><height>100</height><align>center</align><font>Bold60</font><label>Loading TV Guide</label></control>
+            <control type="progress"><left>500</left><top>494</top><width>920</width><height>22</height><info>$PARAM[percent]</info></control>
+            <control type="label"><left>260</left><top>534</top><width>1400</width><height>60</height><align>center</align><font>Reg26</font><label>$INFO[$PARAM[percent],,%]  $INFO[$PARAM[detail]]</label></control>
+            <control type="label"><left>110</left><top>612</top><width>1700</width><height>65</height><align>center</align><font>Reg26</font><label>You can go back and watch something else. Return when the indicator at the top right finishes.</label></control>
+  </include>
+  <include name="PirateGuideLoadingOverlay">
+    <control type="group">
+      <visible>$EXP[PirateGuideLoading]</visible>
+      <include content="PirateGuideLoadingPanel">
+        <param name="percent" value="Window(Home).Property(fenlight.tvguide_load_percent)"/>
+        <param name="detail" value="Window(Home).Property(fenlight.tvguide_load_channel)"/>
+      </include>
+    </control>
+    <control type="group">
+      <visible>!$EXP[PirateGuideLoading] + $EXP[PirateGuidePreparing]</visible>
+      <include content="PirateGuideLoadingPanel">
+        <param name="percent" value="Window(Home).Property(fenlight.tvguide_preparing_percent)"/>
+        <param name="detail" value="Window(Home).Property(fenlight.tvguide_preparing_channel)"/>
+      </include>
     </control>
   </include>
 </includes>

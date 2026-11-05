@@ -1,3 +1,17 @@
+[COLOR dodgerblue][B]Version 2.2.96 - Release Candidate[/B][/COLOR]
+ - Playback creates its Kodi player after a source resolves and releases it when that playback attempt finishes, including retry and error paths.
+ - The source progress dialog no longer creates an unused player callback listener.
+ - Guide player callbacks ignore events before their playback starts and after cleanup completes.
+ - Guide diagnostics retain lifecycle and worker identification logging without collecting Python frames from other Kodi interpreters.
+ - Includes all 2.2.95 guide loading, channel selection and navigation improvements. Playback-exit stability still requires testing in the installed setup.
+
+[COLOR dodgerblue][B]Version 2.2.95[/B][/COLOR]
+ - Channel selections run directly through the guide player. Repeated clicks during startup no longer start a second tune request.
+ - The loading panel follows guide preparation in both the Videos window and Kodi's busy dialog.
+ - Leaving a canceled listing stops its remaining rows from loading. Guide refreshes check the active window and preparation state before updating.
+ - The channel program browsing action opens the selected channel's catalog.
+ - Guide playback closes its own resolver dialog and retains the existing Stop and return handling.
+
 [COLOR dodgerblue][B]Version 2.2.90[/B][/COLOR]
  - Food Netwurk now airs 15 cooking, competition and restaurant shows from the 2000s through the current era. Its five Eastern-time blocks favor the eight primary series, with weekend variety and published schedules retained across restarts.
  - Channel 136 remembers confirmed starts and failed episodes, tries substitutes when available and updates the guide to match the episode that started.

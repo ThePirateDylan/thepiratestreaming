@@ -10,6 +10,7 @@ from time import perf_counter, time
 from urllib.parse import parse_qs, quote_plus, urlparse
 
 from modules import kodi_utils
+from indexers.tv_guide_guard import operation, tuning_request
 
 
 SNAPSHOT_SCHEMA = 6
@@ -941,7 +942,7 @@ def _add_pending_channel(handle, channel, start_time, day_offset, progress_state
 	for key, delta in (('guide_previous_url', -1), ('guide_next_url', 1)):
 		item.setProperty(key, _guide_day_url(_guide_day_offset({'day_offset': day_offset + delta})))
 	url = kodi_utils.build_url({'mode': 'tvguide.main', 'day_offset': str(day_offset), 'retry_channel': channel['id']})
-	kodi_utils.add_item(handle, url, item, True)
+	if kodi_utils.add_item(handle, url, item, True) is False: return False
 	progress_state['rows_added'] += 1
 
 
@@ -1048,15 +1049,12 @@ def _channel_item(handle, channel, start_time, fanart, progress_state, prevalida
 		if right > left:
 			item.setProperty('guide_block_%d' % left, str(right-left))
 			item.setProperty('guide_text_%d' % left, '%s  %s' % (_format_time(entry['start']), entry['program']['title']))
-	# Keep a TMDb ID on playable show and movie entries. Show entries start a
-	# random aired episode; movie entries start that film.
+	# play_channel starts its own player. Leave the action non-playable so Kodi
+	# runs it directly instead of queuing it as an unresolved playlist item.
 	tmdb_id = current_program.get('tmdb_id')
 	if tmdb_id and current_program.get('media_type') in ('tvshow', 'movie'):
-		item.setProperty('IsPlayable', 'true')
 		item.setProperty('tmdb_id', str(tmdb_id))
 		info.setUniqueIDs({'tmdb': str(tmdb_id)})
-	elif current_program.get('favorite_index') is not None:
-		item.setProperty('IsPlayable', 'true')
 	# Keep the channel action stable across time-slot changes. The playback
 	# route resolves the current scheduled program from the validated snapshot.
 	url_params = {
@@ -1065,12 +1063,18 @@ def _channel_item(handle, channel, start_time, fanart, progress_state, prevalida
 		'day_offset': str(day_offset),
 	}
 	url = kodi_utils.build_url(url_params)
-	kodi_utils.add_item(handle, url, item, False)
+	if kodi_utils.add_item(handle, url, item, False) is False: return False
 	progress_state['rows_added'] += 1
 	progress_state['item_build_seconds'] += perf_counter() - item_started
 	return validated_programs
 
 def refresh_snapshot_for_key(cache_key, monitor=None, force=False):
+	with operation('snapshot') as writer:
+		if writer is None: return False
+		return _refresh_snapshot_for_key(cache_key, monitor, force)
+
+
+def _refresh_snapshot_for_key(cache_key, monitor=None, force=False):
 	"""Refresh a previously opened guide quietly while Kodi is playing video.
 
 	The force flag lets the playback monitor update the cache shortly before a
@@ -1173,6 +1177,12 @@ def retire_guide_probe_misses():
 
 
 def prewarm_snapshot(monitor=None, player=None):
+	with operation('snapshot') as writer:
+		if writer is None: return False
+		return _prewarm_snapshot(monitor, player)
+
+
+def _prewarm_snapshot(monitor=None, player=None):
 	"""Build the guide snapshot quietly during Kodi startup, resuming partial work."""
 	channels = _channels()
 	if not channels:
@@ -1194,7 +1204,6 @@ def prewarm_snapshot(monitor=None, player=None):
 		return False
 	progress_state = _new_progress_state(len(channels) * 4, show_progress=False)
 	dialog = kodi_utils.kodi_progress_background()
-	dialog.create('Preparing TV Guide', 'Loading the channel schedule')
 	started = perf_counter()
 
 	def save_partial(complete=False, pass_finished=False):
@@ -1212,6 +1221,7 @@ def prewarm_snapshot(monitor=None, player=None):
 		}, expiration=SNAPSHOT_CACHE_HOURS)
 
 	try:
+		dialog.create('Preparing TV Guide', 'Loading the channel schedule')
 		for channel in channels:
 			channel_id = channel['id']
 			if channel_id in completed:
@@ -1220,7 +1230,10 @@ def prewarm_snapshot(monitor=None, player=None):
 				if monitor and monitor.abortRequested():
 					save_partial()
 					return False
-				dialog.update(int(100 * len(completed) / len(channels)), 'Preparing TV Guide', channel['name'])
+				percent = int(100 * len(completed) / len(channels))
+				kodi_utils.set_property('fenlight.tvguide_preparing_channel', channel['name'])
+				kodi_utils.set_property('fenlight.tvguide_preparing_percent', str(percent))
+				dialog.update(percent, 'Preparing TV Guide', channel['name'])
 				error_state = {}
 				catalog_started = perf_counter()
 				candidates = _channel_programs(channel, favourites, error_state)
@@ -1264,6 +1277,8 @@ def prewarm_snapshot(monitor=None, player=None):
 				'refresh_after': int(time()) + SNAPSHOT_RETRY_DELAY,
 			}, expiration=SNAPSHOT_RETRY_DELAY / 3600.0)
 	finally:
+		kodi_utils.clear_property('fenlight.tvguide_preparing_percent')
+		kodi_utils.clear_property('fenlight.tvguide_preparing_channel')
 		dialog.close()
 	elapsed = perf_counter() - started
 	kodi_utils.logger(
@@ -1279,7 +1294,37 @@ def prewarm_snapshot(monitor=None, player=None):
 	return len(completed) == len(channels) and any(programs.values())
 
 
+def refresh_visible_guide(params=None):
+	folder = urlparse(kodi_utils.folder_path())
+	if (folder.netloc != 'plugin.video.pirate' or parse_qs(folder.query).get('mode') != ['tvguide.main']
+			or not kodi_utils.get_visibility('Window.IsActive(Videos)')
+			or kodi_utils.get_visibility('Container.IsUpdating')
+			or kodi_utils.get_visibility('Window.IsModalDialogTopmost')
+			or kodi_utils.get_property('fenlight.tvguide_tuning') == 'true'
+			or kodi_utils.get_property('fenlight.tvguide_loading')):
+		return False
+	kodi_utils.execute_builtin('Container.Refresh')
+	return True
+
+
 def main(params=None):
+	from uuid import uuid4
+	token = uuid4().hex
+	kodi_utils.set_property('fenlight.tvguide_load_percent', '0')
+	kodi_utils.set_property('fenlight.tvguide_loading', token)
+	try:
+		with operation('snapshot') as writer:
+			loaded = _build_directory(params, writer is not None, token)
+	finally:
+		owns_view = kodi_utils.get_property('fenlight.tvguide_loading') == token
+		if owns_view:
+			kodi_utils.clear_property('fenlight.tvguide_loading')
+			kodi_utils.clear_property('fenlight.tvguide_load_channel')
+	if loaded and owns_view and kodi_utils.current_skin() == 'skin.pirate':
+		_set_guide_view()
+
+
+def _build_directory(params, can_write, token):
 	load_started = perf_counter()
 	rss_before = _process_rss_mb()
 	handle = int(sys.argv[1])
@@ -1316,48 +1361,56 @@ def main(params=None):
 		except Exception as exc:
 			kodi_utils.logger('TV Guide', 'Snapshot cache unavailable; building a fresh guide: %s' % str(exc))
 		progress_state['snapshot_hit'] = bool(complete_snapshot and isinstance(cached_programs, dict))
-		preparing = kodi_utils.get_property('fenlight.tvguide_preload_running') == 'true'
+		preparing = not can_write
 		if preparing and not complete_snapshot:
 			kodi_utils.set_property('fenlight.tvguide_refresh_when_ready', 'true')
 		retry_after = (snapshot or {}).get('missing_retry_after', 0) if cache_enabled and isinstance(snapshot, dict) else 0
 		updated_programs = dict(cached_programs or {})
 		attempted = False
 		retry_channel = (params or {}).get('retry_channel')
-		for channel in channels:
+		for index, channel in enumerate(channels):
+			if kodi_utils.get_property('fenlight.tvguide_loading') == token:
+				kodi_utils.set_property('fenlight.tvguide_load_percent', str(index * 100 // len(channels)))
+				kodi_utils.set_property('fenlight.tvguide_load_channel', channel['name'])
 			channel_id = channel['id']
 			programs = updated_programs.get(channel_id)
 			try:
 				if not programs and (preparing or (retry_after > time() and retry_channel != channel_id)):
-					_add_pending_channel(handle, channel, start_time, day_offset, progress_state, preparing)
+					if _add_pending_channel(handle, channel, start_time, day_offset, progress_state, preparing) is False: break
 					continue
 				if not programs:
 					attempted = True
 				programs = _channel_item(handle, channel, start_time, fanart, progress_state, programs, favourites, day_offset)
+				if programs is False: break
 				if programs:
 					updated_programs[channel_id] = programs
 					continue
 			except Exception as exc:
 				kodi_utils.logger('TV Guide', 'Channel %s could not be rendered: %s' % (channel_id, str(exc)))
-			_add_pending_channel(handle, channel, start_time, day_offset, progress_state, False)
-		if cache_enabled and attempted and not preparing:
-			now = int(time())
-			main_cache.set(cache_key, {
-				'schema': SNAPSHOT_SCHEMA, 'channels': channels, 'favorites': favourites,
-				'programs': updated_programs, 'completed_channels': sorted(updated_programs),
-				'complete': len(updated_programs) == len(channels), 'updated_at': now,
-				'refresh_after': now + SNAPSHOT_INITIAL_REFRESH_DELAY,
-				'missing_retry_after': now + SNAPSHOT_RETRY_DELAY,
-			}, expiration=SNAPSHOT_CACHE_HOURS)
-		kodi_utils.set_content(handle, 'files')
-		kodi_utils.set_category(handle, 'TV Guide')
-		kodi_utils.end_directory(handle, cacheToDisc=False)
+			if _add_pending_channel(handle, channel, start_time, day_offset, progress_state, False) is False: break
+		else:
+			if cache_enabled and attempted and not preparing:
+				now = int(time())
+				main_cache.set(cache_key, {
+					'schema': SNAPSHOT_SCHEMA, 'channels': channels, 'favorites': favourites,
+					'programs': updated_programs, 'completed_channels': sorted(updated_programs),
+					'complete': len(updated_programs) == len(channels), 'updated_at': now,
+					'refresh_after': now + SNAPSHOT_INITIAL_REFRESH_DELAY,
+					'missing_retry_after': now + SNAPSHOT_RETRY_DELAY,
+				}, expiration=SNAPSHOT_CACHE_HOURS)
+			kodi_utils.set_content(handle, 'files')
+			kodi_utils.set_category(handle, 'TV Guide')
+			kodi_utils.end_directory(handle, cacheToDisc=False)
+			return True
+		kodi_utils.end_directory(handle, cacheToDisc=False, succeeded=False)
+		return False
 	finally:
 		progress = progress_state.get('dialog')
 		if progress:
 			try:
-				progress.update(100, 'TV Guide ready', 'Playable channel lineups are cached.')
 				progress.close()
-			except Exception: pass
+			except Exception as exc:
+				kodi_utils.logger('TV Guide', 'Could not close progress dialog: %s' % exc)
 		elapsed = perf_counter() - load_started
 		rss_after = _process_rss_mb()
 		kodi_utils.logger(
@@ -1378,9 +1431,6 @@ def main(params=None):
 				'unknown' if rss_after is None else rss_after,
 			),
 		)
-	if kodi_utils.current_skin() == 'skin.pirate':
-		# Complete view setup before this plugin invocation can be reused.
-		_set_guide_view()
 
 
 def _set_guide_view():
@@ -1404,8 +1454,9 @@ def _set_view_for_mode(mode, view_id):
 	seen_target = False
 	ready_checks = 0
 	def at_target():
-		return (kodi_utils.get_visibility('Window.IsActive(Videos)')
-			and parse_qs(urlparse(kodi_utils.folder_path()).query).get('mode') == [mode])
+		folder = urlparse(kodi_utils.folder_path())
+		return (folder.netloc == 'plugin.video.pirate' and kodi_utils.get_visibility('Window.IsActive(Videos)')
+			and parse_qs(folder.query).get('mode') == [mode])
 	for unused in range(20):
 		if monitor.abortRequested(): return False
 		current = at_target()
@@ -1503,6 +1554,26 @@ def _clear_guide_playback_logo():
 
 
 def play_channel(params):
+	from indexers.tv_guide_trace import event
+	with tuning_request() as acquired:
+		if acquired:
+			event('handler enter')
+			try:
+				return _play_channel(params)
+			finally:
+				event('handler returning')
+				if kodi_utils.get_visibility('System.GetBool(debug.showloginfo)'):
+					_log_remaining_workers()
+
+
+def _log_remaining_workers():
+	import threading
+	for worker in threading.enumerate():
+		if worker is not threading.current_thread():
+			kodi_utils.logger('TV Guide exit', 'native_thread=%s' % worker.native_id)
+
+
+def _play_channel(params):
 	"""Play the current program: a random aired episode for shows, or the movie."""
 	channel_id = str(params.get('channel') or '')
 	channel = next((item for item in _channels() if item.get('id') == channel_id), None)
@@ -1643,7 +1714,6 @@ def channel_programs(params):
 		info.setTitle(program['title'])
 		info.setPlot(program['plot'])
 		info.setMediaType(program['media_type'])
-		item.setProperty('IsPlayable', 'true')
 		url_params = {
 			'mode': 'tvguide.play_channel',
 			'channel': channel_id,

@@ -671,12 +671,9 @@ class Sources():
 					self.progress_dialog.busy_spinner()
 					if count > 1:
 						kodi_utils.sleep(200)
-						try: del player
-						except: pass
 					url, self.playback_successful, self.cancel_all_playback = None, None, False
 					self.playing_filename = item['name']
 					self.playing_item = item
-					player = getattr(self, 'player_class', FenLightPlayer)()
 					try:
 						if self.progress_dialog.iscanceled() or monitor.abortRequested(): break
 						url = self.resolve_sources(item)
@@ -685,14 +682,18 @@ class Sources():
 							self.progress_dialog.busy_spinner('false')
 							self.progress_dialog.update_resolver(percent=resolve_percent)
 							kodi_utils.sleep(200)
-							player.run(url, self)
-						else: continue
-						if self.cancel_all_playback: break
-						if self.playback_successful: break
-						if count == len(items):
-							self.cancel_all_playback = True
-							player.stop()
-							break
+							# Kodi registers a native callback listener at construction.
+							# Own it only for this resolved source, including the final stop.
+							player = getattr(self, 'player_class', FenLightPlayer)()
+							try:
+								player.run(url, self)
+								if self.cancel_all_playback or self.playback_successful: break
+								if count == len(items):
+									self.cancel_all_playback = True
+									player.stop()
+									break
+							finally:
+								del player
 					except: pass
 				except: pass
 		except: self._kill_progress_dialog()

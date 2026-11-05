@@ -18,6 +18,8 @@ def routing(sys):
 		from indexers import tv_guide
 		action = mode.split('.', 1)[1]
 		if action == 'main': return tv_guide.main(params)
+		elif action == 'refresh': return tv_guide.refresh_visible_guide()
+		elif action == 'channel_programs': return tv_guide.channel_programs(params)
 		elif action == 'channel': return tv_guide.channel(params)
 		elif action == 'play_channel': return tv_guide.play_channel(params)
 		elif action == 'kodi_favorites': return tv_guide.kodi_favorites(params)

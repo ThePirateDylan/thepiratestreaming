@@ -234,7 +234,7 @@ class TVGuidePreloader:
 					continue
 				kodi_utils.set_property('fenlight.tvguide_preload_running', 'true')
 				try:
-					from indexers.tv_guide import prewarm_snapshot
+					from indexers.tv_guide import prewarm_snapshot, refresh_visible_guide
 					ready = prewarm_snapshot(monitor, player)
 				finally:
 					kodi_utils.clear_property('fenlight.tvguide_preload_running')
@@ -246,8 +246,7 @@ class TVGuidePreloader:
 						if monitor.waitForAbort(0.1) or not kodi_utils.get_visibility('Window.IsActive(Videos)'):
 							break
 						if not kodi_utils.get_visibility('Container.IsUpdating'):
-							if 'mode=tvguide.main' in kodi_utils.folder_path():
-								kodi_utils.execute_builtin('Container.Refresh')
+							refresh_visible_guide()
 							break
 				if ready:
 					kodi_utils.logger('The Pirate', 'TV Guide startup snapshot is ready')
@@ -369,15 +368,15 @@ class FenLightMonitor(Monitor):
 
 	def startServices(self):
 		try: SetAddonConstants().run()
-		except Exception as e: logger('SetAddonConstants', str(e))
+		except Exception as e: kodi_utils.logger('SetAddonConstants', str(e))
 		try: DatabaseMaintenance().run()
-		except Exception as e: logger('DatabaseMaintenance', str(e))
+		except Exception as e: kodi_utils.logger('DatabaseMaintenance', str(e))
 		try: SyncSettings().run()
-		except Exception as e: logger('SyncSettings', str(e))
+		except Exception as e: kodi_utils.logger('SyncSettings', str(e))
 		try: OnUpdateChanges().run()
-		except Exception as e: logger('OnUpdateChanges', str(e))
+		except Exception as e: kodi_utils.logger('OnUpdateChanges', str(e))
 		try: AddonXMLCheck().run()
-		except Exception as e: logger('AddonXMLCheck', str(e))
+		except Exception as e: kodi_utils.logger('AddonXMLCheck', str(e))
 		Thread(target=CustomWindowsPrepare().run).start()
 		Thread(target=TraktMonitor().run).start()
 		Thread(target=UpdateCheck().run).start()
@@ -385,9 +384,13 @@ class FenLightMonitor(Monitor):
 		Thread(target=TVGuideRefresher().run).start()
 		Thread(target=TVGuidePreloader().run).start()
 		try: AutoStart().run()
-		except Exception as e: logger('AutoStart', str(e))
+		except Exception as e: kodi_utils.logger('AutoStart', str(e))
 
 	def onNotification(self, sender, method, data):
+		if sender == "plugin.video.pirate" and method.rsplit(".", 1)[-1] == "GuideTraceUnload":
+			from indexers.tv_guide_trace import window_unloaded
+			window_unloaded()
+			return
 		if method in ('GUI.OnScreensaverActivated', 'System.OnSleep'):
 			kodi_utils.set_property(pause_services_prop, 'true')
 			kodi_utils.logger('OnNotificationActions', 'PAUSING ThePirateStreaming Services Due to Device Sleep')

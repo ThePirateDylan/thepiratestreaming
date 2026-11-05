@@ -1,4 +1,4 @@
- <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <includes>
 	<include name="BingieAltInfo">	
@@ -574,7 +574,7 @@
                                 <onclick condition="System.HasAddon(plugin.video.youtube) + !String.IsEmpty(ListItem.Trailer) + [![String.IsEqual(Skin.String(trailersource),imdb) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] | [String.IsEqual(Skin.String(trailersource),imdb) + !String.IsEqual(Skin.String(AutoYoutubeTrailer),true)]]">
 									PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
 								<onclick condition="System.HasAddon(plugin.video.imdb.trailers) + String.IsEqual(Skin.String(trailersource),imdb) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
-									PlayMedia(plugin://plugin.video.imdb.trailers/?action=play_id&imdb=$VAR[IMDb_Trailers],1)</onclick>
+									PlayMedia(plugin://plugin.video.imdb.trailers/?action=play_id&amp;imdb=$VAR[IMDb_Trailers],1)</onclick>
 								<!-- plugin with fallback -->
 								<onclick condition="System.HasAddon(plugin.video.youtube) + String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) + String.IsEqual(Skin.String(trailersource),youtube)">
 									RunScript(script.pirate.helper,action=playtrailer,title=$INFO[ListItem.Title]$INFO[ListItem.Year])</onclick>
@@ -1812,7 +1812,7 @@
                                 <onclick condition="System.HasAddon(plugin.video.youtube) + !String.IsEmpty(ListItem.Trailer) + [![String.IsEqual(Skin.String(trailersource),imdb) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] | [String.IsEqual(Skin.String(trailersource),imdb) + !String.IsEqual(Skin.String(AutoYoutubeTrailer),true)]]">
 									PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
 								<onclick condition="System.HasAddon(plugin.video.imdb.trailers) + String.IsEqual(Skin.String(trailersource),imdb) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
-									PlayMedia(plugin://plugin.video.imdb.trailers/?action=play_id&imdb=$VAR[IMDb_Trailers],1)</onclick>	
+									PlayMedia(plugin://plugin.video.imdb.trailers/?action=play_id&amp;imdb=$VAR[IMDb_Trailers],1)</onclick>	
 								<!-- plugin with fallback -->
 								<onclick condition="System.HasAddon(plugin.video.youtube) + String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) + String.IsEqual(Skin.String(trailersource),youtube)">
 									RunScript(script.pirate.helper,action=playtrailer,title=$INFO[ListItem.Title]$INFO[ListItem.Year])</onclick>

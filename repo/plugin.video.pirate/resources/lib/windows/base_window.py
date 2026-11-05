@@ -141,12 +141,12 @@ def window_player(obj):
 	kodi_utils.hide_busy_dialog()
 
 class BaseDialog(xbmcgui.WindowXMLDialog):
-	def __init__(self, *args):
+	def __init__(self, *args, needs_player=True):
 		# WindowXMLDialog expects each window argument separately. Passing the
 		# tuple itself prevents Kodi from resolving the requested XML window.
 		xbmcgui.WindowXMLDialog.__init__(self, *args)
 		self.args = args
-		self.player = kodi_utils.kodi_player()
+		self.player = kodi_utils.kodi_player() if needs_player else None
 		self.left_action = 1
 		self.right_action = 2
 		self.up_action = 3
