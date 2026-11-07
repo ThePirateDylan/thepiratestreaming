@@ -19,12 +19,23 @@ def debrid_for_ext_cache_check(enabled_debrid=None):
 
 def manual_add_magnet_to_cloud(params):
 	show_busy_dialog()
+	if params['provider'] == 'AllDebrid':
+		try:
+			provider = AllDebridAPI()
+			result = provider.create_transfer(params['magnet_url'])
+			provider.clear_cache()
+		finally:
+			hide_busy_dialog()
+		if not result: notification('AllDebrid magnet submission failed. Check the Kodi log for the provider error.')
+		else: notification('Success')
+		return
 	debrid_list_modules = [('Real-Debrid', RealDebridAPI), ('Premiumize.me', PremiumizeAPI), ('AllDebrid', AllDebridAPI), ('TorBox', TorBoxAPI)]
 	function = [i[1] for i in debrid_list_modules if i[0] == params['provider']][0]
-	result = function().create_transfer(params['magnet_url'])
-	function().clear_cache()
+	provider = function()
+	result = provider.create_transfer(params['magnet_url'])
+	provider.clear_cache()
 	hide_busy_dialog()
-	if result == 'failed': notification('Failed')
+	if not result: notification('Failed')
 	else: notification('Success')
 
 def query_local_cache(hash_list):

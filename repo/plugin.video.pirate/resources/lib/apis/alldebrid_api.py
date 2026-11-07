@@ -3,7 +3,6 @@ import re
 import time
 import requests
 from threading import Thread
-from urllib.parse import quote
 from caches.main_cache import cache_object
 from caches.settings_cache import get_setting, set_setting
 from modules.utils import copy2clip, make_qrcode, make_tinyurl
@@ -100,30 +99,34 @@ class AllDebridAPI:
 		return cache_object(self._get, string, url, False, 0.03)
 
 	def unrestrict_link(self, link):
-		url = 'link/unlock'
-		url_append = '&link=%s' % quote(link)
-		response = self._get(url, url_append)
-		try: return response['link']
+		response = self._post('link/unlock', {'link': link})
+		try: return response.get('link')
 		except: return None
 
 	def create_transfer(self, magnet):
 		url = 'magnet/upload'
-		url_append = '&magnet=%s' % magnet
-		result = self._get(url, url_append)
-		if 'error' in result: return None
-		return result['magnets'][0].get('id', None)
+		result = self._post(url, {'magnets[]': magnet})
+		if result is None: return None
+		try:
+			magnet_result = result['magnets'][0]
+			if magnet_result.get('error'):
+				self._log_api_error(url, magnet_result['error'])
+				return None
+			return magnet_result.get('id')
+		except (TypeError, KeyError, IndexError):
+			return None
 
 	def list_transfer(self, transfer_id):
 		url = 'magnet/status'
 		url_append = '&id=%s' % transfer_id
 		result = self._get(url, url_append)
-		return result['magnets']
+		return result.get('magnets', []) if result else []
 
 	def delete_transfer(self, transfer_id):
 		url = 'magnet/delete'
 		url_append = '&id=%s' % transfer_id
 		result = self._get(url, url_append)
-		return result.get('message', '') == 'Magnet was successfully deleted'
+		return bool(result) and result.get('message', '') == 'Magnet was successfully deleted'
 
 	def correct_files_list(self, files_list):
 		results = []
@@ -155,7 +158,7 @@ class AllDebridAPI:
 			if not store_to_cloud: Thread(target=self.delete_transfer, args=(transfer_id,)).start()
 			if media_id:
 				file_url = self.unrestrict_link(media_id)
-				if not any(file_url.lower().endswith(x) for x in extensions): file_url = None
+				if not file_url or not any(file_url.lower().endswith(x) for x in extensions): file_url = None
 			return file_url
 		except:
 			if transfer_id:
@@ -190,26 +193,54 @@ class AllDebridAPI:
 		links = self.correct_files_list(transfer_info.get('files', []))
 		return transfer_id, links
 
-	def _get(self, url, url_append=''):
-		result = None
+	def _log_api_error(self, endpoint, error):
 		try:
-			if self.token in ('empty_setting', ''): return None
-			url = self.base_url + url + '?agent=%s&apikey=%s' % (self.user_agent, self.token) + url_append
-			if 'magnet/status' in url: url = url.replace('v4', 'v4.1')
-			result = requests.get(url, timeout=20).json()
-			if result.get('status') == 'success' and 'data' in result: result = result['data']
+			from modules.kodi_utils import logger
+			if isinstance(error, dict) and isinstance(error.get('data'), dict): error = error['data'].get('error', error['data'])
+			if isinstance(error, dict) and isinstance(error.get('error'), dict): error = error['error']
+			code = error.get('code', 'UNKNOWN') if isinstance(error, dict) else str(error)
+			message = error.get('message', '') if isinstance(error, dict) else ''
+			logger('AllDebrid %s error' % endpoint, '%s: %s' % (code, message))
 		except: pass
-		return result
 
-	def _post(self, url, data={}):
-		result = None
+	def _request(self, method, endpoint, data=None, params=None):
+		if self.token in ('empty_setting', ''): return None
+		url = self.base_url + endpoint
+		if endpoint.startswith('magnet/status'):
+			url = url.replace('/v4/', '/v4.1/')
 		try:
-			if self.token in ('empty_setting', ''): return None
-			url = self.base_url + url + '?agent=%s&apikey=%s' % (self.user_agent, self.token)
-			result = requests.post(url, data=data, timeout=20).json()
-			if result.get('status') == 'success' and 'data' in result: result = result['data']
-		except: pass
-		return result
+			request = getattr(requests, method)
+			response = request(url, params=params, data=data, timeout=20)
+			status_code = response.status_code
+			try: result = response.json()
+			except ValueError:
+				self._log_api_error(endpoint, {'code': 'INVALID_JSON', 'message': 'HTTP %s' % status_code})
+				return None
+			if status_code >= 400:
+				self._log_api_error(endpoint, result if isinstance(result, dict) else {'code': 'HTTP_%s' % status_code})
+			if not isinstance(result, dict): return None
+			if result.get('status') == 'success' and 'data' in result: return result['data']
+			if result.get('status') == 'error' or 'error' in result:
+				self._log_api_error(endpoint, result)
+				return None
+			return result
+		except requests.RequestException as exc:
+			self._log_api_error(endpoint, {'code': 'REQUEST_FAILED', 'message': str(exc)})
+			return None
+
+	def _get(self, url, url_append=''):
+		params = {'agent': self.user_agent, 'apikey': self.token}
+		if url_append:
+			# Retain legacy query string callers while keeping credentials out of logs.
+			for pair in url_append.lstrip('&').split('&'):
+				if '=' in pair:
+					key, value = pair.split('=', 1)
+					params[key] = requests.utils.unquote(value)
+		return self._request('get', url, params=params)
+
+	def _post(self, url, data=None):
+		params = {'agent': self.user_agent, 'apikey': self.token}
+		return self._request('post', url, data=data or {}, params=params)
 
 	def clear_cache(self, clear_hashes=True):
 		try:

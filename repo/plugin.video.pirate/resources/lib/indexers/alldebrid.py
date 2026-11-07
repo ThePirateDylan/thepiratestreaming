@@ -140,6 +140,8 @@ def browse_ad_cloud(folder_id):
 def resolve_ad(params):
 	url = params['url']
 	resolved_link = AllDebrid.unrestrict_link(url)
+	if not resolved_link:
+		return kodi_utils.notification('AllDebrid link unlock failed. Check the Kodi log for the provider error.', 5000)
 	if params.get('play', 'false') != 'true' : return resolved_link
 	from modules.player import FenLightPlayer
 	FenLightPlayer().run(resolved_link, 'video')

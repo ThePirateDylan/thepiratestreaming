@@ -1,3 +1,9 @@
+[COLOR dodgerblue][B]Version 2.2.97 - AllDebrid Resolution Fix[/B][/COLOR]
+ - AllDebrid magnet uploads and link unlocks use the documented POST requests.
+ - Successful playback was confirmed by the user after installing the 2.2.97 ZIP on Windows. Kodi logs confirm version 2.2.97 and video playback starting on November 7, 2026.
+ - AllDebrid request failures report provider errors, and failed unlocks are not sent to playback.
+ - The reviewed logs contained no NO_SERVER, ipnotallowed or AUTH_BLOCKED errors. WARP involvement was not confirmed; this release does not bypass provider IP restrictions. Fire TV playback remains unverified.
+
 [COLOR dodgerblue][B]Version 2.2.96 - Release Candidate[/B][/COLOR]
  - Playback creates its Kodi player after a source resolves and releases it when that playback attempt finishes, including retry and error paths.
  - The source progress dialog no longer creates an unused player callback listener.
