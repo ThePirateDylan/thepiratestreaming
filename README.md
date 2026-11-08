@@ -58,9 +58,9 @@ The percentages below are estimates until verified. They do not guarantee that a
 
 Main add-on functionality and integration.
 
-### External Players — 80%
+### External Players — 100%
 
-`[████████░░] 80%`
+`[██████████] 100%`
 
 External player configuration and playback.
 
@@ -75,30 +75,6 @@ Restored keys and related service functionality.
 `[████████░░] 80%`
 
 BINGIE Mod customization and integration.
-
-### Genre Channels — 60%
-
-`[██████░░░░] 60%`
-
-Channel generation and playback.
-
-### Trakt Schedule — 60%
-
-`[██████░░░░] 60%`
-
-Generating a schedule from Trakt lists.
-
-### Favorites Channel — 70%
-
-`[███████░░░] 70%`
-
-Populating the channel from Kodi Favorites.
-
-### Holiday Channel — 70%
-
-`[███████░░░] 70%`
-
-Seasonal visibility and holiday programming.
 
 ### Offline TV Guide — 40%
 
@@ -129,10 +105,6 @@ The Pirate Streaming includes a work-in-progress, channel-based experience desig
 This is **not conventional broadcast television**. Channels are populated using your configured sources and content lists.
 
 Current features include:
-
-- **Genre Channels** — Browse content through genre-based channels.
-- **Trakt-Powered Schedules** — Trakt lists can populate schedules containing a mixture of movies and TV shows.
-- **Kodi Favorites Channel** — Content from your Kodi Favorites can populate its own channel.
 - **Seasonal Holiday Channels** — A seasonal channel can appear automatically during Halloween and Christmas periods, featuring relevant content.
 - **Offline TV Guide** — An offline guide is available in a usable but unfinished state.
 
