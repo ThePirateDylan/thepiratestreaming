@@ -1,280 +1,133 @@
+<p align="center">
+  <img src="repo/skin.pirate/media/branding/thepirate-logo.png" alt="The Pirate Streaming" width="480">
+</p>
+
 # The Pirate Streaming
 
-A fork of FenLightAM that brings external player support, restores API key functionality, adds quality-of-life improvements, and includes a customized BINGIE Mod skin designed specifically for this project.
+A Kodi add-on and custom skin for movies, TV shows, and scheduled channels. Built on FenLightAM and BINGIE Mod, The Pirate brings browsing, playback, and a cable-style TV Guide into one interface.
 
-The Pirate Streaming was created because maintaining the original setup had become a constant cycle of fixes. Since my mom relies on me to keep her TV working, I wanted to build a setup that I could maintain in one place instead of repeatedly fixing the same things.
+**[Install](#installation)** · **[First-time setup](#first-time-setup)** · **[Troubleshooting](#troubleshooting)** · **[Report an issue](https://github.com/ThePirateDylan/thepiratestreaming/issues)** · **[Changelog](repo/plugin.video.pirate/resources/text/changelog.txt)**
 
-This project brings the add-on, skin, and related configuration together in one place to make installation easier.
+## What’s included
 
----
+- **The Pirate Skin:** a navy-and-blue interface designed for remote and keyboard navigation.
+- **Movies and TV:** search, Continue Watching, saved progress, and Trakt integration.
+- **TV Guide:** scheduled channels, seasonal programming, and playback that joins a program in progress when seeking is available.
+- **Channel tuning:** a “SEARCHING FOR SIGNAL...” transition while a channel connects and moves to its scheduled position.
+- **Playback options:** supported debrid services, provider cloud search, and external player support.
 
-## Table of Contents
+TV Guide channels use on-demand sources and content lists. Playback availability depends on your configured providers.
 
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Development Status](#development-status)
-- [Important Skin Warning](#important-skin-warning)
-- [Simulated Live TV](#simulated-live-tv)
-- [Supported Platforms](#supported-platforms)
-- [Mouse Support](#mouse-support)
-- [Requirements](#requirements)
-- [Installation Guide](#installation-guide)
-- [Initial Setup](#initial-setup)
-- [Troubleshooting](#troubleshooting)
-- [Credits](#credits)
-- [Disclaimer](#disclaimer)
+## Installation
 
----
+You’ll need Kodi with Python 3 add-on support, an internet connection, and a supported source provider for playback. Trakt is optional for account-based lists and watch progress. A remote, controller, or keyboard is recommended; mouse support is limited.
 
-## About the Project
+### 1. Add the repository source
 
-The Pirate Streaming builds on the work of FenLight and FenLightAM while adding its own features and customizations.
+In Kodi, open **Settings → File manager → Add source**. Select **None** and enter:
 
-The project includes a customized version of the BINGIE Mod skin, bundled directly with the repository. You do not need to locate or install a separate skin repository.
+```text
+https://ThePirateDylan.github.io/thepiratestreaming/
+```
 
-The goal is to provide a unified Kodi experience with personalized home-screen layouts, automated ratings, external player support, and a simulated Live TV experience.
+Name the source **The Pirate Streaming** and select **OK**.
 
-## Features
+### 2. Install The Pirate Repo
 
-- **Restored API Key Functionality** — Restores API key functionality from the underlying add-on project where supported.
--  **Prioritize Cloud-Search** - Searches your provider's cloud to auto-select a previously played media instead of scraping again.
-- **Automatic TV Ratings** — TV ratings are enabled by default and color-coded to better match the media presentation.
-- **Automatic Review Ratings** — Review ratings and their providers are enabled by default.
-- **Customized BINGIE Mod Skin** — A bundled skin tailored to The Pirate Streaming.
-- **Simulated Live TV** — Genre-based channels, Trakt-powered schedules, Kodi Favorites, and seasonal channels.
-- **Unified Installation** — The skin ZIP is intended to install the components required for the complete setup.
-- **Ongoing Maintenance** — Continued fixes and improvements as time permits.
+1. Open **Settings → System → Add-ons** and enable **Unknown sources**.
+2. Go to **Add-ons → Add-on browser → Install from zip file**.
+3. Select **The Pirate Streaming**, then **repository.pirate-1.0.8.zip**.
+4. Wait for the repository installation notification.
 
-## Development Status
+Already have the ZIP on your device? Select it directly under **Install from zip file**. [Download the repository ZIP](repository.pirate-1.0.8.zip).
 
-The Pirate Streaming is an ongoing project. Features, layouts, and compatibility may change as fixes and improvements are made.
-Some areas, especially the simulated Live TV experience and offline TV Guide, remain works in progress.
+### 3. Install the skin
 
-The percentages below are estimates until verified. They do not guarantee that a feature is complete, stable, or fully tested.
+1. Choose **Install from repository → The Pirate Repo**.
+2. Open **Look and feel → Skin → The Pirate Skin** and select **Install**.
+3. Accept the required dependencies and wait for installation to finish.
+4. Select **Yes** when Kodi asks to switch to The Pirate Skin.
 
-### Core Add-on — 80%
+The skin installs the required Pirate components, including the video add-on. Continue with [first-time setup](#first-time-setup) to connect your playback services.
 
-`[████████░░] 80%`
+## First-time setup
 
-Main add-on functionality and integration.
+1. Open **Settings** from the home-screen sidebar.
+2. Authorize your supported debrid or source provider.
+3. Select and configure your scraper.
+4. Connect Trakt if you want your lists and watch progress available in Kodi.
+5. Play a movie or episode to confirm your setup, then open the TV Guide.
 
-### External Players — 100%
+Allow the guide’s initial preparation to finish. Its channels use the same source configuration as regular playback.
 
-`[██████████] 100%`
+The skin ships with a configured layout. Keep a backup before changing menus, widgets, or advanced skin settings.
 
-External player configuration and playback.
+## Updating
 
-### API Keys — 100%
+Install updates through **The Pirate Repo** in Kodi. When an update includes both the video add-on and skin, update both and fully restart Kodi.
 
-`[██████████] 100%`
-
-Restored keys and related service functionality.
-
-### Bundled Skin — 80%
-
-`[████████░░] 80%`
-
-BINGIE Mod customization and integration.
-
-### Offline TV Guide — 40%
-
-`[████░░░░░░] 40%`
-
-Guide interface and schedule navigation.
-
-### Testing — 55%
-
-`[█████▌░░░░] 55%`
-
-Compatibility testing across devices and setups.
-
-## Important Skin Warning
-
-**Please do not change the skin settings unless you know exactly what you are doing.**
-
-The included skin has been customized specifically for The Pirate Streaming. Its layouts and features are designed to work with the project's existing configuration.
-
-Changing skin settings, experimenting with unsupported options, or altering its configuration may cause parts of the interface to break or behave unexpectedly.
-
-If you encounter a problem, please check the troubleshooting section before changing skin settings.
-
-## Simulated Live TV
-
-The Pirate Streaming includes a work-in-progress, channel-based experience designed to make browsing your library feel more like watching television.
-
-This is **not conventional broadcast television**. Channels are populated using your configured sources and content lists.
-
-Current features include:
-- **Seasonal Holiday Channels** — A seasonal channel can appear automatically during Halloween and Christmas periods, featuring relevant content.
-- **Offline TV Guide** — An offline guide is available in a usable but unfinished state.
-
-### TV Guide Development
-
-The TV Guide remains a major work in progress and needs substantial additional development. Some features and behaviors may change as development continues.
-
-## Supported Platforms
-
-The project has been developed and tested with the following platforms:
-
-- PC
-- Xbox
-- Android TV
-- Amazon Fire TV Stick
-
-Compatibility can vary depending on your device, Kodi version, installed dependencies, and available hardware resources. Not every feature is guaranteed to work identically across every platform.
-
-## Mouse Support
-
-Mouse support is **not officially supported**.
-
-I have made code adjustments to make mouse navigation more bearable, but there are limitations that cannot be fully addressed without changes to Kodi itself.
-
-For the intended experience, a compatible remote, controller, or other supported navigation method is recommended.
-
-## Requirements
-
-Before installing, make sure you have:
-
-- A working installation of Kodi compatible with the project's dependencies.
-- An internet connection for installation and initial configuration.
-- A Trakt account if you want to use Trakt-powered features.
-- A compatible Debrid service or torrent provider, configured according to your preferences and the add-on's supported options, if required for your chosen sources.
-
-Availability and compatibility depend on your device, Kodi version, and provider configuration.
-
-## Installation Guide
-
-Install The Pirate Streaming directly through Kodi using the project's website as a source in Kodi's File Manager.
-
-**Repository URL:**
-
-`https://ThePirateDylan.github.io/thepiratestreaming/`
-
-### Step 1 — Add the Source in Kodi
-
-1. Open Kodi.
-2. Navigate to **Settings**.
-3. Select **File Manager**.
-4. Choose **Add source**.
-5. Select the field displaying `<None>`.
-6. Enter the following URL exactly:
-
-   `https://ThePirateDylan.github.io/thepiratestreaming/`
-
-7. Select **OK**.
-8. Enter `The Pirate Streaming` as the source name.
-9. Select **OK** to save the source.
-
-### Step 2 — Enable Unknown Sources
-
-1. Return to Kodi's **Settings**.
-2. Select **System**.
-3. Open **Add-ons**.
-4. Enable **Unknown sources**.
-5. Confirm the warning by selecting **Yes**.
-
-This allows Kodi to install ZIP packages from sources outside its official repository system. Only install packages you trust.
-
-### Step 3 — Install the Skin ZIP
-
-1. Return to Kodi's home screen.
-2. Open **Add-ons**.
-3. Select the **Add-on Browser**.
-4. Choose **Install from ZIP file**.
-5. Select the `The Pirate Streaming` source you added in Step 1.
-6. Locate and select the **The Pirate Repo**.
-7. Wait for the installation to complete.
-8. Choose **Install from Repositroy**.
-9. Select **The Pirate Repo**.
-10. Select **Look and Feel**.
-11. Select **The Pirate Skin** and install. Select `Yes` to install dependencies.
-
-If Kodi asks whether you want to switch to the included skin, select **Yes**.
-
-### Step 4 — Allow Setup to Finish
-
-Allow Kodi to finish installing and configuring the included components. Depending on your device and internet connection, this may take some time.
-
-Do not interrupt the installation process.
-
-Once the customized home screen loads, continue to [Initial Setup](#initial-setup).
-
-## Initial Setup
-
-After installation:
-
-1. Open the left sidebar from the home screen.
-2. Select **Settings**.
-3. Sign in to or authenticate your **Trakt** account if you want to use Trakt features.
-4. Configure your preferred supported **Debrid** or **Torrent** provider, as applicable. You may configure multiple.
-5. Configure your choice of **Scraper**.
-6. Return to the home screen and explore the available sections and channels.
-
-Provider availability, authentication steps, and source behavior depend on the services you choose.
-
-**Remember:** Avoid changing the included skin's settings. It has been configured specifically for this project.
+For manual test builds, install each supplied add-on ZIP through **Install from zip file**. The GitHub **Download ZIP** archive contains the source repository and cannot be installed as a Kodi add-on.
 
 ## Troubleshooting
 
-### The source cannot be opened
+Choose the issue that matches what you’re seeing:
 
-- Check that you entered the repository URL correctly.
-- Verify that your device has an internet connection.
-- Confirm that the website is accessible.
-- If Kodi cannot browse the source, the website may need a Kodi-compatible directory listing or repository structure.
+- [Repository source won’t open](#repository-source-wont-open)
+- [Installation or dependency error](#installation-or-dependency-error)
+- [Skin didn’t switch or looks wrong](#skin-didnt-switch-or-looks-wrong)
+- [No results or playback won’t start](#no-results-or-playback-wont-start)
+- [Trakt lists or Continue Watching are missing](#trakt-lists-or-continue-watching-are-missing)
+- [TV Guide is empty, stuck, or crashes](#tv-guide-is-empty-stuck-or-crashes)
 
-### The skin did not activate
+### Repository source won’t open
 
-- Check whether Kodi displayed a prompt to switch skins.
-- Allow the installation process to finish.
-- Restart Kodi and check whether the included skin is available.
-- Consult the project website for the current installation package and instructions.
+Copy the source URL from [Installation](#installation) and check for typing errors. Confirm your device is online. If browsing the source still fails, download the [repository ZIP](repository.pirate-1.0.8.zip), transfer it to your device, and install it locally.
 
-### Add-ons or dependencies are missing
+### Installation or dependency error
 
-- Confirm that you selected the intended **The Pirate Streaming Skin ZIP**.
-- Make sure your Kodi version is compatible with the package.
-- Check Kodi's notifications and logs for installation errors.
-- Verify that your device has an internet connection.
+Install **The Pirate Repo** first, then install the skin from that repository. Note the exact dependency named in Kodi’s error and check that your Kodi version supports it. Include that message when [reporting the problem](#reporting-a-problem).
 
-### Trakt lists or channels are empty
+### Skin didn’t switch or looks wrong
 
-- Confirm that you authenticated Trakt successfully.
-- Check that your selected Trakt lists contain content.
-- Allow time for content and schedules to populate.
-- Check whether the relevant feature is still under development.
+Wait for all dependencies to finish installing. Open **Settings → Interface → Skin** and select **The Pirate Skin**. If an update appears incomplete, confirm that both Pirate components updated and restart Kodi.
 
-### Playback is not working
+If the problem began after changing a skin setting, restore that setting or your saved configuration.
 
-- Check your provider configuration and authentication.
-- Verify that your selected source is supported by your device and Kodi version.
-- If using an external player, check its installation and configuration.
+### No results or playback won’t start
 
-### The skin looks broken after changing settings
+Check that your provider is authorized, its subscription is active where required, and your scraper is configured. Try another title or source to see whether the problem affects one item or all playback. For an external player, also check its installation and configuration.
 
-Restore the intended configuration if you know which settings were changed. If you are unsure how to restore it, avoid making further changes and consult the project's documentation or report the problem.
+If regular playback works but a guide channel fails, include the channel, program, and time in your report.
 
-For unresolved problems, include your device, Kodi version, the steps that caused the issue, and relevant Kodi log errors when reporting a bug.
+### Trakt lists or Continue Watching are missing
+
+Confirm that the correct Trakt account is connected and that the list or playback progress exists in that account. Allow synchronization to finish. Include an affected title and whether the problem appears in the add-on, a home-screen widget, or both.
+
+### TV Guide is empty, stuck, or crashes
+
+Check whether guide preparation is still running, and test a regular movie or episode to confirm your playback setup. After updating both the add-on and skin, fully restart Kodi and try again.
+
+If Kodi freezes or closes, record the exact sequence—for example, **open guide → play channel → stop → exit guide**—and save the log before further restarts overwrite it. See [Reporting a problem](#reporting-a-problem).
+
+### Reporting a problem
+
+[Open a GitHub issue](https://github.com/ThePirateDylan/thepiratestreaming/issues) with:
+
+- Device and operating system.
+- Kodi, The Pirate, and Pirate Skin versions.
+- Steps to reproduce the problem and what you expected to happen.
+- The error message, a screenshot if useful, and a relevant Kodi log.
+
+Remove credentials, API keys, and private playback links from logs before posting them.
 
 ## Credits
 
-The Pirate Streaming builds on the work and resources of other developers and projects.
-
-- **peno64** — Help with repository URL casing.
-- **Goldenfreddy0703** — Inspiration for repository structure and layout.
-- **drinfernoo** — Example repository.
-- **TikiPeter** — Creator of FenLight.
-- **AnonyMouse** — Continued development of FenLightAM.
-- **BINGIE Mod team** — Original skin foundation.
+- **TikiPeter** — FenLight.
+- **AnonyMouse** — FenLightAM.
+- **BINGIE Mod team** — the original skin.
 - **kittmaster** — Kodi Texture Tool.
-- **Team Kodi** — Android TV GUI sounds.
+- **Team Kodi** — Kodi and Android TV GUI sounds.
+- **Goldenfreddy0703** and **drinfernoo** — repository structure and examples.
+- **peno64** — repository URL assistance.
 
-Thank you to the developers and contributors whose work helped make this project possible.
-
-## Disclaimer
-
-The Pirate Streaming is an independent community project and is not affiliated with, endorsed by, or officially connected to Kodi, Team Kodi, the developers of FenLight or FenLightAM, or the BINGIE Mod team.
-
-All trademarks, software, and third-party assets remain the property of their respective owners. Credit is provided to acknowledge the original work.
-
-Users are responsible for how they configure and use Kodi, third-party add-ons, playback providers, and external services. Ensure that your use complies with applicable laws and the terms of the services you choose.
+The Pirate Streaming is an independent community project. It is not affiliated with Kodi or the upstream projects credited above. Third-party services and assets belong to their respective owners.
