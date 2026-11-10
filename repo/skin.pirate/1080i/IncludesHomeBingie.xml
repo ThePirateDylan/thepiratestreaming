@@ -66,7 +66,7 @@
                 <control type="image">
                     <visible>!$EXP[IsPlayingRecognizedContent]</visible>
                     <include>FullscreenDimensions</include>
-                    <texture background="true" colordiffuse="cc111315">colors/color_white.png</texture>
+                    <texture background="true" colordiffuse="PirateNavyOverlay">colors/color_white.png</texture>
                     <animation effect="fade" start="100" end="90" delay="0" time="400">Visible</animation>
                     <animation effect="fade" start="90" end="0" delay="0" time="1200">Hidden</animation>
                 </control>
@@ -624,7 +624,7 @@
                                 <height>8</height>
                                 <texturebg colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="0">diffuse/panel2.png</texturebg>
                                 <lefttexture/>
-                                <midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
+                                <midtexture colordiffuse="PirateEdge" border="4">diffuse/panel2.png</midtexture>
                                 <righttexture/>
                                 <info>ListItem.PercentPlayed</info>
                             </control>
@@ -785,24 +785,24 @@
                 <include>Bingie_Left_Gradient</include>
 			</control>
 	
-			<!-- Silver sidebar rail and straight Y2K divider stripes. -->
+			<!-- Midnight navy rail with restrained blue edge stripes. -->
             <control type="group">
                 <visible>!Player.HasVideo</visible>
                 <control type="image">
                     <left>0</left><top>0</top><width>340</width><height>100%</height>
-                    <texture colordiffuse="ff50565c">colors/color_white.png</texture>
+                    <texture colordiffuse="PirateNavy">colors/color_white.png</texture>
                 </control>
                 <control type="image">
                     <left>340</left><top>0</top><width>7</width><height>100%</height>
-                    <texture colordiffuse="ff73c82a">colors/color_white.png</texture>
+                    <texture colordiffuse="PirateSoftEdge">colors/color_white.png</texture>
                 </control>
                 <control type="image">
                     <left>347</left><top>0</top><width>8</width><height>100%</height>
-                    <texture colordiffuse="ffff7417">colors/color_white.png</texture>
+                    <texture colordiffuse="PirateEdge">colors/color_white.png</texture>
                 </control>
                 <control type="image">
                     <left>355</left><top>0</top><width>5</width><height>100%</height>
-                    <texture colordiffuse="ffd7dadd">colors/color_white.png</texture>
+                    <texture colordiffuse="PirateSoftEdge">colors/color_white.png</texture>
                 </control>
             </control>
 
@@ -811,10 +811,7 @@
 				<visible>!Skin.HasSetting(DisableBingieLogo) + !Window.IsActive(1110) + !Window.IsActive(1111) + !Window.IsActive(1114) + !Window.IsActive(1120)</visible>
 				<description>The Pirate Streaming brand wordmark</description>
 				<left>30</left><top>22</top><width>300</width><height>128</height>
-				<control type="label"><left>13</left><top>0</top><width>110</width><height>31</height><font>Bold24</font><textcolor>ffd7d9dc</textcolor><shadowcolor>cc000000</shadowcolor><align>left</align><aligny>center</aligny><label>The</label></control>
-				<control type="label"><left>0</left><top>19</top><width>300</width><height>62</height><font>Bold56</font><textcolor>ffff7417</textcolor><shadowcolor>e6000000</shadowcolor><align>left</align><aligny>center</aligny><label>Pirate</label></control>
-				<control type="label"><left>12</left><top>74</top><width>280</width><height>38</height><font>Bold28</font><textcolor>ffe5e7e9</textcolor><shadowcolor>cc000000</shadowcolor><align>left</align><aligny>center</aligny><label>Streaming</label></control>
-				<control type="image"><left>13</left><top>116</top><width>218</width><height>4</height><texture colordiffuse="ff78c92b">colors/color_white.png</texture></control>
+				<control type="image"><width>300</width><height>128</height><aspectratio>keep</aspectratio><texture>branding/thepirate-logo.png</texture></control>
 			</control>
 			<control type="grouplist">
 				<visible>!Skin.HasSetting(DisableBingieLogo) + [Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1120) | Window.IsActive(1114)]</visible>
@@ -828,7 +825,7 @@
 			<control type="image">
 				<width>9</width>
 				<height>40</height>
-				<texture background="true" colordiffuse="ffff7417">bingie/line.png</texture>
+				<texture background="true" colordiffuse="PirateEdge">bingie/line.png</texture>
 			</control>
 			<control type="label">
 				<width>auto</width>

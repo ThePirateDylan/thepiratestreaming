@@ -8,7 +8,7 @@
 	<onunload condition="!String.IsEmpty(Window(Home).Property(BaseWindow)) + String.IsEmpty(Window(Home).Property(ListItem.TVShowID)) + !Player.HasVideo">AlarmClock(loadinfo,Action(Info),00:00,silent)</onunload>
 	<onunload condition="!ControlGroup(77777).HasFocus()">SetFocus(101)</onunload>
 	<onunload>ClearProperty(KeepSuggestions)</onunload>
-    <backgroundcolor>ff111315</backgroundcolor>
+    <backgroundcolor>PirateNavy</backgroundcolor>
     <include>CustomBingieWinProps</include>
     <onload condition="String.IsEmpty(Skin.String(CustomSearchTerm))">SetProperty(CustomSearch,1,home)</onload>
 	<onload condition="String.IsEmpty(Window.Property(SearchPosterAnimation))">SetProperty(SearchPosterAnimation,1)</onload>
@@ -125,20 +125,25 @@
             <include>SearchSuggestionsAnim</include>
             <visible>!$EXP[IsActualKeyboardActive]</visible>
             <top>710</top>
-            <left>360</left>
-            <width>595</width>
+            <include>No_Circular_Left</include>
+            <left>135</left>
+            <width>500</width>
             <height>42</height>
             <control type="image">
-                <width>280</width>
+                <width>500</width>
                 <height>42</height>
-                <texture border="20" colordiffuse="ffff7417">dialogs/keyboard/key-nf.png</texture>
+                <texture border="20" colordiffuse="PirateSelection">dialogs/keyboard/key-nf.png</texture>
+            </control>
+            <control type="image">
+                <width>500</width><height>42</height>
+                <texture border="10" colordiffuse="PirateEdge">bingie/border/default_button_focus.png</texture>
             </control>
             <control type="label">
                 <left>22</left>
                 <top>0</top>
-                <width>230</width>
+                <width>456</width>
                 <height>42</height>
-                <align>left</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <font>Reg24</font>
                 <textcolor>ffffffff</textcolor>
@@ -153,8 +158,10 @@
             <param name="id" value="1007" />
             <param name="left" value="135" />
             <param name="top" value="765" />
-            <param name="width" value="595" />
-            <param name="height" value="250" />
+            <param name="width" value="500" />
+            <param name="labelwidth" value="450" />
+            <param name="groupwidth" value="475" />
+            <param name="height" value="220" />
             <param name="onitemfocus" value="SetProperty(SuggestionPath,$ESCINFO[ListItem.Property(path)])" />
             <param name="onitemfocus2" value="SetProperty(CustomSearch,1,home)" />
             <onleft>SetProperty(KeepSuggestions,1)</onleft>
@@ -178,19 +185,25 @@
             <ondown condition="Integer.IsGreater(Container(77777).NumItems,0)">77777</ondown>
             <ondown condition="!Integer.IsGreater(Container(77777).NumItems,0)">9000</ondown>
 			<!-- Search Term -->
+
             <control type="image">
                 <visible>!$EXP[IsActualKeyboardActive]</visible>
                 <left>0</left>
                 <top>0</top>
                 <width>560</width>
                 <height>62</height>
-                <texture border="20" colordiffuse="ff1b1b1b">dialogs/keyboard/key-nf.png</texture>
+                <texture border="20" colordiffuse="PiratePanel">dialogs/keyboard/key-nf.png</texture>
+            </control>
+            <control type="image">
+                <visible>!$EXP[IsActualKeyboardActive]</visible>
+                <left>0</left><top>0</top><width>560</width><height>62</height>
+                <texture border="10" colordiffuse="PirateSoftEdge">bingie/border/default_button_focus.png</texture>
             </control>
             <control type="label">
                 <visible>!$EXP[IsActualKeyboardActive] + String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
                 <left>24</left>
                 <top>8</top>
-                <width>500</width>
+                <width>430</width>
                 <height>46</height>
                 <font>Reg28</font>
                 <align>left</align>
@@ -229,7 +242,7 @@
                 <visible>!$EXP[IsActualKeyboardActive]</visible>
                 <left>24</left>
                 <top>8</top>
-                <width>500</width>
+                <width>430</width>
                 <height>46</height>
                 <font>Reg28</font>
                 <align>left</align>
@@ -239,12 +252,21 @@
 				<animation effect="slide" end="50" time="0" condition="[Container(5041).IsUpdating | Container(5042).IsUpdating | Container(5043).IsUpdating | Container(5044).IsUpdating | Container(5045).IsUpdating | Container(5046).IsUpdating | Container(5047).IsUpdating | Container(5048).IsUpdating | 
 				Container(5049).IsUpdating | Container(5050).IsUpdating | Container(5051).IsUpdating | Container(5052).IsUpdating | Container(5053).IsUpdating | Container(5054).IsUpdating | Container(5055).IsUpdating | Container(5056).IsUpdating | Container(5057).IsUpdating | Container(5058).IsUpdating | Container(5059).IsUpdating | Container(5060).IsUpdating] + !String.IsEmpty(Skin.String(CustomSearchTerm)) | !String.IsEmpty(Window.Property(SearchPosterAnimation)) + [Container(500).IsUpdating + Control.IsVisible(500)]">Conditional</animation>
             </control>
+            <control type="button" id="9901">
+                <left>510</left><top>8</top><width>42</width><height>46</height>
+                <label>×</label><font>Reg28</font><align>center</align><aligny>center</aligny>
+                <textcolor>ffffffff</textcolor><focusedcolor>PirateEdge</focusedcolor>
+                <texturefocus>dialogs/keyboard/key-nf.png</texturefocus><texturenofocus />
+                <visible>!$EXP[IsActualKeyboardActive] + !String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+                <onleft>9000</onleft><ondown>9000</ondown><onright>77777</onright><onback>9000</onback>
+                <include>SearchClearActions</include>
+            </control>
         </control>
 		
         <!-- Initial Msg / No Results Label -->
         <control type="label">
             <top>370</top>
-            <left>820</left>
+            <left>960</left>
             <width>850</width>
             <height>auto</height>
             <font>Reg42</font>
@@ -258,7 +280,7 @@
         <!-- Left ornament line -->
         <control type="image">
             <top>445</top>
-            <left>995</left>
+            <left>1110</left>
             <width>180</width>
             <height>2</height>
             <texture colordiffuse="$INFO[Skin.String(BingiePrimaryTextColor)]">colors/color_white.png</texture>
@@ -267,7 +289,7 @@
         <!-- Skull ornament -->
         <control type="image">
             <top>425</top>
-            <left>1230</left>
+            <left>1365</left>
             <width>40</width>
             <height>40</height>
             <texture>indication/skull.png</texture>
@@ -277,7 +299,7 @@
         <!-- Right ornament line -->
         <control type="image">
             <top>445</top>
-            <left>1325</left>
+            <left>1460</left>
             <width>180</width>
             <height>2</height>
             <texture colordiffuse="$INFO[Skin.String(BingiePrimaryTextColor)]">colors/color_white.png</texture>

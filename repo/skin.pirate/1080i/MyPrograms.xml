@@ -44,7 +44,7 @@
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
 					<include>SideBladeMenuButton</include>
-					<alttexturefocus border="10" colordiffuse="ffff7417">diffuse/panel.png</alttexturefocus>
+					<alttexturefocus border="10" colordiffuse="PirateSelection">diffuse/panel.png</alttexturefocus>
 					<alttexturenofocus/>
 					<label>$LOCALIZE[585]</label>
 					<altlabel>$LOCALIZE[584]</altlabel>

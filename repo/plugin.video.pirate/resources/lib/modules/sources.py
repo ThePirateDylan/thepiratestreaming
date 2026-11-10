@@ -667,7 +667,7 @@ class Sources():
 					kodi_utils.hide_busy_dialog()
 					if not self.progress_dialog: break
 					self.progress_dialog.reset_is_cancelled()
-					self.progress_dialog.update_resolver(text=item['resolve_display'])
+					self.progress_dialog.update_resolver(text=item['resolve_display'], quality=item.get('quality'))
 					self.progress_dialog.busy_spinner()
 					if count > 1:
 						kodi_utils.sleep(200)

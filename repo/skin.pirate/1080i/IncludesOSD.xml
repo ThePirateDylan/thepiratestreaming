@@ -182,7 +182,7 @@
 					<visible>Player.HasDuration + !VideoPlayer.content(livetv)</visible>					
 					<texturebg border="10" colordiffuse="00ffffff">diffuse/osd_panel.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="$INFO[Skin.String(OSDProgressBarCacheColor)]">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="PirateSoftEdge">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
                     <visible>!String.IsEqual(Skin.String(OSDProgressBarCacheColor),None)</visible>
@@ -195,9 +195,9 @@
 					<width>700</width>
 					<info>Player.Progress</info>
 					<visible>!VideoPlayer.HasEpg</visible>
-					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
+					<texturebg border="10" colordiffuse="PirateNavy">diffuse/osd_panel_trans.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="ffff7417">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="PirateSelection">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>
@@ -209,9 +209,9 @@
 					<width>700</width>
 					<info>PVR.EpgEventProgress</info>
 					<visible>VideoPlayer.HasEpg</visible>
-					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
+					<texturebg border="10" colordiffuse="PirateNavy">diffuse/osd_panel_trans.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="ffff7417">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="PirateSelection">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>
@@ -251,7 +251,7 @@
 					<height>16</height>
 					<width>700</width>
                     <texturesliderbar>colors/color_transparent.png</texturesliderbar>
-                    <textureslidernib colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">diffuse/seekslider.png</textureslidernib>
+                    <textureslidernib colordiffuse="PirateEdge">diffuse/seekslider.png</textureslidernib>
                     <textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
                     <visible>Player.Seeking + !Player.HasAudio</visible>
                 </control>
@@ -263,7 +263,7 @@
 					<height>16</height>
 					<width>700</width>
                     <texturesliderbar>colors/color_transparent.png</texturesliderbar>
-                    <textureslidernib colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">diffuse/seekslider.png</textureslidernib>
+                    <textureslidernib colordiffuse="PirateEdge">diffuse/seekslider.png</textureslidernib>
                     <textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
                     <visible>Player.Seeking + Player.HasAudio</visible>
                 </control>						
@@ -508,9 +508,9 @@
 					<posy>174</posy>
 					<height>7</height>
 					<width>1152</width>
-					<texturebg colordiffuse="$INFO[Skin.String(BingieOSDProgressBarBackgroundColor)]">diffuse/panel2.png</texturebg>
+					<texturebg colordiffuse="PirateNavy">diffuse/panel2.png</texturebg>
 					<lefttexture/>
-					<midtexture colordiffuse="$INFO[Skin.String(BingieOSDProgressBarCacheColor)]">diffuse/panel2.png</midtexture>
+					<midtexture colordiffuse="PirateSoftEdge">diffuse/panel2.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 					<info>Player.ProgressCache</info>
@@ -525,7 +525,7 @@
 					<width>1152</width>
 					<texturebg colordiffuse="4dffffff">diffuse/panel2.png</texturebg>
 					<lefttexture/>
-					<midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
+					<midtexture colordiffuse="PirateSelection">diffuse/panel2.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 					<info>Player.Progress</info>
@@ -540,7 +540,7 @@
 					<info>PVR.EpgEventProgress</info>
 					<texturebg colordiffuse="4dffffff">diffuse/panel2.png</texturebg>
 					<lefttexture/>
-					<midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
+					<midtexture colordiffuse="PirateSelection">diffuse/panel2.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>
@@ -571,7 +571,7 @@
 					<height>11</height>
 					<width>1152</width>
 					<texturesliderbar>colors/color_transparent.png</texturesliderbar>
-					<textureslidernib colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
+					<textureslidernib colordiffuse="PirateEdge">common/slider/slider_button_nofocus.png</textureslidernib>
 					<visible>Player.SeekEnabled + Player.Seeking + !Player.HasAudio</visible>
 				</control>
 				<control type="slider" id="401">
@@ -582,7 +582,7 @@
 					<height>11</height>
 					<width>1152</width>
 					<texturesliderbar>colors/color_transparent.png</texturesliderbar>
-					<textureslidernib colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
+					<textureslidernib colordiffuse="PirateEdge">common/slider/slider_button_nofocus.png</textureslidernib>
 					<visible>Player.SeekEnabled + Player.Seeking + Player.HasAudio</visible>
 				</control>					
 
@@ -808,9 +808,9 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]prevtrack.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]prevtrack.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]prevtrack.png</texturenofocus>
-				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]prevtrack.png</alttexturefocus>
+				<alttexturefocus colordiffuse="PirateEdge">$PARAM[iconspath]prevtrack.png</alttexturefocus>
 				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]prevtrack.png</alttexturenofocus>
 				<onclick condition="!VideoPlayer.Content(livetv)">PlayerControl(Previous)</onclick>
 				<onclick condition="VideoPlayer.Content(livetv)">ChannelUp</onclick>
@@ -822,7 +822,7 @@
 				<height>$PARAM[size]</height>
 				<font/>
                 <label/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]rewind.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]rewind.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]rewind.png</texturenofocus>
 				<onclick>PlayerControl(Rewind)</onclick>
                 <visible>Player.SeekEnabled</visible>
@@ -834,10 +834,10 @@
 				<height>$PARAM[size]</height>
 				<font/>
                 <label/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]pause.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]pause.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]pause.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]play.png</alttexturefocus>
+				<alttexturefocus colordiffuse="PirateEdge">$PARAM[iconspath]play.png</alttexturefocus>
 				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]play.png</alttexturenofocus>
 				<onclick>PlayerControl(Play)</onclick>
 			</control>
@@ -847,7 +847,7 @@
 				<height>$PARAM[size]</height>
 				<font/>
                 <label/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]stop.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]stop.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]stop.png</texturenofocus>
 				<onclick>PlayerControl(Stop)</onclick>
 			</control>
@@ -857,7 +857,7 @@
 				<height>$PARAM[size]</height>
 				<font/>
                 <label/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]forward.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]forward.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]forward.png</texturenofocus>
 				<onclick>PlayerControl(Forward)</onclick>
                 <visible>Player.SeekEnabled</visible>
@@ -868,9 +868,9 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]nexttrack.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]nexttrack.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]nexttrack.png</texturenofocus>
-				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]nexttrack.png</alttexturefocus>
+				<alttexturefocus colordiffuse="PirateEdge">$PARAM[iconspath]nexttrack.png</alttexturefocus>
 				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]nexttrack.png</alttexturenofocus>
 				<onclick condition="!VideoPlayer.Content(livetv)">PlayerControl(Next)</onclick>
 				<onclick condition="VideoPlayer.Content(livetv)">ChannelDown</onclick>
@@ -880,7 +880,7 @@
 			  <height>$PARAM[size]</height>
 			  <label/>
 			  <font/>
-			  <texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]repeat.png</texturefocus>
+			  <texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]repeat.png</texturefocus>
 			  <texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]repeat.png</texturenofocus>
 			  <onclick>PlayerControl(Repeat)</onclick>
 			  <visible>!Playlist.IsRepeatOne + !Playlist.IsRepeat</visible>
@@ -889,7 +889,7 @@
 			<control type="button" id="208">
 			  <width>$PARAM[size]</width>
 			  <height>$PARAM[size]</height>
-			  <texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]repeatone.png</texturefocus>
+			  <texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]repeatone.png</texturefocus>
 			  <texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]repeatone.png</texturenofocus>
 			  <visible>Playlist.IsRepeatOne</visible>
               <visible>!VideoPlayer.Content(livetv)</visible>
@@ -898,7 +898,7 @@
 			<control type="button" id="210">
 			  <width>$PARAM[size]</width>
 			  <height>$PARAM[size]</height>
-			  <texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]repeatall.png</texturefocus>
+			  <texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]repeatall.png</texturefocus>
 			  <texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]repeatall.png</texturenofocus>
 			  <visible>Playlist.IsRepeat</visible>
               <visible>!VideoPlayer.Content(livetv)</visible>
@@ -909,10 +909,10 @@
               <height>$PARAM[size]</height>
 			  <label/>
 			  <font/>
-			  <texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]randomoff.png</texturefocus>
+			  <texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]randomoff.png</texturefocus>
 			  <texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]randomoff.png</texturenofocus>
 			  <usealttexture>Playlist.IsRandom</usealttexture>
-			  <alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]Randomon.png</alttexturefocus>
+			  <alttexturefocus colordiffuse="PirateEdge">$PARAM[iconspath]Randomon.png</alttexturefocus>
 			  <alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]Randomon.png</alttexturenofocus>
 			  <onclick>PlayerControl(Random)</onclick>
 			  <visible>Player.HasAudio</visible>
@@ -923,9 +923,9 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]recordoff.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]recordoff.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]recordoff.png</texturenofocus>
-				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]recordon.png</alttexturefocus>
+				<alttexturefocus colordiffuse="PirateEdge">$PARAM[iconspath]recordon.png</alttexturefocus>
 				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]recordon.png</alttexturenofocus>
 				<usealttexture>PVR.IsRecordingPlayingChannel</usealttexture>
 				<onclick>PVR.ToggleRecordPlayingChannel</onclick>
@@ -937,7 +937,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]bookmarks.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]bookmarks.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]bookmarks.png</texturenofocus>
 				<onclick>ActivateWindow(VideoBookmarks)</onclick>
 				<visible>Player.HasVideo</visible>
@@ -949,7 +949,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]dvd.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]dvd.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]dvd.png</texturenofocus>
 				<onclick>PlayerControl(ShowVideoMenu)</onclick>
 				<visible>VideoPlayer.HasMenu</visible>
@@ -960,7 +960,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]stereoscopic.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]stereoscopic.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]stereoscopic.png</texturenofocus>
 				<onclick>StereoMode</onclick>
 				<visible>VideoPlayer.IsStereoscopic</visible>
@@ -971,7 +971,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]audio.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]audio.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]audio.png</texturenofocus>
 				<onclick>ActivateWindow(124)</onclick>
 			</control>
@@ -982,7 +982,7 @@
 				<label>$LOCALIZE[13395]</label>
 				<align>left</align>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]video.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]video.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]video.png</texturenofocus>
 				<onclick>ActivateWindow(123)</onclick>
 				<visible>Player.HasVideo</visible>
@@ -993,7 +993,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]subtitles.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]subtitles.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]subtitles.png</texturenofocus>
 				<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
 				<visible>!Player.HasAudio</visible>
@@ -1004,7 +1004,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]teletext.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]teletext.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]teletext.png</texturenofocus>
 				<onclick>ActivateWindow(Teletext)</onclick>
 				<visible>VideoPlayer.Content(livetv) + VideoPlayer.HasTeletext</visible>
@@ -1016,9 +1016,9 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]lyrics.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]lyrics.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]lyrics.png</texturenofocus>
-				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]lyrics.png</alttexturefocus>
+				<alttexturefocus colordiffuse="PirateEdge">$PARAM[iconspath]lyrics.png</alttexturefocus>
 				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]lyrics.png</alttexturenofocus>
 				<onclick>RunScript($INFO[Skin.String(LyricScript_iconspath)])</onclick>
 				<altclick>Skin.SetAddon(LyricScript_iconspath,xbmc.python.lyrics)</altclick>
@@ -1033,7 +1033,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]viz.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]viz.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]viz.png</texturenofocus>
 				<visible>Player.HasAudio</visible>
 			</control>
@@ -1043,7 +1043,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]settings.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]settings.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]settings.png</texturenofocus>
 				<visible>Player.HasAudio + Visualisation.Enabled </visible>
                 <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
@@ -1054,7 +1054,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]epg.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]epg.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]epg.png</texturenofocus>
 				<visible>Player.HasAudio + Visualisation.Enabled + [String.IsEqual(Visualisation.Name,milkdrop) | String.IsEqual(Visualisation.Name,vortex) | Visualisation.HasPresets ]</visible>
                 <onclick>ActivateWindow(122)</onclick>
@@ -1065,7 +1065,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]channellist.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]channellist.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]channellist.png</texturenofocus>
 				<visible>VideoPlayer.Content(livetv)</visible>
 				<onclick>ActivateWindow(PVROSDChannels)</onclick>
@@ -1076,7 +1076,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]epg.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]epg.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]epg.png</texturenofocus>
 				<visible>VideoPlayer.Content(livetv) + VideoPlayer.HasEpg</visible>
                 <onclick>ActivateWindow(pvrchannelguide)</onclick>
@@ -1087,7 +1087,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]teletext.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]teletext.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]teletext.png</texturenofocus>
 				<visible>!String.IsEqual(Playlist.Length(music),0) + Player.HasAudio</visible>
                 <onclick>SetProperty(playlistdialog,show,Home)</onclick>
@@ -1100,7 +1100,7 @@
 				<height>$PARAM[size]</height>
 				<label/>
 				<font/>
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]info.png</texturefocus>
+				<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]info.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]info.png</texturenofocus>
 				<visible>Player.HasVideo</visible>
 				<onclick>Skin.ToggleSetting(EnableOSDInfo)</onclick>
@@ -1130,10 +1130,10 @@
 			  <altlabel>$LOCALIZE[206]</altlabel>
 			  <font>Reg26</font>
 			  <textwidth>160</textwidth>
-			  <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+			  <texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 			  <texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
 			  <usealttexture>Skin.HasSetting(EnableOSDCrewInfo)</usealttexture>
-			  <alttexturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</alttexturefocus>
+			  <alttexturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</alttexturefocus>
 			  <alttexturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</alttexturenofocus>
 			  <onclick>Skin.ToggleSetting(EnableOSDCrewInfo)</onclick>
 			  <onclick>Skin.Reset(EnableOSDCastInfo)</onclick>
@@ -1195,7 +1195,7 @@
 			<height>16</height>
 			<width>700</width>
             <texturesliderbar>colors/color_transparent.png</texturesliderbar>
-            <textureslidernib colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">diffuse/seekslider.png</textureslidernib>
+            <textureslidernib colordiffuse="PirateEdge">diffuse/seekslider.png</textureslidernib>
             <textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
 			<visible>!Player.Seeking + Player.HasVideo | Player.HasAudio</visible>
 			<visible>Control.HasFocus(87)</visible>
@@ -1231,7 +1231,7 @@
 			<height>11</height>
 			<width>1152</width>
 			<texturesliderbar>colors/color_transparent.png</texturesliderbar>
-			<textureslidernib colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
+			<textureslidernib colordiffuse="PirateEdge">common/slider/slider_button_nofocus.png</textureslidernib>
 			<visible>!Player.Seeking + Player.HasVideo | Player.HasAudio</visible>
 			<visible>Control.HasFocus(187)</visible>
         </control>
@@ -1735,7 +1735,7 @@
 					<height>$PARAM[topsize]</height>
 					<font/>
 					<label/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]back_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]back_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]back.png</texturenofocus>
 					<onclick>PlayerControl(Stop)</onclick>
 					<visible>Skin.HasSetting(bingie_osd_buttons_back)</visible>
@@ -1746,9 +1746,9 @@
 					<height>$PARAM[topsize]</height>
 					<label/>
 					<font/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]recordoff_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]recordoff_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]recordoff.png</texturenofocus>
-					<alttexturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]recordon_fo.png</alttexturefocus>
+					<alttexturefocus colordiffuse="PirateEdge">$PARAM[iconspath]recordon_fo.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]recordon.png</alttexturenofocus>
 					<usealttexture>PVR.IsRecordingPlayingChannel</usealttexture>
 					<onclick>PVR.ToggleRecordPlayingChannel</onclick>
@@ -1761,7 +1761,7 @@
 					<height>$PARAM[topsize]</height>
 					<label/>
 					<font/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]subtitles_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]subtitles_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]subtitles.png</texturenofocus>
 					<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
 					<visible>Skin.HasSetting(bingie_osd_buttons_subtitles)</visible>
@@ -1773,7 +1773,7 @@
                     <height>$PARAM[topsize]</height>
                     <label/>
                     <font/>
-                    <texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]audio_fo.png</texturefocus>
+                    <texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]audio_fo.png</texturefocus>
                     <texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]audio.png</texturenofocus>
                     <onclick>ActivateWindow(124)</onclick>
 					<visible>Skin.HasSetting(bingie_osd_buttons_audio)</visible>
@@ -1784,7 +1784,7 @@
                     <height>$PARAM[topsize]</height>
 					<label/>
 					<font/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]playlist_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]playlist_fo.png</texturefocus>
                     <texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]playlist.png</texturenofocus>
 					<visible>!String.IsEqual(Playlist.Length(music),0) + Player.HasAudio</visible>
 					<onclick>SetProperty(playlistdialog,show,Home)</onclick>
@@ -1798,7 +1798,7 @@
                     <height>$PARAM[topsize]</height>
 					<label/>
 					<font/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]viz_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]viz_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]viz.png</texturenofocus>
 					<onfocus>SetProperty(VizSlide,hide,Home)</onfocus>
 					<visible>Player.HasAudio</visible>
@@ -1810,9 +1810,9 @@
                     <height>$PARAM[topsize]</height>
 					<label/>
 					<font/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]lyrics_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]lyrics_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]lyrics.png</texturenofocus>
-					<alttexturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]lyrics_fo.png</alttexturefocus>
+					<alttexturefocus colordiffuse="PirateEdge">$PARAM[iconspath]lyrics_fo.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]lyrics.png</alttexturenofocus>
 					<onclick>RunScript($INFO[Skin.String(LyricScript_iconspath)])</onclick>
 					<altclick>Skin.SetAddon(LyricScript_iconspath,xbmc.python.lyrics)</altclick>
@@ -1828,7 +1828,7 @@
                     <height>$PARAM[topsize]</height>
                     <label/>
                     <font/>
-                    <texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]video_fo.png</texturefocus>
+                    <texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]video_fo.png</texturefocus>
                     <texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]video.png</texturenofocus>
                     <onclick>ActivateWindow(123)</onclick>
 					<visible>Skin.HasSetting(bingie_osd_buttons_video)</visible>
@@ -1840,7 +1840,7 @@
 					<height>$PARAM[topsize]</height>
 					<label/>
 					<font/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]channellist_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]channellist_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]channellist.png</texturenofocus>
 					<visible>VideoPlayer.Content(livetv)</visible>
 					<onclick condition="Skin.HasSetting(small_pvrchannelsosd)">ActivateWindow(PVROSDChannels)</onclick>
@@ -1854,7 +1854,7 @@
 					<height>$PARAM[topsize]</height>
 					<label/>
 					<font/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]epg_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]epg_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]epg.png</texturenofocus>
 					<visible>VideoPlayer.Content(livetv) + VideoPlayer.HasEpg</visible>
 					<onclick>ActivateWindow(pvrchannelguide)</onclick>
@@ -1866,7 +1866,7 @@
 					<height>$PARAM[topsize]</height>
 					<label/>
 					<font/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]bookmarks_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]bookmarks_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]bookmarks.png</texturenofocus>
 					<onclick>ActivateWindow(VideoBookmarks)</onclick>
 					<visible>!VideoPlayer.Content(livetv)</visible>
@@ -1879,7 +1879,7 @@
 					<height>$PARAM[topsize]</height>
 					<label/>
 					<font/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]epg_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]epg_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]epg.png</texturenofocus>
 					<onclick>PlayerControl(ShowVideoMenu)</onclick>
 					<visible>VideoPlayer.HasMenu</visible>
@@ -1890,7 +1890,7 @@
 					<height>$PARAM[topsize]</height>
 					<font/>
 					<label/>
-					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]play_beginning_fo.png</texturefocus>
+					<texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]play_beginning_fo.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]play_beginning.png</texturenofocus>
 					<onclick>seek(-298800)</onclick>
 					<onclick condition="Player.Paused">PlayerControl(Play)</onclick>
@@ -1904,7 +1904,7 @@
                     <height>$PARAM[topsize]</height>
                     <label/>
                     <font/>
-                    <texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]info_fo.png</texturefocus>
+                    <texturefocus colordiffuse="PirateEdge">$PARAM[iconspath]info_fo.png</texturefocus>
                     <texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]info.png</texturenofocus>
                     <visible>Player.HasVideo</visible>
 					<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(livetv)</visible>
@@ -2038,7 +2038,7 @@
 			  <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
 			  <font>Reg26</font>
 			  <textwidth>160</textwidth>
-			  <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+			  <texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 			  <texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
 			  <onclick>PlayerControl(Repeat)</onclick>
 			  <visible>!Playlist.IsRepeatOne + !Playlist.IsRepeat</visible>
@@ -2049,7 +2049,7 @@
 			  <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
 			  <font>Reg26</font>
 			  <textwidth>160</textwidth>
-			  <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+			  <texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 			  <texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
 			  <visible>Playlist.IsRepeatOne</visible>
 			  <onclick>PlayerControl(Repeat)</onclick>
@@ -2060,7 +2060,7 @@
 			  <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
 			  <font>Reg26</font>
 			  <textwidth>160</textwidth>
-			  <texturefocus  border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+			  <texturefocus  border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 			  <texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
 			  <visible>Playlist.IsRepeat</visible>
 			  <onclick>PlayerControl(Repeat)</onclick>
@@ -2074,10 +2074,10 @@
 			  <onup>200</onup>
 			  <font>Reg26</font>
 			  <textwidth>160</textwidth>
-			  <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+			  <texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 			  <texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
 			  <usealttexture>Playlist.IsRandom</usealttexture>
-			  <alttexturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</alttexturefocus>
+			  <alttexturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</alttexturefocus>
 			  <alttexturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</alttexturenofocus>
 			  <onclick>PlayerControl(Random)</onclick>
 			</control>
@@ -2115,10 +2115,10 @@
 			  <altlabel>$LOCALIZE[15067]</altlabel>
 			  <font>Reg26</font>
 			  <textwidth>160</textwidth>
-			  <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+			  <texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 			  <texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
 			  <usealttexture>Skin.HasSetting(EnableOSDCastInfo)</usealttexture>
-			  <alttexturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</alttexturefocus>
+			  <alttexturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</alttexturefocus>
 			  <alttexturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</alttexturenofocus>
 			  <onclick>Skin.ToggleSetting(EnableOSDCastInfo)</onclick>
 			  <onclick>Skin.Reset(EnableOSDCrewInfo)</onclick>
@@ -2132,10 +2132,10 @@
 			  <altlabel>$LOCALIZE[15067]</altlabel>
 			  <font>Reg26</font>
 			  <textwidth>160</textwidth>
-			  <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+			  <texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 			  <texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
 			  <usealttexture>Skin.HasSetting(EnableOSDCrewInfo)</usealttexture>
-			  <alttexturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</alttexturefocus>
+			  <alttexturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</alttexturefocus>
 			  <alttexturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</alttexturenofocus>
 			  <onclick>Skin.ToggleSetting(EnableOSDCrewInfo)</onclick>
 			  <onclick>Skin.Reset(EnableOSDCastInfo)</onclick>

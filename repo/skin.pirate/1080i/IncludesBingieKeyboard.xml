@@ -510,7 +510,7 @@
                     <control type="image">
                         <width>350</width>
                         <height>60</height>
-                        <texture border="10" colordiffuse="ffff7417">diffuse/panel.png</texture>
+                        <texture border="10" colordiffuse="PirateSelection">diffuse/panel.png</texture>
                         <visible>Control.HasFocus(8000)</visible>
                     </control>
                     <control type="label">

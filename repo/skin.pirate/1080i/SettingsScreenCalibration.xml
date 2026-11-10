@@ -14,7 +14,7 @@
 				<top>0</top>
 				<width>128</width>
 				<height>128</height>
-				<texturefocus colordiffuse="ffff7417">calibrate/cal_tl.png</texturefocus>
+				<texturefocus colordiffuse="PirateSelection">calibrate/cal_tl.png</texturefocus>
 				<texturenofocus>calibrate/cal_tl.png</texturenofocus>
 				<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
 					<eventconfig type="up" />
@@ -29,7 +29,7 @@
 				<top>500</top>
 				<width>128</width>
 				<height>128</height>
-				<texturefocus colordiffuse="ffff7417">calibrate/cal_br.png</texturefocus>
+				<texturefocus colordiffuse="PirateSelection">calibrate/cal_br.png</texturefocus>
 				<texturenofocus>calibrate/cal_br.png</texturenofocus>
 				<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
 					<eventconfig type="up" />
@@ -44,7 +44,7 @@
 				<top>390</top>
 				<width>500</width>
 				<height>500</height>
-				<texturefocus colordiffuse="ffff7417">calibrate/cal_ratio.png</texturefocus>
+				<texturefocus colordiffuse="PirateSelection">calibrate/cal_ratio.png</texturefocus>
 				<texturenofocus>calibrate/cal_ratio.png</texturenofocus>
 				<movingspeed acceleration="140" maxvelocity="300" resettimeout="180" delta="1">
 					<eventconfig type="left" />
@@ -58,7 +58,7 @@
 				<width>380</width>
 				<height>90</height>
 				<!-- NOTE: The image must have 40px of trasparent on top and bottom the bar -->
-				<texturefocus colordiffuse="ffff7417">calibrate/cal_sub.png</texturefocus>
+				<texturefocus colordiffuse="PirateSelection">calibrate/cal_sub.png</texturefocus>
 				<texturenofocus>calibrate/cal_sub.png</texturenofocus>
 				<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
 					<eventconfig type="up" />
@@ -71,7 +71,7 @@
 				<top>900</top>
 				<width>100</width>
 				<height>100</height>
-				<texturefocus colordiffuse="ffff7417">calibrate/reset.png</texturefocus>
+				<texturefocus colordiffuse="PirateSelection">calibrate/reset.png</texturefocus>
 				<texturenofocus>calibrate/reset.png</texturenofocus>
 			</control>
             <control type="label" id="2">

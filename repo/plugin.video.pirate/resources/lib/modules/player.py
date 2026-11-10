@@ -68,6 +68,10 @@ class FenLightPlayer(xbmc.Player):
 		ku.sleep(200)
 		ku.close_all_dialog()
 
+	def playback_position_sample(self, join_pending, position):
+		# Optional guide presentation observer; ordinary playback has no overlay.
+		pass
+
 	def monitor(self):
 		try:
 			ensure_dialog_dead, total_check_time = False, 0
@@ -97,6 +101,7 @@ class FenLightPlayer(xbmc.Player):
 					if not self.wait_for_sample(): break
 					try: self.total_time, self.curr_time = self.getTotalTime(), self.getTime()
 					except: ku.sleep(250); continue
+					observed_position = self.curr_time
 					if guide_join_pending:
 						guide_join_checks += 1
 						try:
@@ -109,6 +114,7 @@ class FenLightPlayer(xbmc.Player):
 								self.seekTime(target)
 								ku.sleep(500)
 								seek_position = float(self.getTime())
+								observed_position = seek_position
 								tolerance = max(3.0, min(15.0, target * 0.05))
 								if abs(seek_position - target) > tolerance:
 									ku.logger('TV Guide Join', 'Seek did not reach the requested position; continuing normally.')
@@ -117,6 +123,7 @@ class FenLightPlayer(xbmc.Player):
 								guide_join_pending = False
 						except Exception:
 							guide_join_pending = False
+					self.playback_position_sample(guide_join_pending, observed_position)
 					self.current_point = round(float(self.curr_time/self.total_time * 100), 1)
 					if self.current_point >= 90:
 						if play_random_continual: self.run_random_continual(); break

@@ -157,7 +157,7 @@
                                 <posy>0</posy>
                                 <width>1048</width>
                                 <height>100</height>
-                                <texture border="10" colordiffuse="ffff7417">diffuse/panel.png</texture>
+                                <texture border="10" colordiffuse="PirateSelection">diffuse/panel.png</texture>
                             </control>
                             <!--Language Flag -->
                            <control type="image">
@@ -416,7 +416,7 @@
                             <width>330</width>
                             <height>60</height>
                             <texture border="10">diffuse/panel.png</texture>
-							<colordiffuse>ffff7417</colordiffuse>
+							<colordiffuse>PirateSelection</colordiffuse>
                             <visible>Control.HasFocus(150)</visible>
                         </control>
                         <control type="label">

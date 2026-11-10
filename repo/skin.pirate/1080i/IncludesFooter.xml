@@ -146,7 +146,7 @@
             <onup>900</onup>
             <onright>900</onright>
             <onleft>900</onleft>
-            <texturefocus colordiffuse="ffff7417">common/shutdown2.png</texturefocus>
+            <texturefocus colordiffuse="PirateSelection">common/shutdown2.png</texturefocus>
             <texturenofocus colordiffuse="white">common/shutdown2.png</texturenofocus>
             <onclick>ActivateWindow(111)</onclick>
             <onfocus>ActivateWindow(111)</onfocus>

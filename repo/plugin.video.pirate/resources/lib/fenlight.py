@@ -7,5 +7,5 @@ def init_settings():
     settings_cache['fenlight.playback_key'] = jsonrpc_get_system_setting('fenlight.playback_key', '8029')
 
 routing(sys)
-if sys_exit_check(): sys.exit(1)
+if sys_exit_check(sys.argv[2]): sys.exit(1)
 

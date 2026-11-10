@@ -181,7 +181,7 @@
                                     <width>600</width>
                                     <height>90</height>
                                     <texture colordiffuse="$INFO[Skin.String(ButtonColor)]" border="10">diffuse/panel_trans.png</texture>
-									<colordiffuse>ffff7417</colordiffuse>
+									<colordiffuse>PirateSelection</colordiffuse>
                                     <visible>ListItem.IsSelected</visible>
                                 </control>
                                 <control type="image">
@@ -190,7 +190,7 @@
                                     <width>600</width>
                                     <height>90</height>
                                     <texture border="10">diffuse/panel.png</texture>
-									<colordiffuse>ffff7417</colordiffuse>
+									<colordiffuse>PirateSelection</colordiffuse>
                                     <visible>!ListItem.IsSelected</visible>
                                 </control>
                                 <control type="group">

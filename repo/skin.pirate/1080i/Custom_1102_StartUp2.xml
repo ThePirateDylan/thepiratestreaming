@@ -28,10 +28,7 @@
 				<align>center</align>
 				<!-- Pirate Streaming wordmark -->
 				<control type="group"><width>500</width><height>180</height>
-					<control type="label"><left>181</left><top>10</top><width>130</width><height>34</height><font>Bold24</font><textcolor>ffd7d9dc</textcolor><shadowcolor>cc000000</shadowcolor><align>left</align><aligny>center</aligny><label>The</label></control>
-					<control type="label"><left>144</left><top>25</top><width>390</width><height>75</height><font>Bold75</font><textcolor>ffff7417</textcolor><shadowcolor>e6000000</shadowcolor><align>left</align><aligny>center</aligny><label>Pirate</label></control>
-					<control type="label"><left>163</left><top>99</top><width>380</width><height>50</height><font>Bold38</font><textcolor>ffe5e7e9</textcolor><shadowcolor>cc000000</shadowcolor><align>left</align><aligny>center</aligny><label>Streaming</label></control>
-					<control type="image"><left>164</left><top>152</top><width>245</width><height>4</height><texture colordiffuse="ff78c92b">colors/color_white.png</texture></control>
+                    <control type="image"><left>144</left><width>390</width><height>180</height><aspectratio>keep</aspectratio><texture>branding/thepirate-logo.png</texture></control>
 				</control>
 				<!-- message -->
 				<control id="5" type="textbox">

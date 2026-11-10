@@ -715,17 +715,17 @@ def trakt_progress_movies(progress_info):
 def trakt_progress_tv(progress_info):
 	def _process_tmdb_ids(item):
 		tmdb_id = get_trakt_tvshow_id(item['ids'])
-		tmdb_list_append((tmdb_id, item['title']))
+		tmdb_list_append((tmdb_id, item['ids']))
 	def _process():
 		for item in tmdb_list:
 			try:
 				tmdb_id = item[0]
 				if not tmdb_id: continue
-				title = item[1]
+				show_ids = item[1]
 				for p_item in progress_items:
-					if p_item['show']['title'] == title:
+					if p_item['show']['ids'] == show_ids:
 						season = p_item['episode']['season']
-						if season > 0: yield ('episode', str(tmdb_id), season, p_item['episode']['number'], str(round(p_item['progress'], 1)),
+						if season >= 0: yield ('episode', str(tmdb_id), season, p_item['episode']['number'], str(round(p_item['progress'], 1)),
 												0, p_item['paused_at'], p_item['id'], p_item['show']['title'])
 			except: pass
 	tmdb_list = []

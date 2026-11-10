@@ -1,15 +1,26 @@
-[COLOR dodgerblue][B]Version 2.2.97 - AllDebrid Resolution Fix[/B][/COLOR]
- - AllDebrid magnet uploads and link unlocks use the documented POST requests.
- - Successful playback was confirmed by the user after installing the 2.2.97 ZIP on Windows. Kodi logs confirm version 2.2.97 and video playback starting on November 7, 2026.
- - AllDebrid request failures report provider errors, and failed unlocks are not sent to playback.
- - The reviewed logs contained no NO_SERVER, ipnotallowed or AUTH_BLOCKED errors. WARP involvement was not confirmed; this release does not bypass provider IP restrictions. Fire TV playback remains unverified.
+[COLOR dodgerblue][B]Version 2.2.99 - TV Guide and Blue UI[/B][/COLOR]
+- Fixed a crash when leaving the TV Guide after stopping playback.
+- Added SEARCHING FOR SIGNAL... static while a channel connects and jumps to its scheduled position.
+- Finished the blue theme across the TV Guide, menus, loading spinners and playback controls.
+- Made selected playback buttons easier to see and gave played and buffered progress distinct colors.
+- Improved season and episode spacing, search suggestions, and the CLEAR button.
+- Tidied the Resume dialog and source-loading screen.
+- Updated Continue Watching headings to Shows and Movies.
+- Includes Pirate Skin 2.2.96.
 
-[COLOR dodgerblue][B]Version 2.2.96 - Release Candidate[/B][/COLOR]
- - Playback creates its Kodi player after a source resolves and releases it when that playback attempt finishes, including retry and error paths.
- - The source progress dialog no longer creates an unused player callback listener.
- - Guide player callbacks ignore events before their playback starts and after cleanup completes.
- - Guide diagnostics retain lifecycle and worker identification logging without collecting Python frames from other Kodi interpreters.
- - Includes all 2.2.95 guide loading, channel selection and navigation improvements. Playback-exit stability still requires testing in the installed setup.
+[COLOR dodgerblue][B]Version 2.2.98 - Branding and Resume Fixes[/B][/COLOR]
+- Added the new Pirate logo and startup intro.
+- Fixed missing episodes in Continue Watching, including rewatched episodes with saved progress.
+- Improved Trakt progress matching and support for specials.
+- Improved Real-Debrid authentication retries and error handling.
+- Fixed cloud-transfer error handling and TorBox Usenet download requests.
+
+[COLOR dodgerblue][B]Version 2.2.97 - AllDebrid Fix[/B][/COLOR]
+- Fixed AllDebrid source resolution and improved error messages when a link cannot be opened.
+
+[COLOR dodgerblue][B]Version 2.2.96 - Playback Cleanup[/B][/COLOR]
+- Improved player cleanup after playback, failed sources and retries.
+- Removed an unused player from the source-loading dialog.
 
 [COLOR dodgerblue][B]Version 2.2.95[/B][/COLOR]
  - Channel selections run directly through the guide player. Repeated clicks during startup no longer start a second tune request.
@@ -42,7 +53,7 @@
  - Fixes TV Guide channel configuration validation so the configured networks are retained instead of falling back to an empty lineup.
 
 [COLOR dodgerblue][B]Version 2.2.69[/B][/COLOR]
- - Adds supplied, transparent 256 × 224 logos for all 31 TV Guide networks and the Halloween and Christmas seasonal channels.
+ - Adds supplied, transparent 256 Ã— 224 logos for all 31 TV Guide networks and the Halloween and Christmas seasonal channels.
 
 [COLOR dodgerblue][B]Version 2.2.67[/B][/COLOR]
  - Adds a seek-gated join-in-progress attempt for today's current guide slot, with playback from the beginning when seeking is unavailable.

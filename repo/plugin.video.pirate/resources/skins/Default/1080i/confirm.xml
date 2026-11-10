@@ -61,7 +61,7 @@
                 <font>font12</font> <!-- FENLIGHT_26 -->
                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                <texturefocus colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texturefocus>
                 <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -78,7 +78,7 @@
                 <font>font12</font> <!-- FENLIGHT_26 -->
                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                <texturefocus colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texturefocus>
                 <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                 <align>center</align>
                 <aligny>center</aligny>

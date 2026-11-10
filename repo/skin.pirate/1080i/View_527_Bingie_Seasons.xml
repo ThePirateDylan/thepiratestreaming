@@ -137,7 +137,7 @@
                 <height>6</height>
                 <texturebg colordiffuse="$INFO[Skin.String(BingieProgressBarBackgroundColor)]">diffuse/panel2.png</texturebg>
                 <lefttexture/>
-                <midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
+                <midtexture colordiffuse="PirateSelection">diffuse/panel2.png</midtexture>
                 <righttexture/>
                 <info>ListItem.PercentPlayed</info>
             </control>
@@ -149,9 +149,9 @@
                 <description>progress bar</description>
                 <width>410</width>
                 <height>6</height>
-                <texturebg colordiffuse="ffff7417">diffuse/panel2.png</texturebg>
+                <texturebg colordiffuse="PirateSelection">diffuse/panel2.png</texturebg>
                 <lefttexture/>
-                <midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
+                <midtexture colordiffuse="PirateSelection">diffuse/panel2.png</midtexture>
                 <righttexture/>
                 <info>ListItem.PercentPlayed</info>
             </control>
@@ -515,7 +515,7 @@
                             <control type="image">                         
                                 <width>365</width>
                                 <height>65</height>
-                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+                                <texture border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texture>
                             </control>
 						<!-- Season x label -->
                             <control type="label">
@@ -612,7 +612,7 @@
                         <height>episodes_thumb_height</height>
                         <width>episodes_thumb_width</width>
                         <texture>diffuse/wide.png</texture>
-                        <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                        <colordiffuse>PirateEdge</colordiffuse>
                         <include>thumbsborder_focused</include>
                     </control>
                     <!-- landscape content -->
@@ -631,7 +631,7 @@
                     <width>episodes_thumb_width</width>
                     <height>episodes_thumb_height</height>
                     <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
-                    <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                    <colordiffuse>PirateEdge</colordiffuse>
                     <bordersize>2</bordersize>
                 </control>
                 <!-- vertical Scrollbar -->

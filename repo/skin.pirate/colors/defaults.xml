@@ -3,4 +3,11 @@
 	<color name="black">ff111315</color>
 	<color name="white">ffffffff</color>
 	<color name="None">00ffffff</color>	
+    <color name="PirateNavy">ff071322</color>
+    <color name="PirateNavyOverlay">cc071322</color>
+    <color name="PiratePanel">ff0b2340</color>
+    <color name="PirateSelection">ff075bba</color>
+    <color name="PirateEdge">ff40baff</color>
+    <color name="PirateSoftEdge">ff164b78</color>
+    <color name="PirateText">fff2f7ff</color>
 </colors>

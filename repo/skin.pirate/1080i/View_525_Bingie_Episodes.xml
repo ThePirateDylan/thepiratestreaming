@@ -115,7 +115,7 @@
                 <height>6</height>
                 <texturebg colordiffuse="$INFO[Skin.String(BingieProgressBarBackgroundColor)]">diffuse/panel2.png</texturebg>
                 <lefttexture/>
-                <midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
+                <midtexture colordiffuse="PirateSelection">diffuse/panel2.png</midtexture>
                 <righttexture/>
                 <info>ListItem.PercentPlayed</info>
             </control>
@@ -127,9 +127,9 @@
                 <description>progress bar</description>
                 <width>410</width>
                 <height>6</height>
-                <texturebg colordiffuse="ffff7417">diffuse/panel2.png</texturebg>
+                <texturebg colordiffuse="PirateSelection">diffuse/panel2.png</texturebg>
                 <lefttexture/>
-                <midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
+                <midtexture colordiffuse="PirateSelection">diffuse/panel2.png</midtexture>
                 <righttexture/>
                 <info>ListItem.PercentPlayed</info>
             </control>
@@ -151,14 +151,14 @@
         <!-- bingie button border -->
         <control type="image">
             <visible>!String.IsEmpty(Container(525).ListItem.Season) + !String.IsEmpty(Container(5250).ListItem.Season) + String.IsEqual(Container(5250).ListItem.Season,Container(525).ListItem.Season) + [Control.HasFocus(525) | Control.HasFocus(60)]</visible>
-            <width>565</width>
+            <width>365</width>
             <height>65</height>
             <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texture>
         </control>
         <!-- Season x label -->
         <control type="label">
             <left>20</left>
-            <width>300</width>
+            <width>155</width>
             <height>63</height>
             <aligny>center</aligny>
             <align>left</align>
@@ -170,7 +170,7 @@
         <control type="label">
             <visible>String.IsEqual(Container(5250).ListItem.Season,Container(525).ListItem.Season) + [Control.HasFocus(525) | Control.HasFocus(60)]</visible>
             <right>21</right>
-            <width>250</width>
+            <width>165</width>
             <height>63</height>
             <aligny>center</aligny>
             <align>right</align>
@@ -188,7 +188,7 @@
             <animation effect="fade" start="100" end="60" time="150" condition="!Control.HasFocus(525) + !Control.HasFocus(60)">Conditional</animation>
             <left>495</left>
             <height>episodes_thumb_height</height>
-            <width>600</width>
+            <width>570</width>
             <!-- item title -->
             <control type="label">
                 <top>36</top>
@@ -206,7 +206,7 @@
                 <visible>Container(525).Content(episodes) + String.IsEqual(ListItem.DBTYPE,episode)</visible>
                 <width>100%</width>
                 <top>82</top>
-                <height max="140">auto</height>
+                <height>100</height>
                 <align>left</align>
                 <font>Reg24</font>
                 <textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
@@ -230,7 +230,7 @@
             <animation effect="fade" start="100" end="60" time="150" condition="!Control.HasFocus(525) + !Control.HasFocus(60)">Conditional</animation>
             <left>495</left>
             <height>episodes_thumb_height</height>
-            <width>600</width>
+            <width>570</width>
             <!-- item title -->
             <control type="label">
                 <top>18</top>
@@ -259,7 +259,7 @@
                 <visible>Container(525).Content(episodes) + String.IsEqual(ListItem.DBTYPE,episode)</visible>
                 <width>100%</width>
                 <top>102</top>
-                <height max="140">auto</height>
+                <height>100</height>
                 <align>left</align>
                 <font>Reg24</font>
                 <textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
@@ -288,7 +288,7 @@
             <animation effect="fade" start="100" end="60" time="150" condition="!Control.HasFocus(525) + !Control.HasFocus(60)">Conditional</animation>
             <left>495</left>
             <height>episodes_thumb_height</height>
-            <width>600</width>
+            <width>570</width>
             <!-- item title -->
             <control type="label">
                 <top>36</top>
@@ -306,7 +306,7 @@
                 <visible>Container(525).Content(episodes) + String.IsEqual(ListItem.DBTYPE,episode)</visible>
                 <width>100%</width>
                 <top>82</top>
-                <height max="140">auto</height>
+                <height>100</height>
                 <align>left</align>
                 <font>Reg24</font>
                 <textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
@@ -330,7 +330,7 @@
             <animation effect="fade" start="100" end="60" time="150" condition="!Control.HasFocus(525) + !Control.HasFocus(60)">Conditional</animation>
             <left>495</left>
             <height>episodes_thumb_height</height>
-            <width>600</width>
+            <width>570</width>
             <!-- item title -->
             <control type="label">
                 <top>18</top>
@@ -359,7 +359,7 @@
                 <visible>Container(525).Content(episodes) + String.IsEqual(ListItem.DBTYPE,episode)</visible>
                 <width>100%</width>
                 <top>102</top>
-                <height max="140">auto</height>
+                <height>100</height>
                 <align>left</align>
                 <font>Reg24</font>
                 <textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
@@ -385,7 +385,8 @@
         <control type="grouplist">
             <orientation>horizontal</orientation>
             <usecontrolcoords>true</usecontrolcoords>
-            <height>50</height>
+            <height>45</height>
+            <width>365</width>
             <itemgap>15</itemgap>
 
 			<include condition="Skin.HasSetting(details_row_thumbs) + !Skin.HasSetting(AddRaitingTrakt)">Thumbs_Up_Details_Row</include>
@@ -411,12 +412,13 @@
             <include condition="Skin.HasSetting(details_row_mpaa) + String.IsEqual(Skin.String(mpaa_style),uk_mpaa)">MPAA_Details_RowNew</include>
 			<include condition="Skin.HasSetting(details_row_mpaa) + String.IsEqual(Skin.String(mpaa_style),color_mpaa)">MPAA_Details_RowUS</include>
 			<include condition="Skin.HasSetting(details_row_mpaa) + String.IsEqual(Skin.String(mpaa_style),color_fixed_mpaa)">MPAA_Details_RowUS_Fixed_Size</include>
+        </control>
             <!-- Total Seasons -->
             <control type="label" id="611117">
-                <posy>6</posy>
+                <top>48</top><left>0</left>
 				<visible>Skin.HasSetting(details_row_duration)</visible>
                 <visible>!String.IsEmpty(Control.GetLabel(611117)) + Control.IsVisible(5250)</visible>
-                <width>auto</width>
+                <width>365</width>
                 <label>$VAR[View525TotalSeasons]</label>
                 <height>35</height>
                 <aligny>center</aligny>
@@ -425,10 +427,10 @@
                 <include>Default_Visible_Fade</include>
             </control>
 			<control type="label" id="611118">
-                <posy>6</posy>
+                <top>48</top><left>0</left>
 				<visible>Skin.HasSetting(details_row_duration)</visible>
                 <visible>!Control.IsVisible(611117)</visible>
-                <width>auto</width>
+                <width>365</width>
                 <label>$VAR[View525CurrentSeason]</label>
                 <height>35</height>
                 <aligny>center</aligny>
@@ -437,7 +439,6 @@
                 <include>Default_Visible_Fade</include>
             </control>
 
-        </control>
     </include>
 	
 	<!-- height for left list without fanart thumb -->
@@ -504,7 +505,7 @@
 					<left>15</left>
 					<top>8</top>
                     <width>365</width>
-                    <height>40</height>
+                    <height>88</height>
                     <include>View_525_Row_Details</include>
                 </control>
 			</control>	
@@ -563,7 +564,7 @@
                             <!-- Season x label -->
                             <control type="label">
                                 <left>20</left>
-                                <width>180</width>
+                                <width>155</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
                                 <align>left</align>
@@ -580,12 +581,12 @@
                             <control type="image">
                                 <width>365</width>
                                 <height>65</height>
-                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+                                <texture border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texture>
                             </control>
                             <!-- Season x label -->
                             <control type="label">
                                 <left>20</left>
-                                <width>180</width>
+                                <width>155</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
                                 <align>left</align>
@@ -597,7 +598,7 @@
                             <!-- x Episodes label -->
                             <control type="label">
                                 <right>21</right>
-                                <width>140</width>
+                                <width>165</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
                                 <align>right</align>
@@ -624,7 +625,7 @@
                             <!-- Season x label -->
                             <control type="label">
                                 <left>20</left>
-                                <width>180</width>
+                                <width>155</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
                                 <align>left</align>
@@ -636,7 +637,7 @@
                             <control type="label">
                                 <visible>String.IsEqual(Container(5250).ListItem.Season,Container(525).ListItem.Season) + [Control.HasFocus(525) | Control.HasFocus(60)]</visible>
                                 <right>21</right>
-                                <width>140</width>
+                                <width>165</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
                                 <align>right</align>
@@ -648,7 +649,7 @@
                             <control type="label">
                                 <visible>![Control.HasFocus(525) | Control.HasFocus(60)]</visible>
                                 <right>21</right>
-                                <width>140</width>
+                                <width>165</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
                                 <align>right</align>
@@ -673,9 +674,9 @@
                         <param name="viewtype" value="$LOCALIZE[31318]" />
                     </include>
                     <top>-153</top>
-                    <posx>781</posx>
+                    <posx>811</posx>
                     <height>1280</height>
-                    <width>1100</width>
+                    <width>1070</width>
                     <orientation>vertical</orientation>
                     <onup>525</onup>
                     <ondown>525</ondown>
@@ -687,13 +688,13 @@
                     <preloaditems>2</preloaditems>
                     <focusposition>1</focusposition>
                     <include>ScrollTime</include>
-                    <itemlayout width="1050" height="280">
+                    <itemlayout width="1070" height="280">
                         <!-- landscape content -->
                         <include>View_525_Landscape_Defs</include>
                         <!-- details content -->
                         <include>View_525_Details_Defs</include>
                     </itemlayout>
-                    <focusedlayout width="1050" height="280">
+                    <focusedlayout width="1070" height="280">
                         <!-- panel/border -->
                         <control type="image">
                             <visible>!Skin.HasSetting(View525_DisableFixedBingieFrame)</visible>
@@ -701,7 +702,7 @@
                             <height>episodes_thumb_height</height>
                             <width>episodes_thumb_width</width>
                             <texture>diffuse/wide.png</texture>
-                            <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                            <colordiffuse>PirateEdge</colordiffuse>
                             <include>thumbsborder_focused</include>
                         </control>
                         <!-- landscape content -->
@@ -718,11 +719,11 @@
                 <control type="image">
                     <visible>Skin.HasSetting(View525_DisableFixedBingieFrame) + Integer.IsGreater(Container(525).NumItems,0) + Control.HasFocus(525)</visible>
                     <top>127</top>
-                    <posx>781</posx>
+                    <posx>811</posx>
                     <width>episodes_thumb_width</width>
                     <height>episodes_thumb_height</height>
                     <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
-                    <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                    <colordiffuse>PirateEdge</colordiffuse>
                     <bordersize>2</bordersize>
                 </control>
 

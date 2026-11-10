@@ -101,7 +101,7 @@
                             <top>0</top>
                             <width>320</width>
                             <height>320</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="12">fenlight_common/panel-256-box.png</texture>
+                            <texture colordiffuse="ff075bba" border="12">fenlight_common/panel-256-box.png</texture>
                         </control>
                         <control type="image">
                             <left>10</left>
@@ -121,9 +121,9 @@
                 <height>940</height>
                 <onleft>2000</onleft>
                 <onright>2000</onright>
-                <texturesliderbackground colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbackground>
+                <texturesliderbackground colordiffuse="ff075bba">fenlight_common/white.png</texturesliderbackground>
                 <texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">fenlight_common/white.png</texturesliderbar>
-                <texturesliderbarfocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texturesliderbarfocus>
+                <texturesliderbarfocus colordiffuse="ff075bba">fenlight_common/white.png</texturesliderbarfocus>
                 <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
                 <visible>Control.IsVisible(2000)</visible>

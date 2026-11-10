@@ -32,10 +32,16 @@ def manual_add_magnet_to_cloud(params):
 	debrid_list_modules = [('Real-Debrid', RealDebridAPI), ('Premiumize.me', PremiumizeAPI), ('AllDebrid', AllDebridAPI), ('TorBox', TorBoxAPI)]
 	function = [i[1] for i in debrid_list_modules if i[0] == params['provider']][0]
 	provider = function()
-	result = provider.create_transfer(params['magnet_url'])
-	provider.clear_cache()
-	hide_busy_dialog()
-	if not result: notification('Failed')
+	try:
+		result = provider.create_transfer(params['magnet_url'])
+		provider.clear_cache()
+	except Exception:
+		result = None
+	finally:
+		hide_busy_dialog()
+	if isinstance(result, dict): success = result.get('status') == 'success'
+	else: success = bool(result) and result != 'failed'
+	if not success: notification('Failed')
 	else: notification('Success')
 
 def query_local_cache(hash_list):

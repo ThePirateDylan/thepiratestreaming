@@ -135,5 +135,36 @@
             <aspectratio>keep</aspectratio>
             <texture>$INFO[Player.Art(pirate_channel_logo)]</texture>
         </control>
-	</controls>
+	
+        <!-- Pirate guide signal: passive artwork; existing windows retain all input. -->
+        <control type="group" id="9078">
+            <description>Pirate guide signal</description>
+            <visible>Player.HasVideo + !String.IsEmpty(Player.Art(pirate_signal_token)) + String.IsEqual(Player.Art(pirate_signal_token),Window(Home).Property(fenlight.tvguide.signal))</visible>
+            <!-- Nonzero IDs: fullscreen hides ID 0 (BLUE_BAR), including unnamed children. -->
+            <!-- Opaque backing prevents crossfades exposing the screen underneath. -->
+            <control type="image" id="9079">
+                <left>0</left><top>0</top><width>1920</width><height>1080</height>
+                <texture>special://home/addons/plugin.video.pirate/resources/media/guide_signal/static_00.png</texture>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="multiimage" id="9080">
+                <left>0</left><top>0</top><width>1920</width><height>1080</height>
+                <imagepath>special://home/addons/plugin.video.pirate/resources/media/guide_signal/</imagepath>
+                <timeperimage>180</timeperimage><fadetime>100</fadetime>
+                <pauseatend>0</pauseatend><randomize>false</randomize><loop>yes</loop>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="label" id="9081">
+                <left>160</left><top>490</top><width>1600</width><height>100</height>
+                <font>Bold33</font><align>center</align><aligny>center</aligny>
+                <textcolor>fff2f7ff</textcolor><shadowcolor>ff071322</shadowcolor>
+                <label>SEARCHING FOR SIGNAL...</label>
+            </control>
+            <control type="label" id="9082">
+                <left>160</left><top>630</top><width>1600</width><height>60</height>
+                <font>Bold33</font><align>center</align><aligny>center</aligny>
+                <textcolor>ff40baff</textcolor><label></label>
+            </control>
+        </control>
+    </controls>
 </window>

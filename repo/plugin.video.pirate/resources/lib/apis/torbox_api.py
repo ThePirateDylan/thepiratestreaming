@@ -80,8 +80,8 @@ class TorBoxAPI:
 
 	def unrestrict_usenet(self, file_id):
 		usenet_id, file_id = file_id.split(',')
-		params = {'token': self.token, 'usenet_id': usenet_id, 'file_id': file_id, 'user_ip': True}
-		try: return self._get('usenet/requestdl', params=params)['data']
+		params = {'token': self.token, 'usenet_id': usenet_id, 'file_id': file_id}
+		try: return self._get('usenet/requestdl', data=params)['data']
 		except: return None
 
 	def add_magnet(self, magnet):

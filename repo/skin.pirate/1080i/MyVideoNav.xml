@@ -12,7 +12,7 @@
     <onload>CancelAlarm(loadinfo,silent)</onload>
     <onload>ClearProperty(CloseInfoDialog,Home)</onload>
 	<onload>ClearProperty(ShowViewSubMenu,Home)</onload>
-    <onunload condition="System.GetBool(debug.showloginfo) + [String.Contains(Container.FolderPath,mode=tvguide.main) | String.IsEqual(Window(Home).Property(PirateTVGuideView),1)]">NotifyAll(plugin.video.pirate,GuideTraceUnload)</onunload>
+    <onunload condition="String.Contains(Container.FolderPath,mode=tvguide.main) | String.IsEqual(Window(Home).Property(PirateTVGuideView),1)">NotifyAll(plugin.video.pirate,GuideTraceUnload)</onunload>
     <onunload>ClearProperty(ShowViewSubMenu,Home)</onunload>
     <onunload condition="System.HasAlarm(PirateTVGuideRefresh)">CancelAlarm(PirateTVGuideRefresh,silent)</onunload>
     <onunload>CancelAlarm(PirateTVGuideRefresh,silent)</onunload>
@@ -72,7 +72,7 @@
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
 					<include>SideBladeMenuButton</include>
-					<alttexturefocus border="10" colordiffuse="ffff7417">diffuse/panel.png</alttexturefocus>
+					<alttexturefocus border="10" colordiffuse="PirateSelection">diffuse/panel.png</alttexturefocus>
 					<alttexturenofocus/>
 					<label>$LOCALIZE[584]</label>
 					<altlabel>$LOCALIZE[585]</altlabel>
@@ -102,7 +102,7 @@
 					<include>SideBladeMenuButton</include>
 					<label>$LOCALIZE[653]</label>
 					<altlabel>$LOCALIZE[13353]</altlabel>
-					<alttexturefocus border="5" colordiffuse="ffff7417">colors/color_white.png</alttexturefocus>
+					<alttexturefocus border="5" colordiffuse="PirateSelection">colors/color_white.png</alttexturefocus>
 					<alttexturenofocus/>
 					<usealttexture>library.isscanningvideo</usealttexture>
 					<visible>!String.Contains(Container.FolderPath,plugin://plugin.video)</visible>

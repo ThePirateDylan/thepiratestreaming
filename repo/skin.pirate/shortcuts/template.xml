@@ -18,6 +18,8 @@
 		<property name="height">341</property>
         <property name="widgetPath" tag="property" attribute="name|list" />
         <property name="widgetPath"/>
+        <property name="widgetName" tag="label" value="Continue Watching (TV)">Continue Watching Shows</property>
+        <property name="widgetName" tag="label" value="Continue Watching (Movies)">Continue Watching Movies</property>
         <property name="widgetName" tag="label" />
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
@@ -331,6 +333,8 @@
 		<property name="height">341</property>
         <property name="widgetPath" tag="property" attribute="name|list" />
         <property name="widgetPath"/>
+        <property name="widgetName" tag="label" value="Continue Watching (TV)">Continue Watching Shows</property>
+        <property name="widgetName" tag="label" value="Continue Watching (Movies)">Continue Watching Movies</property>
         <property name="widgetName" tag="label" />
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
@@ -402,6 +406,8 @@
 		<property name="height">341</property>
         <property name="widgetPath" tag="property" attribute="name|list" />
         <property name="widgetPath"/>
+        <property name="widgetName" tag="label" value="Continue Watching (TV)">Continue Watching Shows</property>
+        <property name="widgetName" tag="label" value="Continue Watching (Movies)">Continue Watching Movies</property>
         <property name="widgetName" tag="label" />
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
@@ -473,6 +479,8 @@
 		<property name="height">341</property>
         <property name="widgetPath" tag="property" attribute="name|list" />
         <property name="widgetPath"/>
+        <property name="widgetName" tag="label" value="Continue Watching (TV)">Continue Watching Shows</property>
+        <property name="widgetName" tag="label" value="Continue Watching (Movies)">Continue Watching Movies</property>
         <property name="widgetName" tag="label" />
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
@@ -544,6 +552,8 @@
 		<property name="height">341</property>
         <property name="widgetPath" tag="property" attribute="name|list" />
         <property name="widgetPath"/>
+        <property name="widgetName" tag="label" value="Continue Watching (TV)">Continue Watching Shows</property>
+        <property name="widgetName" tag="label" value="Continue Watching (Movies)">Continue Watching Movies</property>
         <property name="widgetName" tag="label" />
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
@@ -615,6 +625,8 @@
 		<property name="height">341</property>
         <property name="widgetPath" tag="property" attribute="name|list" />
         <property name="widgetPath"/>
+        <property name="widgetName" tag="label" value="Continue Watching (TV)">Continue Watching Shows</property>
+        <property name="widgetName" tag="label" value="Continue Watching (Movies)">Continue Watching Movies</property>
         <property name="widgetName" tag="label" />
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
@@ -686,6 +698,8 @@
 		<property name="height">474</property>
         <property name="widgetPath" tag="property" attribute="name|list" />
         <property name="widgetPath"/>
+        <property name="widgetName" tag="label" value="Continue Watching (TV)">Continue Watching Shows</property>
+        <property name="widgetName" tag="label" value="Continue Watching (Movies)">Continue Watching Movies</property>
         <property name="widgetName" tag="label" />
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>

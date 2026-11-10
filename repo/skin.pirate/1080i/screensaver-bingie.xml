@@ -57,7 +57,7 @@
 			<height>165</height>
 			<align>right</align>
 			<aspectratio align="right">keep</aspectratio>
-			<texture>home/bingie_logo.png</texture>
+			<texture>branding/thepirate-logo.png</texture>
 			<fadetime>1000</fadetime>
 			<animation effect="slide" start="1,-1" end="0,0" time="60000" tween="linear" pulse="true" condition="!Container(1297).IsUpdating">Conditional</animation>
 		</control>

@@ -10,7 +10,7 @@
         <width>1850</width>
         <height>985</height>
         <texture>diffuse/panel2.png</texture>
-        <colordiffuse>DD111315</colordiffuse>
+        <colordiffuse>PirateNavy</colordiffuse>
       </control>
       <control type="label">
         <left>75</left>
@@ -18,7 +18,7 @@
         <width>880</width>
         <height>55</height>
         <font>Bold45</font>
-        <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+        <textcolor>PirateText</textcolor>
         <label>TV GUIDE</label>
       </control>
       <control type="label">
@@ -27,7 +27,7 @@
         <width>1320</width>
         <height>35</height>
         <font>Reg26</font>
-        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+        <textcolor>PirateText</textcolor>
         <label>$INFO[Container(58).ListItem.Property(guide_header)]</label>
       </control>
       <control type="button" id="59">
@@ -37,10 +37,10 @@
         <height>52</height>
         <label>PREVIOUS DAY</label>
         <font>Bold22</font>
-        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
-        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-        <texturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
-        <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
+        <textcolor>PirateText</textcolor>
+        <focusedcolor>PirateText</focusedcolor>
+        <texturefocus colordiffuse="PirateSelection" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
+        <texturenofocus colordiffuse="PiratePanel" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
         <onleft>9000</onleft>
         <onright>61</onright>
         <onup>58</onup>
@@ -54,10 +54,10 @@
         <height>52</height>
         <label>NEXT DAY</label>
         <font>Bold22</font>
-        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
-        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-        <texturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
-        <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
+        <textcolor>PirateText</textcolor>
+        <focusedcolor>PirateText</focusedcolor>
+        <texturefocus colordiffuse="PirateSelection" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
+        <texturenofocus colordiffuse="PiratePanel" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
         <onleft>59</onleft>
         <onright>58</onright>
         <onup>58</onup>
@@ -78,7 +78,7 @@
         <width>220</width>
         <height>42</height>
         <font>Bold30</font>
-        <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+        <textcolor>PirateText</textcolor>
         <label>$INFO[Container(58).ListItem.Title]</label>
       </control>
       <control type="textbox">
@@ -87,7 +87,7 @@
         <width>220</width>
         <height>123</height>
         <font>Reg24</font>
-        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+        <textcolor>PirateText</textcolor>
         <label>$INFO[Container(58).ListItem.Plot]</label>
       </control>
       <control type="label">
@@ -96,7 +96,7 @@
         <width>360</width>
         <height>34</height>
         <font>Bold26</font>
-        <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+        <textcolor>PirateText</textcolor>
         <label>CHANNEL</label>
       </control>
       <control type="label">
@@ -160,7 +160,7 @@
             <top>3</top>
             <width>1790</width>
             <height>84</height>
-            <texture colordiffuse="99111315">diffuse/panel.png</texture>
+            <texture colordiffuse="PiratePanel">diffuse/panel.png</texture>
           </control>
           <control type="label">
             <left>4</left>
@@ -168,7 +168,7 @@
             <width>66</width>
             <height>70</height>
             <font>Bold24</font>
-            <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+            <textcolor>PirateText</textcolor>
             <align>center</align>
             <aligny>center</aligny>
             <label>$INFO[ListItem.Property(channel_number)]</label>
@@ -187,7 +187,7 @@
             <width>279</width>
             <height>70</height>
             <font>Bold22</font>
-            <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+            <textcolor>PirateText</textcolor>
             <aligny>center</aligny>
             <label>$INFO[ListItem.Property(channel_name)]</label>
             <scroll>false</scroll>
@@ -200,7 +200,7 @@
             <top>0</top>
             <width>1790</width>
             <height>88</height>
-            <texture colordiffuse="$INFO[Skin.String(ViewDetailsFocusColor)]" border="10">diffuse/panel.png</texture>
+            <texture colordiffuse="PirateSelection" border="10">diffuse/panel.png</texture>
           </control>
           <control type="label">
             <left>4</left>
@@ -208,7 +208,7 @@
             <width>66</width>
             <height>70</height>
             <font>Bold24</font>
-            <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+            <textcolor>PirateText</textcolor>
             <align>center</align>
             <aligny>center</aligny>
             <label>$INFO[ListItem.Property(channel_number)]</label>
@@ -227,7 +227,7 @@
             <width>279</width>
             <height>70</height>
             <font>Bold22</font>
-            <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+            <textcolor>PirateText</textcolor>
             <aligny>center</aligny>
             <label>$INFO[ListItem.Property(channel_name)]</label>
             <scroll>false</scroll>

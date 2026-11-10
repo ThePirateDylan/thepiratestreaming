@@ -357,7 +357,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
 								<width>224</width>
@@ -386,7 +386,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
 								<width>224</width>
@@ -414,7 +414,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
 								<width>224</width>
@@ -443,7 +443,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
 								<width>224</width>
@@ -473,7 +473,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
 								<width>224</width>
@@ -523,7 +523,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
 								<width>224</width>
@@ -551,7 +551,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
                                 <label>$LOCALIZE[20410]</label>
 								<height>52</height>
@@ -594,7 +594,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<aligny>center</aligny>
 								<align>left</align>
@@ -624,7 +624,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
                                 <label>[CAPITALIZE]$LOCALIZE[31534][/CAPITALIZE]</label>
                              	<height>52</height>
@@ -652,7 +652,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
                                 <label>[CAPITALIZE]$LOCALIZE[31534][/CAPITALIZE]</label>
 								<height>52</height>
@@ -680,7 +680,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
                                 <label>$LOCALIZE[31126]</label>
                              	<height>52</height>
@@ -708,7 +708,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
                                 <label>$LOCALIZE[31153]</label>
                              	<height>52</height>
@@ -734,7 +734,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
                                 <label>[CAPITALIZE]$LOCALIZE[31187][/CAPITALIZE]</label>
 								<height>52</height>
@@ -762,7 +762,7 @@
                                 </include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
                                 <label>$LOCALIZE[31094]</label>
 								<height>52</height>
@@ -788,7 +788,7 @@
 								</include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
                                 <width>224</width>
@@ -813,7 +813,7 @@
 								</include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
                                 <width>224</width>
@@ -840,7 +840,7 @@
 								</include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
                                 <width>224</width>
@@ -865,7 +865,7 @@
 								</include>
 								<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+								<texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
 								<height>52</height>
                                 <width>224</width>
@@ -900,7 +900,7 @@
 							<height>52</height>
 							<top>664</top>
 							<left>139</left>
-							<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+							<texture border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texture>
 						</control>
 							<!-- Trailer -->
                             <control type="radiobutton">
@@ -958,7 +958,7 @@
 			<visible>Control.HasFocus(8999)</visible>
 			<width>224</width>
 			<height>52</height>
-			<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+			<texture border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texture>
 		</control>
 		<control type="image">
 			<visible>!Control.HasFocus(8999)</visible>
@@ -1431,27 +1431,27 @@
 							<visible>ControlGroup(700).HasFocus() + Control.HasFocus(7001) + Window.IsVisible(1151)</visible>
 							<width>64</width>
 							<height>64</height>
-							<texture background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texture>
+							<texture background="true" colordiffuse="PirateEdge">bingie/border/circle_focus.png</texture>
 						</control>
 						<control type="image">
 							<visible>ControlGroup(700).HasFocus() + Control.HasFocus(7002) + Window.IsVisible(1151)</visible>
 							<width>64</width>
 							<height>64</height>
-							<texture background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texture>
+							<texture background="true" colordiffuse="PirateEdge">bingie/border/circle_focus.png</texture>
 						</control>
 						<control type="image">
 							<visible>ControlGroup(700).HasFocus() + Control.HasFocus(7003) + Window.IsVisible(1152)</visible>
 							<width>64</width>
 							<height>64</height>
 							<left>94</left>
-							<texture background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texture>
+							<texture background="true" colordiffuse="PirateEdge">bingie/border/circle_focus.png</texture>
 						</control>
 						<control type="image">
 							<visible>ControlGroup(700).HasFocus() + Control.HasFocus(7004) + Window.IsVisible(1152)</visible>
 							<width>64</width>
 							<height>64</height>
 							<left>94</left>
-							<texture background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texture>
+							<texture background="true" colordiffuse="PirateEdge">bingie/border/circle_focus.png</texture>
 						</control>
 				
 						<control type="grouplist" id="8000">
@@ -1485,7 +1485,7 @@
 									<width>64</width>
 									<height>64</height>
 									<font>Reg30</font>
-									<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texturefocus>
+									<texturefocus colordiffuse="PirateEdge">bingie/border/circle_focus.png</texturefocus>
 									<texturenofocus>-</texturenofocus>
 									<alttexturefocus>-</alttexturefocus>
 									<alttexturenofocus>-</alttexturenofocus>
@@ -1508,7 +1508,7 @@
 									<width>64</width>
 									<height>64</height>
 									<font>Reg30</font>
-									<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texturefocus>
+									<texturefocus colordiffuse="PirateEdge">bingie/border/circle_focus.png</texturefocus>
 									<texturenofocus>-</texturenofocus>
 									<alttexturefocus>-</alttexturefocus>
 									<alttexturenofocus>-</alttexturenofocus>
@@ -1532,7 +1532,7 @@
 									<width>64</width>
 									<height>64</height>
 									<font>Plots</font>
-									<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texturefocus>
+									<texturefocus colordiffuse="PirateEdge">bingie/border/circle_focus.png</texturefocus>
 									<texturenofocus>-</texturenofocus>
 									<alttexturefocus>-</alttexturefocus>
 									<alttexturenofocus>-</alttexturenofocus>
@@ -1556,7 +1556,7 @@
 									<width>64</width>
 									<height>64</height>
 									<font>Plots</font>
-									<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texturefocus>
+									<texturefocus colordiffuse="PirateEdge">bingie/border/circle_focus.png</texturefocus>
 									<texturenofocus>-</texturenofocus>
 									<alttexturefocus>-</alttexturefocus>
 									<alttexturenofocus>-</alttexturenofocus>
@@ -1589,7 +1589,7 @@
 									<width>64</width>
 									<height>64</height>
 									<font>Reg30</font>
-									<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texturefocus>
+									<texturefocus colordiffuse="PirateEdge">bingie/border/circle_focus.png</texturefocus>
 									<texturenofocus>-</texturenofocus>
 									<alttexturefocus>-</alttexturefocus>
 									<alttexturenofocus>-</alttexturenofocus>
@@ -1611,7 +1611,7 @@
 									<width>64</width>
 									<height>64</height>
 									<font>Plots</font>
-									<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texturefocus>
+									<texturefocus colordiffuse="PirateEdge">bingie/border/circle_focus.png</texturefocus>
 									<texturenofocus>-</texturenofocus>
 									<alttexturefocus>-</alttexturefocus>
 									<alttexturenofocus>-</alttexturenofocus>
@@ -1633,7 +1633,7 @@
 									<width>64</width>
 									<height>64</height>
 									<font>Plots</font>
-									<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texturefocus>
+									<texturefocus colordiffuse="PirateEdge">bingie/border/circle_focus.png</texturefocus>
 									<texturenofocus>-</texturenofocus>
 									<alttexturefocus>-</alttexturefocus>
 									<alttexturenofocus>-</alttexturenofocus>
@@ -2090,7 +2090,7 @@
 								<height>8</height>
 								<texturebg colordiffuse="$INFO[Skin.String(BingieProgressBarBackgroundColor)]" border="0">diffuse/panel2.png</texturebg>
 								<lefttexture/>
-								<midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
+								<midtexture colordiffuse="PirateSelection" border="4">diffuse/panel2.png</midtexture>
 								<righttexture/>
 								<info>ListItem.PercentPlayed</info>
 							</control>
@@ -2104,7 +2104,7 @@
 								<height>8</height>
 								<texturebg colordiffuse="$INFO[Skin.String(BingieProgressBarBackgroundColor)]" border="0">diffuse/panel2.png</texturebg>
 								<lefttexture/>
-								<midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
+								<midtexture colordiffuse="PirateSelection" border="4">diffuse/panel2.png</midtexture>
 								<righttexture/>
 								<info>Container(5050).ListItem.PercentPlayed</info>
 							</control>
@@ -2118,7 +2118,7 @@
 								<height>8</height>
 								<texturebg colordiffuse="$INFO[Skin.String(BingieProgressBarBackgroundColor)]" border="0">diffuse/panel2.png</texturebg>
 								<lefttexture/>
-								<midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
+								<midtexture colordiffuse="PirateSelection" border="4">diffuse/panel2.png</midtexture>
 								<righttexture/>
 								<info>Container(1234).ListItem.PercentPlayed</info>
 							</control>
@@ -2133,7 +2133,7 @@
 								<control type="image">						
 									<width>550</width>
 									<height>64</height>
-									<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+									<texture border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texture>
 								</control>								
 								<!-- Trailer -->
 								<control type="radiobutton">
@@ -2338,7 +2338,7 @@
                             <height>episodes_thumb_height</height>
                             <width>episodes_thumb_width</width>
                             <texture border="5">diffuse/wide.png</texture>
-                            <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                            <colordiffuse>PirateEdge</colordiffuse>
                             <include>thumbsborder_focused</include>
                         </control>
                         <!-- landscape content -->
@@ -2381,7 +2381,7 @@
 						<visible>Control.HasFocus(3522)</visible>
 						<width>550</width>
 						<height>65</height>
-						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+						<texture border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texture>
 					</control>
 					<control type="image">
 						<visible>!Control.HasFocus(3522)</visible>
@@ -2456,7 +2456,7 @@
                     <width>episodes_thumb_width</width>
                     <height>episodes_thumb_height</height>
                     <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
-                    <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                    <colordiffuse>PirateEdge</colordiffuse>
                     <bordersize>2</bordersize>
                 </control>
 
@@ -2526,7 +2526,7 @@
                             <height>episodes_thumb_height</height>
                             <width>episodes_thumb_width</width>
                             <texture border="5">diffuse/wide.png</texture>
-                            <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                            <colordiffuse>PirateEdge</colordiffuse>
                             <include>thumbsborder_focused</include>
                         </control>
                         <!-- landscape content -->
@@ -2568,7 +2568,7 @@
 						<visible>Control.HasFocus(3541)</visible>
 						<width>550</width>
 						<height>65</height>
-						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+						<texture border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texture>
 					</control>
 					<control type="image">
 						<visible>!Control.HasFocus(3541)</visible>
@@ -2641,7 +2641,7 @@
                     <width>episodes_thumb_width</width>
                     <height>episodes_thumb_height</height>
                     <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
-                    <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                    <colordiffuse>PirateEdge</colordiffuse>
                     <bordersize>2</bordersize>
                 </control>
 
@@ -2755,7 +2755,7 @@
 									<animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
                                     <control type="image">										
 										<width>836</width>
-                                        <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
+                                        <texture border="10" background="true" colordiffuse="PirateEdge">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
                                     </control>
                                     <control type="textbox">
 										<top>16</top>
@@ -2774,7 +2774,7 @@
                                 <control type="group">
                                     <control type="image">
 										<width>836</width>
-                                        <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
+                                        <texture border="10" background="true" colordiffuse="PirateEdge">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
                                     </control>
                                    <control type="textbox">
 										<top>16</top>
@@ -2841,7 +2841,7 @@
 					<visible>Control.HasFocus(8999)</visible>
 					<width>550</width>
 					<height>65</height>
-					<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+					<texture border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texture>
 				</control>
 				<control type="image">
 					<visible>!Control.HasFocus(8999)</visible>
@@ -3140,7 +3140,7 @@
 						<visible>Control.HasFocus(2999)</visible>
 						<width>310</width>
 						<height>65</height>
-						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+						<texture border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texture>
 					</control>
 					<control type="image">
 						<visible>!Control.HasFocus(2999)</visible>
@@ -3440,7 +3440,7 @@
             <posy>$PARAM[icon_posy]</posy>
             <width>$PARAM[icon_width]</width>
             <height>$PARAM[icon_height]</height>
-            <colordiffuse>$INFO[Skin.String(BingieDialogAdditionalInfoIconColor)]</colordiffuse>
+            <colordiffuse>PirateEdge</colordiffuse>
             <texture>$PARAM[icon_image]</texture>
         </control>
     </include>
@@ -3510,7 +3510,7 @@
 		<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 		<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
 		<texturenofocus/>
-        <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+        <texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
     </include>
 	
 	<include name="Bingie_InfoDialog_Trailer_Button_Default_Defs">
@@ -3524,7 +3524,7 @@
 		<textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
 		<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
 		<texturenofocus/>
-        <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+        <texturefocus border="10" background="true" colordiffuse="PirateSelection">bingie/border/default_button_focus.png</texturefocus>
     </include>
 	
 	<include name="Bingie_InfoDialog_Button_Default_Defs2">
@@ -4270,7 +4270,7 @@
                 <width>240</width>
                 <height>340</height>
                 <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
-                <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                <colordiffuse>PirateEdge</colordiffuse>
                 <bordersize>2</bordersize>
             </control>
         </definition>

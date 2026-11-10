@@ -40,7 +40,7 @@
                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <shadowcolor>$INFO[Skin.String(BackgroundOverlayColor)]</shadowcolor>
                     <align>center</align>
-                    <label>[UPPERCASE][B]Active Downloads:  [COLOR $INFO[Skin.String(ButtonFocusColor)]]$INFO[Window.Property(active)][/COLOR]     |     Queued Downloads:  [COLOR $INFO[Skin.String(ButtonFocusColor)]]$INFO[Window.Property(queued)][/B][/COLOR][/UPPERCASE]</label>
+                    <label>[UPPERCASE][B]Active Downloads:  [COLOR ff075bba]$INFO[Window.Property(active)][/COLOR]     |     Queued Downloads:  [COLOR ff075bba]$INFO[Window.Property(queued)][/B][/COLOR][/UPPERCASE]</label>
                 </control>
                 <control type="label">
                     <visible>Integer.IsGreater(Window.Property(active),0) | Integer.IsGreater(Window.Property(queued),0)</visible>
@@ -84,7 +84,7 @@
                         <width>60</width>
                         <height>5</height>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
+                        <textcolor>ff075bba</textcolor>
                         <aligny>center</aligny>
                         <label>[B]$INFO[ListItem.Property(percent),,%][/B]</label>
                     </control>
@@ -95,7 +95,7 @@
                         <width max="820">auto</width>
                         <height>5</height>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
+                        <textcolor>ff075bba</textcolor>
                         <aligny>center</aligny>
                         <align>left</align>
                         <label>[UPPERCASE][B]Paused[/B][/UPPERCASE]</label>
@@ -107,7 +107,7 @@
                         <width max="820">auto</width>
                         <height>5</height>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
+                        <textcolor>ff075bba</textcolor>
                         <aligny>center</aligny>
                         <align>left</align>
                         <label>[UPPERCASE][B]Queued[/B][/UPPERCASE]</label>
@@ -273,147 +273,147 @@
                             <left>0</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),1)</visible>
                         </control>
                         <control type="image">
                             <left>35</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),5)</visible>
                         </control>
                         <control type="image">
                             <left>70</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),10)</visible>
                         </control>
                         <control type="image">
                             <left>105</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),15)</visible>
                         </control>
                         <control type="image">
                             <left>140</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),20)</visible>
                         </control>
                         <control type="image">
                             <left>175</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),25)</visible>
                         </control>
                         <control type="image">
                             <left>210</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),30)</visible>
                         </control>
                         <control type="image">
                             <left>245</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),35)</visible>
                         </control>
                         <control type="image">
                             <left>280</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),40)</visible>
                         </control>
                         <control type="image">
                             <left>315</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),45)</visible>
                         </control>
                         <control type="image">
                             <left>350</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),50)</visible>
                         </control>
                         <control type="image">
                             <left>385</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),55)</visible>
                         </control>
                         <control type="image">
                             <left>420</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),60)</visible>
                         </control>
                         <control type="image">
                             <left>455</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),65)</visible>
                         </control>
                         <control type="image">
                             <left>490</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),70)</visible>
                         </control>
                         <control type="image">
                             <left>525</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),75)</visible>
                         </control>
                         <control type="image">
                             <left>560</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),80)</visible>
                         </control>
                         <control type="image">
                             <left>595</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),85)</visible>
                         </control>
                         <control type="image">
                             <left>630</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),90)</visible>
                         </control>
                         <control type="image">
                             <left>665</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),95)</visible>
                         </control>
                         <control type="image">
                             <left>700</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),99)</visible>
                         </control>
                     </control>
@@ -422,7 +422,7 @@
                     <control type="image">
                         <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(2500)">Conditional</animation>
                         <width>890</width>
-                        <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
+                        <texture colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texture>
                     </control>
                     <control type="label">
                         <width max="820">auto</width>
@@ -441,7 +441,7 @@
                         <width>60</width>
                         <height>5</height>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
+                        <textcolor>ff075bba</textcolor>
                         <aligny>center</aligny>
                         <label>[B]$INFO[ListItem.Property(percent),,%][/B]</label>
                     </control>
@@ -452,7 +452,7 @@
                         <width max="820">auto</width>
                         <height>5</height>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
+                        <textcolor>ff075bba</textcolor>
                         <aligny>center</aligny>
                         <align>left</align>
                         <label>[UPPERCASE][B]Paused[/B][/UPPERCASE]</label>
@@ -464,7 +464,7 @@
                         <width max="820">auto</width>
                         <height>5</height>
                         <font>font12</font> <!-- FENLIGHT_26 -->
-                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
+                        <textcolor>ff075bba</textcolor>
                         <aligny>center</aligny>
                         <align>left</align>
                         <label>[UPPERCASE][B]Queued[/B][/UPPERCASE]</label>
@@ -630,147 +630,147 @@
                             <left>0</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),1)</visible>
                         </control>
                         <control type="image">
                             <left>35</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),5)</visible>
                         </control>
                         <control type="image">
                             <left>70</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),10)</visible>
                         </control>
                         <control type="image">
                             <left>105</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),15)</visible>
                         </control>
                         <control type="image">
                             <left>140</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),20)</visible>
                         </control>
                         <control type="image">
                             <left>175</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),25)</visible>
                         </control>
                         <control type="image">
                             <left>210</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),30)</visible>
                         </control>
                         <control type="image">
                             <left>245</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),35)</visible>
                         </control>
                         <control type="image">
                             <left>280</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),40)</visible>
                         </control>
                         <control type="image">
                             <left>315</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),45)</visible>
                         </control>
                         <control type="image">
                             <left>350</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),50)</visible>
                         </control>
                         <control type="image">
                             <left>385</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),55)</visible>
                         </control>
                         <control type="image">
                             <left>420</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),60)</visible>
                         </control>
                         <control type="image">
                             <left>455</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),65)</visible>
                         </control>
                         <control type="image">
                             <left>490</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),70)</visible>
                         </control>
                         <control type="image">
                             <left>525</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),75)</visible>
                         </control>
                         <control type="image">
                             <left>560</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),80)</visible>
                         </control>
                         <control type="image">
                             <left>595</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),85)</visible>
                         </control>
                         <control type="image">
                             <left>630</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),90)</visible>
                         </control>
                         <control type="image">
                             <left>665</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),95)</visible>
                         </control>
                         <control type="image">
                             <left>700</left>
                             <width>30</width>
                             <height>15</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                             <visible>Integer.IsGreaterOrEqual(ListItem.Property(percent),99)</visible>
                         </control>
                     </control>

@@ -140,25 +140,25 @@
     <!-- GENERIC LAYOUT FOR POSTERS -->
 	<include name="PosterThumbFO_Defs">
         <texture>diffuse/poster4.png</texture>
-        <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+        <colordiffuse>$VAR[PirateBrowseFocusColor]</colordiffuse>
     </include>
 	<include name="SmallPosterThumbFO_Defs">
         <texture>diffuse/poster6.png</texture>
-        <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+        <colordiffuse>$VAR[PirateBrowseFocusColor]</colordiffuse>
     </include>
     <include name="PosterThumbFO_Case">
         <texture>diffuse/poster4.png</texture>
 		<bordersize>3</bordersize>
-        <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+        <colordiffuse>$VAR[PirateBrowseFocusColor]</colordiffuse>
     </include>
 	<include name="SmallPosterThumbFO_Case">
         <texture>diffuse/poster6.png</texture>
 		<bordersize>3</bordersize>
-        <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+        <colordiffuse>$VAR[PirateBrowseFocusColor]</colordiffuse>
     </include>
     <include name="PosterThumbFO_DefsBingie">
         <texture>diffuse/poster3.png</texture>
-        <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+        <colordiffuse>$VAR[PirateBrowseFocusColor]</colordiffuse>
     </include>
 	
     <!-- TAG OVERLAYS -->

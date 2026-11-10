@@ -91,7 +91,7 @@
                         <height>8</height>
                         <texturebg colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="0">diffuse/panel2.png</texturebg>
                         <lefttexture/>
-                        <midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
+                        <midtexture colordiffuse="PirateSelection" border="4">diffuse/panel2.png</midtexture>
                         <righttexture/>
                         <info>ListItem.Progress</info>
                     </control>

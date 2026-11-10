@@ -683,4 +683,8 @@
 	
     <expression name="PirateGuideLoading">Window.IsActive(Videos) + !String.IsEmpty(Window(Home).Property(fenlight.tvguide_loading)) + String.IsEmpty(Window(Home).Property(fenlight.tvguide_tuning))</expression>
     <expression name="PirateGuidePreparing">Window.IsActive(Videos) + String.Contains(Container.FolderPath,mode=tvguide.main) + !String.IsEmpty(Window(Home).Property(fenlight.tvguide_preparing_percent)) + String.IsEmpty(Window(Home).Property(fenlight.tvguide_tuning))</expression>
+    <variable name="PirateBrowseFocusColor">
+        <value condition="$EXP[IsBingieViewsActive]">PirateEdge</value>
+        <value>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</value>
+    </variable>
 </includes>

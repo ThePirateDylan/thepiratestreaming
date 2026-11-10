@@ -24,7 +24,7 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.97">
+</addon><addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.99">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.pil" version="1.1.7" />
@@ -46,7 +46,7 @@
             <icon>resources/media/addon_icons/pirate_icon.png</icon>
             <fanart>resources/media/fenlight_fanart_01.jpg</fanart>
         </assets>
-        <news>AllDebrid requests use the documented POST flow and report provider errors. See Tools for the full changelog.</news>
+        <news>Fixed the TV Guide crash after stopping playback and returning Home. Added SEARCHING FOR SIGNAL... during channel loading and scheduled seeking. Blue UI, clearer playback controls, improved search and Resume dialogs, and updated Continue Watching headings.</news>
     </extension>
 </addon><addon id="plugin.video.tmdb.pirate.helper" version="1.0.13" name="The Pirate TMDb Helper" provider-name="The Pirate Dylan">
 <requires>
@@ -237,7 +237,7 @@
         <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.widgets</website>
         <source />
     </extension>
-</addon><addon id="skin.pirate" version="2.2.94" name="The Pirate Skin" provider-name="The Pirate Dylan">
+</addon><addon id="skin.pirate" version="2.2.96" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui" />
 		<import addon="script.pirate.helper" version="1.1.40" />
@@ -265,6 +265,7 @@
 		<description lang="es_ES">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_AR">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_MX">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
+		<news>Finished the blue theme across the TV Guide and playback controls. Added channel-tuning static, clearer progress colors, improved search and Resume dialogs, and updated Continue Watching headings.</news>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
 		<forum />

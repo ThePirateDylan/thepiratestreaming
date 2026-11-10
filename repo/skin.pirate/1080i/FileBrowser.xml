@@ -172,7 +172,7 @@
                             <width>580</width>
                             <height>60</height>
                             <texture border="10">diffuse/panel.png</texture>
-							<colordiffuse>ffff7417</colordiffuse>
+							<colordiffuse>PirateSelection</colordiffuse>
                         </control>
                         <control type="image">
                             <posx>5</posx>
@@ -308,7 +308,7 @@
                             <width>580</width>
                             <height>60</height>
                             <texture border="10">diffuse/panel.png</texture>
-							<colordiffuse>ffff7417</colordiffuse>
+							<colordiffuse>PirateSelection</colordiffuse>
                         </control>
                         <control type="image">
                             <posx>5</posx>

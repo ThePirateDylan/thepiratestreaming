@@ -764,7 +764,7 @@
                           <animation effect="fade" time="0" end="85" condition="true">Visible</animation>
                           <align>left</align>
                           <aligny>center</aligny>
-                          <texture>$VAR[BingieMoreDetailsImage,bingie/details/,.png]</texture>
+                          <texture colordiffuse="PirateEdge">$VAR[BingieMoreDetailsImage,bingie/details/white/,.png]</texture>
                       </control>
 					  <control type="image">    <!-- white circle icons -->
 					      <visible>!Skin.HasSetting(EnableColorDetailsIcons)</visible>
@@ -772,7 +772,7 @@
                           <animation effect="fade" time="0" end="85" condition="true">Visible</animation>
                           <align>left</align>
                           <aligny>center</aligny>
-						  <colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
+						  <colordiffuse>PirateEdge</colordiffuse>
                           <texture>$VAR[BingieMoreDetailsImage,bingie/details/white/,.png]</texture>
                       </control>
                   </control>
@@ -820,7 +820,7 @@
                           <animation effect="fade" time="0" end="85" condition="true">Visible</animation>
                           <align>left</align>
                           <aligny>center</aligny>
-                          <texture>$VAR[BingieMoreDetailsImage,bingie/details/,.png]</texture>
+                          <texture colordiffuse="PirateEdge">$VAR[BingieMoreDetailsImage,bingie/details/white/,.png]</texture>
                       </control>
 					  <control type="image">    <!-- white circle icons -->
 					      <visible>!Skin.HasSetting(EnableColorDetailsIcons)</visible>
@@ -828,7 +828,7 @@
                           <animation effect="fade" time="0" end="85" condition="true">Visible</animation>
                           <align>left</align>
                           <aligny>center</aligny>
-						  <colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
+						  <colordiffuse>PirateEdge</colordiffuse>
                           <texture>$VAR[BingieMoreDetailsImage,bingie/details/white/,.png]</texture>
                       </control>
                   </control>
@@ -843,7 +843,7 @@
                           <animation effect="fade" time="0" end="85" condition="true">Visible</animation>
                           <align>left</align>
                           <aligny>center</aligny>
-						  <colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
+						  <colordiffuse>PirateEdge</colordiffuse>
                           <texture>bingie/circle_back.png</texture>
                       </control>
 					  <control type="image">
@@ -910,7 +910,7 @@
                           <animation effect="fade" time="0" end="85" condition="true">Visible</animation>
                           <align>left</align>
                           <aligny>center</aligny>
-                          <texture>bingie/details/music_genre.png</texture>
+                          <texture colordiffuse="PirateEdge">bingie/details/white/music_genre.png</texture>
                       </control>
 					  <control type="image">    <!-- white circle icons -->
 					      <visible>!Skin.HasSetting(EnableColorDetailsIcons)</visible>
@@ -918,7 +918,7 @@
                           <animation effect="fade" time="0" end="85" condition="true">Visible</animation>
                           <align>left</align>
                           <aligny>center</aligny>
-						  <colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
+						  <colordiffuse>PirateEdge</colordiffuse>
                           <texture>bingie/details/white/music_genre.png</texture>
                       </control>
                   </control>
@@ -1657,7 +1657,7 @@
                         <align>left</align>
                         <width>58</width>
                         <height>58</height>
-                        <texturefocus border="10" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">diffuse/border.png</texturefocus>
+                        <texturefocus border="10" colordiffuse="PirateEdge">diffuse/border.png</texturefocus>
                         <texturenofocus/>
 						<onunfocus>AlarmClock(CancelTrailerAlarm,CancelAlarm(preview_delay,silent),00:01,silent)</onunfocus>
                         <onup>noop</onup>
@@ -1949,7 +1949,7 @@
                     <top>14</top>
                     <width>220</width>
                     <height>54</height>
-                    <texture border="18" colordiffuse="ffff7417">dialogs/keyboard/key-nf.png</texture>
+                    <texture border="18" colordiffuse="PirateSelection">dialogs/keyboard/key-nf.png</texture>
                     <aspectratio>stretch</aspectratio>
                     <animation effect="fade" start="0" end="100" delay="100" time="150">Visible</animation>
                 </control>
@@ -2133,7 +2133,7 @@
             <height>$PARAM[height]</height>
             <texture background="true" border="-4">$PARAM[texture]</texture>
             <bordersize>2</bordersize>
-            <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+            <colordiffuse>$VAR[PirateBrowseFocusColor]</colordiffuse>
         </control>
     </include>
 	
@@ -2279,7 +2279,7 @@
                     <aspectratio>keep</aspectratio>
                     <imagepath>spinner/widgets_busy_loader/</imagepath>
                     <timeperimage>85</timeperimage>
-                    <colordiffuse>$INFO[Skin.String(WidgetSpinnerTextureColor)]</colordiffuse>
+                    <colordiffuse>ffffffff</colordiffuse>
                     <fadetime>0</fadetime>
                 </control>
                 <control type="label">
@@ -2781,7 +2781,7 @@
                                 <height>8</height>
                                 <texturebg colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="0">diffuse/panel2.png</texturebg>
                                 <lefttexture/>
-                                <midtexture colordiffuse="ffff7417" border="4">diffuse/panel2.png</midtexture>
+                                <midtexture colordiffuse="PirateSelection" border="4">diffuse/panel2.png</midtexture>
                                 <righttexture/>
                                 <info>ListItem.PercentPlayed</info>
                             </control>
@@ -2920,7 +2920,7 @@
                 <width>$PARAM[width]</width>
                 <height>$PARAM[height]</height>
                 <texture background="true" border="-4">$PARAM[texture]</texture>
-                <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                <colordiffuse>PirateEdge</colordiffuse>
                 <bordersize>8</bordersize>
                 <include condition="!Window.IsActive(DialogVideoInfo.xml)">Default_Visible_Fade</include>
                 <animation effect="slide" end="$PARAM[xAxisAnim],0" time="150" condition="Integer.IsGreater(Container($PARAM[containerid]).Column, 0)">Conditional</animation>

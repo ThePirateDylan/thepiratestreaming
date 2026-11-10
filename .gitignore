@@ -1,0 +1,9 @@
+/.validation-tools/
+/release-assets/
+/release-candidates/
+
+# Local development material is kept outside the repository.
+/tools/
+/tests/
+__pycache__/
+*.py[cod]

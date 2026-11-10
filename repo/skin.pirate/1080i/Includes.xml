@@ -219,7 +219,7 @@
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
 		<texturenofocus></texturenofocus>
-		<texturefocus colordiffuse="ffff7417" border="10">diffuse/panel.png</texturefocus>
+		<texturefocus colordiffuse="PirateSelection" border="10">diffuse/panel.png</texturefocus>
     </include>
 
     <include name="DialogListNF">
@@ -270,7 +270,7 @@
                 <aspectratio>keep</aspectratio>
                 <imagepath>spinner/busy_spinner/</imagepath>
                 <timeperimage>100</timeperimage>
-                <colordiffuse>$INFO[Skin.String(SpinnerTextureColor)]</colordiffuse>
+                <colordiffuse>ffffffff</colordiffuse>
                 <fadetime>0</fadetime>
             </control>
         </definition>
@@ -286,7 +286,7 @@
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="ffff7417" border="10">diffuse/panel.png</texturefocus>
+        <texturefocus colordiffuse="PirateSelection" border="10">diffuse/panel.png</texturefocus>
     </include>
     <include name="KeyBoardKey">
         <height>70</height>
@@ -299,7 +299,7 @@
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="ffff7417" border="10">diffuse/panel.png</texturefocus>
+        <texturefocus colordiffuse="PirateSelection" border="10">diffuse/panel.png</texturefocus>
         <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="10">diffuse/panel.png</texturenofocus>
      </include>
     <include name="KeyBoardKeyRadio">
@@ -325,9 +325,9 @@
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
+        <texturefocus colordiffuse="PirateSelection" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
         <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
-        <alttexturefocus colordiffuse="ffff7417" border="20">dialogs/keyboard/key-nf-2.png</alttexturefocus>
+        <alttexturefocus colordiffuse="PirateSelection" border="20">dialogs/keyboard/key-nf-2.png</alttexturefocus>
         <alttexturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</alttexturenofocus>
     </include>
 
@@ -502,9 +502,9 @@
 					<posy>174</posy>
 					<height>7</height>
 					<width>1152</width>
-					<texturebg colordiffuse="$INFO[Skin.String(BingieOSDProgressBarBackgroundColor)]">diffuse/panel2.png</texturebg>
+					<texturebg colordiffuse="PirateNavy">diffuse/panel2.png</texturebg>
 					<lefttexture/>
-					<midtexture colordiffuse="$INFO[Skin.String(BingieOSDProgressBarCacheColor)]">diffuse/panel2.png</midtexture>
+					<midtexture colordiffuse="PirateSoftEdge">diffuse/panel2.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 					<info>Player.ProgressCache</info>
@@ -518,7 +518,7 @@
 					<width>1152</width>
 					<texturebg colordiffuse="4dffffff">diffuse/panel2.png</texturebg>
 					<lefttexture/>
-					<midtexture colordiffuse="ffff7417">diffuse/panel2.png</midtexture>
+					<midtexture colordiffuse="PirateSelection">diffuse/panel2.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 					<info>Player.SeekBar</info>
@@ -532,7 +532,7 @@
 					<height>11</height>
 					<width>1152</width>
 					<texturesliderbar>colors/color_transparent.png</texturesliderbar>
-					<textureslidernib colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
+					<textureslidernib colordiffuse="PirateEdge">common/slider/slider_button_nofocus.png</textureslidernib>
 					<visible>Player.SeekEnabled + Player.Seeking</visible>
 				</control>
 				<!-- Play Time / Remaining Time -->
@@ -638,7 +638,7 @@
 					<visible>Player.HasDuration + !VideoPlayer.content(livetv)</visible>					
 					<texturebg border="10" colordiffuse="00ffffff">diffuse/panel.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="$INFO[Skin.String(OSDProgressBarCacheColor)]">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="PirateSoftEdge">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
                     <visible>!String.IsEqual(Skin.String(OSDProgressBarCacheColor),None)</visible>
@@ -651,9 +651,9 @@
 					<width>700</width>
 					<info>Player.Progress</info>
 					<visible>!VideoPlayer.HasEpg</visible>
-					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
+					<texturebg border="10" colordiffuse="PirateNavy">diffuse/osd_panel_trans.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="ffff7417">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="PirateSelection">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>
@@ -665,9 +665,9 @@
 					<width>700</width>
 					<info>PVR.EpgEventProgress</info>
 					<visible>VideoPlayer.HasEpg</visible>
-					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
+					<texturebg border="10" colordiffuse="PirateNavy">diffuse/osd_panel_trans.png</texturebg>
 					<lefttexture/>
-					<midtexture border="10" colordiffuse="ffff7417">diffuse/osd_panel.png</midtexture>
+					<midtexture border="10" colordiffuse="PirateSelection">diffuse/osd_panel.png</midtexture>
 					<righttexture/>
 					<overlaytexture/>
 				</control>
@@ -688,7 +688,7 @@
 					<height>16</height>
 					<width>700</width>
                     <texturesliderbar>colors/color_transparent.png</texturesliderbar>
-                    <textureslidernib colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">diffuse/seekslider.png</textureslidernib>
+                    <textureslidernib colordiffuse="PirateEdge">diffuse/seekslider.png</textureslidernib>
                     <textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
                     <visible>Player.Seeking + !Player.HasAudio</visible>
                 </control>
@@ -895,7 +895,7 @@
 					<right>0</right>
 					<bottom>0</bottom>
 					<texture border="10">diffuse/panel.png</texture>
-					<colordiffuse>ffff7417</colordiffuse>
+					<colordiffuse>PirateSelection</colordiffuse>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -949,7 +949,7 @@
 				<onclick>$PARAM[onclick]</onclick>
 				<wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
 				<align>center</align>
-				<texturefocus border="15" colordiffuse="ffff7417">diffuse/panel.png</texturefocus>
+				<texturefocus border="15" colordiffuse="PirateSelection">diffuse/panel.png</texturefocus>
 				<texturenofocus/>
 				<visible>$PARAM[visible]</visible>
 				<enable>$PARAM[enable]</enable>

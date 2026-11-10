@@ -1,15 +1,15 @@
 <shortcuts>
 	<shortcut>
 		<defaultID />
-		<label>Continue Watching (TV)</label>
+		<label>Continue Watching Shows</label>
 		<label2>Video Add-On</label2>
 		<icon>DefaultShortcut.png</icon>
 		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fin_progress_tvshow.png/</thumb>
-		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=In+Progress&amp;mode=build_tvshow_list&amp;action=in_progress_tvshows&amp;iconImage=in_progress_tvshow",return)</action>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=In+Progress&amp;mode=build_in_progress_episode&amp;iconImage=in_progress_tvshow",return)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID />
-		<label>Continue Watching (Movies)</label>
+		<label>Continue Watching Movies</label>
 		<label2>Video Add-On</label2>
 		<icon>DefaultShortcut.png</icon>
 		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fplayer.png/</thumb>

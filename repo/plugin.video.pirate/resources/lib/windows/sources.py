@@ -367,8 +367,13 @@ class SourcesPlayback(BaseDialog):
 		self.setProperty('clearlogo', clearlogo)
 		self.setProperty('title', title)
 		self.setProperty('genre', ', '.join(genre))
+		episode_label = ''
+		if self.meta_get('media_type') == 'episode':
+			episode_label = 'S%s E%s - %s' % (self.meta_get('season', ''), self.meta_get('episode', ''), self.meta_get('ep_name', ''))
+		self.setProperty('episode_label', episode_label)
 
 	def set_resolver_properties(self):
+		self.setProperty('stream_loading_label', 'Loading Stream...')
 		if self.meta_get('media_type') == 'movie': self.text = self.meta_get('plot')
 		else:
 			if avoid_episode_spoilers() and int(self.meta_get('playcount', '0')) == 0: plot = self.meta_get('tvshow_plot') or '* Hidden to Prevent Spoilers *'
@@ -392,7 +397,10 @@ class SourcesPlayback(BaseDialog):
 		self.setProperty('percent', str(percent))
 		self.set_text(2001, content)
 
-	def update_resolver(self, text='', percent=0):
+	def update_resolver(self, text='', percent=0, quality=None):
+		if text:
+			label = 'Loading %s Stream...' % quality if quality in ('4K', '1080p', '720p', 'SD') else 'Loading Stream...'
+			self.setProperty('stream_loading_label', label)
 		try: self.setProperty('percent', str(percent))
 		except: pass
 		if text: self.set_text(2002, text)

@@ -4,8 +4,14 @@ from urllib.parse import parse_qsl
 from modules.kodi_utils import external, get_property
 # from modules.kodi_utils import logger
 
-def sys_exit_check():
+def sys_exit_check(query=''):
 	if get_property('fenlight.reuse_language_invoker') == 'false': return False
+	# A completed guide listing can be selected for reuse by a Home widget
+	# while its original invoker thread is being released. Retire guide
+	# invocations through Kodi's existing SystemExit/non-reusable path.
+	# Use this invocation's route, not whichever container is now visible.
+	mode = dict(parse_qsl(query.lstrip('?'), keep_blank_values=True)).get('mode', '')
+	if mode.startswith('tvguide.'): return True
 	return external()
 
 def routing(sys):
@@ -56,6 +62,10 @@ def routing(sys):
 			from indexers.movies import Movies
 			return Movies(params).fetch_list()
 		elif mode == 'build_tvshow_list':
+			# Compatibility for the shipped Home shortcut persisted by Skin Shortcuts.
+			if external() and params.get('action') == 'in_progress_tvshows' and params.get('name') == 'In Progress' and 'is_anime_list' not in params:
+				from indexers.episodes import build_single_episode
+				return build_single_episode('episode.progress', params)
 			from indexers.tvshows import TVShows
 			return TVShows(params).fetch_list()
 		elif mode == 'build_season_list':

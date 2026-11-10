@@ -619,6 +619,17 @@
             <include content="Fixed_Focus_Navigation_Factory">
                 <param name="widgetid" value="$PARAM[widgetid]"/>
             </include>
+            <!-- Decorative only; shares the existing heading rectangle and inherited visibility. -->
+            <control type="image">
+                <include>widget_header_home_leftalign</include>
+                <top>-1</top><width>470</width><height>42</height>
+                <texture border="16" colordiffuse="PiratePanel">dialogs/keyboard/key-nf.png</texture>
+            </control>
+            <control type="image">
+                <include>widget_header_home_leftalign</include>
+                <top>-1</top><width>470</width><height>42</height>
+                <texture border="10" colordiffuse="PirateSoftEdge">bingie/border/default_button_focus.png</texture>
+            </control>
             <control type="label">
                 <height>100%</height>
                 <width>100%</width>

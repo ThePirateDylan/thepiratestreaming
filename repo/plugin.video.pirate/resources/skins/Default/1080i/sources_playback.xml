@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <controls>
-        <!-- Background -->
-        <control type="group">
-            <width>1920</width>
-            <height>1080</height>
-            <control type="image">
-                <texture colordiffuse="$INFO[Skin.String(BackgroundOverlayColor)]">fenlight_common/white.png</texture>
-            </control>
-            <control type="image">
-                <texture>$INFO[Window.Property(fanart)]</texture>
-                <aspectratio>scale</aspectratio>
-                <animation effect="fade" end="25">WindowOpen</animation>
-            </control>
+        <!-- Branding only; playback, cancel and skip controls retain their existing actions. -->
+        <control type="image">
+            <width>1920</width><height>1080</height>
+            <texture colordiffuse="ff061326">fenlight_common/white.png</texture>
         </control>
         <control type="group">
             <animation effect="fade" end="100" time="200">WindowOpen</animation>
@@ -52,41 +44,38 @@
                     <visible>String.IsEqual(Window.Property(window_mode),resolver) + !String.IsEqual(Window.Property(enable_busy_spinner),true)</visible>
                 </control>
             </control>
-            <!-- Clearlogo & Title/Genre -->
-            <control type="group">
-                <control type="image">
-                    <top>280</top>
-                    <left>395</left>
-                    <width>1130</width>
-                    <height max="250">auto</height>
-                    <aspectratio>keep</aspectratio>
-                    <align>center</align>
-                    <aligny>bottom</aligny>
-                    <texture background="true">$INFO[Window.Property(clearlogo)]</texture>
-                    <visible>!String.IsEmpty(Window.Property(clearlogo))</visible>
-                </control>
-                <control type="label">
-                    <top>400</top>
-                    <width>1920</width>
-                    <height>30</height>
-                    <font>font60</font> <!-- FENLIGHT_60_BOLD -->
-                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <align>center</align>
-                    <aligny>bottom</aligny>
-                    <label>[B]$INFO[Window.Property(title)][/B]</label>
-                    <visible>String.IsEmpty(Window.Property(clearlogo))</visible>
-                </control>
-                <control type="label">
-                    <top>480</top>
-                    <width>1920</width>
-                    <height>25</height>
-                    <font>font14</font> <!-- FENLIGHT_33 -->
-                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <align>center</align>
-                    <aligny>bottom</aligny>
-                    <label>[I]$INFO[Window.Property(genre)][/I]</label>
-                    <visible>String.IsEmpty(Window.Property(clearlogo))</visible>
-                </control>
+            <!-- Approved brand and subdued media identification -->
+            <control type="image">
+                <left>510</left><top>210</top><width>900</width><height>340</height>
+                <aspectratio>keep</aspectratio>
+                <texture>special://home/addons/plugin.video.pirate/resources/media/thepirate-logo.png</texture>
+            </control>
+            <control type="label">
+                <left>360</left><top>610</top><width>1200</width><height>40</height>
+                <font>font13</font> <!-- FENLIGHT_30 -->
+                <textcolor>ffb9c8dd</textcolor><align>center</align>
+                <label>$INFO[Window.Property(title)]</label>
+            </control>
+            <control type="label">
+                <left>360</left><top>670</top><width>1200</width><height>35</height>
+                <font>font12</font> <!-- FENLIGHT_26 -->
+                <textcolor>ffb9c8dd</textcolor><align>center</align>
+                <label>$INFO[Window.Property(episode_label)]</label>
+                <visible>!String.IsEqual(Window.Property(window_mode),resume)</visible>
+            </control>
+            <control type="label">
+                <left>360</left><top>735</top><width>1200</width><height>50</height>
+                <font>font14</font> <!-- FENLIGHT_33 -->
+                <textcolor>ff79c9ff</textcolor><align>center</align>
+                <label>Finding your Stream Source...</label>
+                <visible>String.IsEqual(Window.Property(window_mode),scraper)</visible>
+            </control>
+            <control type="label">
+                <left>360</left><top>735</top><width>1200</width><height>50</height>
+                <font>font14</font> <!-- FENLIGHT_33 -->
+                <textcolor>ff79c9ff</textcolor><align>center</align>
+                <label>$INFO[Window.Property(stream_loading_label)]</label>
+                <visible>String.IsEqual(Window.Property(window_mode),resolver)</visible>
             </control>
             <!-- Busy Spinner -->
             <control type="image">
@@ -403,216 +392,102 @@
                     </control>
                 </control>
             </control>
-            <!-- Scraper -->
-            <control type="group">
-                <visible>String.IsEqual(Window.Property(window_mode),scraper)</visible>
-                <top>490</top>
-                <control type="group">
-                    <top>70</top>
-                    <left>690</left>
-                    <control type="group">
-                        <control type="label">
-                            <top>50</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(ScrollbarUnfocusedColor)]][B]4K[/B][/COLOR]</label>
-                        </control>
-                        <control type="label">
-                            <top>100</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(GeneralTextColor)]][B]$INFO[Window.Property(results_4k)][/B][/COLOR]</label>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <left>100</left>
-                        <control type="label">
-                            <top>50</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(ScrollbarUnfocusedColor)]][B]1080[/B][/COLOR]</label>
-                        </control>
-                        <control type="label">
-                            <top>100</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(GeneralTextColor)]][B]$INFO[Window.Property(results_1080p)][/B][/COLOR]</label>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <left>200</left>
-                        <control type="label">
-                            <top>50</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(ScrollbarUnfocusedColor)]][B]720[/B][/COLOR]</label>
-                        </control>
-                        <control type="label">
-                            <top>100</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(GeneralTextColor)]][B]$INFO[Window.Property(results_720p)][/B][/COLOR]</label>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <left>300</left>
-                        <control type="label">
-                            <top>50</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(ScrollbarUnfocusedColor)]][B]SD[/B][/COLOR]</label>
-                        </control>
-                        <control type="label">
-                            <top>100</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(GeneralTextColor)]][B]$INFO[Window.Property(results_sd)][/B][/COLOR]</label>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <left>400</left>
-                        <control type="label">
-                            <top>50</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(ScrollbarUnfocusedColor)]][B]TOTAL[/B][/COLOR]</label>
-                        </control>
-                        <control type="label">
-                            <top>100</top>
-                            <left>10</left>
-                            <width>100</width>
-                            <height>0</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>font12</font> <!-- FENLIGHT_26 -->
-                            <label>[COLOR $INFO[Skin.String(GeneralTextColor)]][B]$INFO[Window.Property(results_total)][/B][/COLOR]</label>
-                        </control>
-                    </control>
+            <!-- Retain update targets without displaying provider names or counters. -->
+            <control type="textbox" id="2001"><visible>false</visible><width>1</width><height>1</height><font>font12</font> <!-- FENLIGHT_26 -->
                 </control>
-                <control type="textbox" id="2001">
-                    <top>220</top>
-                    <left>735</left>
-                    <width>450</width>
-                    <height>310</height>
-                    <align>center</align>
-                    <aligny>bottom</aligny>
-                    <font>font12</font> <!-- FENLIGHT_26 -->
-                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+            <control type="textbox" id="2002"><visible>false</visible><width>1</width><height>1</height><font>font12</font> <!-- FENLIGHT_26 -->
                 </control>
-            </control>
-            <!-- Resolver -->
-            <control type="group">
-                <visible>String.IsEqual(Window.Property(window_mode),resolver)</visible>
-                <control type="textbox">
-                    <left>550</left>
-                    <top>600</top>
-                    <width>820</width>
-                    <height>310</height>
-                    <font>font12</font> <!-- FENLIGHT_26 -->
-                    <align>center</align>
-                    <aligny>bottom</aligny>
-                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <label>$INFO[Window.Property(text)]</label>
-                </control>
-                <control type="textbox" id="2002">
-                    <top>970</top>
-                    <left>360</left>
-                    <width>1200</width>
-                    <height>100</height>
-                    <font>font12</font> <!-- FENLIGHT_26 -->
-                    <align>center</align>
-                    <aligny>bottom</aligny>
-                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                </control>
-            </control>
             <!-- Resume -->
             <control type="grouplist">
                 <visible>String.IsEqual(Window.Property(window_mode),resume)</visible>
-                <top>620</top>
-                <left>650</left>
+                <top>690</top>
+                <left>520</left>
                 <orientation>horizontal</orientation>
-                <itemgap>10</itemgap>
+                <itemgap>20</itemgap>
                 <control type="button" id="10">
                     <description>Resume</description>
-                    <width>200</width>
+                    <width>280</width>
                     <height>60</height>
                     <onleft>12</onleft>
                     <onright>11</onright>
                     <label>Resume $INFO[Window.Property(resume_percent)]%</label>
                     <font>font12</font> <!-- FENLIGHT_26 -->
-                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/circle.png</texturefocus>
-                    <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
+                   <textcolor>fff2f7ff</textcolor>
+                    <focusedcolor>fff2f7ff</focusedcolor>
+                    <texturefocus colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texturefocus>
+                    <texturenofocus colordiffuse="ff0b2340" border="30">fenlight_common/circle.png</texturenofocus>
                     <align>center</align>
+                    <textoffsetx>0</textoffsetx>
+                    <textoffsety>0</textoffsety>
                     <aligny>center</aligny>
                 </control>
                 <control type="button" id="11">
                     <description>Start Over</description>
-                    <width>200</width>
+                    <width>280</width>
                     <height>60</height>
                     <onleft>10</onleft>
                     <onright>12</onright>
                     <label>Start Over</label>
                     <font>font12</font> <!-- FENLIGHT_26 -->
-                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/circle.png</texturefocus>
-                    <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
+                   <textcolor>fff2f7ff</textcolor>
+                    <focusedcolor>fff2f7ff</focusedcolor>
+                    <texturefocus colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texturefocus>
+                    <texturenofocus colordiffuse="ff0b2340" border="30">fenlight_common/circle.png</texturenofocus>
                     <align>center</align>
+                    <textoffsetx>0</textoffsetx>
+                    <textoffsety>0</textoffsety>
                     <aligny>center</aligny>
                 </control>
                 <control type="button" id="12">
                     <description>Cancel</description>
-                    <width>200</width>
+                    <width>280</width>
                     <height>60</height>
                     <onleft>11</onleft>
                     <onright>10</onright>
                     <label>Cancel</label>
                     <font>font12</font> <!-- FENLIGHT_26 -->
-                   <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/circle.png</texturefocus>
-                    <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
+                   <textcolor>fff2f7ff</textcolor>
+                    <focusedcolor>fff2f7ff</focusedcolor>
+                    <texturefocus colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texturefocus>
+                    <texturenofocus colordiffuse="ff0b2340" border="30">fenlight_common/circle.png</texturenofocus>
                     <align>center</align>
+                    <textoffsetx>0</textoffsetx>
+                    <textoffsety>0</textoffsety>
                     <aligny>center</aligny>
                 </control>
+            </control>
+        </control>
+    
+        <!-- Pirate guide signal: passive artwork; existing windows retain all input. -->
+        <control type="group" id="9078">
+            <description>Pirate guide signal</description>
+            <visible>[String.IsEqual(Window.Property(window_mode),scraper) | String.IsEqual(Window.Property(window_mode),resolver)] + !String.IsEmpty(Window.Property(pirate_signal_token)) + String.IsEqual(Window.Property(pirate_signal_token),Window(Home).Property(fenlight.tvguide.signal))</visible>
+            <!-- Visibility follows the request token; no initial-state fade may hide this group. -->
+            <!-- Opaque backing prevents crossfades exposing the screen underneath. -->
+            <control type="image" id="9079">
+                <left>0</left><top>0</top><width>1920</width><height>1080</height>
+                <texture>special://home/addons/plugin.video.pirate/resources/media/guide_signal/static_00.png</texture>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="multiimage" id="9080">
+                <left>0</left><top>0</top><width>1920</width><height>1080</height>
+                <imagepath>special://home/addons/plugin.video.pirate/resources/media/guide_signal/</imagepath>
+                <timeperimage>180</timeperimage><fadetime>100</fadetime>
+                <pauseatend>0</pauseatend><randomize>false</randomize><loop>yes</loop>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="label" id="9081">
+                <left>160</left><top>490</top><width>1600</width><height>100</height>
+                <font>font14</font> <!-- FENLIGHT_33 -->
+                <align>center</align><aligny>center</aligny>
+                <textcolor>fff2f7ff</textcolor><shadowcolor>ff071322</shadowcolor>
+                <label>SEARCHING FOR SIGNAL...</label>
+            </control>
+            <control type="label" id="9082">
+                <left>160</left><top>630</top><width>1600</width><height>60</height>
+                <font>font14</font> <!-- FENLIGHT_33 -->
+                <align>center</align><aligny>center</aligny>
+                <textcolor>ff40baff</textcolor><label>BACK to cancel</label>
             </control>
         </control>
     </controls>

@@ -152,7 +152,7 @@
                             <left>30</left>
                             <height>2</height>
                             <width>1100</width>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                         </control>
                     </control>
                     <!-- INFO ICON -->
@@ -162,7 +162,7 @@
                         <left>5</left>
                         <width>30</width>
                         <height>30</height>
-                        <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/info.png</texture>
+                        <texture colordiffuse="ff075bba">fenlight_common/info.png</texture>
                     </control>
                     <!-- LABEL -->
                     <control type="label">
@@ -187,7 +187,7 @@
                             <align>right</align>
                             <aligny>center</aligny>
                             <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_buttons/radio_button_off.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_buttons/radio_button_off.png</texture>
                         </control>
                         <control type="image">
                             <visible>String.IsEqual(ListItem.Property(setting_value),true)</visible>
@@ -197,7 +197,7 @@
                             <align>right</align>
                             <aligny>center</aligny>
                             <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_buttons/radio_button_on.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_buttons/radio_button_on.png</texture>
                         </control>
                     </control>
                     <!-- SETTING VALUE LABEL -->
@@ -237,7 +237,7 @@
                         <visible>Control.HasFocus(2100)</visible>
                         <height>85</height>
                         <width>1160</width>
-                        <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texture>
+                        <texture colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texture>
                     </control>
                     <!-- SEPARATOR -->
                     <control type="group">
@@ -257,7 +257,7 @@
                             <left>30</left>
                             <height>2</height>
                             <width>1100</width>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                         </control>
                     </control>
                     <!-- INFO ICON -->
@@ -267,7 +267,7 @@
                         <left>5</left>
                         <width>30</width>
                         <height>30</height>
-                        <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/info.png</texture>
+                        <texture colordiffuse="ff075bba">fenlight_common/info.png</texture>
                     </control>
                     <!-- LABEL -->
                     <control type="group">
@@ -308,7 +308,7 @@
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_buttons/radio_button_off.png</texture>
+                                <texture colordiffuse="ff075bba">fenlight_buttons/radio_button_off.png</texture>
                             </control>
                             <control type="image">
                                 <visible>String.IsEqual(ListItem.Property(setting_value),true)</visible>
@@ -318,7 +318,7 @@
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_buttons/radio_button_on.png</texture>
+                                <texture colordiffuse="ff075bba">fenlight_buttons/radio_button_on.png</texture>
                             </control>
                         </control>
                         <control type="group">
@@ -331,7 +331,7 @@
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_buttons/radio_button_off.png</texture>
+                                <texture colordiffuse="ff075bba">fenlight_buttons/radio_button_off.png</texture>
                             </control>
                             <control type="image">
                                 <visible>String.IsEqual(ListItem.Property(setting_value),true)</visible>
@@ -341,7 +341,7 @@
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_buttons/radio_button_on.png</texture>
+                                <texture colordiffuse="ff075bba">fenlight_buttons/radio_button_on.png</texture>
                             </control>
                         </control>
                     </control>

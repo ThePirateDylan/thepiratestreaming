@@ -67,7 +67,7 @@
                             <top>0</top>
                             <width>44</width>
                             <height>44</height>
-                            <texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">fenlight_common/white.png</texture>
+                            <texture colordiffuse="ff075bba">fenlight_common/white.png</texture>
                         </control>
                         <control type="image">
                             <left>2</left>
@@ -96,7 +96,7 @@
                     <font>font12</font> <!-- FENLIGHT_26 -->
                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                    <texturefocus colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texturefocus>
                     <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -114,7 +114,7 @@
                     <font>font12</font> <!-- FENLIGHT_26 -->
                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                    <texturefocus colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texturefocus>
                     <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -143,7 +143,7 @@
                     <font>font12</font> <!-- FENLIGHT_26 -->
                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-                    <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="30">fenlight_common/circle.png</texturefocus>
+                    <texturefocus colordiffuse="ff075bba" border="30">fenlight_common/circle.png</texturefocus>
                     <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="30">fenlight_common/circle.png</texturenofocus>
                     <align>center</align>
                     <aligny>center</aligny>

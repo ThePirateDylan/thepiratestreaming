@@ -304,7 +304,7 @@ def build_single_episode(list_type, params={}):
 	watched_indicators, display_format = settings.watched_indicators(), settings.single_ep_display_format(is_external)
 	current_date, current_time, adjust_hours = get_datetime(), get_current_timestamp(), settings.date_offset()
 	unwatched_info = settings.single_ep_unwatched_episodes()
-	hide_watched = is_external and settings.widget_hide_watched() and list_type != 'episode.recently_watched'
+	hide_watched = is_external and settings.widget_hide_watched() and list_type not in ('episode.recently_watched', 'episode.progress')
 	api_key, mpaa_region_value = settings.tmdb_api_key(), settings.mpaa_region()
 	cm_sort_order, ignore_articles = settings.cm_sort_order(), settings.ignore_articles()
 	custom_cm_menu = cm_sort_order != settings.cm_default_order()

@@ -769,7 +769,7 @@
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
 					<include>SideBladeMenuButton</include>
-					<alttexturefocus border="10" colordiffuse="ffff7417">diffuse/panel.png</alttexturefocus>
+					<alttexturefocus border="10" colordiffuse="PirateSelection">diffuse/panel.png</alttexturefocus>
 					<alttexturenofocus/>
 					<label>$LOCALIZE[21431]</label>
 					<altlabel>$LOCALIZE[21430]</altlabel>
@@ -824,7 +824,7 @@
 		<disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
 		<invalidcolor>FFFF0000</invalidcolor>
 		<pulseonselect>false</pulseonselect>
-		<texturefocus colordiffuse="ffff7417" border="10">diffuse/panel.png</texturefocus>
+		<texturefocus colordiffuse="PirateSelection" border="10">diffuse/panel.png</texturefocus>
         <texturenofocus/>
     </include>
 
