@@ -125,6 +125,8 @@ def addon_fanart():
 	return get_property('fenlight.addon_fanart') or translate_path(addon_info('fanart'))
 
 def get_icon(image_name, image_folder='icons', image_type='png'):
+	if image_folder == 'icons' and image_name in ('nextpage', 'nextpage_landscape'):
+		return translate_path('special://home/addons/plugin.video.pirate/resources/media/%s.png' % image_name)
 	return 'https://raw.githubusercontent.com/%s/%s/main/packages/media/%s/%s.%s' \
 			% (get_property('fenlight.update.username'), get_property('fenlight.update.location'), image_folder, image_name, image_type)
 
@@ -135,6 +137,10 @@ def build_url(url_params):
 	return 'plugin://plugin.video.pirate/?%s' % urlencode(url_params)
 
 def add_dir(handle, url_params, list_name, icon_image='folder', fanart_image=None, isFolder=True):
+	# Suppress this tile at its common producer, including background lists.
+	# Next Page and the page-selection dialog's implementation remain unchanged.
+	if icon_image == 'item_jump' or url_params.get('mode') == 'navigate_to_page_choice':
+		return
 	fanart = fanart_image or get_addon_fanart()
 	icon = get_icon(icon_image)
 	url = build_url(url_params)
@@ -208,7 +214,11 @@ def set_view_mode(view_type, content='files', is_external=None):
 		if get_property('fenlight.use_viewtypes') == 'true':
 			view_id = get_property('fenlight.%s' % view_type) or None
 		if not view_id or str(view_id) == '58':
-			view_id = 50
+			# The skin excludes guide view 58 outside its route. Let Kodi select
+			# an eligible normal view; forcing 50 violates forced-poster settings.
+			clear_property('fenlight.tvguide_view_active')
+			execute_builtin('ClearProperty(PirateTVGuideView,Home)')
+			return
 		try:
 			hold = 0
 			sleep(100)

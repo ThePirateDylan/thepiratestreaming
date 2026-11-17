@@ -1,3 +1,14 @@
+[COLOR dodgerblue][B]Version 2.2.105 - TV Guide and Navigation[/B][/COLOR]
+- Fixed missing program information when opening the TV Guide for the first time.
+- Keep saved catalogs after updates and reuse schedules across Kodi restarts.
+- Show prepared schedules while the remaining channel catalogs load in the background.
+- Resume interrupted preparation and retry individual channels without starting over.
+- Restore channel tuning, with sources checked when a program is selected.
+- Expand channel programming and add Game Shown on channel 150 with its own logo.
+- Save daily schedules with specific episodes, varied rotation and longer slots for longer programs.
+- Keep available episodes listed when newer seasons are empty or have not aired.
+- Fix Next Page and Streaming Services navigation, and remove Jump To from lists and widgets.
+
 [COLOR dodgerblue][B]Version 2.2.99 - TV Guide and Blue UI[/B][/COLOR]
 - Fixed a crash when leaving the TV Guide after stopping playback.
 - Added SEARCHING FOR SIGNAL... static while a channel connects and jumps to its scheduled position.

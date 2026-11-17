@@ -8,7 +8,7 @@
       "icon": "horror",
       "movie_keyword": "halloween",
       "tv_keyword": "horror",
-      "description": "Seasonal Halloween picks, with spooky shows and movies.",
+      "description": "Curated programming for Halloween Channel. Source availability is checked when tuning.",
       "slots": [
         "Halloween Series",
         "Halloween Movies",
@@ -16,7 +16,36 @@
       ],
       "logo_style": "halloween",
       "logo_text": "Halloween Channel",
-      "logo_path": "resources/media/tv_guide/channels/halloween.png"
+      "logo_path": "resources/media/tv_guide/channels/halloween.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "From (2022)",
+        "Crystal Lake",
+        "Carrie (2026)",
+        "American Horror Story",
+        "The Walking Dead",
+        "Stranger Things",
+        "Wednesday",
+        "The Haunting of Hill House"
+      ],
+      "movie_candidate_titles": [
+        "Other Mommy (2026)",
+        "Resident Evil (2026)",
+        "Halloween (1978)",
+        "Scream (1996)",
+        "It (2017)",
+        "Get Out (2017)",
+        "The Conjuring",
+        "Weapons",
+        "Halloween (2018)",
+        "Scream VI",
+        "Insidious",
+        "A Nightmare on Elm Street (1984)",
+        "Trick 'r Treat"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "SEASONAL: Halloween only. Replace broad keyword feeds with this candidate pool where appropriate; do not create extra permanent channel.",
+      "require_verified_sources": false
     },
     "12": {
       "id": "holiday",
@@ -26,7 +55,7 @@
       "icon": "genre_family",
       "movie_keyword": "christmas",
       "tv_keyword": "christmas",
-      "description": "Seasonal Christmas picks for cozy TV and movie nights.",
+      "description": "Curated programming for Christmas Channel. Source availability is checked when tuning.",
       "slots": [
         "Holiday Series",
         "Christmas Movies",
@@ -34,7 +63,30 @@
       ],
       "logo_style": "christmas",
       "logo_text": "Christmas Channel",
-      "logo_path": "resources/media/tv_guide/channels/christmas.png"
+      "logo_path": "resources/media/tv_guide/channels/christmas.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "The Santa Clauses",
+        "Dash & Lily",
+        "Home for Christmas (2019)"
+      ],
+      "movie_candidate_titles": [
+        "Home Alone",
+        "Elf (2003)",
+        "The Polar Express",
+        "How the Grinch Stole Christmas (2000)",
+        "The Grinch (2018)",
+        "National Lampoon's Christmas Vacation",
+        "Love Actually",
+        "Home Alone 2: Lost in New York",
+        "A Christmas Story",
+        "The Santa Clause",
+        "The Nightmare Before Christmas",
+        "Die Hard"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "SEASONAL: Christmas only. 199 reused from October; do not have both active simultaneously.",
+      "require_verified_sources": false
     }
   },
   "network_channels": [
@@ -43,7 +95,7 @@
       "number": "112",
       "name": "Diznoy",
       "icon": "genre_family",
-      "description": "Series aired on Disney Channel, checked against the network's TV catalog.",
+      "description": "Curated programming for Diznoy. Source availability is checked when tuning.",
       "tv_network_id": "54",
       "slots": [
         "Diznoy Series",
@@ -56,20 +108,37 @@
       "logo_style": "diznoy",
       "logo_text": "Diznoy",
       "movie_candidate_titles": [
-        "Descendants",
         "High School Musical",
         "Camp Rock",
-        "The Cheetah Girls",
-        "Wizards of Waverly Place: The Movie"
+        "Descendants",
+        "Freaky Friday (2003)",
+        "High School Musical 2",
+        "High School Musical 3: Senior Year"
       ],
-      "logo_path": "resources/media/tv_guide/channels/disnoy.png"
+      "logo_path": "resources/media/tv_guide/channels/disnoy.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Hannah Montana",
+        "Wizards of Waverly Place",
+        "The Suite Life of Zack & Cody",
+        "That's So Raven",
+        "Good Luck Charlie",
+        "Jessie",
+        "The Suite Life on Deck",
+        "Austin & Ally",
+        "Liv and Maddie",
+        "Shake It Up"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Use film year to disambiguate when resolving metadata.",
+      "require_verified_sources": false
     },
     {
       "id": "disnoy_exb",
       "number": "113",
       "name": "Diznoy EXB",
       "icon": "genre_action",
-      "description": "Series aired on Disney XD, checked against the network's TV catalog.",
+      "description": "Curated programming for Diznoy EXB. Source availability is checked when tuning.",
       "tv_network_id": "44",
       "slots": [
         "Diznoy EXB Series",
@@ -82,19 +151,34 @@
       "logo_style": "diznoy_exb",
       "logo_text": "Diznoy EXB",
       "movie_candidate_titles": [
+        "Big Hero 6",
         "Phineas and Ferb the Movie: Across the 2nd Dimension",
-        "Kim Possible: So the Drama",
-        "Star Wars: The Clone Wars",
-        "Phineas and Ferb: Mission Marvel"
+        "Star Wars: The Clone Wars (2008)"
       ],
-      "logo_path": "resources/media/tv_guide/channels/disnoy_exb.png"
+      "logo_path": "resources/media/tv_guide/channels/disnoy_exb.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "VisionQuest",
+        "Phineas and Ferb",
+        "Gravity Falls",
+        "Star Wars: The Clone Wars",
+        "Star Wars Rebels",
+        "DuckTales (2017)",
+        "Lab Rats",
+        "Mighty Med",
+        "Kick Buttowski: Suburban Daredevil",
+        "Big Hero 6: The Series"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "disnoy_jr",
       "number": "114",
       "name": "Diznoy Jr",
       "icon": "genre_family",
-      "description": "Preschool and family series aired on Disney Junior.",
+      "description": "Curated programming for Diznoy Jr. Source availability is checked when tuning.",
       "tv_network_id": "281",
       "slots": [
         "Diznoy Jr Series",
@@ -107,30 +191,49 @@
       "logo_style": "diznoy_jr",
       "logo_text": "Diznoy Jr",
       "movie_candidate_titles": [
-        "Mickey's Once Upon a Christmas",
-        "Mickey's Twice Upon a Christmas",
-        "The Tigger Movie"
+        "Winnie the Pooh (2011)",
+        "The Tigger Movie",
+        "Mickey's Once Upon a Christmas"
       ],
-      "logo_path": "resources/media/tv_guide/channels/disnoy_jr.png"
+      "logo_path": "resources/media/tv_guide/channels/disnoy_jr.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Bluey",
+        "Mickey Mouse Clubhouse",
+        "Sofia the First",
+        "Doc McStuffins",
+        "The Lion Guard",
+        "Puppy Dog Pals",
+        "Jake and the Never Land Pirates",
+        "Mickey Mouse Funhouse"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Preschool episodes/TV specials are sometimes bundled irregularly; do not assume each episode resolves.",
+      "require_verified_sources": false
     },
     {
       "id": "toon_diznoy",
       "number": "115",
       "name": "Toon Diznoy",
       "icon": "genre_animation",
-      "description": "Classic animated series from the Toon Disney era, with family-animation movie breaks.",
+      "description": "Curated programming for Toon Diznoy. Source availability is checked when tuning.",
       "tv_candidate_titles": [
-        "DuckTales",
-        "TaleSpin",
+        "DuckTales (1987)",
+        "Recess",
+        "Kim Possible",
+        "Lilo & Stitch: The Series",
         "Gargoyles",
-        "Hercules: The Animated Series",
-        "The Emperor's New School",
-        "House of Mouse"
+        "The Proud Family",
+        "Chip 'n Dale: Rescue Rangers",
+        "American Dragon: Jake Long",
+        "The Emperor's New School"
       ],
       "movie_candidate_titles": [
-        "Mickey's Once Upon a Christmas",
-        "The Tigger Movie",
-        "The Lion King"
+        "The Lion King",
+        "Aladdin (1992)",
+        "Hercules (1997)",
+        "A Goofy Movie",
+        "The Little Mermaid (1989)"
       ],
       "slots": [
         "Toon Diznoy Series",
@@ -139,14 +242,18 @@
       ],
       "logo_style": "toon_diznoy",
       "logo_text": "Toon Diznoy",
-      "logo_path": "resources/media/tv_guide/channels/toon_diznoy.png"
+      "logo_path": "resources/media/tv_guide/channels/toon_diznoy.png",
+      "editorial_catalog": 3,
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "nickelodium",
       "number": "116",
       "name": "Nickelodium",
       "icon": "genre_animation",
-      "description": "Series aired on Nickelodeon, checked against the network's TV catalog.",
+      "description": "Curated programming for Nickelodium. Source availability is checked when tuning.",
       "tv_network_id": "13",
       "slots": [
         "Nickelodium Series",
@@ -158,20 +265,36 @@
       ],
       "movie_candidate_titles": [
         "The SpongeBob SquarePants Movie",
-        "Rugrats in Paris: The Movie",
         "Good Burger",
-        "Jimmy Neutron: Boy Genius"
+        "Jimmy Neutron: Boy Genius",
+        "Rugrats in Paris: The Movie"
       ],
       "logo_style": "nickelodium",
       "logo_text": "Nickelodium",
-      "logo_path": "resources/media/tv_guide/channels/nickelodium.png"
+      "logo_path": "resources/media/tv_guide/channels/nickelodium.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "SpongeBob SquarePants",
+        "iCarly",
+        "Victorious",
+        "Drake & Josh",
+        "Rugrats",
+        "Avatar: The Last Airbender",
+        "The Fairly OddParents",
+        "The Legend of Korra",
+        "Sam & Cat",
+        "The Thundermans"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "cartoon_signal",
       "number": "117",
       "name": "Cartoon Signal",
       "icon": "genre_animation",
-      "description": "Series aired on Cartoon Network, checked against the network's TV catalog.",
+      "description": "Curated programming for Cartoon Signal. Source availability is checked when tuning.",
       "tv_network_id": "56",
       "slots": [
         "Cartoon Signal Series",
@@ -182,28 +305,45 @@
         "Cartoon Network"
       ],
       "movie_candidate_titles": [
-        "The Powerpuff Girls Movie",
         "Steven Universe: The Movie",
-        "Ed, Edd n Eddy's Big Picture Show",
+        "The Powerpuff Girls Movie",
         "Ben 10: Secret of the Omnitrix"
       ],
       "logo_style": "cartoon_signal",
       "logo_text": "Cartoon Signal",
-      "logo_path": "resources/media/tv_guide/channels/cartoon_signal.png"
+      "logo_path": "resources/media/tv_guide/channels/cartoon_signal.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Adventure Time",
+        "Regular Show",
+        "The Amazing World of Gumball",
+        "Ben 10 (2005)",
+        "Teen Titans (2003)",
+        "Steven Universe",
+        "The Powerpuff Girls (1998)",
+        "Dexter's Laboratory",
+        "Samurai Jack",
+        "Foster's Home for Imaginary Friends"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "doomerwang",
       "number": "118",
       "name": "DoomerWang",
       "icon": "genre_animation",
-      "description": "Classic cartoons associated with Boomerang's programming era; only exact title matches with playable sources appear.",
+      "description": "Curated programming for DoomerWang. Source availability is checked when tuning.",
       "tv_candidate_titles": [
-        "The Tom and Jerry Show",
         "Scooby-Doo, Where Are You!",
+        "What's New, Scooby-Doo?",
+        "Scooby-Doo! Mystery Incorporated",
+        "Looney Tunes",
         "The Flintstones",
         "The Jetsons",
-        "The Yogi Bear Show",
-        "The Bugs Bunny Show"
+        "Tom and Jerry Tales",
+        "The Sylvester & Tweety Mysteries"
       ],
       "slots": [
         "DoomerWang Cartoons",
@@ -211,29 +351,33 @@
         "DoomerWang Encore"
       ],
       "movie_candidate_titles": [
+        "Scooby-Doo (2002)",
+        "Scooby-Doo 2: Monsters Unleashed",
         "Scooby-Doo on Zombie Island",
-        "Scooby-Doo and the Witch's Ghost",
-        "Tom and Jerry: The Movie",
-        "The Jetsons Meet the Flintstones"
+        "Tom & Jerry (2021)"
       ],
       "logo_style": "doomerwang",
       "logo_text": "DoomerWang",
-      "logo_path": "resources/media/tv_guide/channels/doomerwang.png"
+      "logo_path": "resources/media/tv_guide/channels/doomerwang.png",
+      "editorial_catalog": 3,
+      "hold_candidate_titles": [],
+      "catalog_notes": "Pre-1990 cartoon episode numbering varies; validate season mapping before schedule.",
+      "require_verified_sources": false
     },
     {
       "id": "adult_svim",
       "number": "119",
       "name": "Adult Svim",
       "icon": "genre_animation",
-      "description": "Adult Swim animation and late-night comedy from its own programming catalog.",
+      "description": "Curated programming for Adult Svim. Source availability is checked when tuning.",
       "tv_network_id": "80",
       "expected_tv_network_names": [
         "Adult Swim"
       ],
       "movie_candidate_titles": [
+        "Beavis and Butt-Head Do America",
         "Aqua Teen Hunger Force Colon Movie Film for Theaters",
-        "Metalocalypse: Army of the Doomstar",
-        "The Venture Bros.: Radiant Is the Blood of the Baboon Heart"
+        "Futurama: Bender's Big Score"
       ],
       "slots": [
         "Adult Svim Series",
@@ -242,14 +386,32 @@
       ],
       "logo_style": "adult_svim",
       "logo_text": "Adult Svim",
-      "logo_path": "resources/media/tv_guide/channels/adult_svim.png"
+      "logo_path": "resources/media/tv_guide/channels/adult_svim.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Rick and Morty",
+        "The Simpsons",
+        "Bob's Burgers",
+        "Futurama",
+        "The Boondocks",
+        "Robot Chicken",
+        "Smiling Friends",
+        "King of the Hill",
+        "Aqua Teen Hunger Force",
+        "Primal",
+        "Metalocalypse",
+        "The Venture Bros."
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "teelsee",
       "number": "120",
       "name": "TeeLSee",
       "icon": "genre_documentary",
-      "description": "TLC reality, lifestyle, and documentary programming.",
+      "description": "Curated programming for TeeLSee. Source availability is checked when tuning.",
       "tv_network_id": "84",
       "expected_tv_network_names": [
         "TLC"
@@ -261,14 +423,35 @@
       ],
       "logo_style": "tlc",
       "logo_text": "TeeLSee",
-      "logo_path": "resources/media/tv_guide/channels/teelsee.png"
+      "logo_path": "resources/media/tv_guide/channels/teelsee.png",
+      "tv_candidate_titles": [
+        "Love Is Blind",
+        "90 Day Fiancé",
+        "90 Day Fiancé: Before the 90 Days",
+        "90 Day Fiancé: Happily Ever After?",
+        "Sister Wives",
+        "My 600-lb Life",
+        "1000-lb Sisters",
+        "Dr. Pimple Popper",
+        "Welcome to Plathville",
+        "7 Little Johnstons",
+        "90 Day: The Single Life"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [],
+      "hold_candidate_titles": [
+        "Long Island Medium",
+        "Toddlers & Tiaras"
+      ],
+      "catalog_notes": "Regular 90 Day Fiancé (not only spin-offs) is mandatory, but seasons must be tested. Reality-show metadata often uses variant titles.",
+      "require_verified_sources": false
     },
     {
       "id": "usaye",
       "number": "121",
       "name": "U.S.Aye",
       "icon": "genre_drama",
-      "description": "USA-inspired channel reserved for the owner's show list; programming is not enabled yet.",
+      "description": "Curated programming for U.S.Aye. Source availability is checked when tuning.",
       "enabled": false,
       "slots": [
         "U.S.Aye Movie Block",
@@ -277,14 +460,35 @@
       ],
       "logo_style": "usa",
       "logo_text": "U.S.Aye",
-      "logo_path": "resources/media/tv_guide/channels/usaye.png"
+      "logo_path": "resources/media/tv_guide/channels/usaye.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Suits",
+        "Psych",
+        "Monk",
+        "Mr. Robot",
+        "White Collar",
+        "Burn Notice",
+        "Royal Pains",
+        "Covert Affairs",
+        "The Sinner"
+      ],
+      "movie_candidate_titles": [
+        "The Bourne Identity",
+        "The Bourne Supremacy",
+        "The Bourne Ultimatum",
+        "Mission: Impossible – Fallout"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "EXISTING CHANNEL IS DISABLED IN PUBLIC REPO. Curated standby pool only; DO NOT enable without owner approval.",
+      "require_verified_sources": false
     },
     {
       "id": "truetv",
       "number": "122",
       "name": "TrueTV",
       "icon": "genre_comedy",
-      "description": "truTV reality and comedy programming.",
+      "description": "Curated programming for TrueTV. Source availability is checked when tuning.",
       "tv_network_id": "364",
       "expected_tv_network_names": [
         "truTV"
@@ -296,14 +500,31 @@
       ],
       "logo_style": "truetv",
       "logo_text": "TrueTV",
-      "logo_path": "resources/media/tv_guide/channels/truetv.png"
+      "logo_path": "resources/media/tv_guide/channels/truetv.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Taskmaster",
+        "Impractical Jokers",
+        "The Carbonaro Effect",
+        "Tacoma FD",
+        "Adam Ruins Everything",
+        "Billy on the Street",
+        "World's Dumbest"
+      ],
+      "movie_candidate_titles": [],
+      "hold_candidate_titles": [
+        "The Smoking Gun Presents: World's Dumbest",
+        "Hardcore Pawn"
+      ],
+      "catalog_notes": "Small comedy/reality pool; keep repeats spaced and gate less-common titles behind actual source checks.",
+      "require_verified_sources": false
     },
     {
       "id": "hystory",
       "number": "123",
       "name": "Hystory",
       "icon": "genre_documentary",
-      "description": "History-focused factual series and historical documentaries.",
+      "description": "Curated programming for Hystory. Source availability is checked when tuning.",
       "tv_network_id": "65",
       "expected_tv_network_names": [
         "History",
@@ -316,14 +537,32 @@
       ],
       "logo_style": "history",
       "logo_text": "Hystory",
-      "logo_path": "resources/media/tv_guide/channels/hystory.png"
+      "logo_path": "resources/media/tv_guide/channels/hystory.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Vikings",
+        "Vikings: Valhalla",
+        "Alone",
+        "Forged in Fire",
+        "Ancient Aliens",
+        "The Curse of Oak Island",
+        "The Men Who Built America",
+        "History's Greatest Mysteries"
+      ],
+      "movie_candidate_titles": [],
+      "hold_candidate_titles": [
+        "Pawn Stars",
+        "American Pickers"
+      ],
+      "catalog_notes": "Community reports missing sources/metadata mismatches for Pawn Stars and older History shows; conditional only.",
+      "require_verified_sources": false
     },
     {
       "id": "animal_plan_it",
       "number": "124",
       "name": "Animal Plan-It",
       "icon": "genre_documentary",
-      "description": "Wildlife, animal, and nature series from Animal Planet.",
+      "description": "Curated programming for Animal Plan-It. Source availability is checked when tuning.",
       "tv_network_id": "91",
       "expected_tv_network_names": [
         "Animal Planet"
@@ -335,14 +574,34 @@
       ],
       "logo_style": "animal_planet",
       "logo_text": "Animal Plan-It",
-      "logo_path": "resources/media/tv_guide/channels/animal_plan_it.png"
+      "logo_path": "resources/media/tv_guide/channels/animal_plan_it.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Planet Earth",
+        "Planet Earth II",
+        "Planet Earth III",
+        "Our Planet",
+        "The Blue Planet",
+        "Blue Planet II",
+        "Prehistoric Planet",
+        "Life (2009)",
+        "River Monsters",
+        "The Zoo"
+      ],
+      "movie_candidate_titles": [],
+      "hold_candidate_titles": [
+        "Pit Bulls & Parolees",
+        "The Crocodile Hunter"
+      ],
+      "catalog_notes": "Favor globally released nature documentary series if animal-reality episode matching is poor. Preserve animal-channel identity.",
+      "require_verified_sources": false
     },
     {
       "id": "a_and_y",
       "number": "125",
       "name": "A&Y",
       "icon": "genre_crime",
-      "description": "A&E crime, documentary, and factual entertainment.",
+      "description": "Curated programming for A&Y. Source availability is checked when tuning.",
       "tv_network_id": "129",
       "expected_tv_network_names": [
         "A&E",
@@ -355,24 +614,45 @@
       ],
       "logo_style": "ae",
       "logo_text": "A&Y",
-      "logo_path": "resources/media/tv_guide/channels/a_and_y.png"
+      "logo_path": "resources/media/tv_guide/channels/a_and_y.png",
+      "tv_candidate_titles": [
+        "The First 48",
+        "NCIS",
+        "60 Days In",
+        "Intervention",
+        "Hoarders",
+        "Forensic Files",
+        "Unsolved Mysteries (2020)",
+        "Evil Lives Here",
+        "Deadly Women",
+        "Cold Case Files",
+        "Bates Motel"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [],
+      "hold_candidate_titles": [
+        "Deadly Women"
+      ],
+      "catalog_notes": "Deadly Women requested; do not schedule it unverified. Prefer long-running true-crime titles with demonstrably working episodes.",
+      "require_verified_sources": false
     },
     {
       "id": "h_b_oh",
       "number": "126",
       "name": "H-B-Oh",
       "icon": "genre_drama",
-      "description": "HBO original drama and premium series with a rotating premium-film block.",
+      "description": "Curated programming for H-B-Oh. Source availability is checked when tuning.",
       "tv_network_id": "49",
       "expected_tv_network_names": [
         "HBO"
       ],
       "movie_candidate_titles": [
-        "The Normal Heart",
-        "Recount",
-        "Game Change",
-        "The Tale",
-        "Bad Education"
+        "The Odyssey (2026)",
+        "Project Hail Mary (2026)",
+        "Dune (2021)",
+        "Dune: Part Two",
+        "The Batman (2022)",
+        "Joker (2019)"
       ],
       "slots": [
         "H-B-Oh Series",
@@ -381,21 +661,42 @@
       ],
       "logo_style": "hbo",
       "logo_text": "H-B-Oh",
-      "logo_path": "resources/media/tv_guide/channels/h_b_oh.png"
+      "logo_path": "resources/media/tv_guide/channels/h_b_oh.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "House of the Dragon",
+        "The Last of Us",
+        "The Pitt",
+        "Lanterns",
+        "Game of Thrones",
+        "The Sopranos",
+        "The Wire",
+        "Succession",
+        "True Detective",
+        "The White Lotus",
+        "Euphoria",
+        "Barry",
+        "Chernobyl"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "The Last of Us: direct popularity evidence TF2025; Game of Thrones/House of Dragon historic torrent chart leaders.",
+      "require_verified_sources": false
     },
     {
       "id": "comedy_sentrall",
       "number": "127",
       "name": "Comedy Sentrall",
       "icon": "genre_comedy",
-      "description": "Comedy Central original comedy and animated series.",
+      "description": "Curated programming for Comedy Sentrall. Source availability is checked when tuning.",
       "tv_network_id": "47",
       "expected_tv_network_names": [
         "Comedy Central"
       ],
       "movie_candidate_titles": [
-        "South Park: Bigger, Longer & Uncut",
-        "Beavis and Butt-Head Do America"
+        "Superbad",
+        "21 Jump Street (2012)",
+        "Anchorman: The Legend of Ron Burgundy",
+        "South Park: Bigger, Longer & Uncut"
       ],
       "slots": [
         "Comedy Sentrall Series",
@@ -404,14 +705,32 @@
       ],
       "logo_style": "comedy_central",
       "logo_text": "Comedy Sentrall",
-      "logo_path": "resources/media/tv_guide/channels/comedy_sentrall.png"
+      "logo_path": "resources/media/tv_guide/channels/comedy_sentrall.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "South Park",
+        "Chappelle's Show",
+        "Key & Peele",
+        "Workaholics",
+        "Reno 911!",
+        "Futurama",
+        "Broad City",
+        "Nathan for You",
+        "The Sarah Silverman Program"
+      ],
+      "hold_candidate_titles": [
+        "The Daily Show",
+        "The Colbert Report"
+      ],
+      "catalog_notes": "Daily Show and Colbert Report require airdate matching and individual validation.",
+      "require_verified_sources": false
     },
     {
       "id": "tnt",
       "number": "128",
       "name": "T'N'T",
       "icon": "genre_action",
-      "description": "TNT drama, action, and crime series with matching feature-film breaks.",
+      "description": "Curated programming for T'N'T. Source availability is checked when tuning.",
       "tv_network_id": "41",
       "expected_tv_network_names": [
         "TNT"
@@ -424,29 +743,55 @@
       "logo_style": "tnt",
       "logo_text": "T'N'T",
       "movie_candidate_titles": [
-        "The Fugitive",
-        "Twister",
-        "A Few Good Men",
+        "The Dog Stars (2026)",
+        "The Odyssey (2026)",
         "The Dark Knight",
-        "The Shawshank Redemption"
+        "The Shawshank Redemption",
+        "Die Hard",
+        "Gladiator (2000)",
+        "John Wick",
+        "Mad Max: Fury Road"
       ],
-      "logo_path": "resources/media/tv_guide/channels/tnt.png"
+      "logo_path": "resources/media/tv_guide/channels/tnt.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Reacher",
+        "NCIS",
+        "The Terminal List",
+        "9-1-1",
+        "The Closer",
+        "Major Crimes",
+        "Leverage",
+        "The Last Ship",
+        "Rizzoli & Isles",
+        "Animal Kingdom",
+        "Falling Skies",
+        "Snowpiercer"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "scy_fy",
       "number": "129",
       "name": "Sci-Fy",
       "icon": "genre_scifi",
-      "description": "SYFY science-fiction, fantasy, and horror series with genre-film breaks.",
+      "description": "Curated programming for Sci-Fy. Source availability is checked when tuning.",
       "tv_network_id": "77",
       "expected_tv_network_names": [
         "Syfy",
         "SYFY"
       ],
       "movie_candidate_titles": [
-        "Sharknado",
-        "Sharknado 2: The Second One",
-        "Lavalantula"
+        "Project Hail Mary (2026)",
+        "Resident Evil (2026)",
+        "Alien (1979)",
+        "Interstellar",
+        "Blade Runner 2049",
+        "Arrival (2016)",
+        "Dune (2021)",
+        "Aliens (1986)"
       ],
       "slots": [
         "Sci-Fy Series",
@@ -455,23 +800,46 @@
       ],
       "logo_style": "syfy",
       "logo_text": "Sci-Fy",
-      "logo_path": "resources/media/tv_guide/channels/scy_fy.png"
+      "logo_path": "resources/media/tv_guide/channels/scy_fy.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Silo",
+        "Dark Matter",
+        "Star Trek: Strange New Worlds",
+        "The Lord of the Rings: The Rings of Power",
+        "From (2022)",
+        "The Expanse",
+        "Battlestar Galactica (2004)",
+        "Stargate SG-1",
+        "The X-Files",
+        "Foundation",
+        "Alien: Earth",
+        "Stargate Atlantis",
+        "The 100",
+        "Doctor Who (2005)",
+        "Resident Alien"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Silo: direct TF2025 popularity evidence. Verify alternate franchise title names and special-season numbering.",
+      "require_verified_sources": false
     },
     {
       "id": "abee_family",
       "number": "130",
       "name": "ABee Family",
       "icon": "genre_family",
-      "description": "ABC Family-era series and family entertainment.",
+      "description": "Curated programming for ABee Family. Source availability is checked when tuning.",
       "tv_network_id": "126",
       "expected_tv_network_names": [
         "ABC Family",
         "Freeform"
       ],
       "movie_candidate_titles": [
-        "The Lizzie McGuire Movie",
-        "High School Musical",
-        "Camp Rock"
+        "Mean Girls (2004)",
+        "13 Going on 30",
+        "10 Things I Hate About You",
+        "The Princess Diaries",
+        "Freaky Friday (2003)"
       ],
       "slots": [
         "ABee Family Series",
@@ -480,14 +848,29 @@
       ],
       "logo_style": "abc_family",
       "logo_text": "ABee Family",
-      "logo_path": "resources/media/tv_guide/channels/abee_family.png"
+      "logo_path": "resources/media/tv_guide/channels/abee_family.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Pretty Little Liars",
+        "Gilmore Girls",
+        "The Fosters",
+        "Switched at Birth",
+        "Baby Daddy",
+        "The Secret Life of the American Teenager",
+        "Greek",
+        "Young & Hungry",
+        "Melissa & Joey"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "emtv",
       "number": "131",
       "name": "EmTV",
       "icon": "genre_comedy",
-      "description": "MTV reality, comedy, and youth-culture series.",
+      "description": "Curated programming for EmTV. Source availability is checked when tuning.",
       "tv_network_id": "33",
       "expected_tv_network_names": [
         "MTV"
@@ -499,14 +882,33 @@
       ],
       "logo_style": "mtv",
       "logo_text": "EmTV",
-      "logo_path": "resources/media/tv_guide/channels/emtv.png"
+      "logo_path": "resources/media/tv_guide/channels/emtv.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Jersey Shore",
+        "Jersey Shore: Family Vacation",
+        "The Challenge",
+        "Catfish: The TV Show",
+        "Teen Mom",
+        "Teen Mom 2",
+        "16 and Pregnant",
+        "Are You the One?"
+      ],
+      "movie_candidate_titles": [],
+      "hold_candidate_titles": [
+        "Pimp My Ride",
+        "MTV Cribs",
+        "Ridiculousness"
+      ],
+      "catalog_notes": "MTV back-catalog reality can be patchy. Avoid relying on clip/compilation episodes without validated exact metadata.",
+      "require_verified_sources": false
     },
     {
       "id": "lifetyme",
       "number": "132",
       "name": "LifeTyme",
       "icon": "genre_drama",
-      "description": "Lifetime drama, mystery, and made-for-TV stories.",
+      "description": "Curated programming for LifeTyme. Source availability is checked when tuning.",
       "tv_network_id": "34",
       "expected_tv_network_names": [
         "Lifetime"
@@ -518,14 +920,35 @@
       ],
       "logo_style": "lifetime",
       "logo_text": "LifeTyme",
-      "logo_path": "resources/media/tv_guide/channels/lifetyme.png"
+      "logo_path": "resources/media/tv_guide/channels/lifetyme.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Dance Moms",
+        "Married at First Sight",
+        "Project Runway",
+        "Devious Maids",
+        "Army Wives",
+        "UnREAL",
+        "The Client List",
+        "The Rap Game"
+      ],
+      "movie_candidate_titles": [
+        "The Notebook",
+        "A Walk to Remember",
+        "The Age of Adaline",
+        "The Vow (2012)",
+        "The Lucky One"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Some Lifetime originals and reality episodes have limited releases; use movies as playable fallbacks.",
+      "require_verified_sources": false
     },
     {
       "id": "amcee",
       "number": "133",
       "name": "A.M.Cee",
       "icon": "genre_drama",
-      "description": "AMC original dramas and genre series with matching feature-film breaks.",
+      "description": "Curated programming for A.M.Cee. Source availability is checked when tuning.",
       "tv_network_id": "174",
       "expected_tv_network_names": [
         "AMC"
@@ -537,14 +960,41 @@
       ],
       "logo_style": "amc",
       "logo_text": "A.M.Cee",
-      "logo_path": "resources/media/tv_guide/channels/amcee.png"
+      "logo_path": "resources/media/tv_guide/channels/amcee.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "MobLand",
+        "From (2022)",
+        "Tulsa King",
+        "Breaking Bad",
+        "Better Call Saul",
+        "The Walking Dead",
+        "Mad Men",
+        "Dark Winds",
+        "Interview with the Vampire (2022)",
+        "Fear the Walking Dead",
+        "The Killing (2011)",
+        "Halt and Catch Fire",
+        "The Terror"
+      ],
+      "movie_candidate_titles": [
+        "The Dog Stars (2026)",
+        "Pulp Fiction",
+        "Goodfellas",
+        "Heat (1995)",
+        "The Godfather",
+        "The Shawshank Redemption"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "The Walking Dead led TorrentFreak 2018 TV chart. Strong mainstream candidate channel.",
+      "require_verified_sources": false
     },
     {
       "id": "better",
       "number": "134",
       "name": "B.E.Tter",
       "icon": "genre_drama",
-      "description": "BET original drama, comedy, and reality programming.",
+      "description": "Curated programming for B.E.Tter. Source availability is checked when tuning.",
       "tv_network_id": "24",
       "expected_tv_network_names": [
         "BET"
@@ -556,14 +1006,37 @@
       ],
       "logo_style": "bet",
       "logo_text": "B.E.Tter",
-      "logo_path": "resources/media/tv_guide/channels/better.png"
+      "logo_path": "resources/media/tv_guide/channels/better.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Power",
+        "Power Book II: Ghost",
+        "BMF",
+        "All American",
+        "The Chi",
+        "Tyler Perry's House of Payne",
+        "The Game (2006)",
+        "Being Mary Jane",
+        "Sistas",
+        "The Oval"
+      ],
+      "movie_candidate_titles": [
+        "Friday (1995)",
+        "Barbershop (2002)",
+        "Bad Boys (1995)",
+        "Think Like a Man",
+        "Girls Trip"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Broaden beyond BET originals when genre/identity fits, but preserve branded channel character.",
+      "require_verified_sources": false
     },
     {
       "id": "braavo",
       "number": "135",
       "name": "Braavo",
       "icon": "genre_comedy",
-      "description": "Bravo reality and lifestyle series.",
+      "description": "Curated programming for Braavo. Source availability is checked when tuning.",
       "tv_network_id": "74",
       "expected_tv_network_names": [
         "Bravo"
@@ -575,14 +1048,34 @@
       ],
       "logo_style": "bravo",
       "logo_text": "Braavo",
-      "logo_path": "resources/media/tv_guide/channels/braavo.png"
+      "logo_path": "resources/media/tv_guide/channels/braavo.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Love Is Blind",
+        "The Traitors (US)",
+        "The Real Housewives of Atlanta",
+        "The Real Housewives of New Jersey",
+        "Below Deck",
+        "Vanderpump Rules",
+        "Top Chef",
+        "The Real Housewives of Beverly Hills",
+        "Southern Charm",
+        "Summer House"
+      ],
+      "movie_candidate_titles": [],
+      "hold_candidate_titles": [
+        "Million Dollar Listing New York",
+        "Project Runway"
+      ],
+      "catalog_notes": "Prioritize recent successful episodic releases; no blind whole-catalog rotation on reality seasons.",
+      "require_verified_sources": false
     },
     {
       "id": "food_network",
       "number": "136",
       "name": "Food Netwurk",
       "icon": "genre_documentary",
-      "description": "Food, cooking and restaurant entertainment on New York time.",
+      "description": "Curated programming for Food Netwurk. Source availability is checked when tuning.",
       "slots": [
         "Food NetWurk Series",
         "Food NetWurk Movies",
@@ -592,29 +1085,36 @@
       "logo_text": "Food Netwurk",
       "logo_path": "resources/media/tv_guide/channels/food_network.png",
       "tv_candidate_titles": [
-        "Hell's Kitchen",
-        "Kitchen Nightmares",
-        "MasterChef",
-        "MasterChef Junior",
-        "Ramsay's Kitchen Nightmares",
+        "Hell's Kitchen (US)",
+        "Kitchen Nightmares (US)",
+        "MasterChef (US)",
         "The Great British Bake Off",
         "Next Level Chef",
+        "Top Chef",
         "Bar Rescue",
-        "Gordon Ramsay's 24 Hours to Hell and Back",
+        "Chef's Table",
         "Chopped",
         "Diners, Drive-Ins and Dives",
+        "MasterChef Junior (US)",
+        "Is It Cake?"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [],
+      "hold_candidate_titles": [
         "Restaurant: Impossible",
         "Guy's Grocery Games",
-        "Cutthroat Kitchen",
-        "Iron Chef America"
-      ]
+        "Iron Chef America",
+        "Cutthroat Kitchen"
+      ],
+      "catalog_notes": "KEEP Hell's Kitchen and Kitchen Nightmares per owner request, but Kodi/RD reports document missing episodes. Resolve correct US edition; gate individual episodes.",
+      "require_verified_sources": false
     },
     {
       "id": "showtyme",
       "number": "137",
       "name": "Showtyme",
       "icon": "genre_drama",
-      "description": "Showtime original drama and premium series with a rotating premium-film block.",
+      "description": "Curated programming for Showtyme. Source availability is checked when tuning.",
       "tv_network_id": "67",
       "expected_tv_network_names": [
         "Showtime"
@@ -626,14 +1126,42 @@
       ],
       "logo_style": "showtime",
       "logo_text": "Showtyme",
-      "logo_path": "resources/media/tv_guide/channels/showtyme.png"
+      "logo_path": "resources/media/tv_guide/channels/showtyme.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Dexter: Resurrection",
+        "MobLand",
+        "Tulsa King",
+        "Dexter",
+        "Dexter: New Blood",
+        "Shameless (US)",
+        "Yellowjackets",
+        "Homeland",
+        "Billions",
+        "Dexter: Original Sin",
+        "Californication",
+        "Ray Donovan",
+        "The Chi",
+        "Nurse Jackie"
+      ],
+      "movie_candidate_titles": [
+        "The Odyssey (2026)",
+        "Obsession (2026)",
+        "The Wolf of Wall Street",
+        "The Departed",
+        "Oppenheimer",
+        "Nightcrawler"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "natural_geographic",
       "number": "138",
       "name": "Natural Geographic",
       "icon": "genre_documentary",
-      "description": "National Geographic factual, science, exploration, and nature series.",
+      "description": "Curated programming for Natural Geographic. Source availability is checked when tuning.",
       "tv_network_id": "43",
       "expected_tv_network_names": [
         "National Geographic"
@@ -645,14 +1173,35 @@
       ],
       "logo_style": "natgeo",
       "logo_text": "Natural Geographic",
-      "logo_path": "resources/media/tv_guide/channels/natural_geographic.png"
+      "logo_path": "resources/media/tv_guide/channels/natural_geographic.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Cosmos: A Spacetime Odyssey",
+        "One Strange Rock",
+        "Life Below Zero",
+        "Brain Games",
+        "Welcome to Earth",
+        "Cosmos: Possible Worlds",
+        "Limitless with Chris Hemsworth",
+        "The World According to Jeff Goldblum",
+        "Secrets of the Whales"
+      ],
+      "movie_candidate_titles": [
+        "Free Solo",
+        "The Rescue (2021)",
+        "My Octopus Teacher",
+        "March of the Penguins"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Prefer high-profile nature/science docs when individual network series are difficult to resolve.",
+      "require_verified_sources": false
     },
     {
       "id": "discoveree",
       "number": "139",
       "name": "Discoveree",
       "icon": "genre_documentary",
-      "description": "Discovery factual, science, adventure, and reality programming.",
+      "description": "Curated programming for Discoveree. Source availability is checked when tuning.",
       "tv_network_id": "64",
       "expected_tv_network_names": [
         "Discovery",
@@ -665,20 +1214,44 @@
       ],
       "logo_style": "discovery",
       "logo_text": "Discoveree",
-      "logo_path": "resources/media/tv_guide/channels/discoveree.png"
+      "logo_path": "resources/media/tv_guide/channels/discoveree.png",
+      "tv_candidate_titles": [
+        "How It's Made",
+        "MythBusters",
+        "Deadliest Catch",
+        "Gold Rush",
+        "Dirty Jobs",
+        "Man vs. Wild",
+        "Naked and Afraid",
+        "Street Outlaws",
+        "Wheeler Dealers"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [],
+      "hold_candidate_titles": [
+        "American Chopper",
+        "Fast N' Loud"
+      ],
+      "catalog_notes": "How It's Made has direct community reports of complete season packs; MythBusters and older reality still need per-episode verification.",
+      "require_verified_sources": false
     },
     {
       "id": "nicktoonz",
       "number": "140",
       "name": "NickToonz",
       "icon": "genre_animation",
-      "description": "Animated series carried by the Nicktoons channel, kept distinct from the main Nickelodeon feed.",
+      "description": "Curated programming for NickToonz. Source availability is checked when tuning.",
       "tv_candidate_titles": [
+        "Avatar: The Last Airbender",
+        "The Legend of Korra",
+        "SpongeBob SquarePants",
         "The Fairly OddParents",
         "Danny Phantom",
+        "Teenage Mutant Ninja Turtles (2012)",
         "Invader Zim",
-        "Avatar: The Last Airbender",
-        "Teenage Mutant Ninja Turtles"
+        "Rugrats",
+        "Hey Arnold!",
+        "The Loud House"
       ],
       "slots": [
         "NickToonz Series",
@@ -687,14 +1260,23 @@
       ],
       "logo_style": "nicktoonz",
       "logo_text": "NickToonz",
-      "logo_path": "resources/media/tv_guide/channels/nicktoonz.png"
+      "logo_path": "resources/media/tv_guide/channels/nicktoonz.png",
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [
+        "The SpongeBob SquarePants Movie",
+        "Rugrats in Paris: The Movie",
+        "Teenage Mutant Ninja Turtles (1990)"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "foxx_movie_channel",
       "number": "141",
       "name": "Foxx Movie Channel",
       "icon": "genre_drama",
-      "description": "A rotating feature-film channel across familiar movie genres.",
+      "description": "Curated programming for Foxx Movie Channel. Source availability is checked when tuning.",
       "slots": [
         "Foxx Movie Channel Movie Block",
         "Feature Presentation",
@@ -703,22 +1285,45 @@
       "logo_style": "fox_movie",
       "logo_text": "Foxx Movie Channel",
       "movie_candidate_titles": [
-        "Avatar",
+        "The Odyssey (2026)",
+        "Heart of the Beast (2026)",
+        "Resident Evil (2026)",
+        "Spider-Man: Brand New Day (2026)",
+        "Obsession (2026)",
+        "The Dog Stars (2026)",
+        "Street Fighter (2026)",
+        "Project Hail Mary (2026)",
+        "Avatar (2009)",
+        "Avatar: The Way of Water",
+        "Alien (1979)",
+        "Deadpool",
+        "Deadpool 2",
+        "Deadpool & Wolverine",
+        "Titanic (1997)",
         "Home Alone",
-        "Titanic",
-        "The Sound of Music",
-        "Alien",
         "Die Hard",
-        "The Simpsons Movie"
+        "The Fantastic Four: First Steps",
+        "Superman",
+        "Aliens (1986)",
+        "Logan (2017)",
+        "Home Alone 2: Lost in New York",
+        "Independence Day (1996)",
+        "The Simpsons Movie",
+        "X-Men: Days of Future Past"
       ],
-      "logo_path": "resources/media/tv_guide/channels/foxx_movie_channel.png"
+      "logo_path": "resources/media/tv_guide/channels/foxx_movie_channel.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Fox-family/20th Century films; direct TF2025 chart evidence for The Fantastic Four: First Steps and Deadpool & Wolverine.",
+      "require_verified_sources": false
     },
     {
       "id": "starzz",
       "number": "142",
       "name": "Starzz",
       "icon": "genre_drama",
-      "description": "Starz original drama and premium series with a rotating premium-film block.",
+      "description": "Curated programming for Starzz. Source availability is checked when tuning.",
       "tv_network_id": "318",
       "expected_tv_network_names": [
         "Starz"
@@ -730,14 +1335,42 @@
       ],
       "logo_style": "starz",
       "logo_text": "Starzz",
-      "logo_path": "resources/media/tv_guide/channels/starzz.png"
+      "logo_path": "resources/media/tv_guide/channels/starzz.png",
+      "editorial_catalog": 3,
+      "tv_candidate_titles": [
+        "Tulsa King",
+        "MobLand",
+        "Power",
+        "Power Book II: Ghost",
+        "BMF",
+        "Outlander",
+        "Spartacus",
+        "Black Sails",
+        "Power Book IV: Force",
+        "P-Valley",
+        "Hightown",
+        "Party Down"
+      ],
+      "movie_candidate_titles": [
+        "Spider-Man: Brand New Day (2026)",
+        "Project Hail Mary (2026)",
+        "John Wick",
+        "John Wick: Chapter 2",
+        "John Wick: Chapter 4",
+        "The Hunger Games",
+        "John Wick: Chapter 3 – Parabellum",
+        "The Hunger Games: Catching Fire"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "toonamii",
       "number": "143",
       "name": "Toonamii",
       "icon": "tv",
-      "description": "2000s cable favorites on Toonamii.",
+      "description": "Curated programming for Toonamii. Source availability is checked when tuning.",
       "slots": [
         "Toonamii Morning",
         "Toonamii Primetime",
@@ -748,33 +1381,39 @@
       "logo_path": "resources/media/tv_guide/channels/toonamii.png",
       "tv_candidate_titles": [
         "Dragon Ball Z",
-        "Dragon Ball",
-        "Dragon Ball GT",
+        "Dragon Ball Super",
         "Naruto",
+        "Naruto Shippuden",
         "One Piece",
-        "Yu Yu Hakusho",
-        "Rurouni Kenshin",
-        "Gundam Wing",
-        "Mobile Suit Gundam SEED",
-        "The Big O",
-        "Samurai Jack",
-        "Teen Titans",
-        "Justice League Unlimited",
-        "Batman Beyond",
-        "Pokémon",
-        "Yu-Gi-Oh!",
-        "Digimon Adventure",
         "Bleach",
-        "Inuyasha",
-        "Fullmetal Alchemist"
-      ]
+        "Attack on Titan",
+        "Demon Slayer: Kimetsu no Yaiba",
+        "Fullmetal Alchemist: Brotherhood",
+        "Bleach: Thousand-Year Blood War",
+        "My Hero Academia",
+        "Hunter x Hunter (2011)",
+        "Yu Yu Hakusho",
+        "Cowboy Bebop",
+        "Samurai Jack",
+        "Pokémon"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [
+        "Dragon Ball Super: Broly",
+        "Spirited Away",
+        "Dragon Ball Super: Super Hero",
+        "Pokémon: The First Movie"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Anime naming/sub-dub and absolute-vs-season episode mismatches require specific matching logic.",
+      "require_verified_sources": false
     },
     {
       "id": "nick_junyor",
       "number": "144",
       "name": "Nick Junyor",
       "icon": "tv",
-      "description": "2000s cable favorites on Nick Junyor.",
+      "description": "Curated programming for Nick Junyor. Source availability is checked when tuning.",
       "slots": [
         "Nick Junyor Morning",
         "Nick Junyor Primetime",
@@ -784,34 +1423,35 @@
       "logo_text": "Nick Junyor",
       "logo_path": "resources/media/tv_guide/channels/nick_junyor.png",
       "tv_candidate_titles": [
-        "Blue's Clues",
+        "Bluey",
+        "PAW Patrol",
+        "Peppa Pig",
         "Dora the Explorer",
-        "Go, Diego, Go!",
-        "The Wonder Pets!",
+        "Blue's Clues",
+        "Bubble Guppies",
+        "Gabby's Dollhouse",
         "The Backyardigans",
-        "Little Bear",
-        "Franklin",
-        "Oswald",
         "Max & Ruby",
-        "The Busy World of Richard Scarry",
-        "Maggie and the Ferocious Beast",
-        "Ni Hao, Kai-Lan",
-        "Yo Gabba Gabba!",
-        "Olivia",
-        "The Fresh Beat Band",
-        "Wow! Wow! Wubbzy!",
-        "LazyTown",
-        "The Upside Down Show",
-        "The Adventures of Paddington Bear",
-        "Miss Spider's Sunny Patch Friends"
-      ]
+        "Little Bear",
+        "The Wonder Pets!"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [
+        "PAW Patrol: The Movie",
+        "The SpongeBob SquarePants Movie",
+        "The Paw Patrol Movie",
+        "PAW Patrol: The Mighty Movie"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Kids TV episode packs and specials can mismatch TMDb numbers; validate episodes, not just title popularity.",
+      "require_verified_sources": false
     },
     {
       "id": "hallmarkk",
       "number": "145",
       "name": "Hallmarkk",
       "icon": "tv",
-      "description": "2000s cable favorites on Hallmarkk.",
+      "description": "Curated programming for Hallmarkk. Source availability is checked when tuning.",
       "slots": [
         "Hallmarkk Morning",
         "Hallmarkk Primetime",
@@ -821,111 +1461,40 @@
       "logo_text": "Hallmarkk",
       "logo_path": "resources/media/tv_guide/channels/hallmarkk.png",
       "tv_candidate_titles": [
-        "Little House on the Prairie",
-        "Walker, Texas Ranger",
-        "Murder, She Wrote",
-        "Matlock",
-        "Touched by an Angel",
-        "7th Heaven",
-        "The Waltons",
-        "Dr. Quinn, Medicine Woman",
+        "Gilmore Girls",
         "The Golden Girls",
-        "I Love Lucy",
-        "The Andy Griffith Show",
-        "M*A*S*H",
-        "The Brady Bunch",
         "Full House",
-        "Family Matters",
+        "Virgin River",
+        "Heartland",
+        "Murder, She Wrote",
         "The Nanny",
-        "Cheers",
-        "Frasier",
-        "The Love Boat",
-        "Highway to Heaven"
+        "Sweet Magnolias",
+        "When Calls the Heart",
+        "Good Witch",
+        "Reba"
       ],
       "movie_candidate_titles": [
-        "Love Comes Softly",
-        "Love's Enduring Promise",
-        "Love's Long Journey",
-        "Love's Abiding Joy",
-        "Love's Unending Legacy",
-        "Love's Unfolding Dream",
-        "Love Takes Wing",
-        "Love Finds a Home",
-        "The Magic of Ordinary Days",
-        "The Christmas Card",
-        "A Boyfriend for Christmas",
-        "Single Santa Seeks Mrs. Claus",
-        "Meet the Santas",
-        "The Christmas Choir",
-        "The Most Wonderful Time of the Year",
-        "A Dog Named Christmas",
-        "Mrs. Miracle",
-        "A Season for Miracles",
-        "The Christmas Shoes",
-        "The Christmas Blessing",
-        "The Christmas Hope",
-        "The Note",
-        "Taking a Chance on Love",
-        "The Christmas Visitor",
-        "An Old Fashioned Thanksgiving",
-        "The Christmas Box",
-        "The Courageous Heart of Irena Sendler",
-        "Front of the Class",
-        "The Ron Clark Story",
-        "The Brooke Ellison Story",
-        "The Five People You Meet in Heaven",
-        "The Russell Girl",
-        "The Memory Keeper's Daughter",
-        "The Water Is Wide",
-        "Sarah, Plain and Tall",
-        "Skylark",
-        "Winter's End",
-        "The Love Letter",
-        "The Lake House",
+        "Elf (2003)",
+        "Home Alone",
+        "The Polar Express",
         "The Notebook",
-        "A Walk to Remember",
-        "Dear John",
-        "Nights in Rodanthe",
-        "Message in a Bottle",
-        "The Princess Bride",
-        "Ever After",
-        "While You Were Sleeping",
-        "You've Got Mail",
-        "Sleepless in Seattle",
-        "Notting Hill",
-        "Runaway Bride",
-        "My Best Friend's Wedding",
-        "The Wedding Planner",
-        "27 Dresses",
-        "Bride Wars",
-        "The Holiday",
+        "The Holiday (2006)",
+        "A Christmas Story",
         "Love Actually",
-        "The Family Stone",
-        "Because I Said So",
-        "Must Love Dogs",
-        "The Wedding Date",
-        "Under the Tuscan Sun",
-        "The Sisterhood of the Traveling Pants",
-        "The Sisterhood of the Traveling Pants 2",
-        "Fried Green Tomatoes",
-        "Steel Magnolias",
-        "Little Women",
-        "Anne of Green Gables",
-        "Anne of Avonlea",
-        "Pollyanna",
-        "The Parent Trap",
-        "The Sound of Music",
-        "The Secret Garden",
-        "A Little Princess",
-        "The Ultimate Gift"
-      ]
+        "Last Christmas (2019)",
+        "National Lampoon's Christmas Vacation"
+      ],
+      "editorial_catalog": 3,
+      "hold_candidate_titles": [],
+      "catalog_notes": "Hallmark original TV movies have spotty catalog discoverability; use widely distributed romance/holiday films when needed.",
+      "require_verified_sources": false
     },
     {
       "id": "teenikk",
       "number": "146",
       "name": "TeeNikk",
       "icon": "tv",
-      "description": "2000s cable favorites on TeeNikk.",
+      "description": "Curated programming for TeeNikk. Source availability is checked when tuning.",
       "slots": [
         "TeeNikk Morning",
         "TeeNikk Primetime",
@@ -935,34 +1504,34 @@
       "logo_text": "TeeNikk",
       "logo_path": "resources/media/tv_guide/channels/teenikk.png",
       "tv_candidate_titles": [
-        "Degrassi: The Next Generation",
-        "Zoey 101",
-        "Unfabulous",
-        "Ned's Declassified School Survival Guide",
-        "Drake & Josh",
         "iCarly",
-        "The Amanda Show",
-        "All That",
+        "Victorious",
+        "Drake & Josh",
+        "Zoey 101",
+        "Big Time Rush",
+        "Degrassi: The Next Generation",
+        "Sam & Cat",
+        "Ned's Declassified School Survival Guide",
         "Kenan & Kel",
-        "Clarissa Explains It All",
-        "The Secret World of Alex Mack",
-        "The Adventures of Pete & Pete",
-        "Caitlin's Way",
-        "Radio Free Roscoe",
-        "Instant Star",
-        "South of Nowhere",
-        "Beyond the Break",
-        "The Best Years",
-        "True Jackson, VP",
-        "The Naked Brothers Band"
-      ]
+        "The Amanda Show"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [
+        "Mean Girls (2004)",
+        "Clueless (1995)",
+        "She's the Man (2006)",
+        "The Lizzie McGuire Movie"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "Older sketch shows and pre-2000 Nickelodeon programming are lower confidence than 2000s hit sitcoms.",
+      "require_verified_sources": false
     },
     {
       "id": "tee_bee_ess",
       "number": "147",
       "name": "Tee Bee Ess",
       "icon": "tv",
-      "description": "2000s cable favorites on Tee Bee Ess.",
+      "description": "Curated programming for Tee Bee Ess. Source availability is checked when tuning.",
       "slots": [
         "Tee Bee Ess Morning",
         "Tee Bee Ess Primetime",
@@ -972,34 +1541,41 @@
       "logo_text": "Tee Bee Ess",
       "logo_path": "resources/media/tv_guide/channels/tee_bee_ess.png",
       "tv_candidate_titles": [
+        "The Big Bang Theory",
+        "Abbott Elementary",
+        "Georgie & Mandy's First Marriage",
+        "Ted Lasso",
+        "Bob's Burgers",
         "Friends",
         "Seinfeld",
-        "Everybody Loves Raymond",
-        "King of Queens",
+        "The Office (US)",
+        "Brooklyn Nine-Nine",
+        "Modern Family",
         "Family Guy",
+        "Everybody Loves Raymond",
+        "The King of Queens",
         "American Dad!",
-        "The Office",
-        "My Name Is Earl",
-        "Yes, Dear",
-        "Home Improvement",
-        "Married... with Children",
-        "The Fresh Prince of Bel-Air",
-        "Saved by the Bell",
-        "Full House",
-        "The Drew Carey Show",
-        "According to Jim",
-        "George Lopez",
-        "Tyler Perry's House of Payne",
-        "My Boys",
-        "10 Items or Less"
-      ]
+        "Young Sheldon",
+        "2 Broke Girls"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [
+        "The Hangover",
+        "Superbad",
+        "Step Brothers",
+        "Bridesmaids",
+        "The 40-Year-Old Virgin"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "",
+      "require_verified_sources": false
     },
     {
       "id": "fxx",
       "number": "148",
       "name": "FXx",
       "icon": "tv",
-      "description": "2000s cable favorites on FXx.",
+      "description": "Curated programming for FXx. Source availability is checked when tuning.",
       "slots": [
         "FXx Morning",
         "FXx Primetime",
@@ -1009,34 +1585,41 @@
       "logo_text": "FXx",
       "logo_path": "resources/media/tv_guide/channels/fxx.png",
       "tv_candidate_titles": [
-        "The Shield",
-        "Nip/Tuck",
         "It's Always Sunny in Philadelphia",
-        "Sons of Anarchy",
-        "Rescue Me",
-        "Damages",
-        "Dirt",
-        "The Riches",
-        "30 Days",
-        "Over There",
-        "The League",
-        "The Unit",
         "The Simpsons",
-        "The X-Files",
-        "The Practice",
-        "Buffy the Vampire Slayer",
-        "That '70s Show",
-        "Malcolm in the Middle",
-        "Married... with Children",
-        "King of the Hill"
-      ]
+        "Family Guy",
+        "Bob's Burgers",
+        "American Horror Story",
+        "Fargo",
+        "The Bear",
+        "Sons of Anarchy",
+        "Shōgun",
+        "Alien: Earth",
+        "Archer",
+        "What We Do in the Shadows",
+        "Atlanta",
+        "Justified",
+        "The Shield"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [
+        "Street Fighter (2026)",
+        "Deadpool",
+        "Deadpool 2",
+        "Fight Club",
+        "Logan (2017)",
+        "The Revenant (2015)"
+      ],
+      "hold_candidate_titles": [],
+      "catalog_notes": "The Bear/Alien: Earth are current FX-family popular releases; strong modern anchor candidates.",
+      "require_verified_sources": false
     },
     {
       "id": "spikee_tv",
       "number": "149",
       "name": "Spikee TV",
       "icon": "tv",
-      "description": "2000s cable favorites on Spikee TV.",
+      "description": "Curated programming for Spikee TV. Source availability is checked when tuning.",
       "slots": [
         "Spikee TV Morning",
         "Spikee TV Primetime",
@@ -1046,27 +1629,105 @@
       "logo_text": "Spikee TV",
       "logo_path": "resources/media/tv_guide/channels/spikee_tv.png",
       "tv_candidate_titles": [
+        "The First 48",
+        "NCIS",
+        "The Pitt",
+        "The Terminal List",
         "CSI: Crime Scene Investigation",
         "CSI: Miami",
+        "Criminal Minds",
+        "Law & Order: Special Victims Unit",
+        "The Rookie",
+        "24",
         "CSI: NY",
+        "Blue Bloods",
+        "S.W.A.T.",
+        "Prison Break",
+        "Bar Rescue"
+      ],
+      "editorial_catalog": 3,
+      "movie_candidate_titles": [
+        "Resident Evil (2026)"
+      ],
+      "hold_candidate_titles": [
         "1000 Ways to Die",
-        "The Ultimate Fighter",
-        "MXC",
-        "Pros vs. Joes",
         "Deadliest Warrior",
-        "MANswers",
         "UFC Unleashed",
-        "UFC Countdown",
-        "Blade: The Series",
-        "DEA",
-        "Cops",
-        "Jail",
-        "Disorderly Conduct: Video on Patrol",
-        "World's Wildest Police Videos",
-        "WWE Heat",
-        "TNA Impact!",
-        "The Joe Schmo Show"
-      ]
+        "MXC"
+      ],
+      "catalog_notes": "Spike originals are often difficult to source; use widely released crime/action procedural reruns first.",
+      "require_verified_sources": false
+    },
+    {
+      "id": "game_shown",
+      "number": "150",
+      "name": "Game Shown",
+      "icon": "tv",
+      "description": "Curated programming for Game Shown. Source availability is checked when tuning.",
+      "slots": [
+        "Daytime Games",
+        "Prime Time Games",
+        "Late Night Games"
+      ],
+      "logo_path": "resources/media/tvguide/game_shown.png",
+      "tv_candidate_titles": [
+        "Survivor",
+        "Taskmaster",
+        "The Traitors (US)",
+        "The Amazing Race",
+        "The Challenge",
+        "The Circle (US)",
+        "Squid Game: The Challenge",
+        "The Mole (2022)",
+        "Beast Games",
+        "Who Wants to Be a Millionaire (US)",
+        "Deal or No Deal (US)",
+        "Jeopardy!",
+        "Wheel of Fortune (US)",
+        "Family Feud (US)",
+        "The Price Is Right (US)",
+        "Cash Cab (US)",
+        "The Chase (US)",
+        "Press Your Luck",
+        "Supermarket Sweep",
+        "The Floor (US)"
+      ],
+      "movie_candidate_titles": [],
+      "weekday_anchors": {
+        "19:00": "Jeopardy!",
+        "19:30": "Wheel of Fortune (US)"
+      },
+      "program_blocks": {
+        "daytime": [
+          "The Floor (US)",
+          "Who Wants to Be a Millionaire (US)",
+          "Deal or No Deal (US)"
+        ],
+        "prime_time": [
+          "Survivor",
+          "The Amazing Race",
+          "The Traitors (US)",
+          "Beast Games"
+        ],
+        "overnight": [
+          "The Challenge",
+          "The Circle (US)",
+          "The Mole (2022)"
+        ]
+      },
+      "editorial_catalog": 3,
+      "hold_candidate_titles": [
+        "Jeopardy!",
+        "Wheel of Fortune (US)",
+        "Family Feud (US)",
+        "The Price Is Right (US)",
+        "Cash Cab (US)",
+        "The Chase (US)",
+        "Press Your Luck",
+        "Supermarket Sweep"
+      ],
+      "catalog_notes": "NEW/LOCAL CHANNEL 150. Requested Jeopardy! weekdays 7:00PM and Wheel of Fortune 7:30PM ONLY if a specific episode is verified available, otherwise show a verified game/competition substitute accurately in EPG. Do not fill channel with unvalidated classic game shows. Date-based search for daily releases may help.",
+      "require_verified_sources": false
     }
   ]
 }

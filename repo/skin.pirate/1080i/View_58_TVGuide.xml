@@ -140,6 +140,7 @@
         <label>$INFO[Container(58).ListItem.Property(guide_tick_3)]</label>
       </control>
       <control type="list" id="58">
+        <visible>String.Contains(Container.FolderPath,mode=tvguide.main)</visible>
         <left>65</left>
         <top>278</top>
         <width>1790</width>
@@ -725,10 +726,9 @@
     </control>
     <control type="group">
       <visible>!$EXP[PirateGuideLoading] + $EXP[PirateGuidePreparing]</visible>
-      <include content="PirateGuideLoadingPanel">
-        <param name="percent" value="Window(Home).Property(fenlight.tvguide_preparing_percent)"/>
-        <param name="detail" value="Window(Home).Property(fenlight.tvguide_preparing_channel)"/>
-      </include>
+      <!-- Background preparation must leave the channel rows readable. -->
+      <control type="label"><left>565</left><top>155</top><width>865</width><height>42</height><font>Reg22</font><textcolor>PirateText</textcolor><label>Preparing catalog: $INFO[Window(Home).Property(fenlight.tvguide_preparing_percent),,%]  $INFO[Window(Home).Property(fenlight.tvguide_preparing_channel)]</label></control>
+      <control type="progress"><left>565</left><top>200</top><width>865</width><height>10</height><info>Window(Home).Property(fenlight.tvguide_preparing_percent)</info></control>
     </control>
   </include>
 </includes>

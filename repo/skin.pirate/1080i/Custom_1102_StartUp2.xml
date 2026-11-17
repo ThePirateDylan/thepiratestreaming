@@ -107,7 +107,7 @@
 					<control type="image">
 						<width>50%</width>
 						<height>100%</height>
-						<texture colordiffuse="ffff7417" border="4">diffuse/panel2.png</texture>
+						<texture colordiffuse="PirateSelection" border="4">diffuse/panel2.png</texture>
 						<animation effect="zoom" end="200,100" easing="in" tween="cubic" time="600" condition="!String.IsEmpty(Window(Home).Property(finishBingieStartup2))">Conditional</animation>
 					</control>
 				</control>

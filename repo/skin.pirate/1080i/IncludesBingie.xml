@@ -84,7 +84,7 @@
     </include>
 
     <include name="ContainerShowInfoOnclick">
-        <onclick condition="[String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,episode) | !String.IsEmpty(Container($PARAM[widgetid]).ListItem.AddonName)] + !String.StartsWith(Container($PARAM[widgetid]).ListItem.Label,Next Page)">Action(info)</onclick>
+        <onclick condition="[String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[widgetid]).ListItem.DBType,episode)] + !String.StartsWith(Container($PARAM[widgetid]).ListItem.Label,Next Page)">Action(info)</onclick>
     </include>
 
     <include name="CustomBingieWinProps">

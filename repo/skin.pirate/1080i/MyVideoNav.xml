@@ -3,10 +3,6 @@
 <window>
     <defaultcontrol always="true">5000</defaultcontrol>
     <include>allViewIds</include>
-    <onload condition="String.IsEqual(Window(Home).Property(PirateTVGuideView),1) + !String.Contains(Container.FolderPath,mode=tvguide.main)">Container.SetViewMode(50)</onload>
-    <onload condition="String.IsEqual(Container.Viewmode,TV Guide) + !String.Contains(Container.FolderPath,mode=tvguide.main)">Container.SetViewMode(50)</onload>
-    <onload condition="String.IsEqual(Window(Home).Property(PirateTVGuideView),1) + !String.Contains(Container.FolderPath,mode=tvguide.main)">ClearProperty(PirateTVGuideView,Home)</onload>
-    <onload condition="!String.Contains(Container.FolderPath,mode=tvguide.main)">ClearProperty(fenlight.tvguide_view_active)</onload>
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onload>
     <onload>CancelAlarm(loadinfo,silent)</onload>

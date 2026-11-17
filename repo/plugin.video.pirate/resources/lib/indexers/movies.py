@@ -51,7 +51,7 @@ class Movies:
 				if data['total_pages'] > page_no: self.new_page = {'new_page': str(data['page'] + 1)}
 			elif self.action in self.special:
 				key_id = self.params_get('key_id') or self.params_get('query')
-				if not key_id: return
+				if not key_id: raise ValueError("Missing list filter")
 				data = function(key_id, page_no)
 				results = data['results']
 				self.list = [i['id'] for i in results]
@@ -111,14 +111,22 @@ class Movies:
 					key_id = movie_meta('tmdb_id', key_id, self.tmdb_api_key, settings.mpaa_region(), get_datetime(), get_current_timestamp())['imdb_id']
 				self.list = imdb_more_like_this(key_id)
 			kodi_utils.add_items(handle, self.worker())
+			if not self.items: self.new_page = {}
 			if self.total_pages and self.total_pages > 2 and settings.jump_to_enabled() and not self.is_external:
 				url_params = json.dumps({**self.new_page, **{'mode': 'build_movie_list', 'action': self.action, 'category_name': self.category_name}})
 				kodi_utils.add_dir(handle, {'mode': 'navigate_to_page_choice', 'current_page': page_no, 'total_pages': self.total_pages, 'url_params': url_params},
 											'Jump To...', 'item_jump', kodi_utils.get_icon('item_jump_landscape'), isFolder=False)
 			if self.new_page and not self.widget_hide_next_page:
+				self.new_page = dict(self.params, **self.new_page)
 				self.new_page.update({'mode': 'build_movie_list', 'action': self.action, 'category_name': self.category_name})
 				kodi_utils.add_dir(handle, self.new_page, 'Next Page (%s) >>' % self.new_page['new_page'], 'nextpage', kodi_utils.get_icon('nextpage_landscape'))
-		except: pass
+		except Exception as exc:
+			kodi_utils.logger('Directory listing failed', '%s: %s' % (self.action, type(exc).__name__))
+			kodi_utils.notification('Could not load this list. Please try again.', 3000)
+			return kodi_utils.end_directory(handle, cacheToDisc=False, succeeded=False)
+		if not self.items:
+			self.new_page = {}
+			if not self.is_external: kodi_utils.notification('No more results.', 2500)
 		kodi_utils.set_content(handle, 'movies')
 		kodi_utils.set_category(handle, self.category_name)
 		kodi_utils.end_directory(handle, cacheToDisc=False if self.is_external else True)

@@ -702,7 +702,7 @@
         <onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
         <onunfocus condition="Skin.HasSetting(BingieAutoTrailer) + $EXP[IsPlayingUnrecognizedContent] + String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">PlayerControl(Stop)</onunfocus>
         <onfocus condition="!String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">ClearProperty(KeepPlayingPreview,home)</onfocus>
-        <onclick condition="String.StartsWith(Container($PARAM[widgetid]).ListItem.Label,Next Page)">RunScript(script.pirate.helper,action=nextpage,folderpath=$ESCINFO[Container($PARAM[widgetid]).ListItem.FileNameAndPath])</onclick>
+        <!-- Directory items (including Next Page) use Kodi's provider URL and target. -->
         <include content="ContainerShowInfoOnclick" condition="Skin.HasSetting(ShowInformationBypass)">
             <param name="widgetid" value="$PARAM[widgetid]" />
         </include>

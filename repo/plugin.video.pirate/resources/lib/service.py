@@ -227,7 +227,9 @@ class TVGuidePreloader:
 			retire_guide_probe_misses()
 		except Exception as exc:
 			kodi_utils.logger('TV Guide', 'cache migration deferred: %s' % exc)
+		refresh_pending = False
 		while not monitor.abortRequested():
+			ready = False
 			try:
 				if kodi_utils.get_property(pause_services_prop) == 'true' or player.isPlayingVideo():
 					wait_for_abort(15)
@@ -235,27 +237,39 @@ class TVGuidePreloader:
 				kodi_utils.set_property('fenlight.tvguide_preload_running', 'true')
 				try:
 					from indexers.tv_guide import prewarm_snapshot, refresh_visible_guide
-					ready = prewarm_snapshot(monitor, player)
+					request_day = kodi_utils.get_property('fenlight.tvguide_prepare_day')
+					kodi_utils.clear_property('fenlight.tvguide_prepare_day')
+					generation = kodi_utils.get_property('fenlight.tvguide_catalog_generation')
+					force_retry = kodi_utils.get_property('fenlight.tvguide_prepare_retry')
+					kodi_utils.clear_property('fenlight.tvguide_prepare_retry')
+					ready = prewarm_snapshot(monitor, player, day_offset=request_day or 0, force_retry=force_retry)
+					changed = generation != kodi_utils.get_property('fenlight.tvguide_catalog_generation')
 				finally:
 					kodi_utils.clear_property('fenlight.tvguide_preload_running')
 				# Only refresh a Guide which actually rendered pending rows. Let
 				# Kodi finish its first directory load before issuing the refresh.
-				if kodi_utils.get_property('fenlight.tvguide_refresh_when_ready') == 'true':
-					kodi_utils.clear_property('fenlight.tvguide_refresh_when_ready')
+				if ready or changed: refresh_pending = True
+				if refresh_pending and kodi_utils.get_property('fenlight.tvguide_refresh_when_ready') == 'true':
 					for _ in range(30):
 						if monitor.waitForAbort(0.1) or not kodi_utils.get_visibility('Window.IsActive(Videos)'):
 							break
 						if not kodi_utils.get_visibility('Container.IsUpdating'):
-							refresh_visible_guide()
+							if refresh_visible_guide():
+								kodi_utils.clear_property('fenlight.tvguide_refresh_when_ready')
+								refresh_pending = False
+							# A busy/closing view must not consume its pending refresh.
 							break
 				if ready:
 					kodi_utils.logger('The Pirate', 'TV Guide startup snapshot is ready')
-					break
-				kodi_utils.logger('TV Guide Preload', 'startup snapshot incomplete; partial work is saved for retry')
+				else:
+					kodi_utils.logger('TV Guide Preload', 'snapshot incomplete; partial work is saved for retry')
 			except Exception as e:
 				kodi_utils.logger('TV Guide Preload', 'startup prewarm failed: %s' % str(e))
-			if wait_for_abort(600):
-				break
+			# Reuse this worker for cold guide requests after startup. No directory
+			# invocation fetches catalogs, and no extra worker is launched.
+			for _ in range(60 if ready else 1):
+				if wait_for_abort(10): break
+				if kodi_utils.get_property('fenlight.tvguide_prepare_day') != '': break
 		try: del monitor
 		except: pass
 		try: del player
