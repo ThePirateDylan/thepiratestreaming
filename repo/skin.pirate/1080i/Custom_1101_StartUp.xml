@@ -6,7 +6,7 @@
 	<onload>AlarmClock(FocusStartUpButton,SetFocus(100),00:00,silent)</onload>
 	<controls>
 		<control type="group">
-		<animation time="300" effect="fade" start="100" end="0" condition="String.Contains(VideoPlayer.Title,bingie_intro)">Conditional</animation>
+		<animation time="300" effect="fade" start="100" end="0" condition="Player.HasVideo + String.Contains(VideoPlayer.Title,bingie_intro)">Conditional</animation>
 			<control type="image">
 				<include>Visible_Fade</include>
 				<include>FullscreenDimensions</include>

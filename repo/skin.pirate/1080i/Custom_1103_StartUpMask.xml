@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- BINGIE -->
-<window type="dialog" id="1103">
+<window type="dialog" id="1103" modality="modal">
 	<defaultcontrol always="true">10</defaultcontrol>
 	<zorder>999</zorder>
+    <!-- Bound startup even when the intro or Home widgets never become ready. -->
+    <onload>AlarmClock(PirateStartupTimeout,ClearProperty(StartupMask,Home),00:00:20,silent)</onload>
 	<onload condition="String.IsEqual(Skin.String(splash_screen),bingie_default)">PlayMedia(special://skin/extras/media/bingie_intro_1080p.mp4,1)</onload>
 	<onload condition="String.IsEqual(Skin.String(splash_screen),bingie_image)">AlarmClock(startup,ClearProperty(StartupMask,home),00:10,silent)</onload>
 	<onload condition="String.IsEqual(Skin.String(splash_screen),none)">AlarmClock(startup,ClearProperty(StartupMask,home),00:00,silent)</onload>	
+    <onunload>CancelAlarm(PirateStartupTimeout,silent)</onunload>
+    <onunload>CancelAlarm(startup,silent)</onunload>
+    <onunload>ClearProperty(StartupMask,Home)</onunload>
+    <onunload condition="Player.HasVideo + [String.IsEqual(Player.Filename,bingie_intro_1080p.mp4) | String.IsEqual(Player.Filename,bingie_intro_2160p.mp4)]">PlayerControl(Stop)</onunload>
 	<visible>!String.IsEmpty(Window(Home).Property(StartupMask))</visible>	
 	<controls>
         <!-- Stationary approved logo remains after the one-shot intro until readiness clears the mask. -->
@@ -39,12 +45,15 @@
             <texture background="true">special://skin/extras/media/bingie_splash.png</texture>
 			<fadetime>1000</fadetime>
         </control>
-		<!-- block input button -->
+		<!-- Keep directional input here; Back or Select skips the startup mask. -->
 		<control type="button" id="10">
 			<include>HiddenObject</include>
-			<include content="ButtonMovementAction">
-				<param name="action" value="noop" />
-			</include>
+            <onleft>noop</onleft>
+            <onright>noop</onright>
+            <onup>noop</onup>
+            <ondown>noop</ondown>
+            <onback>ClearProperty(StartupMask,Home)</onback>
+            <onclick>ClearProperty(StartupMask,Home)</onclick>
 		</control>
 		<!-- busy spinner -->
 		<include content="Busy_Spinner">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
-<addon id="skin.pirate" version="2.2.101" name="The Pirate Skin" provider-name="The Pirate Dylan">
+<addon id="skin.pirate" version="2.2.102" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui"/>
 		<import addon="script.pirate.helper" version="1.1.40"/>
@@ -28,7 +28,7 @@
 		<description lang="es_ES">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_AR">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_MX">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
-		<news>Landscape tiles for selected Home rows and the TV Shows page. Streaming services use square tiles on TV Shows and Movies. On Movies, streaming services now sit directly below Continue Watching Movies. Includes the updated TV Guide loading screen.</news>
+		<news>Startup recovery: Back or Select skips the intro. The startup screen closes when the intro ends, with a fallback if playback stalls. Home is no longer hidden by a leftover intro title. Keeps the existing TV Guide and widget layouts.</news>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
 		<forum></forum>
