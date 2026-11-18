@@ -74,20 +74,20 @@ def source_context():
             'movie_quality': settings.quality_filter('%s_quality_movie' % ('autoplay' if settings.auto_play('movie') else 'results'))}
 
 
-def exact_key(program):
+def exact_key(program, context=None):
     media = program.get('media_type')
     season = program.get('_guide_season', program.get('season'))
     episode = program.get('_guide_episode', program.get('episode'))
     if media in ('tvshow', 'episode') and (season is None or episode is None):
         return None
-    data = {'context': source_context(), 'media': 'movie' if media == 'movie' else 'episode',
+    data = {'context': source_context() if context is None else context, 'media': 'movie' if media == 'movie' else 'episode',
             'id': str(program['tmdb_id']), 'season': int(season) if season is not None else None, 'episode': int(episode) if episode is not None else None,
             'release': program.get('_guide_release', '')}
     return 'guide_exact_v2_' + hashlib.sha256(json.dumps(data, sort_keys=True, default=str).encode()).hexdigest()
 
 
-def outcome(program, cache, now=None):
-    key = exact_key(program)
+def outcome(program, cache, now=None, context=None):
+    key = exact_key(program, context=context)
     record = cache.get(key) if key else None
     if isinstance(record, dict) and record.get('until', 0) > (time() if now is None else now):
         return record['status']
@@ -188,18 +188,21 @@ def candidates(channel, api, make_record, icon, state=None, limit=None, previous
     return list(programs.values())
 
 
-def eligible_pool(programs, cache, verified_only=False):
+def eligible_pool(programs, cache, verified_only=False, context=None):
+    # Settings and the external provider file do not need rereading for every
+    # episode in the same schedule build. Do not retain this across requests.
+    context = source_context() if context is None else context
     result = []
     for p in programs:
         p = dict(p)
         if p['media_type']=='movie':
-            state = outcome(p,cache)
+            state = outcome(p,cache,context=context)
             if state=='miss' or ((p.get('_hold') or verified_only) and state not in VERIFIED): continue
             p['source_status']=state
         else:
             episodes = []
             for ep in p.get('_episodes',[]):
-                state = outcome(dict(p,**ep),cache)
+                state = outcome(dict(p,**ep),cache,context=context)
                 if state=='miss' or ((p.get('_hold') or verified_only) and state not in VERIFIED): continue
                 episodes.append(dict(ep,source_status=state))
             if p.get('_episodes') is not None:

@@ -852,7 +852,7 @@ def _add_pending_channel(handle, channel, start_time, day_offset, progress_state
 	progress_state['pending_rows'] = progress_state.get('pending_rows', 0) + 1
 
 
-def _channel_item(handle, channel, start_time, fanart, progress_state, prevalidated=None, favourites=None, day_offset=0, prepare=False):
+def _channel_item(handle, channel, start_time, fanart, progress_state, prevalidated=None, favourites=None, day_offset=0, prepare=False, schedule_rows=None):
 	if prevalidated is None:
 		catalog_started = perf_counter()
 		candidates = _channel_programs(channel, favourites)
@@ -878,7 +878,8 @@ def _channel_item(handle, channel, start_time, fanart, progress_state, prevalida
 	logo_started = perf_counter()
 	icon = _channel_logo(channel)
 	progress_state['logo_reference_seconds'] += perf_counter() - logo_started
-	schedule = _schedule_for_time(list(validated_programs), channel, start_time, count=9, prepare=prepare)
+	schedule = ([dict(row) for row in schedule_rows if row['end'] > start_time]
+		if schedule_rows is not None else _schedule_for_time(list(validated_programs), channel, start_time, count=9, prepare=prepare))
 	if not schedule:
 		return None
 	for entry in schedule:
@@ -939,7 +940,8 @@ def _channel_item(handle, channel, start_time, fanart, progress_state, prevalida
 	# Eight quarter-hour cells form a shared two-hour horizon across channels.
 	# Round shared boundaries once, so adjacent programs never overlap.
 	axis_start = start_time.replace(minute=(start_time.minute // 30) * 30, second=0, microsecond=0)
-	timeline = _schedule_for_time(list(validated_programs), channel, axis_start, count=9)
+	timeline = ([row for row in schedule_rows if row['end'] > axis_start]
+		if schedule_rows is not None else _schedule_for_time(list(validated_programs), channel, axis_start, count=9))
 	def boundary(instant):
 		return max(0, min(8, int(math.floor((instant - axis_start).total_seconds() / 900.0 + 0.5))))
 	for tick in range(4):
@@ -1047,7 +1049,7 @@ def _prewarm_snapshot(monitor=None, player=None, day_offset=0, force_retry=False
 		try:
 			day = datetime.now()+timedelta(days=day_offset)
 			if (main_cache.get('guide_schedule_dirty_'+cid)
-					or not schedule(programs[cid],channel,day,1,main_cache,cache_only=True)):
+					or len(schedule(programs[cid],channel,day,9,main_cache,cache_only=True)) < 9):
 				prepared = schedule(programs[cid],channel,day,9,main_cache)
 				prepared_cached = bool(prepared) or prepared_cached
 				main_cache.set('guide_schedule_dirty_'+cid,False,expiration=1)
@@ -1056,6 +1058,7 @@ def _prewarm_snapshot(monitor=None, player=None, day_offset=0, force_retry=False
 			kodi_utils.logger('TV Guide Prepare', 'channel=%s schedule_error=%s' % (cid,type(exc).__name__))
 	# Return prepared rows to the service before a slow metadata request.
 	# The same worker resumes expansion on its next pass.
+	_publish_guide_view(main_cache, cache_key, channels, programs, states, day_offset)
 	if prepared_cached and not force_retry:
 		return bool(snapshot.get('complete') and snapshot.get('refresh_after', 0) > now)
 	if snapshot.get('complete') and not force_retry and snapshot.get('refresh_after',0)>now: return True
@@ -1122,6 +1125,7 @@ def _prewarm_snapshot(monitor=None, player=None, day_offset=0, force_retry=False
 			kodi_utils.set_property('fenlight.tvguide_preparing_percent',str(percent()))
 			if perf_counter()>=deadline: break
 		complete=save(snapshot.get('next_channel',start))
+		_publish_guide_view(main_cache, cache_key, channels, programs, states, day_offset)
 		if complete: dialog.update(100,'TV Guide','Catalog pass finished')
 		kodi_utils.logger('TV Guide Prepare','channels=%d processed=%d catalogs=%d percent=%d complete=%s source_probes=0' % (len(channels),processed,len(programs),percent(),complete))
 		return complete
@@ -1141,8 +1145,63 @@ def refresh_visible_guide(params=None):
 			or kodi_utils.get_property('fenlight.tvguide_tuning') == 'true'
 			or kodi_utils.get_property('fenlight.tvguide_loading')):
 		return False
-	kodi_utils.execute_builtin('Container.Refresh')
+	from caches.main_cache import main_cache
+	from indexers.guide_view import cache_key as view_key, read as read_view
+	day_offset = _guide_day_offset({'day_offset': parse_qs(folder.query).get('day_offset', ['0'])[0]})
+	now = datetime.now() + timedelta(days=day_offset)
+	channels = _channels(now)
+	favourites = _get_kodi_favourites() if any(c['id'] == 'favorites' for c in channels) else []
+	key = view_key(_guide_snapshot_cache_key(channels, favourites), now)
+	view = read_view(main_cache, key, channels, now)
+	waiting = kodi_utils.get_infolabel('Container(58).ListItem.Property(guide_waiting)')
+	if not view or view.get('state') == 'loading':
+		kodi_utils.set_property('fenlight.tvguide_prepare_day', str(day_offset))
+		if waiting: return False
+	elif view.get('state') == 'failed' and waiting == 'failed':
+		return False
+	# A retry is a one-shot request. Reopening its original URL would enqueue
+	# the same retry again and hide the newly prepared listing indefinitely.
+	if parse_qs(folder.query).get('retry_channel'):
+		kodi_utils.execute_builtin('Container.Update(%s,replace)' % _guide_day_url(day_offset))
+	else:
+		kodi_utils.execute_builtin('Container.Refresh')
 	return True
+
+
+def _guide_view_progress(view, channels):
+	total = max(len(channels), 1)
+	prepared = int(view.get('prepared', 0))
+	kodi_utils.set_property('fenlight.tvguide_view_percent', str(min(100, prepared * 100 // total)))
+	kodi_utils.set_property('fenlight.tvguide_view_detail', '%d of %d channels ready' % (prepared, total))
+
+
+def _publish_guide_view(cache, snapshot_key, channels, programs, states, day_offset):
+	from indexers.guide_view import cache_key as view_key, publish
+	now = datetime.now() + timedelta(days=day_offset)
+	key = view_key(snapshot_key, now)
+	previous = cache.get(key) or {}
+	view = publish(cache, key, channels, programs, states, now)
+	if (view.get('state'), view.get('prepared'), view.get('valid_until')) != (previous.get('state'), previous.get('prepared'), previous.get('valid_until')):
+		kodi_utils.set_property('fenlight.tvguide_catalog_generation', str(time()))
+	if kodi_utils.get_property('fenlight.tvguide_view_key') == key:
+		_guide_view_progress(view, channels)
+	return view
+
+
+def _add_guide_loading_item(handle, day_offset, view, channels):
+	item = kodi_utils.make_listitem()
+	failed = view.get('state') == 'failed'
+	item.setLabel('Retry channel preparation' if failed else 'Loading TV Guide')
+	item.setProperty('guide_waiting', 'failed' if failed else 'loading')
+	if failed:
+		names = [c['name'] for c in channels if c['id'] in view.get('missing', [])]
+		item.setProperty('guide_error', 'Could not prepare: ' + ', '.join(names))
+		params = {'mode': 'tvguide.main', 'day_offset': str(day_offset), 'retry_channel': (view.get('missing') or ['all'])[0]}
+	else:
+		params = {'mode': 'tvguide.refresh'}
+	# A single lightweight row retains native Back navigation while the skin
+	# displays the loading page. There are no partially selectable channels.
+	return kodi_utils.add_item(handle, kodi_utils.build_url(params), item, failed)
 
 
 def main(params=None):
@@ -1151,8 +1210,8 @@ def main(params=None):
 	kodi_utils.set_property('fenlight.tvguide_load_percent', '0')
 	kodi_utils.set_property('fenlight.tvguide_loading', token)
 	try:
-		with operation('snapshot') as writer:
-			loaded = _build_directory(params, writer is not None, token)
+		# Directory invocations only read the compact prepared listing.
+		loaded = _build_directory(params, False, token)
 		if loaded and kodi_utils.get_property('fenlight.tvguide_loading') == token:
 			kodi_utils.set_property('fenlight.tvguide_load_percent', '100')
 			# Keep the loading panel until Kodi has selected the guide container.
@@ -1184,66 +1243,42 @@ def _build_directory(params, can_write, token):
 	kodi_utils.set_sort_method(handle, 'none')
 	progress_state = _new_progress_state(len(channels) * 4)
 	try:
-		cache_enabled, cache_key, cached_programs = False, None, None
-		completed_channels, complete_snapshot = set(), False
-		try:
-			from caches.main_cache import main_cache
-			cache_key_started = perf_counter()
-			cache_key = _guide_snapshot_cache_key(channels, favourites)
-			progress_state['snapshot_key_seconds'] = perf_counter() - cache_key_started
-			cache_started = perf_counter()
-			snapshot = main_cache.get(cache_key)
-			if not isinstance(snapshot, dict) or snapshot.get('schema') != SNAPSHOT_SCHEMA:
-				snapshot = _reuse_channel_catalog(main_cache, channels)
-				if snapshot and can_write:
-					main_cache.set(cache_key, snapshot, expiration=SNAPSHOT_CACHE_HOURS)
-			progress_state['snapshot_read_seconds'] = perf_counter() - cache_started
-			cached_programs = _populated_channels(snapshot, channels)
-			complete_snapshot = bool(isinstance(snapshot,dict) and snapshot.get('complete'))
-			cache_enabled = True
-			kodi_utils.set_property(SNAPSHOT_KEY_PROPERTY, cache_key)
-		except Exception as exc:
-			kodi_utils.logger('TV Guide', 'Snapshot cache unavailable; requesting background preparation: %s' % str(exc))
-		progress_state['snapshot_hit'] = bool(complete_snapshot and isinstance(cached_programs, dict))
-		preparing = not complete_snapshot
-		if preparing:
-			kodi_utils.set_property('fenlight.tvguide_prepare_day', str(day_offset))
+		from caches.main_cache import main_cache
+		from indexers.guide_view import cache_key as view_key, read as read_view
+		cache_key_started = perf_counter()
+		cache_key = _guide_snapshot_cache_key(channels, favourites)
+		key = view_key(cache_key, start_time)
+		progress_state['snapshot_key_seconds'] = perf_counter() - cache_key_started
+		kodi_utils.set_property(SNAPSHOT_KEY_PROPERTY, cache_key)
+		kodi_utils.set_property('fenlight.tvguide_view_key', key)
+		cache_started = perf_counter()
+		view = read_view(main_cache, key, channels, start_time)
+		progress_state['snapshot_read_seconds'] = perf_counter() - cache_started
 		if (params or {}).get('retry_channel'):
 			kodi_utils.set_property('fenlight.tvguide_prepare_retry', str(params['retry_channel']))
-		retry_after = (snapshot or {}).get('missing_retry_after', 0) if cache_enabled and isinstance(snapshot, dict) else 0
-		preparing = preparing and (retry_after <= time() or bool((params or {}).get('retry_channel')))
-		updated_programs = dict(cached_programs or {})
-		for index, channel in enumerate(channels):
-			if kodi_utils.get_property('fenlight.tvguide_loading') == token:
-				kodi_utils.set_property('fenlight.tvguide_load_percent', str(index * 100 // len(channels)))
-				kodi_utils.set_property('fenlight.tvguide_load_channel', channel['name'])
-			channel_id = channel['id']
-			programs = updated_programs.get(channel_id)
-			try:
-				if not programs:
-					if preparing: kodi_utils.set_property('fenlight.tvguide_refresh_when_ready', 'true')
-					if _add_pending_channel(handle, channel, start_time, day_offset, progress_state, preparing) is False: break
-					continue
-				programs = _channel_item(handle, channel, start_time, fanart, progress_state, programs, favourites, day_offset, prepare=can_write)
-				if programs is False: break
-				if programs:
-					updated_programs[channel_id] = programs
-					continue
-			except Exception as exc:
-				import traceback
-				last = traceback.extract_tb(exc.__traceback__)[-1]
-				kodi_utils.logger('TV Guide', 'channel=%s render_error=%s at=%s:%s' % (channel_id,type(exc).__name__,last.name,last.lineno))
-			# The catalog may be warm while a newly requested day's schedule is not.
+			view = None
+		if not view or view.get('state') != 'ready':
 			kodi_utils.set_property('fenlight.tvguide_prepare_day', str(day_offset))
 			kodi_utils.set_property('fenlight.tvguide_refresh_when_ready', 'true')
-			if _add_pending_channel(handle, channel, start_time, day_offset, progress_state, True) is False: break
+			_guide_view_progress(view or {}, channels)
+			if _add_guide_loading_item(handle, day_offset, view or {}, channels) is False:
+				kodi_utils.end_directory(handle, cacheToDisc=False, succeeded=False)
+				return False
+			progress_state['rows_added'] = 1
+			progress_state['pending_rows'] = 1
 		else:
-			kodi_utils.set_content(handle, 'files')
-			kodi_utils.set_category(handle, 'TV Guide')
-			kodi_utils.end_directory(handle, cacheToDisc=False)
-			return True
-		kodi_utils.end_directory(handle, cacheToDisc=False, succeeded=False)
-		return False
+			progress_state['snapshot_hit'] = True
+			for channel in channels:
+				slots = view['rows'][channel['id']]
+				result = _channel_item(handle, channel, start_time, fanart, progress_state,
+					[row['program'] for row in slots], favourites, day_offset, schedule_rows=slots)
+				if result is False:
+					kodi_utils.end_directory(handle, cacheToDisc=False, succeeded=False)
+					return False
+		kodi_utils.set_content(handle, 'files')
+		kodi_utils.set_category(handle, 'TV Guide')
+		kodi_utils.end_directory(handle, cacheToDisc=False)
+		return True
 	finally:
 		progress = progress_state.get('dialog')
 		if progress:

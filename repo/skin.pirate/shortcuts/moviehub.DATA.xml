@@ -9,6 +9,14 @@
 		</shortcut>
 	<shortcut>
 		<defaultID />
+		<label>Browse by Streaming Service</label>
+		<label2>Video Add-On</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fproviders.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=Providers&amp;mode=navigator.providers&amp;menu_type=movie&amp;random_support=true&amp;iconImage=providers",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
 		<label>Trending Movies</label>
 		<label2>Video Add-On</label2>
 		<icon>DefaultShortcut.png</icon>
@@ -22,14 +30,6 @@
 		<icon>DefaultShortcut.png</icon>
 		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fintheatres.png/</thumb>
 		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=In+Theaters&amp;mode=build_movie_list&amp;action=tmdb_movies_in_theaters&amp;random_support=true&amp;iconImage=intheatres",return)</action>
-		</shortcut>
-	<shortcut>
-		<defaultID />
-		<label>Browse by Streaming Service</label>
-		<label2>Video Add-On</label2>
-		<icon>DefaultShortcut.png</icon>
-		<thumb>image://https%3a%2f%2fraw.githubusercontent.com%2fThePirateDylan%2fThePirateDylan.github.io%2fthepiratestreaming%2fmain%2fpackages%2fmedia%2ficons%2fproviders.png/</thumb>
-		<action>ActivateWindow(Videos,"plugin://plugin.video.pirate/?name=Providers&amp;mode=navigator.providers&amp;menu_type=movie&amp;random_support=true&amp;iconImage=providers",return)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID />

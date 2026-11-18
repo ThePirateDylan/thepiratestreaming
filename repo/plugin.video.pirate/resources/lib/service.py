@@ -228,6 +228,7 @@ class TVGuidePreloader:
 		except Exception as exc:
 			kodi_utils.logger('TV Guide', 'cache migration deferred: %s' % exc)
 		refresh_pending = False
+		requested_day = 0
 		while not monitor.abortRequested():
 			ready = False
 			try:
@@ -239,10 +240,12 @@ class TVGuidePreloader:
 					from indexers.tv_guide import prewarm_snapshot, refresh_visible_guide
 					request_day = kodi_utils.get_property('fenlight.tvguide_prepare_day')
 					kodi_utils.clear_property('fenlight.tvguide_prepare_day')
+					if request_day != '': requested_day = request_day
+					elif not kodi_utils.get_visibility('Window.IsActive(Videos)'): requested_day = 0
 					generation = kodi_utils.get_property('fenlight.tvguide_catalog_generation')
 					force_retry = kodi_utils.get_property('fenlight.tvguide_prepare_retry')
 					kodi_utils.clear_property('fenlight.tvguide_prepare_retry')
-					ready = prewarm_snapshot(monitor, player, day_offset=request_day or 0, force_retry=force_retry)
+					ready = prewarm_snapshot(monitor, player, day_offset=requested_day, force_retry=force_retry)
 					changed = generation != kodi_utils.get_property('fenlight.tvguide_catalog_generation')
 				finally:
 					kodi_utils.clear_property('fenlight.tvguide_preload_running')

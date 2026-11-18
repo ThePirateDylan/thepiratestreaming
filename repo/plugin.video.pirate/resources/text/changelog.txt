@@ -1,3 +1,12 @@
+[COLOR dodgerblue][B]Version 2.2.107 - TV Guide and Widget Layouts[/B][/COLOR]
+- Keep the TV Guide loading screen visible until every channel has program information.
+- Prepare guide listings in the background and reduce repeated loading work.
+- Fix loading retries and keep the selected day while its schedule is prepared.
+- Use Landscape tiles on Home for Continue Watching Shows, Top Rated TV Shows of All Time, and Binge-Worthy Shows.
+- Use Landscape tiles throughout TV Shows, with Square tiles for streaming services.
+- Use Square streaming-service tiles on Movies and move the row below Continue Watching Movies.
+- Includes Pirate Skin 2.2.101.
+
 [COLOR dodgerblue][B]Version 2.2.105 - TV Guide and Navigation[/B][/COLOR]
 - Fixed missing program information when opening the TV Guide for the first time.
 - Keep saved catalogs after updates and reuse schedules across Kodi restarts.

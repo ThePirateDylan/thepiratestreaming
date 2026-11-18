@@ -718,11 +718,29 @@
   </include>
   <include name="PirateGuideLoadingOverlay">
     <control type="group">
-      <visible>$EXP[PirateGuideLoading]</visible>
+      <visible>$EXP[PirateGuideLoading] + !$EXP[PirateGuideWaiting]</visible>
+      <control type="image"><left>0</left><top>0</top><width>1920</width><height>1080</height><texture colordiffuse="PirateNavy">colors/color_white.png</texture></control>
       <include content="PirateGuideLoadingPanel">
         <param name="percent" value="Window(Home).Property(fenlight.tvguide_load_percent)"/>
         <param name="detail" value="Window(Home).Property(fenlight.tvguide_load_channel)"/>
       </include>
+    </control>
+    <control type="group">
+      <visible>$EXP[PirateGuideWaiting]</visible>
+      <control type="image"><left>0</left><top>0</top><width>1920</width><height>1080</height><texture colordiffuse="PirateNavy">colors/color_white.png</texture></control>
+      <control type="group">
+        <visible>String.IsEqual(Container(58).ListItem.Property(guide_waiting),loading)</visible>
+        <include content="PirateGuideLoadingPanel">
+          <param name="percent" value="Window(Home).Property(fenlight.tvguide_view_percent)"/>
+          <param name="detail" value="Window(Home).Property(fenlight.tvguide_view_detail)"/>
+        </include>
+      </control>
+      <control type="group">
+        <visible>String.IsEqual(Container(58).ListItem.Property(guide_waiting),failed)</visible>
+        <control type="label"><left>260</left><top>360</top><width>1400</width><height>100</height><align>center</align><font>Bold60</font><label>TV Guide could not finish loading</label></control>
+        <control type="textbox"><left>260</left><top>490</top><width>1400</width><height>110</height><font>Reg26</font><label>$INFO[Container(58).ListItem.Property(guide_error)]</label></control>
+        <control type="label"><left>110</left><top>612</top><width>1700</width><height>65</height><align>center</align><font>Reg26</font><label>Press OK to retry, or Back to leave.</label></control>
+      </control>
     </control>
     <control type="group">
       <visible>!$EXP[PirateGuideLoading] + $EXP[PirateGuidePreparing]</visible>

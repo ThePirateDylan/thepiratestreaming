@@ -24,7 +24,7 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.105">
+</addon><addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.107">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.pil" version="1.1.7" />
@@ -46,7 +46,7 @@
             <icon>resources/media/addon_icons/pirate_icon.png</icon>
             <fanart>resources/media/fenlight_fanart_01.jpg</fanart>
         </assets>
-        <news>Fix missing TV Guide programs on first opening, retain saved catalogs and schedules, and improve background preparation. Expanded channel programming includes Game Shown 150. Corrected Next Page and Streaming Services navigation, removed Jump To, and kept aired episodes visible when newer seasons are empty.</news>
+        <news>Improved TV Guide loading. The loading screen stays up until every channel has program information, with a retry option if preparation fails. Includes the updated Home, TV Shows and Movies layouts in Pirate Skin 2.2.101.</news>
     </extension>
 </addon><addon id="plugin.video.tmdb.pirate.helper" version="1.0.13" name="The Pirate TMDb Helper" provider-name="The Pirate Dylan">
 <requires>
@@ -237,7 +237,7 @@
         <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.widgets</website>
         <source />
     </extension>
-</addon><addon id="skin.pirate" version="2.2.99" name="The Pirate Skin" provider-name="The Pirate Dylan">
+</addon><addon id="skin.pirate" version="2.2.101" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui" />
 		<import addon="script.pirate.helper" version="1.1.40" />
@@ -265,7 +265,7 @@
 		<description lang="es_ES">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_AR">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_MX">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
-		<news>Keep background guide preparation visible in a compact progress panel without covering the channel rows. Existing navigation, loading screen and playback transition are preserved.</news>
+		<news>Landscape tiles for selected Home rows and the TV Shows page. Streaming services use square tiles on TV Shows and Movies. On Movies, streaming services now sit directly below Continue Watching Movies. Includes the updated TV Guide loading screen.</news>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
 		<forum />

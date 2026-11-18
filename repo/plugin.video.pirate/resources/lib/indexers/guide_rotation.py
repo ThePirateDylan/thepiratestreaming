@@ -110,7 +110,7 @@ def schedule(programs, channel, now, count, cache, cache_only=False):
         slots = cache.get(key(day))
         if not slots:
             if cache_only: return result
-            pool = eligible_pool(programs, cache, verified_only=channel.get('require_verified_sources', False)) if channel.get('editorial_catalog') else programs
+            pool = eligible_pool(programs, cache, verified_only=channel.get('require_verified_sources', False), context=context) if channel.get('editorial_catalog') else programs
             if not pool: return result
             previous = [s for days in range(14,0,-1) for s in (cache.get(key(day - timedelta(days=days))) or [])]
             recent = [identity(s['program']) for s in previous]
@@ -126,16 +126,16 @@ def schedule(programs, channel, now, count, cache, cache_only=False):
             start, end = datetime.fromisoformat(slot['start']), datetime.fromisoformat(slot['end'])
             if end <= now: continue
             old = slot['program']
-            status = outcome(old, cache) if channel.get('editorial_catalog') else 'unverified'
+            status = outcome(old, cache, context=context) if channel.get('editorial_catalog') else 'unverified'
             old['source_status'] = status
             if channel.get('editorial_catalog') and (status == 'miss' or ((old.get('_hold') or channel.get('require_verified_sources')) and status not in VERIFIED)):
                 duration = (datetime.fromisoformat(slot['end'])-datetime.fromisoformat(slot['start'])).total_seconds()/60
                 replacements = []
-                for candidate in ([] if cache_only else eligible_pool(programs, cache, verified_only=channel.get('require_verified_sources', False))):
+                for candidate in ([] if cache_only else eligible_pool(programs, cache, verified_only=channel.get('require_verified_sources', False), context=context)):
                     if candidate.get('_episodes'):
                         candidate = dict(candidate, _episodes=[e for e in candidate['_episodes'] if e.get('source_status') in VERIFIED and e['duration_minutes'] <= duration])
                         if not candidate['_episodes']: continue
-                    elif outcome(candidate,cache) not in VERIFIED or _minutes(candidate)>duration: continue
+                    elif outcome(candidate,cache,context=context) not in VERIFIED or _minutes(candidate)>duration: continue
                     replacement = assign_episode(candidate,slot['start'],[])
                     if _minutes(replacement)<=duration: replacements.append(replacement)
                 if replacements:

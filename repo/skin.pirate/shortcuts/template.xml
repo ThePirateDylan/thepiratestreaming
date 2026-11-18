@@ -24,6 +24,10 @@
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
         <property name="widgetTags">WidgetTagOverlayDisable</property>
+        <property name="widgetStyle" tag="label" value="Continue Watching Shows">landscape</property>
+        <property name="widgetStyle" tag="label" value="Continue Watching (TV)">landscape</property>
+        <property name="widgetStyle" tag="label" value="Top Rated TV Shows of All Time">landscape</property>
+        <property name="widgetStyle" tag="label" value="Binge-Worthy Shows">landscape</property>
         <property name="widgetStyle" tag="property" attribute="name|widgetstyle" />
         <property name="widgetStyle">default</property>
         <property name="widgetSortBy" tag="property" attribute="name|widgetSortBy" />
@@ -339,6 +343,8 @@
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
         <property name="widgetTags">WidgetTagOverlayDisable</property>
+        <property name="widgetStyle" tag="label" value="Browse by Streaming Service">square</property>
+        <property name="widgetStyle" tag="label" value="Browse by Streaming Services">square</property>
         <property name="widgetStyle" tag="property" attribute="name|widgetstyle" />
         <property name="widgetStyle">default</property>
         <property name="widgetSortBy" tag="property" attribute="name|widgetSortBy" />
@@ -412,8 +418,9 @@
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
         <property name="widgetTags" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
         <property name="widgetTags">WidgetTagOverlayDisable</property>
-        <property name="widgetStyle" tag="property" attribute="name|widgetstyle" />
-        <property name="widgetStyle">default</property>
+        <property name="widgetStyle" tag="label" value="Browse by Streaming Service">square</property>
+        <property name="widgetStyle" tag="label" value="Browse by Streaming Services">square</property>
+        <property name="widgetStyle">landscape</property>
         <property name="widgetSortBy" tag="property" attribute="name|widgetSortBy" />
         <property name="widgetSortOrder" tag="property" attribute="name|widgetSortOrder" />
         <property name="widgetLimit" tag="property" attribute="name|widgetLimit" />
