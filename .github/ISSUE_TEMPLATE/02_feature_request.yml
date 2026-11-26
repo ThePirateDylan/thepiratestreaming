@@ -1,0 +1,40 @@
+name: Feature Request
+description: Suggest an addition or change to The Pirate.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check existing requests before posting.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - The Pirate (video add-on)
+        - The Pirate Skin
+        - TV Guide
+        - The Pirate Audio
+        - The Pirate Shortcuts
+        - Maintenance
+        - Installation / Updates
+        - Other / Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Feature request
+      description: What would you like added or changed?
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for the request
+      description: Why would this be useful?
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional information
+      description: Screenshots or examples, if applicable.
