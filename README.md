@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="repo/skin.pirate/media/branding/thepirate-logo.png" alt="The Pirate Streaming" width="480">
+  <img src="docs/screenshots/readme-banner.png" alt="The Pirate Streaming" width="100%">
 </p>
 
 # The Pirate Streaming
