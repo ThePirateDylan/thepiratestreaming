@@ -1,13 +1,25 @@
 # The Pirate Maintenance
 
-This add-on removes Kodi temporary files, old add-on installer packages, and cached thumbnails.
+## Startup cleanup
 
-## Manual cleanup
+Removes disposable files older than 24 hours from Kodi's temporary and home/cache folders, and installer ZIPs older than seven days from addons/packages. It leaves recent downloads, log files, cache databases, lock files, protected cache folders and filesystem links alone. Add-on data, favorites, watched progress, Trakt, source results and TV Guide schedules are outside its cleanup paths.
 
-Open the skin's Settings → Backup & Restore page and choose Clean temporary files, packages, and artwork. The confirmation dialog has clear **Clean now** and **Cancel** buttons. Completion and cancellation appear as brief notifications, so you do not have to dismiss a second modal warning. If any item cannot be removed, the add-on logs the details and the notification points to the Kodi log. Thumbnail cleanup uses Kodi's Textures.GetTextures and Textures.RemoveTexture JSON-RPC methods so texture records and cached files stay in sync.
+A brief notification confirms startup completion even when there is nothing to remove.
 
-## Automatic cleanup
+Cleanup waits for playback, busy dialogs, the add-on browser and TV Guide preparation to finish. It stops if Kodi becomes busy again or starts shutting down. No extra service or background thread is added.
 
-Automatic cleanup and thumbnail clearing are enabled at startup. Existing profiles receive these defaults once when the updated add-on starts; you can turn either option off in add-on settings. Cleanup waits until Kodi is idle and TV Guide startup preparation is not running, with a 30-minute maximum wait. It starts after Kodi has settled.
+Thumbnail clearing is off by default. This update turns off the previous forced startup thumbnail wipe once, while preserving the startup-cleanup opt-out. Users can still explicitly enable thumbnail clearing afterward.
 
-Cleared thumbnails are downloaded again as you browse and may refill storage. The add-on preserves log files in the temporary directory and does not clear add-on settings, libraries, watched status, Trakt data, or Kodi databases.
+## Manual tools
+
+Open The Pirate Maintenance or the existing cleanup entry in skin settings:
+
+- **Clean now** cleans disposable temporary files, packages and artwork while preserving cache databases, logs, lock files and protected runtime folders.
+- **Refresh Pirate artwork** removes only cached Pirate add-on icons, fanart and branding logos. Movie/episode posters, widget artwork and metadata remain cached.
+- **Cancel** closes the menu without changes.
+
+Artwork removal uses Kodi's texture API rather than deleting its database. Kodi reloads images when needed; restart Kodi after installing an add-on update if its details still show the old metadata.
+
+## EZ Maintenance
+
+The installed EZ Maintenance+ 2026.04.05.0 clears temporary/cache folders at startup and offers package and thumbnail size warnings. Pirate Maintenance provides the focused cleanup above without clearing useful media caches each boot. It does not depend on EZ Maintenance or change its settings. If both are installed, turn off EZ Maintenance's startup and scheduled AutoClean to avoid duplicate cleanup. Add-on updates remain managed by Kodi.

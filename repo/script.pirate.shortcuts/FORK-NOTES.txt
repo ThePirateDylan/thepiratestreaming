@@ -1,0 +1,11 @@
+Pirate Shortcuts 1.0.0
+
+Based on the installed, working Skin Shortcuts 2.0.4 engine by BigNoid, marcelveldt, SiLVO and anxdpanic.
+Upstream: https://github.com/mikesilvo164/script.skinshortcuts
+License: GPL-2.0-only; original notices and LICENSES are retained.
+
+The Pirate maintains this fork under script.pirate.shortcuts. Upstream script.skinshortcuts can coexist and update independently.
+
+Changes: separate add-on identity and profile storage; one-time, non-destructive import of legacy Pirate menus, properties and generated playlists; redirected script and localization references. Existing template syntax, generated include names, dialog filenames and window-property contracts are retained for the Pirate skin and helper integrations. No playback or widget-provider logic is replaced.
+
+Do not replace this engine with v3 without migrating templates, dialogs and saved menu data and testing a cold menu rebuild. Review relevant upstream fixes individually.

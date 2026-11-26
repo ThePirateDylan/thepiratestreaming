@@ -432,24 +432,44 @@
 				<font>Reg26</font>
 				<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
 				<visible>!Window.IsActive(1116)</visible>
-			</control>
-			<control type="label">
+			<scroll>false</scroll>
+            <visible>![[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Episode)]</visible>
+            </control>
+            <control type="label">
 				<!--Label-->
 				<left>8</left>
-				<right>8</right>
-				<bottom>-81</bottom>
+				<right>116</right>
+				<bottom>-47</bottom>
 				<height>61</height>
 				<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
 				<align>left</align>
 				<aligny>center</aligny>
-				<label>$VAR[ThumbListDetails_3]</label>
-				<font>tagsecrow</font>
+				<label>[B]$VAR[ThumbListDetails_2][/B]</label>
+				<font>Reg26</font>
+				<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+				<visible>!Window.IsActive(1116)</visible>
+			<scroll>false</scroll>
+            <visible>[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Episode)</visible>
+            </control>
+			<control type="label">
+				<!--Label-->
+				<width>100</width>
+				<right>8</right>
+				<bottom>-47</bottom>
+				<height>61</height>
+				
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Season,S,: ]$INFO[ListItem.Episode,E,]</label>
+				<font>Reg22</font>
 				<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
 				<animation effect="fade" start="0" end="70" time="0" condition="true">Conditional</animation>
 				<visible>!Window.IsActive(1116)</visible>
 				<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
-			</control>			
+			<scroll>false</scroll>
+            <visible>[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Episode)</visible>
+            </control>			
             </control>
         </itemlayout>
         <focusedlayout width="418" height="339" condition="Control.HasFocus($PARAM[widgetid])">
@@ -502,27 +522,45 @@
 				<label>[B]$VAR[ThumbListDetails_2][/B]</label>
 				<font>Reg26</font>
 				<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
-				<scroll>true</scroll>
+				<scroll>false</scroll>
 				<visible>!Window.IsActive(1116)</visible>
-			</control>
-			<control type="label">
+			<visible>![[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Episode)]</visible>
+            </control>
+            <control type="label">
 				<!--Label-->
 				<left>8</left>
-				<right>8</right>
-				<bottom>-81</bottom>
+				<right>116</right>
+				<bottom>-47</bottom>
 				<height>61</height>
 				<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
 				<align>left</align>
 				<aligny>center</aligny>
-				<label>$VAR[ThumbListDetails_3]</label>
-				<font>tagsecrow</font>
+				<label>[B]$VAR[ThumbListDetails_2][/B]</label>
+				<font>Reg26</font>
+				<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+				<scroll>false</scroll>
+				<visible>!Window.IsActive(1116)</visible>
+			<visible>[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Episode)</visible>
+            </control>
+			<control type="label">
+				<!--Label-->
+				<width>100</width>
+				<right>8</right>
+				<bottom>-47</bottom>
+				<height>61</height>
+				
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Season,S,: ]$INFO[ListItem.Episode,E,]</label>
+				<font>Reg22</font>
 				<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
 				<animation effect="fade" start="0" end="70" time="0" condition="true">Conditional</animation>
-				<scroll>true</scroll>
+				<scroll>false</scroll>
 				<visible>!Window.IsActive(1116)</visible>
 				<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
-			</control>			
+			<visible>[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Episode)</visible>
+            </control>			
             </control>
         </focusedlayout>
 		<focusedlayout width="418" height="339" condition="!Control.HasFocus($PARAM[widgetid])">
@@ -571,24 +609,44 @@
 				<font>Reg26</font>
 				<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
 				<visible>!Window.IsActive(1116)</visible>
-			</control>
-			<control type="label">
+			<scroll>false</scroll>
+            <visible>![[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Episode)]</visible>
+            </control>
+            <control type="label">
 				<!--Label-->
 				<left>8</left>
-				<right>8</right>
-				<bottom>-81</bottom>
+				<right>116</right>
+				<bottom>-47</bottom>
 				<height>61</height>
 				<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
 				<align>left</align>
 				<aligny>center</aligny>
-				<label>$VAR[ThumbListDetails_3]</label>
-				<font>tagsecrow</font>
+				<label>[B]$VAR[ThumbListDetails_2][/B]</label>
+				<font>Reg26</font>
+				<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+				<visible>!Window.IsActive(1116)</visible>
+			<scroll>false</scroll>
+            <visible>[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Episode)</visible>
+            </control>
+			<control type="label">
+				<!--Label-->
+				<width>100</width>
+				<right>8</right>
+				<bottom>-47</bottom>
+				<height>61</height>
+				
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Season,S,: ]$INFO[ListItem.Episode,E,]</label>
+				<font>Reg22</font>
 				<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
 				<animation effect="fade" start="0" end="70" time="0" condition="true">Conditional</animation>
 				<visible>!Window.IsActive(1116)</visible>
 				<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
-			</control>			
+			<scroll>false</scroll>
+            <visible>[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Episode)</visible>
+            </control>			
             </control>
         </focusedlayout>
     </include>
@@ -611,7 +669,7 @@
             </include>
             <include condition="Skin.HasSetting(EnableRatings)">FooterON</include>
 			<include condition="!Skin.HasSetting(EnableRatings)">FooterOFF</include>
-            <height>42</height>
+            <height>56</height>
             <!-- fixed focus navigation -->
             <include content="SetFixedVerticalNavigationProps">
                 <param name="widgetid" value="$PARAM[widgetid]"/>
@@ -620,18 +678,16 @@
                 <param name="widgetid" value="$PARAM[widgetid]"/>
             </include>
             <!-- Decorative only; shares the existing heading rectangle and inherited visibility. -->
-            <control type="image">
-                <include>widget_header_home_leftalign</include>
-                <top>-1</top><width>470</width><height>42</height>
-                <texture border="16" colordiffuse="PiratePanel">dialogs/keyboard/key-nf.png</texture>
+            <!-- Decorative shelf and bevels; no focusable controls. -->
+            <control type="group"><left>316</left><top>57</top><width>1534</width><height>339</height>
+                <include content="PirateRecessedPanel"><param name="width" value="1534" /><param name="height" value="339" /></include>
             </control>
-            <control type="image">
-                <include>widget_header_home_leftalign</include>
-                <top>-1</top><width>470</width><height>42</height>
-                <texture border="10" colordiffuse="PirateSoftEdge">bingie/border/default_button_focus.png</texture>
+            <control type="group"><left>316</left><top>-1</top><width>1534</width><height>56</height>
+<control type="image"><left>0</left><top>56</top><width>1534</width><height>7</height><texture colordiffuse="b0000000" >pirate-depth/vertical.png</texture></control><control type="image"><left>0</left><top>0</top><width>1534</width><height>56</height><texture colordiffuse="PirateSoftEdge" >colors/color_white.png</texture></control><control type="image"><left>0</left><top>0</top><width>1534</width><height>16</height><texture colordiffuse="705c9ac6" >pirate-depth/vertical.png</texture></control><control type="image"><left>0</left><top>0</top><width>1534</width><height>1</height><texture colordiffuse="805883a2" >colors/color_white.png</texture></control><control type="image"><left>0</left><top>42</top><width>1534</width><height>14</height><texture colordiffuse="b0000000" flipy="true">pirate-depth/vertical.png</texture></control><control type="image"><left>0</left><top>53</top><width>1534</width><height>3</height><texture colordiffuse="ff092039" >colors/color_white.png</texture></control>
             </control>
+
             <control type="label">
-                <height>100%</height>
+                <height>100%</height><aligny>center</aligny>
                 <width>100%</width>
 				<top>-1</top>
                 <font>Bold31</font>
@@ -642,7 +698,7 @@
                 <visible>String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(similartitle)) + String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(genretitle))</visible>
 			</control>
             <control type="label">
-                <height>100%</height>
+                <height>100%</height><aligny>center</aligny>
                 <width>100%</width>
 				<top>-1</top>
                 <font>Bold31</font>
@@ -1092,4 +1148,22 @@
             </item>
         </content>
     </include>
+
+    <include name="PirateRecessedPanel">
+        <param name="width" default="100%" />
+        <param name="height" default="100%" />
+        <definition>
+            <control type="group">
+                <width>$PARAM[width]</width><height>$PARAM[height]</height>
+                <control type="image"><left>3</left><bottom>-12</bottom><width>100%</width><height>12</height><texture colordiffuse="b0000000">pirate-depth/vertical.png</texture></control>
+                <control type="image"><right>-12</right><top>3</top><width>12</width><height>100%</height><texture colordiffuse="d8000000">pirate-depth/horizontal.png</texture></control>
+                <control type="image"><left>0</left><top>0</top><width>100%</width><height>30</height><texture colordiffuse="d8000000">pirate-depth/vertical.png</texture></control>
+                <control type="image"><left>0</left><top>0</top><width>30</width><height>100%</height><texture colordiffuse="c8000000">pirate-depth/horizontal.png</texture></control>
+                <control type="image"><right>0</right><top>0</top><width>20</width><height>100%</height><texture flipx="true" colordiffuse="90000000">pirate-depth/horizontal.png</texture></control>
+                <control type="image"><left>0</left><bottom>0</bottom><width>100%</width><height>20</height><texture flipy="true" colordiffuse="90000000">pirate-depth/vertical.png</texture></control>
+                <control type="image"><left>1</left><bottom>0</bottom><right>1</right><height>1</height><texture colordiffuse="605b7e9c">colors/color_white.png</texture></control>
+            </control>
+        </definition>
+    </include>
+
 </includes>

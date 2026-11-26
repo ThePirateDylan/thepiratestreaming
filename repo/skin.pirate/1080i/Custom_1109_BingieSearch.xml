@@ -25,15 +25,45 @@
         <!-- Hidden Submenu -->
         <include condition="!Skin.HasSetting(DisableAllSubmenus)">hiddenSubmenu</include>
 		
+        <!-- Search uses the same navy rail and wordmark as Home. -->
+            <control type="group">
+                
+                <control type="image">
+                    <left>0</left><top>0</top><width>366</width><height>100%</height>
+                    <texture colordiffuse="ff010308">colors/color_white.png</texture>
+                </control>
+                <control type="image"><left>12</left><top>190</top><width>342</width><height>700</height>
+                    <texture>pirate-depth/sidebar-well.png</texture>
+                </control>
+                <control type="image">
+                    <left>366</left><top>0</top><width>7</width><height>100%</height>
+                    <texture colordiffuse="PirateSoftEdge">colors/color_white.png</texture>
+                </control>
+                <control type="image">
+                    <left>373</left><top>0</top><width>8</width><height>100%</height>
+                    <texture colordiffuse="PirateEdge">colors/color_white.png</texture>
+                </control>
+                <control type="image">
+                    <left>381</left><top>0</top><width>5</width><height>100%</height>
+                    <texture colordiffuse="PirateSoftEdge">colors/color_white.png</texture>
+                </control>
+            </control>
+
+            <control type="image"><visible>!Skin.HasSetting(DisableBingieLogo)</visible><left>30</left><top>22</top><width>300</width><height>128</height><aspectratio>keep</aspectratio><texture>branding/thepirate-logo.png</texture></control>
         <!-- ########## Left Layout ########## -->
 		<!-- VirtualKeyboardLabel -->
         <control type="group">
         <include>SearchSuggestionsAnim</include>
 
+        <control type="group">
+            <visible>!$EXP[IsActualKeyboardActive]</visible>
+            <left>390</left><top>18</top><width>1526</width><height>62</height>
+            <include content="PirateSearchHeaderSurface"><param name="width" value="1526"/><param name="height" value="62"/></include>
+        </control>
         <!-- Search Icon -->
         <control type="image">
         <top>20</top>
-        <left>75</left>
+        <left>410</left>
         <width>48</width>
         <height>48</height>
         <texture>shortcuts/search2.png</texture>
@@ -43,10 +73,11 @@
 
         <control type="label">
         <top>18</top>
-        <left>140</left>
+        <left>475</left>
         <width>auto</width>
-        <font>Reg42</font>
-        <label>SEARCH</label>
+        <font>Bold38</font>
+        <height>62</height><aligny>center</aligny>
+        <label>Search</label>
         <textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
         <visible>!$EXP[IsActualKeyboardActive]</visible>
             </control>
@@ -129,15 +160,7 @@
             <left>135</left>
             <width>500</width>
             <height>42</height>
-            <control type="image">
-                <width>500</width>
-                <height>42</height>
-                <texture border="20" colordiffuse="PirateSelection">dialogs/keyboard/key-nf.png</texture>
-            </control>
-            <control type="image">
-                <width>500</width><height>42</height>
-                <texture border="10" colordiffuse="PirateEdge">bingie/border/default_button_focus.png</texture>
-            </control>
+            <include content="PirateSearchHeaderSurface"><param name="width" value="500"/><param name="height" value="42"/></include>
             <control type="label">
                 <left>22</left>
                 <top>0</top>
@@ -176,7 +199,7 @@
 
         <!--- ########## Right Layout ########## -->
         <control type="group" id="9900">
-            <left>360</left>
+            <left>390</left>
             <top>105</top>
             <height>70</height>
             <width>620</width>
@@ -190,20 +213,20 @@
                 <visible>!$EXP[IsActualKeyboardActive]</visible>
                 <left>0</left>
                 <top>0</top>
-                <width>560</width>
+                <width>530</width>
                 <height>62</height>
                 <texture border="20" colordiffuse="PiratePanel">dialogs/keyboard/key-nf.png</texture>
             </control>
             <control type="image">
                 <visible>!$EXP[IsActualKeyboardActive]</visible>
-                <left>0</left><top>0</top><width>560</width><height>62</height>
+                <left>0</left><top>0</top><width>530</width><height>62</height>
                 <texture border="10" colordiffuse="PirateSoftEdge">bingie/border/default_button_focus.png</texture>
             </control>
             <control type="label">
                 <visible>!$EXP[IsActualKeyboardActive] + String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
                 <left>24</left>
                 <top>8</top>
-                <width>430</width>
+                <width>400</width>
                 <height>46</height>
                 <font>Reg28</font>
                 <align>left</align>
@@ -242,7 +265,7 @@
                 <visible>!$EXP[IsActualKeyboardActive]</visible>
                 <left>24</left>
                 <top>8</top>
-                <width>430</width>
+                <width>400</width>
                 <height>46</height>
                 <font>Reg28</font>
                 <align>left</align>
@@ -253,7 +276,7 @@
 				Container(5049).IsUpdating | Container(5050).IsUpdating | Container(5051).IsUpdating | Container(5052).IsUpdating | Container(5053).IsUpdating | Container(5054).IsUpdating | Container(5055).IsUpdating | Container(5056).IsUpdating | Container(5057).IsUpdating | Container(5058).IsUpdating | Container(5059).IsUpdating | Container(5060).IsUpdating] + !String.IsEmpty(Skin.String(CustomSearchTerm)) | !String.IsEmpty(Window.Property(SearchPosterAnimation)) + [Container(500).IsUpdating + Control.IsVisible(500)]">Conditional</animation>
             </control>
             <control type="button" id="9901">
-                <left>510</left><top>8</top><width>42</width><height>46</height>
+                <left>480</left><top>8</top><width>42</width><height>46</height>
                 <label>×</label><font>Reg28</font><align>center</align><aligny>center</aligny>
                 <textcolor>ffffffff</textcolor><focusedcolor>PirateEdge</focusedcolor>
                 <texturefocus>dialogs/keyboard/key-nf.png</texturefocus><texturenofocus />

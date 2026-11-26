@@ -346,8 +346,8 @@ class Generator:
         Generates a new addons.xml.md5 file.
         """
         try:
-            with open(addons_xml_path, "r", encoding="utf-8") as f:
-                m = hashlib.md5(f.read().encode("utf-8")).hexdigest()
+            with open(addons_xml_path, "rb") as f:
+                m = hashlib.md5(f.read()).hexdigest()
                 self._save_file(m, file=md5_path)
 
             return True

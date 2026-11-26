@@ -60,6 +60,7 @@
             <top>8</top>
             <include>WatchedIndicatorBingieNormal</include>
         </control>
+        <include>PirateArtworkProgress</include>
     </include>
     <include name="SquarePosterPanelBingieLayoutFocus">
         <control type="image">
@@ -82,6 +83,7 @@
             <top>8</top>
             <include>WatchedIndicatorBingieNormal</include>
         </control>
+        <include>PirateArtworkProgress</include>
     </include>
 
     <include name="SquareThumb">

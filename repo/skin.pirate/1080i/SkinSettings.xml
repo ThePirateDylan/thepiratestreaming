@@ -3,7 +3,7 @@
 <window>
     <defaultcontrol always="true">100</defaultcontrol>
     <include>DefaultSkinSettings</include>
-	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=900&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu|tmdbsearchmenu|moviehub|tvshowhub|newhub|musichub|customhub|somethinghub|mylisthub)</onunload>
+	<onunload>RunScript(script.pirate.shortcuts,type=buildxml&amp;mainmenuID=900&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu|tmdbsearchmenu|moviehub|tvshowhub|newhub|musichub|customhub|somethinghub|mylisthub)</onunload>
 	<onunload>Skin.Reset(TMDbBingieHelper.DisableRatings)</onunload>
     <controls>
         <!--Global Background-->

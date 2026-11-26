@@ -1809,25 +1809,25 @@
         <include content="SkinSettings_ActionButton">
             <param name="id" value="31014" />
             <param name="label" value="31014" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=mainmenu)" />
             <param name="visible" value="true" />
         </include>
 		<include content="SkinSettings_ActionButton">
             <param name="id" value="31202" />
             <param name="label" value="31202" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=searchmenu)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=searchmenu)" />
             <param name="visible" value="Library.HasContent(Movies) | Library.HasContent(TVShows)" />
         </include>
 		<include content="SkinSettings_ActionButton">
             <param name="id" value="312022" />
             <param name="label" value="31202" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=tmdbsearchmenu)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=tmdbsearchmenu)" />
             <param name="visible" value="!Library.HasContent(Movies) + !Library.HasContent(TVShows)" />
         </include>
         <include content="SkinSettings_ActionButton">
             <param name="id" value="31204" />
             <param name="label" value="31204" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=powermenu)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=powermenu)" />
             <param name="visible" value="true" />
         </include>				
 		<control type="label" id="31413">
@@ -1850,19 +1850,19 @@
 		<include content="SkinSettings_ActionButton">
             <param name="id" value="31434" />
             <param name="label" value="31434" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=moviehub)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=moviehub)" />
             <param name="visible" value="true" />
         </include>
 		<include content="SkinSettings_ActionButton">
             <param name="id" value="31058" />
             <param name="label" value="31058" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=tvshowhub)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=tvshowhub)" />
             <param name="visible" value="true" />
         </include>
 		<include content="SkinSettings_ActionButton">
             <param name="id" value="31506" />
             <param name="label" value="31506" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=newhub)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=newhub)" />
             <param name="visible" value="true" />
         </include>
 		<include content="SkinSettings_ActionButton">
@@ -1874,25 +1874,25 @@
 		<include content="SkinSettings_ActionButton">
             <param name="id" value="31166" />
             <param name="label" value="31166" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=mylisthub)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=mylisthub)" />
             <param name="visible" value="true" />
         </include>
 		<include content="SkinSettings_ActionButton">
             <param name="id" value="31472" />
             <param name="label" value="31472" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=musichub)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=musichub)" />
             <param name="visible" value="true" />
         </include>
 		<include content="SkinSettings_ActionButton">
             <param name="id" value="31383" />
             <param name="label" value="31383" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=somethinghub)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=somethinghub)" />
             <param name="visible" value="true" />
         </include>
 		<include content="SkinSettings_ActionButton">
             <param name="id" value="31250" />
             <param name="label" value="31250" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=customhub)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=manage&amp;group=customhub)" />
             <param name="visible" value="true" />
         </include>		
         <control type="label" id="31170">
@@ -1915,7 +1915,7 @@
         <include content="SkinSettings_ActionButton">
             <param name="id" value="31415" />
             <param name="label" value="31415" />
-            <param name="action" value="RunScript(script.skinshortcuts,type=resetall)" />
+            <param name="action" value="RunScript(script.pirate.shortcuts,type=resetall)" />
             <param name="visible" value="true" />
         </include>
     </include>
@@ -1938,7 +1938,7 @@
         </include>
         <include content="SkinSettings_AddonButton">
             <param name="id" value="302" />
-            <param name="addon" value="script.skinshortcuts" />
+            <param name="addon" value="script.pirate.shortcuts" />
         </include>
         <include content="SkinSettings_AddonButton">
             <param name="id" value="303" />

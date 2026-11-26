@@ -427,7 +427,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[31379]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlighthome.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlighthome.path)</onclick>
 					<visible>String.EndsWith(Window.Property(groupname),.1)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
@@ -438,7 +438,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[31379]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightmyhub.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightmyhub.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),customhub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
@@ -449,7 +449,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[31379]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightmovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightmovies.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),moviehub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
@@ -460,7 +460,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[31379]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlighttvshows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlighttvshows.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),tvshowhub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
@@ -471,7 +471,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[31379]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightnew.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightnew.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),newhub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
@@ -482,7 +482,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[31379]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightmusic.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightmusic.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),musichub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>

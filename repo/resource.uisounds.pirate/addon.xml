@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="resource.uisounds.pirate" version="1.0.2" name="The Pirate UI Sounds" provider-name="The Pirate Dylan">
+  <requires>
+    <import addon="kodi.resource" version="1.0.0" />
+  </requires>
+  <extension point="kodi.resource.uisounds" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">GUI sound pack for The Pirate.</summary>
+    <description lang="en_GB">Original user interface sounds designed to match The Pirate skin and overall project identity.</description>
+    <platform>all</platform>
+    <assets><icon>pirate-branding-20261125-icon.png</icon><fanart>pirate-branding-20261125-fanart.jpg</fanart>
+        </assets>
+  </extension>
+</addon>

@@ -7,7 +7,7 @@ import xbmc
 import xbmcaddon
 import xbmcgui
 
-from resources.lib.maintenance import run_cleanup
+from resources.lib.maintenance import cleanup_is_busy, run_startup_cleanup
 
 
 ADDON_ID = "script.pirate.maintenance"
@@ -20,32 +20,16 @@ def log(message, level=xbmc.LOGINFO):
 
 
 def _apply_startup_defaults(addon):
-    """Enable the requested boot cleanup once on upgrade while preserving future opt-outs."""
-    if addon.getSetting("startup_defaults_migrated") == "true":
+    """Migrate the old forced thumbnail wipe to the conservative startup policy."""
+    if addon.getSetting("startup_policy_migrated") == "true":
         return
-    addon.setSetting("startup_cleanup", "true")
-    addon.setSetting("startup_clear_artwork", "true")
+    addon.setSetting("startup_clear_artwork", "false")
     addon.setSetting("startup_defaults_migrated", "true")
-
-
-def guide_preload_running():
-    try:
-        return xbmcgui.Window(10000).getProperty("fenlight.tvguide_preload_running") == "true"
-    except Exception:
-        return False
+    addon.setSetting("startup_policy_migrated", "true")
 
 
 def kodi_is_busy():
-    try:
-        if xbmc.Player().isPlaying():
-            return True
-    except Exception:
-        pass
-
-    try:
-        return bool(xbmc.getCondVisibility("Window.IsActive(busydialog)"))
-    except Exception:
-        return False
+    return cleanup_is_busy(automatic=True)
 
 
 def run():
@@ -74,11 +58,13 @@ def run():
 
     clear_artwork = addon.getSettingBool("startup_clear_artwork")
     try:
-        result = run_cleanup(
+        result = run_startup_cleanup(
             include_artwork=clear_artwork,
-            interactive=False,
             monitor=monitor,
         )
+        if result["cancelled"]:
+            log("startup cleanup stopped because Kodi became busy or is shutting down")
+            return
         log(
             "startup cleanup finished: %d temporary files, %d packages, "
             "%d artwork entries, %d errors"
@@ -91,15 +77,22 @@ def run():
         )
         for error in result["errors"]:
             log("startup cleanup detail: %s" % error, xbmc.LOGWARNING)
-        if result["temp_files"] or result["package_files"] or result["artwork_entries"]:
-            xbmcgui.Dialog().notification(
-                addon.getAddonInfo("name"),
-                "Startup cleanup completed",
-                addon.getAddonInfo("icon"),
-                4000,
-            )
+        if result["errors"]:
+            message = addon.getLocalizedString(32031)
+        elif result["temp_files"] or result["package_files"] or result["artwork_entries"]:
+            message = addon.getLocalizedString(32035)
+        else:
+            message = addon.getLocalizedString(32034)
+        xbmcgui.Dialog().notification(
+            addon.getAddonInfo("name"),
+            message,
+            addon.getAddonInfo("icon"),
+            4000,
+            False,
+        )
     except Exception as exc:
         log("startup cleanup failed: %s" % exc, xbmc.LOGERROR)
 
 
-run()
+if __name__ == "__main__":
+    run()

@@ -25,7 +25,7 @@ def change_label():
     return call
 
 def choose_path():
-    call = ('RunScript(script.skinshortcuts,'
+    call = ('RunScript(script.pirate.shortcuts,'
             'type=widgets'
             '&showNone=False'
             '&skinWidgetName={0}.name'

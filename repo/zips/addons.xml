@@ -24,7 +24,7 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.107">
+</addon><addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.108">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.pil" version="1.1.7" />
@@ -37,18 +37,18 @@
     <extension point="xbmc.python.module" library="resources/lib/" />
     <extension point="xbmc.addon.metadata">
         <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en">Access your content from Easynews and Debrid Clouds.</summary>
-        <description lang="en">This add-on is intended for advanced Kodi users only. You must own the content of any media you play through this addon. This is an English language only add-on.</description>
+        <summary lang="en">Streaming add-on for The Pirate.</summary>
+        <description lang="en">Main media add-on for The Pirate, providing browsing and playback through your configured services and helpers.</description>
         <platform>all</platform>
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license />
         <assets>
-            <icon>resources/media/addon_icons/pirate_icon.png</icon>
-            <fanart>resources/media/fenlight_fanart_01.jpg</fanart>
+            <icon>pirate-branding-20261125-icon.png</icon>
+            <fanart>pirate-branding-20261125-fanart.jpg</fanart>
         </assets>
         <news>Improved TV Guide loading. The loading screen stays up until every channel has program information, with a retry option if preparation fails. Includes the updated Home, TV Shows and Movies layouts in Pirate Skin 2.2.101.</news>
     </extension>
-</addon><addon id="plugin.video.tmdb.pirate.helper" version="1.0.13" name="The Pirate TMDb Helper" provider-name="The Pirate Dylan">
+</addon><addon id="plugin.video.tmdb.pirate.helper" version="1.0.14" name="The Pirate TMDb Helper" provider-name="The Pirate Dylan">
 <requires>
   <import addon="xbmc.python" version="3.0.1" />
   <import addon="script.module.requests" version="2.9.1" />
@@ -67,16 +67,17 @@
 <extension point="xbmc.python.module" library="resources/modules" />
 <extension point="xbmc.addon.metadata">
   <reuselanguageinvoker>false</reuselanguageinvoker>
-  <summary lang="en_GB">The Pirate TMDb Helper</summary>
-  <description lang="en_GB">The Pirate TMDb Helper provides details about movies, tvshows and actors from TMDb.</description>
+  <summary lang="en_GB">TMDb helper for The Pirate.</summary>
+  <description lang="en_GB">TMDb-based helper component for The Pirate, used for metadata, lookups, and related integration.</description>
   <disclaimer lang="en_GB">Data provided by TMDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com.</disclaimer>
   <license>GPL-3.0-or-later</license>
   <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/plugin.video.tmdb.pirate.helper</website>
   <assets>
-    <icon>tmdbhelper_icon.png</icon>
-  </assets>
+    <icon>pirate-branding-20261125-icon.png</icon>
+  <fanart>pirate-branding-20261125-fanart.jpg</fanart>
+        </assets>
 </extension>
-</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.8" provider-name="ThePirateDylan">
+</addon><addon id="repository.pirate" name="The Pirate Repo" version="1.0.9" provider-name="ThePirateDylan">
     <extension point="xbmc.addon.repository" name="The Pirate Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ThePirateDylan/thepiratestreaming/main/repo/zips/addons.xml</info>
@@ -85,16 +86,30 @@
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>The Pirate Repo</summary>
-        <description>The software, add-ons, and repositories provided are supplied "as is" and without warranties of any kind.</description>
+        <summary>Official repository for The Pirate.</summary>
+        <description>Update repository for The Pirate add-ons and supporting components.</description>
         <disclaimer>Use At Your Own Risk!</disclaimer>
         <platform>all</platform>
         <assets>
-            <icon>pirate_icon.png</icon>
+            <icon>pirate-branding-20261125-icon.png</icon>
+        <fanart>pirate-branding-20261125-fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="screensaver.pirate" name="The Pirate Screensaver" version="1.0.4" provider-name="The Pirate Dylan">
+</addon><addon id="resource.uisounds.pirate" version="1.0.2" name="The Pirate UI Sounds" provider-name="The Pirate Dylan">
+  <requires>
+    <import addon="kodi.resource" version="1.0.0" />
+  </requires>
+  <extension point="kodi.resource.uisounds" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">GUI sound pack for The Pirate.</summary>
+    <description lang="en_GB">Original user interface sounds designed to match The Pirate skin and overall project identity.</description>
+    <platform>all</platform>
+    <assets><icon>pirate-branding-20261125-icon.png</icon><fanart>pirate-branding-20261125-fanart.jpg</fanart>
+        </assets>
+  </extension>
+</addon><addon id="screensaver.pirate" name="The Pirate Screensaver" version="1.0.6" provider-name="The Pirate Dylan">
     <requires>
+        <import addon="script.pirate.shortcuts" version="1.0.0" />
         <import addon="skin.pirate" version="1.0.0" />
     </requires>
     
@@ -102,10 +117,11 @@
     <extension point="xbmc.python.script" library="script.py" />
     
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">The Pirate Screensaver</summary>
-        <description lang="en">Netflix styled screensaver for The Pirate Streaming skin.</description>
+        <summary lang="en">Screensaver for The Pirate.</summary>
+        <description lang="en">Project-matched screensaver component designed to complement The Pirate interface.</description>
         <assets>
-            <icon>screen_icon.png</icon> 
+            <icon>pirate-branding-20261125-icon.png</icon> 
+        <fanart>pirate-branding-20261125-fanart.jpg</fanart>
         </assets>
     </extension>
 </addon><addon id="script.module.cocoscrapers" name="CocoScrapers Module" version="1.0.11" provider-name="CocoJoe">
@@ -135,7 +151,7 @@
 		</assets>
 		<news />
 	</extension>
-</addon><addon id="script.module.pirate" name="pirate common" provider-name="The Pirate Dylan" version="1.0.3">
+</addon><addon id="script.module.pirate" name="pirate common" provider-name="The Pirate Dylan" version="1.0.4">
   <requires>
     <import addon="xbmc.python" version="3.0.1" />
     <import addon="script.module.requests" version="2.9.1" />
@@ -143,14 +159,16 @@
   </requires>
   <extension point="xbmc.python.module" library="resources/modules" />
   <extension point="xbmc.addon.metadata">
-    <description lang="en_GB">Common code required by The Pirate TMDb Helper.</description>
+        <summary lang="en_GB">Common module for The Pirate.</summary>
+    <description lang="en_GB">Shared common module for The Pirate components.</description>
     <license>GPL-3.0-or-later</license>
     <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.module.pirate</website>
     <assets>
-      <icon>icon.png</icon>
-    </assets>
+      <icon>pirate-branding-20261125-icon.png</icon>
+    <fanart>pirate-branding-20261125-fanart.jpg</fanart>
+        </assets>
   </extension>
-</addon><addon id="script.pirate.helper" name="The Pirate Helper" version="1.1.40" provider-name="The Pirate Dylan">
+</addon><addon id="script.pirate.helper" name="The Pirate Helper" version="1.1.41" provider-name="The Pirate Dylan">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.simplejson" version="3.17.0" />
@@ -158,18 +176,19 @@
 	<extension point="xbmc.python.script" library="default.py" />
 	<extension point="xbmc.addon.metadata">
 		<language />
-		<summary lang="en">The Pirate Helper</summary>
-		<description lang="en">Helper for some of The Pirate Streaming skin features.</description>
+		<summary lang="en">Helper service for The Pirate.</summary>
+		<description lang="en">Background helper module used by The Pirate to support skin features and related utility functions.</description>
 		<platform>all</platform>
 		<license>GPL v3.0</license>
 		<forum />
 		<website />
 		<source>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.helper/</source>
 		<assets>
-			<icon>icon.png</icon>
-		</assets>
+			<icon>pirate-branding-20261125-icon.png</icon>
+		<fanart>pirate-branding-20261125-fanart.jpg</fanart>
+        </assets>
 	</extension>
-</addon><addon id="script.pirate.maintenance" name="The Pirate Maintenance" version="1.0.4" provider-name="The Pirate Dylan">
+</addon><addon id="script.pirate.maintenance" name="The Pirate Maintenance" version="1.0.7" provider-name="The Pirate Dylan">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="xbmc.addon" version="12.0.0" />
@@ -177,15 +196,65 @@
     <extension point="xbmc.python.script" library="default.py" />
     <extension point="xbmc.service" library="service.py" start="startup" />
     <extension point="xbmc.addon.metadata">
-        <summary lang="en_GB">Kodi cache, add-on package, and artwork maintenance.</summary>
-        <description lang="en_GB">Removes temporary files and old add-on installer packages, and clears Kodi's texture cache through JSON-RPC.</description>
+        <summary lang="en_GB">Maintenance tools for The Pirate.</summary>
+        <description lang="en_GB">Cleans old temporary files and installer packages at startup while preserving media caches. Includes a separate Pirate artwork refresh and full manual cleanup.</description>
+        <news>Fixed manual cleanup progress dialogs and protected active cache databases. Startup now confirms completion even when no files need removing.</news>
         <platform>all</platform>
         <license>GPL v2.0</license>
         <assets>
-            <icon>icon.png</icon>
+            <icon>pirate-branding-20261125-icon.png</icon>
+        <fanart>pirate-branding-20261125-fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="script.pirate.toolbox" name="The Pirate Toolbox" version="1.0.2" provider-name="The Pirate Dylan">
+</addon><addon id="script.pirate.shortcuts" name="Pirate Shortcuts" version="1.0.1" provider-name="The Pirate Dylan; BigNoid, marcelveldt, SiLVO, anxdpanic">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.unidecode" version="1.1.1+matrix.2" />
+        <import addon="script.module.simpleeval" version="0.9.10" />
+    </requires>
+    <extension point="xbmc.python.library" library="resources/lib/entry_point.py" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Shortcut support for The Pirate.</summary>
+        <news>Preserves The Pirate menus and widgets independently of Skin Shortcuts v3. Imports existing menu customizations without changing the originals.</news>
+        <platform>all</platform>
+        <license>GPL-2.0-only</license>
+        <forum>https://forum.kodi.tv/showthread.php?tid=178294</forum>
+        <source>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.shortcuts</source>
+        <assets>
+            <icon>pirate-branding-20261125-icon.png</icon>
+            <fanart>pirate-branding-20261125-fanart.jpg</fanart>
+        </assets>
+        <description lang="ar_SA">إضافة مخصصه للمظهر لتوفير إدارة بسيطة للودجيت "الأقسام" و الاختصارات على الشاشة (تتطلب دعم المظهر لها)</description>
+        <description lang="cs_CZ">Doplněk pro vzhledy poskytující jednoduchý management a seznamy uživatelských zkratek (vyžaduje podporu vzhledu)</description>
+        <description lang="da_DK">Add-on til skins der giver enkel styring og lister over brugergenveje (kræver skin-understøttelse)</description>
+        <description lang="de_DE">Addon für Skins zum einfachen Bearbeiten und Auflisten von benutzerdefinierten Verknüpfungen (erfordert Skinunterstützung)</description>
+        <description lang="el_GR">Πρόσθετο για κελύφη, το οποίο παρέχει έναν απλό τρόπο διαχείρισης και κατηγοριοποίησης των συντομεύσεων του χρήστη (πρέπει να υποστηρίζεται από το κέλυφος)</description>
+        <description lang="en_GB">Shortcut and menu support component for The Pirate interface and related navigation features.</description>
+        <description lang="en_NZ">Shortcut and menu support component for The Pirate interface and related navigation features.</description>
+        <description lang="en_US">Shortcut and menu support component for The Pirate interface and related navigation features.</description>
+        <description lang="es_ES">Complemento para las pieles para proporcionar una gestión sencilla y lista de atajos de usuario (requiere que la piel lo soporte)</description>
+        <description lang="fi_FI">Lisäosa, joka mahdollistaa ulkoasujen valikkokohteiden ja omien pikavalintojen lisäyksen ja niiden muokkauksen (vaatii tuen ulkoasulta)</description>
+        <description lang="fr_CA">Addiciel pour habillages qui fournit une gestion simple et un listage des raccourcis utilisateurs (exige la prise en charge de l'habillage)</description>
+        <description lang="fr_FR">Module complémentaire pour les skins pour fournir une gestion et une liste simples de raccourcis utilisateur (nécessite la prise en charge des skins)</description>
+        <description lang="gl_ES">Complemento que fornece aos temas dunha xestión sinxela dos atallos dos usuarios (require soporte do tema)</description>
+        <description lang="hr_HR">Dodatak za presvlake koji omogućuje jednostavno upravljanje i prikaz prečaca korisnika (zahtijeva podršku presvlake)</description>
+        <description lang="hu_HU">Felszín kiegészítő amely könnyen kezelhetővé és listázhatóvá teszi a felhasználói parancsikonokat (Felszín támogatás szükséges)</description>
+        <description lang="is_IS">Viðbót fyrir viðmót til að halda utan um flýtivísa og fá yfirlit yfir þá (þarfnast stuðnings frá viðmóti)</description>
+        <description lang="it_IT">Add-on per gli skin per consentire un facile gestione ed elenco delle scorciatoie utente (richiede che lo skin lo supporti)</description>
+        <description lang="ko_KR">사용자 단축키의 간단한 관리 및 목록을 제공하는 스킨용 애드온(스킨 지원 필요)</description>
+        <description lang="lt_LT">Priedas teminėms išvaizdoms, kad jos turėtų galimybę paprastai tvarkyti ir atvaizduoti vartotojo sukurtas nuorodas (reikalingas teminės išvaizdos palaikymas)</description>
+        <description lang="nb_NO">Tillegg for enkel administrering og opplisting av bruker-snarveier i tema (krever støtte i tema)</description>
+        <description lang="nl_NL">Add-on voor skins om te voorzien in het eenvoudig beheren en sorteren van gebruikers snelkoppelingen (vereist skin ondersteuning)</description>
+        <description lang="pl_PL">Wtyczka dla skór, która zapewnia proste zarządzanie i tworzenie list skrótów użytkownika (wymaga wsparcia skóry)</description>
+        <description lang="pt_BR">Add-on para que as skins possam prover gerenciamento de lista de atalhos para o menu principal (requer suporte da skin)</description>
+        <description lang="pt_PT">Um add-on que permite que os temas tenham recursos simples para gerir e listar atalhos de utilizadores (é necessário suporte do tema)</description>
+        <description lang="ru_RU">Дополнение для обложек, предоставляющее простой способ управления пользовательскими ярлыками (требуется поддержка обложкой)</description>
+        <description lang="sk_SK">Doplnok poskytujúci jednoduchý manažment zoznamu užívateľských odkazov (vyžaduje podporu v doplnku pre vzhľad)</description>
+        <description lang="sv_SE">Skinntillägg som tillhandahåller enkel hantering och översikt av användargenvägar (om skinnet stöder det)</description>
+        <description lang="zh_CN">皮肤加载项，提供简单的用户快捷方式管理和列表（需要皮肤支持）</description>
+        <description lang="zh_TW">插件为皮肤提供了简单的管理和用户连接方式列表 (需要皮肤支持)</description>
+    </extension>
+</addon><addon id="script.pirate.toolbox" name="The Pirate Toolbox" version="1.0.3" provider-name="The Pirate Dylan">
     <requires>
 		<import addon="xbmc.python" version="3.0.0" />
         <import addon="xbmc.addon" version="12.0.0" />
@@ -197,10 +266,11 @@
     <extension point="xbmc.python.pluginsource" library="plugin.py" />
 
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">The Pirate Toolbox</summary>
-        <description>Toolbox for The Pirate Streaming skin.</description>
+        <summary lang="en">Support tools for The Pirate.</summary>
+        <description>Utility toolbox used by The Pirate for internal actions and shared functions.</description>
 		<assets>
-            <icon>icon.png</icon>
+            <icon>pirate-branding-20261125-icon.png</icon>
+        <fanart>pirate-branding-20261125-fanart.jpg</fanart>
         </assets>
         <language />
         <platform>all</platform>
@@ -209,7 +279,7 @@
         <website />
         <source />
     </extension>
-</addon><addon id="script.pirate.widgets" name="The Pirate Widgets" version="1.0.4" provider-name="The Pirate Dylan">
+</addon><addon id="script.pirate.widgets" name="The Pirate Widgets" version="1.0.5" provider-name="The Pirate Dylan">
     <requires>
 		<import addon="xbmc.python" version="3.0.0" />
         <import addon="xbmc.addon" version="12.0.0" />
@@ -224,11 +294,12 @@
     <extension library="service.py" point="xbmc.service" start="login" />
 
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">The Pirate Widgets</summary>
-        <description>Widgets for The Pirate Streaming skin.</description>
+        <summary lang="en">Widget service for The Pirate.</summary>
+        <description>Widget and service component used by The Pirate to drive dynamic content and supporting views.</description>
 		<assets>
-            <icon>widgets_icon.png</icon>
+            <icon>pirate-branding-20261125-icon.png</icon>
             
+        <fanart>pirate-branding-20261125-fanart.jpg</fanart>
         </assets>
         <language />
         <platform>all</platform>
@@ -237,41 +308,42 @@
         <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.widgets</website>
         <source />
     </extension>
-</addon><addon id="skin.pirate" version="2.2.102" name="The Pirate Skin" provider-name="The Pirate Dylan">
+</addon><addon id="skin.pirate" version="2.2.102.23" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui" />
 		<import addon="script.pirate.helper" version="1.1.40" />
 		<import addon="script.pirate.toolbox" version="1.0.1" />
 		<import addon="script.pirate.widgets" version="1.0.3" />
-		<import addon="script.skinshortcuts" version="2.0.3" />
+		<import addon="script.pirate.shortcuts" version="1.0.0" />
 		<import addon="resource.images.studios.coloured" version="0.0.24" />
 		<import addon="plugin.video.tmdb.pirate.helper" version="1.0.10" />
 		<import addon="plugin.program.autocompletion" version="2.1.4" />
 		<import addon="plugin.video.pirate" version="2.2.85" />
         <import addon="script.pirate.maintenance" version="1.0.4" />
-		<import addon="resource.uisounds.androidtv" version="1.0.0" />
+		<import addon="resource.uisounds.pirate" version="1.0.2" />
 	</requires>
 	<extension debugging="false" defaultthemename="Textures.xbt" effectslowdown="1" point="xbmc.gui.skin">
         <res aspect="16:9" default="true" folder="1080i" height="1080" width="1920" />
     </extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Kodi skin with Netflix layout.</summary>
+		<summary lang="en_GB">Main skin for The Pirate.</summary>
 		<summary lang="zh_CN">Netflix 布局 Kodi 皮肤。</summary>
 		<summary lang="es_ES">Kodi con diseño Netflix.</summary>
 		<summary lang="es_AR">Kodi con diseño Netflix.</summary>
 		<summary lang="es_MX">Kodi con diseño Netflix.</summary>
-		<description lang="en_GB">The Pirate Streaming – The home of your favorite movies and shows!</description>
+		<description lang="en_GB">Remote-first custom skin for The Pirate, with home widgets, integrated views, and the project's core interface.</description>
 		<description lang="zh_CN">The Pirate Streaming - 你最喜欢的电影和节目的主界面！</description>
 		<description lang="es_ES">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_AR">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_MX">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
-		<news>Startup recovery: Back or Select skips the intro. The startup screen closes when the intro ends, with a fallback if playback stalls. Home is no longer hidden by a leftover intro title. Keeps the existing TV Guide and widget layouts.</news>
+		<news>Menus and widgets now use Pirate Shortcuts, preserving existing customizations when Skin Shortcuts updates. Includes the latest blue progress percentages and spotlight styling. Updated Pirate artwork and bundled Pirate UI Sounds. Simplified the home spotlight and widget episode labels. Matched Search to the navy sidebar and beveled blue headers. Removed the accent stripe from search result headings. Rebuilt the media details page with an opaque navy panel and a compact action row. Show details now open Episodes consistently from Home and Search. Episode labels use S1: E2 spacing.</news>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
 		<forum />
 		<source />
 		<assets>
-			<icon>skin_icon.png</icon>		
-		</assets>
+			<icon>pirate-branding-20261125-icon.png</icon>		
+		<fanart>pirate-branding-20261125-fanart.jpg</fanart>
+        </assets>
 	</extension>
 </addon></addons>

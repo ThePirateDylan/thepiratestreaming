@@ -1722,4 +1722,29 @@
         <onclick condition="[Container.Content(videos) + String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
     </include>
 
+    <include name="PirateArtworkProgress">
+        <control type="group">
+            <left>8</left><right>8</right><bottom>8</bottom><height>28</height>
+<control type="group"><width>100%</width><height>28</height><visible>[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.Property(DBTYPE),movie) | String.IsEqual(ListItem.Property(DBTYPE),episode) | String.IsEqual(ListItem.Property(DBTYPE),tvshow) | String.IsEqual(ListItem.Property(DBTYPE),season)]</visible><visible>Integer.IsGreater(ListItem.PercentPlayed,0) + Integer.IsLess(ListItem.PercentPlayed,100)</visible><control type="image"><width>100%</width><height>28</height><texture colordiffuse="dc071322">colors/color_white.png</texture></control><control type="progress">
+            <left>6</left><top>11</top><height>6</height>
+            <texturebg colordiffuse="PirateNavy">diffuse/panel2.png</texturebg>
+            <lefttexture />
+            <midtexture colordiffuse="ffb8e7ff">diffuse/panel2.png</midtexture>
+            <righttexture />
+            <overlaytexture />
+            <info>ListItem.PercentPlayed</info>
+        <right>62</right></control>
+        <control type="label"><right>6</right><top>0</top><width>50</width><height>28</height><font>Bold20</font><textcolor>ffffffff</textcolor><shadowcolor>ff000000</shadowcolor><align>right</align><aligny>center</aligny><label>$INFO[ListItem.PercentPlayed,,%]</label></control></control>
+<control type="group"><width>100%</width><height>28</height><visible>[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.Property(DBTYPE),movie) | String.IsEqual(ListItem.Property(DBTYPE),episode) | String.IsEqual(ListItem.Property(DBTYPE),tvshow) | String.IsEqual(ListItem.Property(DBTYPE),season)]</visible><visible>Integer.IsGreater(ListItem.Property(WatchedProgress),0) + Integer.IsLess(ListItem.Property(WatchedProgress),100) + !Integer.IsGreater(ListItem.PercentPlayed,0)</visible><control type="image"><width>100%</width><height>28</height><texture colordiffuse="dc071322">colors/color_white.png</texture></control><control type="progress">
+            <left>6</left><top>11</top><height>6</height>
+            <texturebg colordiffuse="PirateNavy">diffuse/panel2.png</texturebg>
+            <lefttexture />
+            <midtexture colordiffuse="ffb8e7ff">diffuse/panel2.png</midtexture>
+            <righttexture />
+            <overlaytexture />
+            <info>ListItem.Property(WatchedProgress)</info>
+        <right>62</right></control>
+        <control type="label"><right>6</right><top>0</top><width>50</width><height>28</height><font>Bold20</font><textcolor>ffffffff</textcolor><shadowcolor>ff000000</shadowcolor><align>right</align><aligny>center</aligny><label>$INFO[ListItem.Property(WatchedProgress),,%]</label></control></control>
+        </control>
+    </include>
 </includes>

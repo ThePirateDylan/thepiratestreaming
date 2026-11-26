@@ -751,7 +751,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ActionAdvantureMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ActionAdvantureMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])</visible>
 				</control>
 				<control type="button" id="31456">
@@ -759,7 +759,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DramaMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DramaMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])</visible>
 				</control>
 				<control type="button" id="31457">
@@ -767,7 +767,7 @@
 					<height>58</height>
 					<align>center</align>					
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ComedyMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ComedyMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])</visible>
 				</control>
 				<control type="button" id="31451">
@@ -775,7 +775,7 @@
 					<height>58</height>
 					<align>center</align>				
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=FamilyMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=FamilyMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])</visible>
 				</control>
 				<control type="button" id="31452">
@@ -783,7 +783,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=HorrorMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=HorrorMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])</visible>
 				</control>
 				<control type="button" id="31159">
@@ -791,7 +791,7 @@
 					<height>58</height>
 					<align>center</align>		
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DocumentaryMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DocumentaryMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])</visible>
 				</control>
 				<control type="button" id="31046">
@@ -799,7 +799,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=AnimeMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=AnimeMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])</visible>
 				</control>
 				<control type="button" id="31448">
@@ -807,7 +807,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=CrimeMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=CrimeMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])</visible>
 				</control>
 				<control type="button" id="31446">
@@ -815,7 +815,7 @@
 					<height>58</height>
 					<align>center</align>	
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=FantasyMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=FantasyMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])</visible>
 				</control>
 				<control type="button" id="31442">
@@ -823,7 +823,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=HistoryWarMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=HistoryWarMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])</visible>
 				</control>
 				<control type="button" id="31435">
@@ -831,7 +831,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=AnimationMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=AnimationMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])</visible>
 				</control>
 				<control type="button" id="31049">
@@ -839,7 +839,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=MusicMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=MusicMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])</visible>
 				</control>
 				<control type="button" id="31427">
@@ -847,7 +847,7 @@
 					<height>58</height>
 					<align>center</align>	
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=RomanceMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=RomanceMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])</visible>
 				</control>
 				<control type="button" id="31428">
@@ -855,7 +855,7 @@
 					<height>58</height>
 					<align>center</align>		
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=SciFiMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=SciFiMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])</visible>
 				</control>
 				<control type="button" id="31414">
@@ -863,7 +863,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=MysteryMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=MysteryMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])</visible>
 				</control>
 				<control type="button" id="31398">
@@ -871,7 +871,7 @@
 					<height>58</height>
 					<align>center</align>	
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ThrillerMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ThrillerMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])</visible>
 				</control>
 				<control type="button" id="31399">
@@ -879,7 +879,7 @@
 					<height>58</height>
 					<align>center</align>		
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=WesternMovies.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=WesternMovies.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])</visible>
 				</control>
 				<control type="button" id="31386">
@@ -887,7 +887,7 @@
 					<height>58</height>
 					<align>center</align>		
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ActionAdvantureTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ActionAdvantureTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])</visible>
 				</control>
 				<control type="button" id="31381">
@@ -895,7 +895,7 @@
 					<height>58</height>
 					<align>center</align>		
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DramaTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DramaTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])</visible>
 				</control>
 				<control type="button" id="31382">
@@ -903,7 +903,7 @@
 					<height>58</height>
 					<align>center</align>	
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ComedyTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ComedyTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])</visible>
 				</control>
 				<control type="button" id="31376">
@@ -911,7 +911,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=FamilyTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=FamilyTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])</visible>
 				</control>
 				<control type="button" id="31377">
@@ -919,7 +919,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DocumentaryTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DocumentaryTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])</visible>
 				</control>
 				<control type="button" id="31372">
@@ -927,7 +927,7 @@
 					<height>58</height>
 					<align>center</align>	
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=CrimeTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=CrimeTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])</visible>
 				</control>
 				<control type="button" id="31373">
@@ -935,7 +935,7 @@
 					<height>58</height>
 					<align>center</align>		
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=SciFiFantasyTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=SciFiFantasyTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])</visible>
 				</control>
 				<control type="button" id="31374">
@@ -943,7 +943,7 @@
 					<height>58</height>
 					<align>center</align>			
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=WarPoliticsTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=WarPoliticsTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])</visible>
 				</control>
 				<control type="button" id="31364">
@@ -951,7 +951,7 @@
 					<height>58</height>
 					<align>center</align>		
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=AnimationTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=AnimationTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])</visible>
 				</control>
 				<control type="button" id="31352">
@@ -959,7 +959,7 @@
 					<height>58</height>
 					<align>center</align>		
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=MysteryTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=MysteryTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])</visible>
 				</control>
 				<control type="button" id="31353">
@@ -967,7 +967,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[31490]</label>
-					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=WesternTVShows.path)</onclick>
+					<onclick>RunScript(script.pirate.shortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=WesternTVShows.path)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])</visible>
 				</control>
 				<!--widget style-->

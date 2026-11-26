@@ -1124,6 +1124,21 @@
         </definition>
     </include>
 
+    <!-- Passive header surface; all layers stay within the existing row height. -->
+    <include name="PirateSearchHeaderSurface">
+        <param name="width" default="885"/><param name="height" default="40"/>
+        <definition>
+            <control type="group">
+                <width>$PARAM[width]</width><height>$PARAM[height]</height>
+                <control type="image"><width>100%</width><height>100%</height><texture colordiffuse="PirateSoftEdge">colors/color_white.png</texture></control>
+                <control type="image"><width>100%</width><height>16</height><texture colordiffuse="705c9ac6">pirate-depth/vertical.png</texture></control>
+                <control type="image"><width>100%</width><height>1</height><texture colordiffuse="805883a2">colors/color_white.png</texture></control>
+                <control type="image"><bottom>0</bottom><width>100%</width><height>14</height><texture colordiffuse="b0000000" flipy="true">pirate-depth/vertical.png</texture></control>
+                <control type="image"><bottom>0</bottom><width>100%</width><height>3</height><texture colordiffuse="ff092039">colors/color_white.png</texture></control>
+            </control>
+        </definition>
+    </include>
+
     <!-- Search Result Widget Top Label -->
     <include name="SearchResultWidgetTopLabel">
         <definition>
@@ -1131,13 +1146,14 @@
                 <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
                 <nested />
                 <height>40</height>
+                <include content="PirateSearchHeaderSurface"><param name="width" value="885"/><param name="height" value="40"/></include>
                 <control type="label">
-                    <left>8</left>
-                    <width>auto</width>
+                    <left>24</left>
+                    <width>845</width>
                     <label>$PARAM[label]</label>
                     <aligny>center</aligny>
                     <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
-                    <font>Reg30</font>
+                    <font>Bold30</font>
                     <height>36</height>
                     <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
                 </control>

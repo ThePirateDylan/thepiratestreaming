@@ -1,4 +1,4 @@
-<addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.107">
+<addon id="plugin.video.pirate" name="The Pirate Streaming" provider-name="The Pirate Dylan" version="2.2.108">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
@@ -11,14 +11,14 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en">Access your content from Easynews and Debrid Clouds.</summary>
-        <description lang="en">This add-on is intended for advanced Kodi users only. You must own the content of any media you play through this addon. This is an English language only add-on.</description>
+        <summary lang="en">Streaming add-on for The Pirate.</summary>
+        <description lang="en">Main media add-on for The Pirate, providing browsing and playback through your configured services and helpers.</description>
         <platform>all</platform>
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and has no affiliation with any of the content providers.</disclaimer>
         <license/>
         <assets>
-            <icon>resources/media/addon_icons/pirate_icon.png</icon>
-            <fanart>resources/media/fenlight_fanart_01.jpg</fanart>
+            <icon>pirate-branding-20261125-icon.png</icon>
+            <fanart>pirate-branding-20261125-fanart.jpg</fanart>
         </assets>
         <news>Improved TV Guide loading. The loading screen stays up until every channel has program information, with a retry option if preparation fails. Includes the updated Home, TV Shows and Movies layouts in Pirate Skin 2.2.101.</news>
     </extension>
