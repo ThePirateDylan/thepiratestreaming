@@ -168,7 +168,7 @@
     <fanart>pirate-branding-20261125-fanart.jpg</fanart>
         </assets>
   </extension>
-</addon><addon id="script.pirate.helper" name="The Pirate Helper" version="1.1.41" provider-name="The Pirate Dylan">
+</addon><addon id="script.pirate.helper" name="The Pirate Helper" version="1.1.42" provider-name="The Pirate Dylan">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.simplejson" version="3.17.0" />
@@ -178,7 +178,8 @@
 		<language />
 		<summary lang="en">Helper service for The Pirate.</summary>
 		<description lang="en">Background helper module used by The Pirate to support skin features and related utility functions.</description>
-		<platform>all</platform>
+		<news>Apply Pirate navigation defaults and select the bundled UI Sounds on first use.</news>
+        <platform>all</platform>
 		<license>GPL v3.0</license>
 		<forum />
 		<website />
@@ -206,7 +207,7 @@
         <fanart>pirate-branding-20261125-fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="script.pirate.shortcuts" name="Pirate Shortcuts" version="1.0.1" provider-name="The Pirate Dylan; BigNoid, marcelveldt, SiLVO, anxdpanic">
+</addon><addon id="script.pirate.shortcuts" name="Pirate Shortcuts" version="1.0.2" provider-name="The Pirate Dylan; BigNoid, marcelveldt, SiLVO, anxdpanic">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.unidecode" version="1.1.1+matrix.2" />
@@ -215,7 +216,7 @@
     <extension point="xbmc.python.library" library="resources/lib/entry_point.py" />
     <extension point="xbmc.addon.metadata">
         <summary lang="en_GB">Shortcut support for The Pirate.</summary>
-        <news>Preserves The Pirate menus and widgets independently of Skin Shortcuts v3. Imports existing menu customizations without changing the originals.</news>
+        <news>Remove the retired My Stars sidebar item while preserving other menu customizations.</news>
         <platform>all</platform>
         <license>GPL-2.0-only</license>
         <forum>https://forum.kodi.tv/showthread.php?tid=178294</forum>
@@ -308,13 +309,13 @@
         <website>https://github.com/ThePirateDylan/thepiratestreaming/tree/main/repo/script.pirate.widgets</website>
         <source />
     </extension>
-</addon><addon id="skin.pirate" version="2.2.102.23" name="The Pirate Skin" provider-name="The Pirate Dylan">
+</addon><addon id="skin.pirate" version="2.2.102.24" name="The Pirate Skin" provider-name="The Pirate Dylan">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui" />
-		<import addon="script.pirate.helper" version="1.1.40" />
+		<import addon="script.pirate.helper" version="1.1.42" />
 		<import addon="script.pirate.toolbox" version="1.0.1" />
 		<import addon="script.pirate.widgets" version="1.0.3" />
-		<import addon="script.pirate.shortcuts" version="1.0.0" />
+		<import addon="script.pirate.shortcuts" version="1.0.2" />
 		<import addon="resource.images.studios.coloured" version="0.0.24" />
 		<import addon="plugin.video.tmdb.pirate.helper" version="1.0.10" />
 		<import addon="plugin.program.autocompletion" version="2.1.4" />
@@ -336,7 +337,7 @@
 		<description lang="es_ES">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_AR">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
 		<description lang="es_MX">The Pirate Streaming - tu hogar de películas y series favoritas!</description>
-		<news>Menus and widgets now use Pirate Shortcuts, preserving existing customizations when Skin Shortcuts updates. Includes the latest blue progress percentages and spotlight styling. Updated Pirate artwork and bundled Pirate UI Sounds. Simplified the home spotlight and widget episode labels. Matched Search to the navy sidebar and beveled blue headers. Removed the accent stripe from search result headings. Rebuilt the media details page with an opaque navy panel and a compact action row. Show details now open Episodes consistently from Home and Search. Episode labels use S1: E2 spacing.</news>
+		<news>Removed My Stars from the sidebar. Hide parent-folder arrow tiles and select Pirate UI Sounds automatically when the skin is first updated.</news>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
 		<forum />

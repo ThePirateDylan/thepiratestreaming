@@ -4,6 +4,8 @@
     <defaultcontrol always="true">1000</defaultcontrol>
     <menucontrol>900</menucontrol>
 
+    <onload condition="!String.IsEqual(Window(Home).Property(PirateSkinDefaultsApplied),1)">RunScript(script.pirate.helper,action=applyskindefaults)</onload>
+
     <!-- Defaults -->
     <include>DefaultSkinSettings</include>
     

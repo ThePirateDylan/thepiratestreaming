@@ -182,6 +182,13 @@ class DataFunctions:
                     log("Failed attempt to load file %s" % path)
                     continue
 
+            # Filter the retired default in memory, including existing profiles.
+            # Keep the saved file and all unrelated custom shortcuts intact.
+            if tree is not None and group == "mainmenu" and SKIN_DIR == "skin.pirate":
+                for shortcut in list(tree.getroot()):
+                    if shortcut.findtext("defaultID") == "mystars":
+                        tree.getroot().remove(shortcut)
+
             if tree is not None and process_shortcuts:
                 # If this is a user-selected list of shortcuts...
                 if group == "mainmenu":

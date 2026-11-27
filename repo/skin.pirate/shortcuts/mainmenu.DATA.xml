@@ -40,14 +40,6 @@
 		<action>ActivateWindow(1111,return)</action>
 		</shortcut>
 	<shortcut>
-		<defaultID>mystars</defaultID>
-		<label>My Stars</label>
-		<label2>Favorites</label2>
-		<icon>special://skin/shortcut-icons/favorites.png</icon>
-		<thumb />
-		<action>ActivateWindow(1114,return)</action>
-	</shortcut>
-	<shortcut>
 		<defaultID />
 		<label>Cloud Services</label>
 		<label2>Video Add-On</label2>

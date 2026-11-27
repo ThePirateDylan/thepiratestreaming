@@ -528,3 +528,8 @@ def json_call(method,properties=None,sort=None,query_filter=None,limit=None,para
 
     return result
 
+
+
+def applyskindefaults(params):
+    from resources.lib.skin_defaults import apply_defaults
+    apply_defaults()

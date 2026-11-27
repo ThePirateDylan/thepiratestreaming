@@ -41,7 +41,8 @@ class Main:
                             'moreepisodes': moreepisodes,
                             'jumpseason': jumpseason,
                             'nextpage': nextpage,
-                            'installpauseosdkeymap': installpauseosdkeymap}
+                            'installpauseosdkeymap': installpauseosdkeymap,
+                            'applyskindefaults': applyskindefaults}
         for action in self.action:
             action_inventory[action](self.params)
 
